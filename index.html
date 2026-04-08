@@ -391,7 +391,11 @@
                                 { icon: "info", title: "About Vāṇī AI", body: "India's premium neural voice studio. Built for creators, dubbing artists, and YouTubers looking for human-like realistic voices." },
                                 { icon: "cpu", title: "Technology", body: "Powered by Gemini 2.5 Flash. Our neural engine understands the subtle nuances of Indian accents and emotions." },
                                 { icon: "shield-check", title: "Privacy Policy", body: "Security first. We never store your scripts or API keys. Everything stays in your browser's local cache." },
-                                { icon: "file-text", title: "Terms of Use", body: "Commercial rights included. Perfect for ads, educational content, and social media podcasts. No hidden fees." },
+                              { 
+  icon: "file-text", 
+  title: <a href="terms.html" className="hover:text-indigo-400 transition-colors">Terms of Use</a>, 
+  body: "Commercial rights included. Perfect for ads, educational content, and social media podcasts. No hidden fees." 
+},
                                 { icon: "help-circle", title: "Help & Support", body: "Community-driven open engine. Use Google AI Studio to monitor and manage your free API usage credits." }
                             ].map((card, i) => (
                                 <div key={i} className="glass rounded-[3rem] p-10 hover:bg-white/5 transition-all group border border-transparent hover:border-indigo-500/20">
