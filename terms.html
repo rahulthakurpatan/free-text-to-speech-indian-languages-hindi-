@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Vāṇī AI Studio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root { --bg-main: #020617; --card-bg: rgba(15, 23, 42, 0.6); --accent: #6366f1; }
+        body { 
+            background-color: var(--bg-main); 
+            color: #f8fafc; 
+            font-family: sans-serif; 
+            background-image: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #020617 100%); 
+            min-height: 100vh; 
+        }
+        .glass { background: var(--card-bg); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .icon-container svg { display: inline-block; vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5" }) => {
+            const containerRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && containerRef.current) {
+                    containerRef.current.innerHTML = `<i data-lucide="${name}"></i>`;
+                    window.lucide.createIcons({ root: containerRef.current });
+                }
+            }, [name]);
+            return <span ref={containerRef} className={`icon-container inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [lang, setLang] = useState('en');
+            const t = {
+                en: { 
+                    title: "Vāṇī AI", tagline: "Neural Text-to-Speech", 
+                    page: "Terms of Use", back: "Back to Home",
+                    s: [
+                        { h: "01. Agreement", p: "By using Vāṇī AI, you agree to these terms for responsible voice synthesis." },
+                        { h: "02. API Keys", p: "Users must use their own API keys. We don't store or see your credentials." },
+                        { h: "03. Ownership", p: "You own 100% of the generated audio for YouTube and commercial use." },
+                        { h: "04. Ethics", p: "Misuse for deepfakes, hate speech, or misinformation is strictly prohibited." }
+                    ]
+                },
+                hi: { 
+                    title: "वाणी एआई", tagline: "न्यूरल टेक्स्ट टू स्पीच", 
+                    page: "उपयोग की शर्तें", back: "वापस स्टूडियो",
+                    s: [
+                        { h: "०१. समझौता", p: "वाणी एआई का उपयोग करके आप इन शर्तों से सहमत होते हैं।" },
+                        { h: "०२. एपीआई कुंजी", p: "उपयोगकर्ता को अपनी एपीआई कुंजी का उपयोग करना होगा, हम उसे सेव नहीं करते।" },
+                        { h: "०३. मालिकाना हक", p: "जनरेट किए गए ऑडियो पर आपका १००% हक है, इसे कहीं भी उपयोग करें।" },
+                        { h: "०४. नैतिकता", p: "डीपफेक या गलत सूचना फैलाने के लिए इसका उपयोग वर्जित है।" }
+                    ]
+                }
+            };
+
+            return (
+                <div className="min-h-screen flex flex-col p-6 md:p-10">
+                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-12 text-center">
+                        <div className="p-4 bg-indigo-600 rounded-3xl shadow-2xl mb-4"><Icon name="mic-2" className="text-white w-8 h-8" /></div>
+                        <h1 className="text-4xl font-bold uppercase italic tracking-tighter">{t[lang].title}</h1>
+                        <p className="text-xs text-indigo-400 uppercase tracking-widest">{t[lang].tagline}</p>
+                        <button onClick={() => setLang(lang === 'en' ? 'hi' : 'en')} className="mt-6 px-4 py-2 glass rounded-xl text-xs font-bold text-indigo-400 uppercase tracking-widest">
+                             {lang === 'en' ? "हिन्दी" : "English"}
+                        </button>
+                    </header>
+
+                    <main className="max-w-4xl mx-auto w-full flex-1">
+                        <div className="glass rounded-[3rem] p-8 md:p-14 shadow-2xl relative overflow-hidden">
+                            <h2 className="text-3xl font-bold text-white mb-10 italic uppercase border-b border-white/5 pb-4 text-indigo-500">{t[lang].page}</h2>
+                            <div className="space-y-10">
+                                {t[lang].s.map((item, i) => (
+                                    <div key={i}>
+                                        <h3 className="text-white font-bold uppercase mb-3 flex items-center gap-3">
+                                            <span className="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-[10px]">{i+1}</span>
+                                            {item.h}
+                                        </h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed pl-9">{item.p}</p>
+                                    </div>
+                                ))}
+                                <div className="pt-10 border-t border-white/5 flex justify-between">
+                                    <a href="index.html" className="text-indigo-400 font-bold hover:underline uppercase text-[10px] tracking-widest flex items-center gap-2">
+                                        <Icon name="arrow-left" size={14} /> {t[lang].back}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer className="mt-20 text-center py-10 border-t border-white/5">
+                        <p className="text-[10px] font-bold text-slate-700 tracking-[0.3em] uppercase">© 2026 Vāṇī AI Studio • Realistic TTS Engine</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
