@@ -1,27 +1,93 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use - Vāṇī AI Studio</title>
+    <title>Terms & Conditions - Vāṇī AI Studio | Professional Legal Guidelines</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Official Terms and Conditions for Vāṇī AI Studio. Learn about our BYOK model, commercial rights, and user responsibilities for AI voice generation.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        :root { --bg-main: #020617; --card-bg: rgba(15, 23, 42, 0.6); --accent: #6366f1; }
-        body { 
-            background-color: var(--bg-main); 
-            color: #f8fafc; 
-            font-family: sans-serif; 
-            background-image: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #020617 100%); 
-            min-height: 100vh; 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'indi-orange': '#ea580c',
+                        'indi-blue': '#1e40af',
+                        'indi-bg': '#fefefe'
+                    }
+                }
+            }
         }
-        .glass { background: var(--card-bg); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .icon-container svg { display: inline-block; vertical-align: middle; }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background-image: radial-gradient(circle at 50% -20%, #ffedd5 0%, #f8fafc 100%);
+            min-height: 100vh;
+            color: #0f172a;
+        }
+        .hindi-font { font-family: 'Noto Sans Devanagari', sans-serif; }
+        
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #1e293b; /* Thin dark border */
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+            border-radius: 2.5rem;
+        }
+        
+        .footer-card {
+            border: 1px solid #1e293b;
+        }
+
+        .icon-box {
+            background: linear-gradient(135deg, #f97316, #1e40af);
+            color: white;
+            border-radius: 1.25rem;
+        }
+        
+        .animate-up { animation: fadeInUp 0.7s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+        
+        .terms-section h3 {
+            color: #1e40af;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid #ffedd5;
+            padding-bottom: 0.5rem;
+        }
+        .terms-section ul {
+            padding-left: 1.5rem;
+            list-style-type: disc;
+            margin-top: 0.5rem;
+        }
+        .terms-section li {
+            margin-bottom: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -30,77 +96,182 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        const Icon = ({ name, className = "w-5 h-5" }) => {
-            const containerRef = useRef(null);
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
             useEffect(() => {
-                if (window.lucide && containerRef.current) {
-                    containerRef.current.innerHTML = `<i data-lucide="${name}"></i>`;
-                    window.lucide.createIcons({ root: containerRef.current });
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
                 }
-            }, [name]);
-            return <span ref={containerRef} className={`icon-container inline-flex items-center justify-center ${className}`}></span>;
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
         };
 
         const App = () => {
             const [lang, setLang] = useState('en');
-            const t = {
-                en: { 
-                    title: "Vāṇī AI", tagline: "Neural Text-to-Speech", 
-                    page: "Terms of Use", back: "Back to Home",
-                    s: [
-                        { h: "01. Agreement", p: "By using Vāṇī AI, you agree to these terms for responsible voice synthesis." },
-                        { h: "02. API Keys", p: "Users must use their own API keys. We don't store or see your credentials." },
-                        { h: "03. Ownership", p: "You own 100% of the generated audio for YouTube and commercial use." },
-                        { h: "04. Ethics", p: "Misuse for deepfakes, hate speech, or misinformation is strictly prohibited." }
+
+            const i18n = {
+                hi: {
+                    tagline: "उपयोग की शर्तें | कानूनी नियम",
+                    title: "Terms & Conditions",
+                    lastUpdated: "अंतिम अपडेट: ९ अप्रैल, २०२६",
+                    backBtn: "वापस स्टूडियो",
+                    contactText: "सम्पर्क करें:",
+                    sections: [
+                        { title: "१. शर्तों की स्वीकृति", icon: "check-circle", content: "वाणी एआई स्टूडियो का उपयोग करके, आप पुष्टि करते हैं कि आपने इन शर्तों को पढ़ और समझ लिया है, हमारी गोपनीयता नीति से सहमत हैं, और आप कानूनी रूप से समझौता करने में सक्षम हैं।" },
+                        { title: "२. सेवा की प्रकृति (BYOK Model)", icon: "cpu", content: "वाणी एआई स्टूडियो एक क्लाइंट-साइड इंटरफ़ेस टूल है, न कि स्वयं एआई सेवा प्रदाता। हम उपयोगकर्ताओं को गूगल जेमिनी एपीआई से जुड़ने में सक्षम बनाते हैं। सभी प्रोसेसिंग उपयोगकर्ता और गूगल के बीच होती है।" },
+                        { title: "३. उपयोगकर्ता की जिम्मेदारी", icon: "user", content: "आप अपनी गूगल जेमिनी एपीआई कुंजी और उसके माध्यम से होने वाली सभी गतिविधियों के लिए पूरी तरह जिम्मेदार हैं। किसी भी शुल्क, कोटा उपयोग, या गूगल खाते के निलंबन के लिए हम जिम्मेदार नहीं हैं।" },
+                        { title: "४. स्वामित्व और व्यावसायिक अधिकार", icon: "music", content: "आप जनरेट किए गए सभी ऑडियो के १००% मालिक बने रहेंगे। आप इसे यूट्यूब, विज्ञापनों, पॉडकास्ट और रील्स के लिए व्यावसायिक रूप से उपयोग करने और मुद्रीकृत करने के लिए पूरी तरह से स्वतंत्र हैं।" },
+                        { title: "५. प्रतिबंधित उपयोग", icon: "slash", content: "आप अवैध सामग्री, नफरत फैलाने वाले भाषण, उत्पीड़न, या बिना सहमति के किसी व्यक्ति की नकल (डीपफेक) बनाने के लिए इस टूल का उपयोग नहीं करने के लिए सहमत हैं।" },
+                        { title: "६. बौद्धिक संपदा", icon: "award", content: "वेबसाइट डिजाइन, सोर्स कोड, ब्रांडिंग और लोगो वाणी एआई स्टूडियो के स्वामित्व में हैं। आप एप्लिकेशन को क्लोन करने या इंटरफ़ेस को पुनर्विक्रय करने का प्रयास नहीं कर सकते।" }
                     ]
                 },
-                hi: { 
-                    title: "वाणी एआई", tagline: "न्यूरल टेक्स्ट टू स्पीच", 
-                    page: "उपयोग की शर्तें", back: "वापस स्टूडियो",
-                    s: [
-                        { h: "०१. समझौता", p: "वाणी एआई का उपयोग करके आप इन शर्तों से सहमत होते हैं।" },
-                        { h: "०२. एपीआई कुंजी", p: "उपयोगकर्ता को अपनी एपीआई कुंजी का उपयोग करना होगा, हम उसे सेव नहीं करते।" },
-                        { h: "०३. मालिकाना हक", p: "जनरेट किए गए ऑडियो पर आपका १००% हक है, इसे कहीं भी उपयोग करें।" },
-                        { h: "०४. नैतिकता", p: "डीपफेक या गलत सूचना फैलाने के लिए इसका उपयोग वर्जित है।" }
+                en: {
+                    tagline: "Terms of Service | Legal Guidelines",
+                    title: "Terms & Conditions",
+                    lastUpdated: "Last Updated: April 9, 2026",
+                    backBtn: "Back to Studio",
+                    contactText: "Contact Us:",
+                    sections: [
+                        { title: "1. Acceptance of Terms", icon: "check-circle", content: "By using Vāṇī AI Studio, you confirm that you have read, understood, and agreed to these Terms and our Privacy Policy. Your continued use constitutes acceptance of updates." },
+                        { title: "2. Nature of Service (BYOK)", icon: "cpu", content: "Vāṇī AI Studio is a client-side interface tool for the Google Gemini API. We are not an AI service provider; all processing occurs directly between the user and Google infrastructure." },
+                        { title: "3. User Responsibility", icon: "user", content: "You are solely responsible for your Google Gemini API Key, including all activity, charges, billing, or quota usage. Keep your key confidential and secure at all times." },
+                        { title: "4. Ownership & Commercial Rights", icon: "music", content: "Users retain 100% ownership of all input content and generated audio. You are fully allowed to monetize and use audio for YouTube, Ads, Podcasts, and Reels without restriction." },
+                        { title: "5. Prohibited Use", icon: "slash", content: "You agree not to generate illegal content, hate speech, harassment, or deepfakes. Violation of Google's AI policies may result in immediate access restriction." },
+                        { title: "6. Intellectual Property", icon: "award", content: "All platform rights, including design, source code, and branding, are owned by Vāṇī AI Studio. Unauthorized cloning or reselling is strictly prohibited." }
                     ]
                 }
             };
 
+            const t = i18n[lang];
+
             return (
-                <div className="min-h-screen flex flex-col p-6 md:p-10">
-                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-12 text-center">
-                        <div className="p-4 bg-indigo-600 rounded-3xl shadow-2xl mb-4"><Icon name="mic-2" className="text-white w-8 h-8" /></div>
-                        <h1 className="text-4xl font-bold uppercase italic tracking-tighter">{t[lang].title}</h1>
-                        <p className="text-xs text-indigo-400 uppercase tracking-widest">{t[lang].tagline}</p>
-                        <button onClick={() => setLang(lang === 'en' ? 'hi' : 'en')} className="mt-6 px-4 py-2 glass rounded-xl text-xs font-bold text-indigo-400 uppercase tracking-widest">
-                             {lang === 'en' ? "हिन्दी" : "English"}
-                        </button>
+                <div className={`min-h-screen flex flex-col p-4 md:p-10 animate-up ${lang === 'hi' ? 'hindi-font' : ''}`}>
+                    {/* Header */}
+                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-16 text-center">
+                        <div className="flex w-full justify-end mb-4">
+                            <button 
+                                onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
+                                className="flex items-center gap-2 bg-indi-blue text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg hover:bg-blue-700 transition-all border border-slate-900"
+                            >
+                                <Icon name="languages" size={14} />
+                                {lang === 'hi' ? "English" : "हिन्दी"}
+                            </button>
+                        </div>
+                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-50">
+                            <Icon name="file-text" size={32} />
+                        </div>
+                        <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</h1>
+                        <p className="text-[11px] text-indi-orange font-black uppercase tracking-[0.4em] mt-2">{t.tagline}</p>
                     </header>
 
-                    <main className="max-w-4xl mx-auto w-full flex-1">
-                        <div className="glass rounded-[3rem] p-8 md:p-14 shadow-2xl relative overflow-hidden">
-                            <h2 className="text-3xl font-bold text-white mb-10 italic uppercase border-b border-white/5 pb-4 text-indigo-500">{t[lang].page}</h2>
-                            <div className="space-y-10">
-                                {t[lang].s.map((item, i) => (
-                                    <div key={i}>
-                                        <h3 className="text-white font-bold uppercase mb-3 flex items-center gap-3">
-                                            <span className="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-[10px]">{i+1}</span>
-                                            {item.h}
-                                        </h3>
-                                        <p className="text-slate-400 text-sm leading-relaxed pl-9">{item.p}</p>
+                    <main className="max-w-5xl mx-auto w-full flex-1">
+                        <div className="glass-card p-8 md:p-16 border-slate-900 shadow-2xl relative overflow-hidden">
+                            
+                            {/* TOP BACK BUTTON */}
+                            <div className="mb-10">
+                                <a href="index.html" className="inline-flex items-center gap-2 text-indi-blue font-black text-xs uppercase tracking-widest hover:text-indi-orange transition-colors group">
+                                    <Icon name="arrow-left" size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+                                    {t.backBtn}
+                                </a>
+                            </div>
+
+                            <div className="absolute top-0 right-0 p-12 opacity-5 -rotate-12 pointer-events-none">
+                                <Icon name="gavel" size={250} />
+                            </div>
+
+                            <div className="relative">
+                                <h2 className="text-4xl font-black text-slate-900 mb-2 uppercase italic tracking-tighter">{t.title}</h2>
+                                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-12 border-b border-slate-200 pb-6">{t.lastUpdated}</p>
+
+                                <div className="space-y-12">
+                                    {t.sections.map((section, idx) => (
+                                        <div key={idx} className="terms-section">
+                                            <h3><Icon name={section.icon} className="text-indi-orange" /> {section.title}</h3>
+                                            <p className="text-slate-800 leading-relaxed font-bold">
+                                                {section.content}
+                                            </p>
+                                        </div>
+                                    ))}
+
+                                    {/* DETAILED LEGAL SECTIONS FROM USER */}
+                                    <div className="terms-section">
+                                        <h3><Icon name="alert-triangle" className="text-indi-orange" /> 8. No Warranties (As-Is Basis)</h3>
+                                        <p className="text-slate-800 leading-relaxed font-bold">
+                                            {lang === 'en' 
+                                                ? "The Platform is provided “as is” and “as available”, without warranties of any kind. We do NOT guarantee continuous uptime, error-free functionality, or accuracy of generated speech. Use at your own risk."
+                                                : "प्लेटफ़ॉर्म 'जैसा है' और 'उपलब्ध है' के आधार पर प्रदान किया जाता है। हम निरंतर अपटाइम, त्रुटि मुक्त कार्यक्षमता, या जनरेट की गई आवाज़ की सटीकता की गारंटी नहीं देते हैं। जोखिम पर उपयोग करें।"}
+                                        </p>
                                     </div>
-                                ))}
-                                <div className="pt-10 border-t border-white/5 flex justify-between">
-                                    <a href="index.html" className="text-indigo-400 font-bold hover:underline uppercase text-[10px] tracking-widest flex items-center gap-2">
-                                        <Icon name="arrow-left" size={14} /> {t[lang].back}
+
+                                    <div className="terms-section">
+                                        <h3><Icon name="shield-off" className="text-indi-orange" /> 9. Limitation of Liability</h3>
+                                        <p className="text-slate-800 leading-relaxed font-bold">
+                                            {lang === 'en' 
+                                                ? "To the fullest extent permitted by law, Vāṇī AI Studio shall NOT be liable for direct or indirect damages, loss of revenue, data corruption, or API-related costs incurred by the user."
+                                                : "कानून द्वारा अनुमत पूर्ण सीमा तक, वाणी एआई स्टूडियो प्रत्यक्ष या अप्रत्यक्ष नुकसान, राजस्व की हानि, डेटा भ्रष्टाचार, या उपयोगकर्ता द्वारा किए गए एपीआई-संबंधित खर्चों के लिए उत्तरदायी नहीं होगा।"}
+                                        </p>
+                                    </div>
+
+                                    <div className="terms-section">
+                                        <h3><Icon name="map-pin" className="text-indi-orange" /> 13. Governing Law</h3>
+                                        <p className="text-slate-800 leading-relaxed font-bold">
+                                            {lang === 'en' 
+                                                ? "These Terms shall be governed by and interpreted in accordance with the laws of India. Any disputes shall be subject to the jurisdiction of appropriate courts in India."
+                                                : "ये शर्तें भारत के कानूनों के अनुसार शासित और व्याख्यायित की जाएंगी। कोई भी विवाद भारत में उचित न्यायालयों के अधिकार क्षेत्र के अधीन होगा।"}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* BOTTOM BACK BUTTON & CONTACT */}
+                                <div className="mt-20 pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8">
+                                    <a href="index.html" className="flex items-center gap-3 bg-indi-blue text-white px-10 py-5 rounded-[2rem] font-black text-sm uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl border border-slate-900">
+                                        <Icon name="arrow-left" size={18} /> {t.backBtn}
                                     </a>
+                                    <div className="text-center md:text-right">
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{t.contactText}</p>
+                                        <p className="text-lg font-black text-indi-blue tracking-tight">support@vaniai.com</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </main>
 
-                    <footer className="mt-20 text-center py-10 border-t border-white/5">
-                        <p className="text-[10px] font-bold text-slate-700 tracking-[0.3em] uppercase">© 2026 Vāṇī AI Studio • Realistic TTS Engine</p>
+                    {/* Footer (Same as other pages) */}
+                    <footer className="max-w-7xl mx-auto w-full mt-40 pb-20 border-t border-slate-900 pt-20">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-2">
+                            {[
+                                { icon: "info", title: lang === 'en' ? "About Us" : "हमारे बारे में", link: "about.html", body: "India's premium neural studio for creators looking for high-fidelity voices." },
+                                { icon: "shield-check", title: lang === 'en' ? "Privacy" : "गोपनीयता", link: "privacy-policy.html", body: "100% Client-side privacy. Your keys are never saved on servers." },
+                                { icon: "file-text", title: lang === 'en' ? "Terms" : "नियम", link: "terms.html", body: "Commercial rights included for all generated audio content." },
+                                { icon: "mail", title: lang === 'en' ? "Contact" : "संपर्क", link: "contact.html", body: "Reach out to our Indian support community for quick help." },
+                                { icon: "book-open", title: lang === 'en' ? "Blog" : "ब्लॉग", link: "blog.html", body: "Read latest tips on AI voiceovers and content monetization." }
+                            ].map((card, i) => (
+                                <a href={card.link} key={i} className="glass-card footer-card p-8 hover:border-indi-orange transition-all group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-slate-100 text-indi-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indi-blue group-hover:text-white transition-all shadow-inner border border-slate-200">
+                                        <Icon name={card.icon} size={22} />
+                                    </div>
+                                    <h4 className="text-base font-black text-slate-900 mb-3 uppercase tracking-tighter italic flex items-center justify-between">
+                                        {card.title}
+                                        <Icon name="arrow-up-right" size={14} className="opacity-0 group-hover:opacity-100 transition-all" />
+                                    </h4>
+                                    <p className="text-[11px] text-slate-800 leading-relaxed font-bold">{card.body}</p>
+                                </a>
+                            ))}
+                        </div>
+                        <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-10 border-t border-slate-900 pt-16 px-6 text-[10px] font-black text-slate-900 uppercase tracking-widest italic">
+                            <div className="flex items-center gap-4">
+                                <Icon name="sparkles" className="text-indi-orange" size={26} />
+                                <div>
+                                    <p className="text-2xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</p>
+                                    <p>Powered by Gemini Flash 2.5</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-10">
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="flag" size={14} className="text-indi-orange" /> Made in India</span>
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="cpu" size={14} className="text-indi-blue" /> Neural Studio v3.5</span>
+                            </div>
+                        </div>
                     </footer>
                 </div>
             );
