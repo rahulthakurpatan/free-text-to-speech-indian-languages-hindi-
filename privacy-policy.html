@@ -184,7 +184,7 @@
                                 {lang === 'hi' ? "English" : "हिन्दी"}
                             </button>
                         </div>
-                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-100">
+                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-50">
                             <Icon name="shield-check" size={32} />
                         </div>
                         <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</h1>
@@ -193,6 +193,14 @@
 
                     <main className="max-w-4xl mx-auto w-full flex-1">
                         <div className="glass-card p-8 md:p-16 border-slate-900 shadow-2xl relative overflow-hidden">
+                            {/* NEW: Top Back Button */}
+                            <div className="mb-10 flex justify-start">
+                                <a href="index.html" className="flex items-center gap-2 text-indi-blue font-black text-xs uppercase tracking-widest hover:text-indi-orange transition-colors group">
+                                    <Icon name="arrow-left" size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+                                    {t.backBtn}
+                                </a>
+                            </div>
+
                             <div className="absolute top-0 right-0 p-12 opacity-5 -rotate-12">
                                 <Icon name="lock" size={250} />
                             </div>
@@ -222,7 +230,7 @@
                                 </div>
 
                                 <div className="mt-16 pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
-                                    <a href="index.html" className="flex items-center gap-2 bg-indi-blue text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl">
+                                    <a href="index.html" className="flex items-center gap-2 bg-indi-blue text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl border border-slate-900">
                                         <Icon name="arrow-left" size={16} /> {t.backBtn}
                                     </a>
                                     <div className="text-right">
