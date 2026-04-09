@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Vāṇī AI Studio | Data Security & Transparency</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Official Privacy Policy for Vāṇī AI Studio. Learn how we protect your API keys and why we prioritize 100% client-side data processing.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'indi-orange': '#ea580c',
+                        'indi-blue': '#1e40af',
+                        'indi-bg': '#fefefe'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background-image: radial-gradient(circle at 50% -20%, #ffedd5 0%, #f8fafc 100%);
+            min-height: 100vh;
+            color: #0f172a;
+        }
+        .hindi-font { font-family: 'Noto Sans Devanagari', sans-serif; }
+        
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #1e293b; /* Thin dark border */
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+            border-radius: 2.5rem;
+        }
+        
+        .footer-card {
+            border: 1px solid #1e293b;
+        }
+
+        .icon-box {
+            background: linear-gradient(135deg, #f97316, #1e40af);
+            color: white;
+            border-radius: 1.25rem;
+        }
+        
+        .animate-up { animation: fadeInUp 0.7s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+        
+        .policy-section h3 {
+            color: #1e40af;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [lang, setLang] = useState('en');
+
+            const i18n = {
+                hi: {
+                    tagline: "गोपनीयता नीति | डेटा सुरक्षा",
+                    title: "Privacy Policy",
+                    lastUpdated: "अंतिम अपडेट: ९ अप्रैल, २०२६",
+                    backBtn: "वापस स्टूडियो",
+                    sections: [
+                        {
+                            title: "डेटा संग्रह (No Data Collection)",
+                            icon: "shield-off",
+                            content: "वाणी एआई स्टूडियो आपके किसी भी व्यक्तिगत डेटा, आपकी स्क्रिप्ट या जनरेट की गई ऑडियो फाइलों को हमारे किसी भी बाहरी सर्वर पर संग्रहीत (store) या लॉग नहीं करता है। हमारा आर्किटेक्चर १००% क्लाइंट-साइड है।"
+                        },
+                        {
+                            title: "एपीआई कुंजी सुरक्षा (API Key Security)",
+                            icon: "key",
+                            content: "आपकी गूगल जेमिनी एपीआई कुंजी केवल आपके ब्राउज़र के 'लोकल स्टोरेज' में सुरक्षित रहती है। यह कुंजी कभी भी आपके डिवाइस से बाहर नहीं जाती, सिवाय गूगल के सुरक्षित सर्वर के साथ सीधे संचार करने के।"
+                        },
+                        {
+                            title: "लोकल स्टोरेज का उपयोग",
+                            icon: "database",
+                            content: "हम ब्राउज़र के लोकल स्टोरेज का उपयोग केवल आपकी सुविधा के लिए करते हैं ताकि आपको बार-बार एपीआई क्रेडेंशियल दर्ज न करने पड़ें। आप किसी भी समय अपनी सेटिंग्स से इस डेटा को साफ़ कर सकते हैं।"
+                        },
+                        {
+                            title: "तृतीय-पक्ष सेवाएं (Third-Party Services)",
+                            icon: "external-link",
+                            content: "यह ऐप वॉयस सिंथेसिस के लिए Google Gemini API (Google Cloud) का उपयोग करता है। गूगल द्वारा डेटा को संभालने के तरीके को समझने के लिए आप गूगल की गोपनीयता नीति देख सकते हैं।"
+                        },
+                        {
+                            title: "कुकीज़ और विज्ञापन (Cookies & Ads)",
+                            icon: "cookie",
+                            content: "हम गूगल एडसेंस (Google AdSense) का उपयोग कर सकते हैं। गूगल जैसे तृतीय-पक्ष विक्रेता विज्ञापन दिखाने के लिए कुकीज़ का उपयोग करते हैं। आप गूगल की विज्ञापन सेटिंग्स के माध्यम से इसे प्रबंधित कर सकते हैं।"
+                        }
+                    ]
+                },
+                en: {
+                    tagline: "Privacy Policy | Data Security",
+                    title: "Privacy Policy",
+                    lastUpdated: "Last Updated: April 9, 2026",
+                    backBtn: "Back to Studio",
+                    sections: [
+                        {
+                            title: "No Data Collection",
+                            icon: "shield-off",
+                            content: "Vāṇī AI Studio does NOT collect, store, or log any personal data, scripts, or generated audio files on any external server. Our architecture is 100% client-side."
+                        },
+                        {
+                            title: "API Key Security",
+                            icon: "key",
+                            content: "Your Google Gemini API key is stored exclusively in your browser's 'localStorage'. This key never leaves your device except for direct, encrypted communication with Google's API servers."
+                        },
+                        {
+                            title: "LocalStorage Usage",
+                            icon: "database",
+                            content: "We use browser LocalStorage solely for your convenience to save API credentials. This prevents you from re-entering your key every time you visit. You can clear this data at any time via the 'Reset Key' button."
+                        },
+                        {
+                            title: "Third-Party Services",
+                            icon: "external-link",
+                            content: "This application utilizes the Google Gemini API (Google Cloud) for voice synthesis. Users are encouraged to refer to Google’s Privacy Policy regarding data handling by their infrastructure."
+                        },
+                        {
+                            title: "Cookies & Advertisements",
+                            icon: "cookie",
+                            content: "We may use Google AdSense to serve ads. Third-party vendors, including Google, use cookies to serve ads based on your prior visits. You may opt out of personalized advertising by visiting Google Ad Settings."
+                        }
+                    ]
+                }
+            };
+
+            const t = i18n[lang];
+
+            return (
+                <div className={`min-h-screen flex flex-col p-4 md:p-10 animate-up ${lang === 'hi' ? 'hindi-font' : ''}`}>
+                    {/* Header (Same as Index) */}
+                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-16 text-center">
+                        <div className="flex w-full justify-end mb-4">
+                            <button 
+                                onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
+                                className="flex items-center gap-2 bg-indi-blue text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg hover:bg-blue-700 transition-all border border-slate-900"
+                            >
+                                <Icon name="languages" size={14} />
+                                {lang === 'hi' ? "English" : "हिन्दी"}
+                            </button>
+                        </div>
+                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-100">
+                            <Icon name="shield-check" size={32} />
+                        </div>
+                        <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</h1>
+                        <p className="text-[11px] text-indi-orange font-black uppercase tracking-[0.4em] mt-2">{t.tagline}</p>
+                    </header>
+
+                    <main className="max-w-4xl mx-auto w-full flex-1">
+                        <div className="glass-card p-8 md:p-16 border-slate-900 shadow-2xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-12 opacity-5 -rotate-12">
+                                <Icon name="lock" size={250} />
+                            </div>
+
+                            <div className="relative">
+                                <h2 className="text-4xl font-black text-slate-900 mb-2 uppercase italic tracking-tighter">{t.title}</h2>
+                                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-12 border-b border-slate-200 pb-6">{t.lastUpdated}</p>
+
+                                <div className="space-y-12">
+                                    {t.sections.map((section, idx) => (
+                                        <div key={idx} className="policy-section">
+                                            <h3><Icon name={section.icon} className="text-indi-orange" /> {section.title}</h3>
+                                            <p className="text-slate-800 leading-relaxed font-medium">
+                                                {section.content}
+                                            </p>
+                                        </div>
+                                    ))}
+
+                                    <div className="policy-section">
+                                        <h3><Icon name="music" className="text-indi-orange" /> Commercial Rights</h3>
+                                        <p className="text-slate-800 leading-relaxed font-medium">
+                                            {lang === 'en' 
+                                                ? "Vāṇī AI does not claim any ownership of the audio files you generate. Users retain 100% commercial rights to their content for use on YouTube, Social Media, Podcasts, and beyond."
+                                                : "वाणी एआई आपके द्वारा जनरेट की गई ऑडियो फाइलों पर किसी भी मालिकाना हक का दावा नहीं करता है। उपयोगकर्ता यूट्यूब, सोशल मीडिया और पॉडकास्ट पर उपयोग के लिए अपने कंटेंट के १००% व्यावसायिक अधिकार रखते हैं।"}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="mt-16 pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
+                                    <a href="index.html" className="flex items-center gap-2 bg-indi-blue text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl">
+                                        <Icon name="arrow-left" size={16} /> {t.backBtn}
+                                    </a>
+                                    <div className="text-right">
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Contact for Privacy Concerns</p>
+                                        <p className="text-sm font-bold text-indi-blue">privacy@vaniai.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+
+                    {/* Footer (Same as Index) */}
+                    <footer className="max-w-7xl mx-auto w-full mt-40 pb-20 border-t border-slate-900 pt-20">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-2">
+                            {[
+                                { icon: "info", title: lang === 'en' ? "About Us" : "हमारे बारे में", link: "about.html", body: "India's premium neural studio for creators looking for high-fidelity voices." },
+                                { icon: "shield-check", title: lang === 'en' ? "Privacy" : "गोपनीयता", link: "privacy-policy.html", body: "100% Client-side privacy. Your keys are never saved on servers." },
+                                { icon: "file-text", title: lang === 'en' ? "Terms" : "नियम", link: "terms.html", body: "Commercial rights included for all generated audio content." },
+                                { icon: "mail", title: lang === 'en' ? "Contact" : "संपर्क", link: "contact.html", body: "Reach out to our Indian support community for quick help." },
+                                { icon: "book-open", title: lang === 'en' ? "Blog" : "ब्लॉग", link: "blog.html", body: "Read latest tips on AI voiceovers and content monetization." }
+                            ].map((card, i) => (
+                                <a href={card.link} key={i} className="glass-card footer-card p-8 hover:border-indi-orange transition-all group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-slate-100 text-indi-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indi-blue group-hover:text-white transition-all shadow-inner border border-slate-200">
+                                        <Icon name={card.icon} size={22} />
+                                    </div>
+                                    <h4 className="text-base font-black text-slate-900 mb-3 uppercase tracking-tighter italic flex items-center justify-between">
+                                        {card.title}
+                                        <Icon name="arrow-up-right" size={14} className="opacity-0 group-hover:opacity-100 transition-all" />
+                                    </h4>
+                                    <p className="text-[11px] text-slate-800 leading-relaxed font-bold">{card.body}</p>
+                                </a>
+                            ))}
+                        </div>
+                        <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-10 border-t border-slate-900 pt-16 px-6 text-[10px] font-black text-slate-900 uppercase tracking-widest italic">
+                            <div className="flex items-center gap-4">
+                                <Icon name="sparkles" className="text-indi-orange" size={26} />
+                                <div>
+                                    <p className="text-2xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</p>
+                                    <p>Powered by Gemini Flash 2.5</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-10">
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="flag" size={14} className="text-indi-orange" /> Made in India</span>
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="cpu" size={14} className="text-indi-blue" /> Neural Studio v3.5</span>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
