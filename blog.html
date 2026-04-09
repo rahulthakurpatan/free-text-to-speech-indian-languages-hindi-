@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Vāṇī AI Studio | Hindi Text to Speech & AI Voice Mastery</title>
+    
+    <!-- Professional SEO Meta Tags -->
+    <meta name="description" content="Master Hindi Text to Speech with 20+ expert guides on Vāṇī AI Studio. Learn about Gemini API, YouTube automation, professional dubbing, and AI voice monetization strategies for Indian creators.">
+    <meta name="keywords" content="Hindi TTS Guide, Free Gemini API Key, AI Voice Monetization, Best Hindi AI Voices, Neural Speech Synthesis India, YouTube Shorts AI Voice, Professional Dubbing Tips">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rahulthakurpatan.github.io/blog/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'indi-orange': '#ea580c',
+                        'indi-blue': '#1e40af',
+                        'indi-bg': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background-image: radial-gradient(circle at 50% -20%, #ffedd5 0%, #f8fafc 100%);
+            min-height: 100vh;
+            color: #0f172a;
+        }
+        .hindi-font { font-family: 'Noto Sans Devanagari', sans-serif; }
+        
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #1e293b; 
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.05);
+            border-radius: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover { 
+            transform: translateY(-10px);
+            border-color: #ea580c;
+            box-shadow: 0 25px 50px -12px rgba(234, 88, 12, 0.15);
+        }
+        
+        .footer-card { border: 1px solid #1e293b; }
+        .icon-box { background: linear-gradient(135deg, #f97316, #1e40af); color: white; border-radius: 1.25rem; }
+        .animate-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [lang, setLang] = useState('en');
+
+            const i18n = {
+                hi: {
+                    tagline: "वाणी ज्ञान केंद्र | एआई और कंटेंट क्रिएशन गाइड",
+                    backBtn: "वापस स्टूडियो",
+                    title: "Vāṇī Knowledge Base",
+                    subtitle: "20+ विस्तृत ट्यूटोरियल और प्रोफेशनल इनसाइट्स",
+                    readMore: "विस्तार से पढ़ें",
+                    blogPosts: [
+                        { title: "Gemini API Key कैसे बनाएं: फुल स्टेप-बाय-स्टेप गाइड", desc: "गूगल एआई स्टूडियो का उपयोग करके फ्री जेमिनी एपीआई कुंजी बनाने, सुरक्षित रखने और उसे वाणी स्टूडियो में सक्रिय करने की पूरी जानकारी।", slug: "how-to-get-api-key.html", date: "April 09, 2026" },
+                        { title: "YouTube Shorts के लिए बेस्ट हिंदी AI आवाजें कैसे चुनें?", desc: "शॉर्ट्स वीडियो को वायरल करने के लिए 'प्रिया' और 'अमित' जैसी आवाजों का सही इस्तेमाल। जानें किस तरह की स्क्रिप्ट के लिए कौन सा वॉयस प्रोफाइल बेस्ट है।", slug: "best-voices-for-youtube.html", date: "April 08, 2026" },
+                        { title: "Faceless YouTube चैनल से पैसे कैसे कमाएं: AI वॉयसओवर स्ट्रैटेजी", desc: "बिना अपना चेहरा दिखाए हाई-क्वालिटी कंटेंट बनाने और उसे मुद्रीकृत (Monetize) करने के गुप्त तरीके। एडसेंस फ्रेंडली वीडियो बनाने की पूरी गाइड।", slug: "earn-money-ai-voice.html", date: "April 07, 2026" },
+                        { title: "Vāṇī AI vs ElevenLabs: भारतीय रचनाकारों के लिए विस्तृत तुलना", desc: "कीमत, भाषा की शुद्धता और क्षेत्रीय लहजे के आधार पर एक न्यूट्रल एनालिसिस। जानें भारतीय भाषाओं के लिए कौन सा टूल आपके पैसे बचा सकता है।", slug: "vani-ai-vs-elevenlabs.html", date: "April 06, 2026" },
+                        { title: "BYOK मॉडल: आपकी डेटा सुरक्षा और गोपनीयता का नया मानक", desc: "'ब्रिंग योर ओन की' मॉडल क्या है और यह आपकी स्क्रिप्ट को सर्वर लॉगिंग से कैसे बचाता है। जानें क्यों स्थानीय ब्राउज़र स्टोरेज सबसे सुरक्षित है।", slug: "why-byok-is-safe.html", date: "April 05, 2026" },
+                        { title: "AI स्पीच के लिए प्रोफेशनल स्क्रिप्ट कैसे लिखें?", desc: "विराम चिह्नों, कोमा और प्रश्नवाचक चिह्नों का उपयोग करके एआई आवाज़ को इंसानी भावनाओं के करीब लाने के सीक्रेट्स।", slug: "write-better-tts-scripts.html", date: "April 04, 2026" },
+                        { title: "Chrome में लोडिंग और 'White Screen' समस्याओं को कैसे ठीक करें?", desc: "यदि आपका स्टूडियो क्रोम ब्राउज़र में नहीं खुल रहा है, तो इन 5 आसान चरणों का पालन करें। कैश, एक्सटेंशन और डीएनएस सेटिंग का फिक्स।", slug: "fix-chrome-loading-issues.html", date: "April 03, 2026" },
+                        { title: "ई-लर्निंग और एजुकेशनल वीडियो के लिए AI आवाज का उपयोग", desc: "शिक्षकों और ऑनलाइन मेंटर्स के लिए प्रोफेशनल डबिंग गाइड। जटिल विषयों को सहज और स्पष्ट आवाज़ में समझाने का तरीका।", slug: "ai-voice-for-elearning.html", date: "April 02, 2026" },
+                        { title: "AI वॉयस पॉडकास्ट: बिना माइक के अपना शो कैसे शुरू करें?", desc: "महंगे गियर के बिना प्रोफेशनल पॉडकास्ट एपिसोड जनरेट करने की तकनीक। आवाज़ में ठहराव और गहराई लाने के टिप्स।", slug: "create-podcast-with-ai.html", date: "April 01, 2026" },
+                        { title: "15+ वॉयस प्रोफाइल: अमित, प्रिया और अंजलि का मास्टरक्लास", desc: "हर वॉयस प्रोफाइल की 'पर्सनैलिटी' को समझें। समाचार, कहानी, और विज्ञापनों के लिए सही आवाज़ का चुनाव कैसे करें।", slug: "voice-profiles-masterclass.html", date: "March 31, 2026" },
+                        { title: "क्षेत्रीय भाषाएँ: मराठी, बंगाली और संस्कृत गाइड", desc: "हिंदी के अलावा अन्य भारतीय भाषाओं में वॉयस जनरेट करने के लिए यूनिकोड का सही इस्तेमाल। क्षेत्रीय लहजे की बारीकियां।", slug: "regional-languages-guide.html", date: "March 30, 2026" },
+                        { title: "अपनी Google API कुंजी को चोरी होने से कैसे बचाएं?", desc: "इंटरनेट सुरक्षा के बुनियादी नियम। अपनी की (Key) को पब्लिक शेयरिंग और दुर्भावनापूर्ण स्क्रिप्ट्स से बचाने के तरीके।", slug: "secure-your-api-key.html", date: "March 29, 2026" },
+                        { title: "न्यूरल स्पीच सिंथेसिस: एआई आवाज़ों के पीछे का विज्ञान", desc: "गहराई से जानें कि कैसे एआई शब्दों को ध्वनि तरंगों में बदलता है। टेक्स्ट-टू-स्पीच तकनीक का इतिहास और भविष्य।", slug: "what-is-neural-speech.html", date: "March 28, 2026" },
+                        { title: "AI विज्ञापनों के साथ अपने छोटे व्यवसाय (Business) को कैसे बढ़ाएं?", desc: "कम बजट में हाई-कन्वर्जन वाले विज्ञापन बनाने के लिए वाणी स्टूडियो का उपयोग। ऑडियो मार्केटिंग की नयी तकनीक।", slug: "ai-voices-for-ads.html", date: "March 27, 2026" },
+                        { title: "इमोशनल एआई आवाजें: खुशी और उत्साह को ऑडियो में कैसे भरें?", desc: "आवाज़ के उतार-चढ़ाव को नियंत्रित करने के तरीके। श्रोताओं को भावनात्मक रूप से जोड़ने वाली आवाज़ बनाने की तकनीक।", slug: "emotional-ai-voices.html", date: "March 26, 2026" },
+                        { title: "AI वॉइसओवर के लिए SEO: अपने ऑडियो को गूगल में कैसे रैंक करें?", desc: "यूट्यूब मेटाडेटा और ऑडियो विवरण के लिए कीवर्ड रिसर्च। अपने कंटेंट की विजिबिलिटी (Visibility) बढ़ाने के हैक्स।", slug: "seo-for-audio-content.html", date: "March 25, 2026" },
+                        { title: "Mobile vs Desktop: वाणी एआई स्टूडियो का बेहतरीन अनुभव", desc: "विभिन्न डिवाइसों पर इंटरफ़ेस और परफॉरमेंस का तुलनात्मक अध्ययन। मोबाइल क्रिएटर के लिए उत्पादकता बढ़ाने के टिप्स।", slug: "mobile-vs-desktop-guide.html", date: "March 24, 2026" },
+                        { title: "Vāṇī Version 5.0: नए स्टेबल फीचर्स की पूरी जानकारी", desc: "हालिया अपडेट्स, बग फिक्स और नयी आवाज़ों का विवरण। जानें हमने आपके अनुभव को पहले से बेहतर कैसे बनाया है।", slug: "version-5-updates.html", date: "March 23, 2026" },
+                        { title: "प्रोफेशनल वॉयस क्रिएटर मास्टरक्लास: जीरो से हीरो तक", desc: "एक शुरुआती क्रिएटर से लेकर एक प्रोफेशनल ऑडियो प्रोड्यूसर बनने का पूरा रोडमैप। टूल का सही और पूरा उपयोग।", slug: "beginner-to-pro-masterclass.html", date: "March 22, 2026" },
+                        { title: "भारत का एआई भविष्य: भारतीय भाषाओं के लिए नई संभावनाएं", desc: "अगले 5 वर्षों में एआई और भारतीय क्षेत्रीय भाषाओं के बीच बढ़ते सम्बन्ध। रचनाकारों के लिए आने वाले सुनहरे अवसर।", slug: "future-of-indian-ai.html", date: "March 21, 2026" }
+                    ]
+                },
+                en: {
+                    tagline: "Vāṇī Knowledge Hub | AI & Content Creation Guides",
+                    backBtn: "Back to Studio",
+                    title: "Vāṇī Knowledge Base",
+                    subtitle: "20+ Detailed Tutorials & Professional Insights",
+                    readMore: "Read Full Article",
+                    blogPosts: [
+                        { title: "How to Generate a Free Gemini API Key: Step-by-Step Guide", desc: "Comprehensive walkthrough on creating your free API key via Google AI Studio, securing your credentials, and activating the Vāṇī Studio engine.", slug: "how-to-get-api-key.html", date: "April 09, 2026" },
+                        { title: "Best Hindi AI Voices for YouTube Shorts: Go Viral Today", desc: "Learn how to leverage profiles like 'Priya' and 'Amit' for maximum retention. A guide on choosing voices based on script categories like news or comedy.", slug: "best-voices-for-youtube.html", date: "April 08, 2026" },
+                        { title: "Monetization Secrets for Faceless Channels: AI Voice Strategy", desc: "How to build a sustainable income on YouTube and Instagram using AI voiceovers. AdSense-friendly content creation tips for high CPM results.", slug: "earn-money-ai-voice.html", date: "April 07, 2026" },
+                        { title: "Vāṇī AI vs ElevenLabs: The Real Comparison for Indian Creators", desc: "In-depth analysis of pricing, linguistic accuracy, and regional accent support. Discover which tool provides the best value for Indian regional content.", slug: "vani-ai-vs-elevenlabs.html", date: "April 06, 2026" },
+                        { title: "Why BYOK Model is the New Standard for Data Privacy", desc: "Understanding the 'Bring Your Own Key' model and how it prevents server-side logging of your scripts. Why local browser processing is the safest route.", slug: "why-byok-is-safe.html", date: "April 05, 2026" },
+                        { title: "How to Write High-Conversion Scripts for AI Voiceovers", desc: "The art of using punctuation, pauses, and tone indicators to make AI voices sound indistinguishable from humans. Scriptwriting secrets revealed.", slug: "write-better-tts-scripts.html", date: "April 04, 2026" },
+                        { title: "Fixing Chrome Loading & White Screen Issues in 5 Easy Steps", desc: "Troubleshooting guide for browser-related hangs. Learn how to clear DNS cache, manage extensions, and optimize Chrome for the Vāṇī engine.", slug: "fix-chrome-loading-issues.html", date: "April 03, 2026" },
+                        { title: "Using AI Voices for E-Learning & Professional Educational Content", desc: "A guide for teachers and mentors to generate clear, steady, and authoritative narrations for online courses and documentary modules.", slug: "ai-voice-for-elearning.html", date: "April 02, 2026" },
+                        { title: "Podcast Magic: How to Start Your Show Without a Microphone", desc: "Techniques for generating high-fidelity podcast episodes using neural synthesis. Mastering the 'Narrator' voice for immersive storytelling.", slug: "create-podcast-with-ai.html", date: "April 01, 2026" },
+                        { title: "Masterclass: Breakdown of 15+ Neural Voice Profiles", desc: "Understand the 'Personality' of each voice. From Amit's boldness to Priya's sweetness—find the perfect match for your brand identity.", slug: "voice-profiles-masterclass.html", date: "March 31, 2026" },
+                        { title: "Regional Power: Guide to Marathi, Bengali & Sanskrit Voices", desc: "Going beyond Hindi—how to use Unicode properly for regional language synthesis. Exploring the nuances of regional tones and accents.", slug: "regional-languages-guide.html", date: "March 30, 2026" },
+                        { title: "Cyber Security: How to Prevent Your Google API Key from Theft", desc: "Essential security tips for creators. Learn about the dangers of public key sharing and how to keep your Google Cloud account safe.", slug: "secure-your-api-key.html", date: "March 29, 2026" },
+                        { title: "The Science of Neural Speech Synthesis: How it Works", desc: "A deep dive into how AI transforms text into sound waves. The history of TTS technology and the future of generative audio engines.", slug: "what-is-neural-speech.html", date: "March 28, 2026" },
+                        { title: "Scaling Small Businesses with AI Voice Marketing Ads", desc: "How to create high-impact audio ads on a budget. Using Vāṇī AI for local business promotions and professional telephony (IVR).", slug: "ai-voices-for-ads.html", date: "March 27, 2026" },
+                        { title: "Creating Emotional AI Voices: Joy, Sadness & Excitement", desc: "Secrets to controlling the 'Inflection' and 'Pitch' of AI speech. How to build a deep emotional connection with your audience through audio.", slug: "emotional-ai-voices.html", date: "March 26, 2026" },
+                        { title: "SEO for AI Content: How to Rank Your Audio Narrations in Search", desc: "Keyword research for audio descriptions and YouTube metadata. Hacks to increase your content visibility in global search engines.", slug: "seo-for-audio-content.html", date: "March 25, 2026" },
+                        { title: "Mobile vs Desktop: Optimizing Your Vāṇī AI Experience", desc: "Comparative study of performance across devices. Productivity hacks for creators who manage their workflow on smartphones.", slug: "mobile-vs-desktop-guide.html", date: "March 24, 2026" },
+                        { title: "Vāṇī Studio v5.0 Stable Release: What's New?", desc: "Full breakdown of recent updates, bug fixes, and new voice profiles. Learn how we improved the high-fidelity rendering for long scripts.", slug: "version-5-updates.html", date: "March 23, 2026" },
+                        { title: "Professional AI Voice Producer: From Beginner to Expert", desc: "A complete roadmap for new creators. Learn every feature of the studio to produce world-class audio for professional projects.", slug: "beginner-to-pro-masterclass.html", date: "March 22, 2026" },
+                        { title: "The Future of Indian AI: Language Barriers are Breaking", desc: "Predicting the growth of AI in Indian regional languages over the next 5 years. Golden opportunities for digital content creators in Bharat.", slug: "future-of-indian-ai.html", date: "March 21, 2026" }
+                    ]
+                }
+            };
+
+            const t = i18n[lang];
+
+            return (
+                <div className={`min-h-screen flex flex-col p-4 md:p-10 animate-up ${lang === 'hi' ? 'hindi-font' : ''}`}>
+                    {/* Header */}
+                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-16 text-center">
+                        <div className="flex w-full justify-end mb-4">
+                            <button 
+                                onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
+                                className="flex items-center gap-2 bg-indi-blue text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg hover:bg-blue-700 transition-all border border-slate-900"
+                            >
+                                <Icon name="languages" size={14} />
+                                {lang === 'hi' ? "English" : "हिन्दी"}
+                            </button>
+                        </div>
+                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-100">
+                            <Icon name="book-open" size={32} />
+                        </div>
+                        <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Blog</h1>
+                        <p className="text-[11px] text-indi-orange font-black uppercase tracking-[0.4em] mt-2">{t.tagline}</p>
+                    </header>
+
+                    <main className="max-w-7xl mx-auto w-full flex-1">
+                        <div className="mb-12 flex justify-start">
+                            <a href="../index.html" className="inline-flex items-center gap-2 text-indi-blue font-black text-xs uppercase tracking-widest hover:text-indi-orange transition-colors group">
+                                <Icon name="arrow-left" size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+                                {t.backBtn}
+                            </a>
+                        </div>
+
+                        <div className="text-center mb-20">
+                            <h2 className="text-4xl font-black text-slate-900 mb-4 uppercase italic tracking-tighter">{t.title}</h2>
+                            <p className="text-xs font-bold text-slate-500 uppercase tracking-[0.3em]">{t.subtitle}</p>
+                        </div>
+
+                        {/* SEO GRID - 20 REFINED TOPICS */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            {t.blogPosts.map((post, idx) => (
+                                <article key={idx} className="glass-card flex flex-col h-full group relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-1 h-full bg-indi-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="p-8 flex flex-col h-full">
+                                        <div className="flex items-center gap-2 text-[10px] font-black text-indi-orange uppercase tracking-widest mb-4">
+                                            <Icon name="calendar" size={12} /> {post.date}
+                                        </div>
+                                        <h3 className="text-lg font-black text-indi-blue mb-4 leading-tight min-h-[4rem] group-hover:text-indi-orange transition-colors">
+                                            {post.title}
+                                        </h3>
+                                        <p className="text-xs text-slate-800 font-bold leading-relaxed mb-10 flex-1">
+                                            {post.desc}
+                                        </p>
+                                        <a href={post.slug} className="inline-flex items-center gap-3 text-[10px] font-black text-indi-blue uppercase tracking-widest border-t border-slate-100 pt-6 group-hover:gap-4 transition-all">
+                                            {t.readMore} <Icon name="chevron-right" size={14} className="text-indi-orange" />
+                                        </a>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+
+                        {/* Bottom Navigation */}
+                        <div className="mt-24 pt-12 border-t border-slate-200 flex justify-center">
+                            <a href="../index.html" className="flex items-center gap-3 bg-indi-blue text-white px-12 py-5 rounded-[2.5rem] font-black text-sm uppercase tracking-[0.2em] hover:bg-blue-800 transition-all shadow-xl border border-slate-900 active:scale-95">
+                                <Icon name="mic-2" size={18} /> {t.backBtn}
+                            </a>
+                        </div>
+                    </main>
+
+                    {/* SEO FOOTER (Same as main site) */}
+                    <footer className="max-w-7xl mx-auto w-full mt-40 pb-20 border-t border-slate-900 pt-20">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-2">
+                            {[
+                                { icon: "info", title: lang === 'en' ? "About Us" : "हमारे बारे में", link: "../about.html", body: "India's premium neural studio for creators looking for high-fidelity voices." },
+                                { icon: "shield-check", title: lang === 'en' ? "Privacy" : "गोपनीयता", link: "../privacy-policy.html", body: "100% Client-side privacy. Your keys are never saved on servers." },
+                                { icon: "file-text", title: lang === 'en' ? "Terms" : "नियम", link: "../terms.html", body: "Commercial rights included for all generated audio content." },
+                                { icon: "mail", title: lang === 'en' ? "Contact" : "संपर्क", link: "../contact.html", body: "Reach out to our Indian support community for quick help." },
+                                { icon: "book-open", title: lang === 'en' ? "Blog" : "ब्लॉग", link: "index.html", body: "Read latest tips on AI voiceovers and content monetization." }
+                            ].map((card, i) => (
+                                <a href={card.link} key={i} className="glass-card footer-card p-8 hover:border-indi-orange transition-all group shadow-sm flex flex-col">
+                                    <div className="w-12 h-12 bg-slate-100 text-indi-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indi-blue group-hover:text-white transition-all shadow-inner border border-slate-200">
+                                        <Icon name={card.icon} size={22} />
+                                    </div>
+                                    <h4 className="text-base font-black text-slate-900 mb-3 uppercase tracking-tighter italic flex items-center justify-between">
+                                        {card.title}
+                                        <Icon name="arrow-up-right" size={14} className="opacity-0 group-hover:opacity-100 transition-all" />
+                                    </h4>
+                                    <p className="text-[11px] text-slate-800 leading-relaxed font-bold">{card.body}</p>
+                                </a>
+                            ))}
+                        </div>
+                        <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-10 border-t border-slate-900 pt-16 px-6 text-[10px] font-black text-slate-900 uppercase tracking-widest italic">
+                            <div className="flex items-center gap-4">
+                                <Icon name="sparkles" className="text-indi-orange" size={26} />
+                                <div>
+                                    <p className="text-2xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</p>
+                                    <p>Powered by Gemini Flash 2.5</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-10">
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="flag" size={14} className="text-indi-orange" /> Made in Bharat</span>
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="cpu" size={14} className="text-indi-blue" /> Knowledge Hub v2.1</span>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
