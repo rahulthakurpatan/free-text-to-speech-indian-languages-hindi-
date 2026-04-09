@@ -172,9 +172,10 @@
                     </header>
 
                     <main className="max-w-7xl mx-auto w-full flex-1">
+                        {/* IMPROVED TOP BACK BUTTON */}
                         <div className="mb-12 flex justify-start">
-                            <a href="../index.html" className="inline-flex items-center gap-2 text-indi-blue font-black text-xs uppercase tracking-widest hover:text-indi-orange transition-colors group">
-                                <Icon name="arrow-left" size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+                            <a href="../index.html" className="inline-flex items-center gap-3 bg-white border border-slate-900 px-6 py-3 rounded-2xl text-indi-blue font-black text-xs uppercase tracking-widest hover:bg-slate-50 hover:shadow-md transition-all group">
+                                <Icon name="arrow-left" size={18} className="group-hover:-translate-x-1 transition-transform" /> 
                                 {t.backBtn}
                             </a>
                         </div>
@@ -207,10 +208,12 @@
                             ))}
                         </div>
 
-                        {/* Bottom Navigation */}
-                        <div className="mt-24 pt-12 border-t border-slate-200 flex justify-center">
-                            <a href="../index.html" className="flex items-center gap-3 bg-indi-blue text-white px-12 py-5 rounded-[2.5rem] font-black text-sm uppercase tracking-[0.2em] hover:bg-blue-800 transition-all shadow-xl border border-slate-900 active:scale-95">
-                                <Icon name="mic-2" size={18} /> {t.backBtn}
+                        {/* IMPROVED BOTTOM BACK BUTTON */}
+                        <div className="mt-24 pt-12 border-t border-slate-300 flex justify-center">
+                            <a href="../index.html" className="flex items-center gap-4 bg-indi-blue text-white px-12 py-5 rounded-[2.5rem] font-black text-sm uppercase tracking-[0.2em] hover:bg-blue-800 shadow-2xl border border-slate-900 active:scale-95 transition-all">
+                                <Icon name="mic-2" size={20} /> 
+                                <span>{t.backBtn}</span>
+                                <Icon name="chevron-right" size={18} className="opacity-40" />
                             </a>
                         </div>
                     </main>
