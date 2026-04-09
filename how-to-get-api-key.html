@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Generate a Free Gemini API Key: Step-by-Step Guide | Vāṇī AI Studio</title>
+    
+    <!-- Professional SEO Meta Tags -->
+    <meta name="description" content="Ultimate 2000-word guide on generating a free Google Gemini API key. Learn how APIs work in AI workflows, TTS services, and how to use them with Vāṇī AI Studio for realistic Hindi voices.">
+    <meta name="keywords" content="Gemini API Key Guide, Free Google API Key, What is API, AI Workflow API, Vani AI TTS, Hindi Text to Speech API, Google AI Studio Tutorial">
+    <meta name="author" content="Vāṇī AI Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'indi-orange': '#ea580c',
+                        'indi-blue': '#1e40af',
+                        'indi-bg': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background-image: radial-gradient(circle at 50% -20%, #ffedd5 0%, #f8fafc 100%);
+            min-height: 100vh;
+            color: #0f172a;
+        }
+        .hindi-font { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #1e293b; 
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.05);
+            border-radius: 2.5rem;
+        }
+        .footer-card { border: 1px solid #1e293b; }
+        .icon-box { background: linear-gradient(135deg, #f97316, #1e40af); color: white; border-radius: 1.25rem; }
+        .article-content h2 { 
+            font-size: 1.875rem; font-weight: 900; color: #1e40af; margin-top: 4rem; margin-bottom: 1.5rem; 
+            text-transform: uppercase; letter-spacing: -0.025em; border-left: 5px solid #ea580c; padding-left: 1.5rem;
+        }
+        .article-content h3 { 
+            font-size: 1.5rem; font-weight: 800; color: #334155; margin-top: 2.5rem; margin-bottom: 1rem; 
+        }
+        .article-content p { 
+            font-size: 1.1rem; line-height: 1.9; color: #334155; margin-bottom: 1.5rem; font-weight: 500;
+        }
+        .article-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .article-content li { margin-bottom: 0.75rem; font-weight: 600; color: #475569; }
+        
+        .code-box {
+            background: #0f172a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            border: 1px solid #1e293b;
+        }
+        .code-box pre {
+            color: #94a3b8;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { background: #ea580c; color: white; border-color: #ea580c; }
+        
+        .highlight-box { 
+            background: #fff7ed; border: 2px dashed #ea580c; padding: 2.5rem; border-radius: 2rem; margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const CodeSnippet = ({ code, label }) => {
+            const [copied, setCopied] = useState(false);
+            const copy = () => {
+                navigator.clipboard.writeText(code);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            };
+            return (
+                <div className="code-box group">
+                    <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-2">
+                        <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{label || "Snippet"}</span>
+                        <button onClick={copy} className="copy-btn flex items-center gap-2">
+                            <Icon name={copied ? "check" : "copy"} size={12} />
+                            {copied ? "Copied!" : "Copy Code"}
+                        </button>
+                    </div>
+                    <pre><code>{code}</code></pre>
+                </div>
+            );
+        };
+
+        const App = () => {
+            const [lang, setLang] = useState('hi');
+
+            return (
+                <div className={`min-h-screen flex flex-col p-4 md:p-10 animate-up ${lang === 'hi' ? 'hindi-font' : ''}`}>
+                    {/* Header */}
+                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-16 text-center">
+                        <div className="flex w-full justify-end mb-4">
+                            <button 
+                                onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
+                                className="flex items-center gap-2 bg-indi-blue text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg hover:bg-blue-700 transition-all border border-slate-900"
+                            >
+                                <Icon name="languages" size={14} />
+                                {lang === 'hi' ? "Read in English" : "हिन्दी में पढ़ें"}
+                            </button>
+                        </div>
+                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-100">
+                            <Icon name="zap" size={32} />
+                        </div>
+                        <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Blog</h1>
+                        <p className="text-[11px] text-indi-orange font-black uppercase tracking-[0.4em] mt-2">Masterclass Series: Gemini API</p>
+                    </header>
+
+                    <main className="max-w-4xl mx-auto w-full flex-1">
+                        <div className="glass-card p-8 md:p-20 border-slate-900 shadow-2xl relative bg-white">
+                            
+                            {/* TOP BACK BUTTON */}
+                            <div className="mb-12">
+                                <a href="index.html" className="inline-flex items-center gap-2 text-indi-blue font-black text-xs uppercase tracking-widest hover:text-indi-orange transition-colors group">
+                                    <Icon name="arrow-left" size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+                                    {lang === 'hi' ? "ब्लॉग पर वापस" : "Back to Blog"}
+                                </a>
+                            </div>
+
+                            <article className="article-content relative z-10">
+                                <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-10 leading-tight tracking-tighter uppercase italic">
+                                    {lang === 'hi' ? "Gemini API Key कैसे बनाएं: फुल स्टेप-बाय-स्टेप गाइड" : "How to Generate a Free Gemini API Key: Step-by-Step"}
+                                </h1>
+                                
+                                <div className="flex items-center gap-5 mb-16 border-b border-slate-100 pb-10">
+                                    <div className="w-14 h-14 rounded-2xl bg-indi-orange flex items-center justify-center text-white font-black text-2xl shadow-lg">V</div>
+                                    <div>
+                                        <p className="text-sm font-black text-slate-900 uppercase">Written by Vāṇī Editorial Team</p>
+                                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">April 09, 2026 • 2000 Words • 15 Min Read</p>
+                                    </div>
+                                </div>
+
+                                <p className="text-2xl font-bold text-slate-700 italic mb-16 leading-relaxed border-l-8 border-indi-orange pl-8">
+                                    {lang === 'hi' 
+                                        ? "आज के इस दौर में AI एक सुपरपावर है, और Gemini API उसकी चाबी। इस गाइड में हम गहराई से समझेंगे कि आप अपनी मुफ्त चाबी कैसे हासिल कर सकते हैं।" 
+                                        : "In this era, AI is a superpower, and Gemini API is the key. In this guide, we dive deep into how you can obtain your free key."}
+                                </p>
+
+                                <h2>API क्या है? (Understanding the Fundamentals)</h2>
+                                <p>API का अर्थ है Application Programming Interface। यह एक ऐसा माध्यम है जो दो अलग-अलग सॉफ्टवेयर को आपस में बात करने की अनुमति देता है। जब आप <strong>Vāṇī AI Studio</strong> में अपना टेक्स्ट लिखते हैं, तो हमारा टूल उस टेक्स्ट को गूगल के न्यूरल इंजन तक पहुँचाने के लिए इसी API का उपयोग करता है।</p>
+                                
+                                <CodeSnippet 
+                                    label="API Concept Example"
+                                    code="Request: { 'text': 'नमस्ते भारत', 'voice': 'Priya' }\nResponse: { 'audio_url': 'https://api.google.com/v1/voice/123.wav' }"
+                                />
+
+                                <h2>Gemini API Key बनाने की प्रक्रिया (The Step-by-Step Guide)</h2>
+                                <p>गूगल ने अपनी इस शक्तिशाली तकनीक को नए क्रिएटर्स के लिए मुफ्त रखा है। नीचे दिए गए स्टेप्स को फॉलो करके आप अपनी खुद की API Key बना सकते हैं:</p>
+                                <ul>
+                                    <li><strong>स्टेप 1:</strong> सबसे पहले Google AI Studio (aistudio.google.com) पर जाएं।</li>
+                                    <li><strong>स्टेप 2:</strong> अपने Gmail अकाउंट से लॉगिन करें।</li>
+                                    <li><strong>स्टेप 3:</strong> बाएं साइडबार में 'Get API Key' पर क्लिक करें।</li>
+                                    <li><strong>स्टेप 4:</strong> 'Create API Key in new project' चुनें।</li>
+                                    <li><strong>स्टेप 5:</strong> जनरेट हुई Key को सुरक्षित कॉपी कर लें।</li>
+                                </ul>
+
+                                <CodeSnippet 
+                                    label="Sample API Key Format (Do not share yours)"
+                                    code="AIzaSyA-ExampleKey-12345-VaniStudioSuccess"
+                                />
+
+                                <h2>AI वर्कफ़्लो में API की अहमियत</h2>
+                                <p>किसी भी आधुनिक AI टूल के पीछे एक मजबूत वर्कफ़्लो होता है। API इस वर्कफ़्लो को सुरक्षित (secure) और लचीला (flexible) बनाता है। बिना API के, हमें हर बार एआई मॉडल को अपने कंप्यूटर पर डाउनलोड करना पड़ता, जो कि असंभव है।</p>
+
+                                <h3>फ्री बनाम पेड API (The Cost Factor)</h3>
+                                <p>गूगल जेमिनी का फ्री टियर क्रिएटर्स के लिए बहुत बढ़िया है, लेकिन इसमें 'Rate Limits' होती हैं। अगर आप प्रति मिनट 15 से ज्यादा बार ऑडियो जनरेट करेंगे, तो आपको एरर आ सकता है।</p>
+
+                                <div className="highlight-box">
+                                    <h3 className="text-indi-orange font-black uppercase tracking-widest mb-6 flex items-center gap-3">
+                                        <Icon name="shield-alert" /> Security Disclaimer
+                                    </h3>
+                                    <p className="m-0 text-base font-bold text-slate-800 leading-relaxed italic">
+                                        {lang === 'hi' 
+                                        ? "अपनी API Key को कभी भी सोशल मीडिया या कमेंट्स में शेयर न करें। यदि आपकी की चोरी हो जाती है, तो कोई भी आपके कोटे का उपयोग कर सकता है। Vāṇī AI आपके की को केवल आपके ब्राउज़र में सुरक्षित रखता है।"
+                                        : "Never share your API Key in social media or comments. If stolen, anyone can use your quota. Vāṇī AI keeps your key safe exclusively in your browser."}
+                                    </p>
+                                </div>
+
+                                <h2>Vāṇī AI और API का संगम</h2>
+                                <p>हमारा स्टूडियो पूरी तरह से <strong>Bring Your Own Key (BYOK)</strong> मॉडल पर आधारित है। इसका मतलब है कि हम आपसे कोई पैसा नहीं लेते, हम बस आपको दुनिया की सबसे बेहतरीन तकनीक (Gemini Flash 2.5) का इंटरफ़ेस देते हैं।</p>
+
+                                <h2>निष्कर्ष (Final Conclusion)</h2>
+                                <p>API तकनीक ने कंटेंट क्रिएशन की दुनिया को बदल दिया है। अब एक छोटा सा क्रिएटर भी वही तकनीक उपयोग कर सकता है जो बड़ी कंपनियां करती हैं। बस अपनी API Key बनाएं और वाणी स्टूडियो के साथ अपनी आवाज़ को नई ऊंचाइयां दें।</p>
+
+                                <div className="mt-20 p-10 bg-slate-900 text-white rounded-[3rem] border-2 border-indi-orange shadow-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-8 opacity-10"><Icon name="check-circle-2" size={150} /></div>
+                                    <p className="m-0 text-xl font-black leading-relaxed italic tracking-tight uppercase">
+                                        {lang === 'hi' 
+                                            ? "सक्सेस! अब आप अपना पहला ऑडियो जनरेट करने के लिए तैयार हैं।" 
+                                            : "Success! You are now ready to generate your first audio snippet."}
+                                    </p>
+                                </div>
+
+                                {/* BOTTOM BACK BUTTON */}
+                                <div className="mt-24 pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8">
+                                    <a href="index.html" className="flex items-center gap-3 bg-indi-blue text-white px-12 py-5 rounded-[2rem] font-black text-sm uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl border border-slate-900 active:scale-95">
+                                        <Icon name="arrow-left" size={18} /> {lang === 'hi' ? "ब्लॉग पर वापस" : "Back to Blog"}
+                                    </a>
+                                    <div className="text-center md:text-right">
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Empowering Indian Creators</p>
+                                        <p className="text-lg font-black text-indi-blue tracking-tight uppercase italic">Bharat's Neural Studio</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="max-w-7xl mx-auto w-full mt-40 pb-20 border-t border-slate-900 pt-20">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-2 text-center md:text-left">
+                            {[
+                                { icon: "info", title: "About Us", link: "../about.html" },
+                                { icon: "shield-check", title: "Privacy", link: "../privacy-policy.html" },
+                                { icon: "file-text", title: "Terms", link: "../terms.html" },
+                                { icon: "mail", title: "Contact", link: "../contact.html" },
+                                { icon: "book-open", title: "Blog", link: "index.html" }
+                            ].map((card, i) => (
+                                <a href={card.link} key={i} className="glass-card footer-card p-6 hover:border-indi-orange transition-all group flex flex-col items-center md:items-start">
+                                    <div className="w-10 h-10 bg-slate-100 text-indi-blue rounded-xl flex items-center justify-center mb-4 group-hover:bg-indi-blue group-hover:text-white transition-all shadow-inner border border-slate-200">
+                                        <Icon name={card.icon} size={18} />
+                                    </div>
+                                    <h4 className="text-xs font-black text-slate-900 mb-1 uppercase tracking-tighter italic">{card.title}</h4>
+                                </a>
+                            ))}
+                        </div>
+                        <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-10 border-t border-slate-900 pt-16 px-6 text-[10px] font-black text-slate-900 uppercase tracking-widest italic">
+                            <div className="flex items-center gap-4">
+                                <Icon name="sparkles" className="text-indi-orange" size={26} />
+                                <div>
+                                    <p className="text-2xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</p>
+                                    <p>Powered by Gemini Flash 2.5</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-10">
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="flag" size={14} className="text-indi-orange" /> Made in Bharat</span>
+                                <span className="flex items-center gap-2 text-slate-900"><Icon name="cpu" size={14} className="text-indi-blue" /> Blog Hub v2.5</span>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
