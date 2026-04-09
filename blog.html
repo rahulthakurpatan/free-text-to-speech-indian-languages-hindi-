@@ -164,7 +164,7 @@
                                 {lang === 'hi' ? "English" : "हिन्दी"}
                             </button>
                         </div>
-                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-100">
+                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-50">
                             <Icon name="book-open" size={32} />
                         </div>
                         <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Blog</h1>
@@ -172,9 +172,9 @@
                     </header>
 
                     <main className="max-w-7xl mx-auto w-full flex-1">
-                        {/* IMPROVED TOP BACK BUTTON */}
+                        {/* FIXED TOP BACK BUTTON LINK */}
                         <div className="mb-12 flex justify-start">
-                            <a href="../index.html" className="inline-flex items-center gap-3 bg-white border border-slate-900 px-6 py-3 rounded-2xl text-indi-blue font-black text-xs uppercase tracking-widest hover:bg-slate-50 hover:shadow-md transition-all group">
+                            <a href="../" className="inline-flex items-center gap-3 bg-white border border-slate-900 px-6 py-3 rounded-2xl text-indi-blue font-black text-xs uppercase tracking-widest hover:bg-slate-50 hover:shadow-md transition-all group">
                                 <Icon name="arrow-left" size={18} className="group-hover:-translate-x-1 transition-transform" /> 
                                 {t.backBtn}
                             </a>
@@ -208,9 +208,9 @@
                             ))}
                         </div>
 
-                        {/* IMPROVED BOTTOM BACK BUTTON */}
+                        {/* FIXED BOTTOM BACK BUTTON LINK */}
                         <div className="mt-24 pt-12 border-t border-slate-300 flex justify-center">
-                            <a href="../index.html" className="flex items-center gap-4 bg-indi-blue text-white px-12 py-5 rounded-[2.5rem] font-black text-sm uppercase tracking-[0.2em] hover:bg-blue-800 shadow-2xl border border-slate-900 active:scale-95 transition-all">
+                            <a href="../" className="flex items-center gap-4 bg-indi-blue text-white px-12 py-5 rounded-[2.5rem] font-black text-sm uppercase tracking-[0.2em] hover:bg-blue-800 shadow-2xl border border-slate-900 active:scale-95 transition-all">
                                 <Icon name="mic-2" size={20} /> 
                                 <span>{t.backBtn}</span>
                                 <Icon name="chevron-right" size={18} className="opacity-40" />
