@@ -1,525 +1,412 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Key, 
-  Cpu, 
-  Zap, 
-  ShieldAlert, 
-  Lock, 
-  ExternalLink, 
-  ChevronRight, 
-  BookOpen, 
-  Info,
-  CheckCircle2,
-  AlertTriangle,
-  Fingerprint,
-  TrendingUp,
-  Layers,
-  Terminal,
-  Server,
-  Globe,
-  Database,
-  Search,
-  ArrowRight
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Vāṇī AI: Best Multilingual Text to Speech & Gemini API Guide 2024</title>
+    <meta name="description" content="Vāṇī AI ke saath text to AI voice convert karein. Google Gemini Flash 2.5 API ka use karke high-quality multilingual text to speech engine setup karne ki complete guide.">
+    <meta name="keywords" content="Vāṇī AI, Text to Speech in every language, Text to AI voice, Gemini API key, Hindi AI Voice, AI Speech Synthesis, Best TTS for YouTube, Multilingual AI Voice Converter, Gemini Flash 2.5 TTS">
+    <meta name="author" content="Vāṇī AI Editorial">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vāṇī AI: The Ultimate Multilingual Text to AI Voice Engine">
+    <meta property="og:description" content="Unlock the superpower of Google's Neural Engine. Convert text to AI voice in any language with Vāṇī AI Studio.">
+    <meta property="og:url" content="https://rahulthakurpatan.github.io/free-text-to-speech-indian-languages-hindi-/index.html">
+    
+    <!-- Schema Markup for Google Ranking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The AI Superpower in Your Pocket: 5 Surprising Realities of the Gemini API",
+      "description": "A deep dive into Gemini API for multilingual text to speech and how Vāṇī AI is democratizing high-end neural technology.",
+      "author": {
+        "@type": "Organization",
+        "name": "Vāṇī AI Studio"
+      },
+      "keywords": "Text to AI Voice, Multilingual TTS, Gemini API Guide"
+    }
+    </script>
 
-const App = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const currentScroll = window.scrollY;
-      setScrollProgress((currentScroll / totalScroll) * 100);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-200 selection:text-blue-900">
-      {/* Scroll Progress Bar (Enhanced Water Flow) */}
-      <div 
-        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 z-50 transition-all duration-300 ease-out shadow-lg"
-        style={{ width: `${scrollProgress}%` }}
-      />
-
-      {/* Navigation */}
-      <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-blue-100/50">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl rotate-3 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
-                <div className="w-5 h-5 bg-white rounded-full animate-pulse"></div>
-              </div>
-            </div>
-            <span className="text-2xl font-black tracking-tighter text-slate-900">VĀṆĪ <span className="text-blue-600">AI</span></span>
-          </div>
-          <div className="hidden lg:flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
-            <a href="#intro" className="hover:text-blue-600 transition-colors">Vision</a>
-            <a href="#points" className="hover:text-blue-600 transition-colors">The Realities</a>
-            <a href="#setup" className="hover:text-blue-600 transition-colors">Blueprint</a>
-            <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
-              Access Studio
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <header className="relative pt-32 pb-24 px-6 overflow-hidden bg-white">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-indigo-400 rounded-full blur-[100px]"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm animate-bounce">
-            <Zap className="w-4 h-4" /> Vāṇī AI Special Edition
-          </div>
-          <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.95] tracking-tight mb-10">
-            The AI Superpower <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
-              In Your Pocket.
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12">
-            A comprehensive strategic analysis of how the Gemini API is dismantling corporate monopolies and rewriting the rules of neural orchestration.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400 font-bold uppercase tracking-widest text-xs">
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-              <TrendingUp className="w-4 h-4" /> 25 Minute Deep-Read
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-              <Globe className="w-4 h-4" /> Global Infrastructure
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-              <Terminal className="w-4 h-4" /> 2.5 Flash Tech
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content Area */}
-      <main className="max-w-4xl mx-auto px-6 pb-40">
-        
-        {/* 1. INTRODUCTION EXPANDED */}
-        <article id="intro" className="mb-32">
-          <div className="flex gap-4 items-center mb-8">
-            <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
-            <span className="text-blue-600 font-black uppercase tracking-widest text-sm">Chapter 01</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-10 leading-tight">
-            1. Introduction: The Key to the Neural Engine
-          </h2>
-          <div className="prose prose-xl prose-slate max-w-none text-slate-700 leading-[1.8]">
-            <p className="mb-8 first-letter:text-7xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
-              For decades, the path to leveraging world-class Artificial Intelligence was gated by a massive hardware barrier. To even scratch the surface of neural processing, a creator needed to invest thousands in high-end GPUs like the NVIDIA A100s, navigate complex Python environments, and manage local server clusters that required specialized cooling and power. It was a playground reserved for those with deep pockets, venture capital backing, and specialized PhD degrees.
-            </p>
-            <p className="mb-8">
-              But history shows that technology only truly changes the world when it becomes invisible. We saw this with electricity—once a luxury of industrial hubs, now a socket in every wall. We saw this with the internet—once a military communication network, now a signal in the air. Today, we are witnessing the third great democratization: the <strong>Neural Utility Era</strong>.
-            </p>
-            
-            <div className="bg-white border-2 border-blue-100 rounded-[2rem] p-8 my-12 shadow-xl shadow-blue-100/20 relative overflow-hidden">
-               <div className="absolute top-0 right-0 p-4 opacity-5"><Layers size={200} /></div>
-               <h4 className="text-blue-600 font-black uppercase text-sm mb-4">Strategic Insight</h4>
-               <p className="text-slate-800 font-medium italic text-xl">
-                 "The 'superpower' of Google’s global neural engine has been condensed into a single alphanumeric string: the Gemini API key. This isn’t just a technical tool; it is a pipeline to limitless scale."
-               </p>
-            </div>
-
-            <p className="mb-8">
-              By shifting from local execution to frictionless cloud orchestration, the Gemini API transforms your browser into a remote control for a building-sized brain. You are no longer limited by the RAM of your laptop or the processing speed of your CPU. You are tapping into a globally distributed matrix of Tensor Processing Units (TPUs) that can process millions of tokens in seconds. Effectively, this is putting a supercomputer—one that occupies city blocks of data center space—directly into your pocket.
-            </p>
-          </div>
-        </article>
-
-        <div id="points" className="space-y-40">
-          
-          {/* 2. TAKEAWAY 1 EXPANDED */}
-          <section className="relative">
-            <div className="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none">02</div>
-            <div className="flex gap-4 items-center mb-6">
-              <span className="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200"><CheckCircle2 /></span>
-              <h3 className="text-3xl md:text-4xl font-black text-slate-900">Takeaway 1: High-End Tech is Now Free for Everyone</h3>
-            </div>
-            
-            <div className="prose prose-lg text-slate-600 space-y-8 leading-relaxed">
-              <p>
-                The most radical shift in the modern creator economy is the collapse of the financial barrier to entry. Historically, the "Moat" of a company was its data and its hardware. If you had the money to buy more compute, you won. But Google AI Studio has flipped the script. By ensuring that their most sophisticated models remain accessible to the individual visionary through a generous free tier, they have neutralized the capital advantage of legacy corporations.
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-8 my-10">
-                <div className="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm">
-                  <h5 className="font-bold text-slate-900 mb-3 flex items-center gap-2"><TrendingUp className="text-emerald-500 w-4 h-4"/> The Old Paradigm</h5>
-                  <p className="text-sm">High R&D costs, proprietary models, and "walled gardens" meant only the 1% could innovate.</p>
-                </div>
-                <div className="p-6 bg-blue-900 text-white rounded-2xl shadow-xl">
-                  <h5 className="font-bold mb-3 flex items-center gap-2"><Zap className="text-blue-400 w-4 h-4"/> The New Reality</h5>
-                  <p className="text-sm opacity-80">Zero cost for the "intelligence layer." Competition is now purely about vision and execution.</p>
-                </div>
-              </div>
-
-              <p>
-                As a strategist, I see this as the ultimate leveling of the playing field. When the cost of intelligence drops to zero, the value moves upstream to <strong>Creative Orchestration</strong>. A teenager in a small town with a Gemini API key has the same cognitive firepower as a Fortune 500 R&D lab. This democratization ensures that the "little guy" is no longer a step behind the enterprise giants. 
-              </p>
-              <p>
-                But why would a tech giant give this away for free? The answer is simple: <strong>Ecosystem Dominance</strong>. By making the entry point free, they ensure that the next generation of "Unicorn" apps are built on their neural foundation. For the creator, this is a golden window of opportunity—an era where your ideas aren't limited by your bank balance, but by your imagination.
-              </p>
-            </div>
-          </section>
-
-          {/* 3. TAKEAWAY 2 EXPANDED */}
-          <section className="relative">
-            <div className="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none">03</div>
-            <div className="flex gap-4 items-center mb-6">
-              <span className="p-3 bg-indigo-600 text-white rounded-2xl shadow-lg shadow-indigo-200"><Cpu /></span>
-              <h3 className="text-3xl md:text-4xl font-black text-slate-900">Takeaway 2: APIs Solve the "Impossible" Hardware Problem</h3>
-            </div>
-
-            <div className="prose prose-lg text-slate-600 space-y-8 leading-relaxed">
-              <p>
-                Let’s talk technical reality. Attempting to run a model like <strong>Gemini Flash 2.5</strong>—with its massive parameter count and multimodal capabilities—on a standard consumer laptop or even a high-end MacBook is, quite literally, impossible. The model's architecture requires specialized memory bandwidth and throughput that consumer silicon simply cannot provide.
-              </p>
-
-              <div className="bg-slate-900 rounded-[2.5rem] p-10 my-12 shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all"></div>
-                <div className="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <span className="ml-4 text-xs font-mono text-slate-500 uppercase tracking-widest">Live Neural Transmission</span>
-                </div>
-                
-                <div className="space-y-8">
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center text-xs font-bold text-blue-400 uppercase tracking-tighter">
-                      <span>Request (Client Side)</span>
-                      <span className="text-slate-500">JSON Format</span>
-                    </div>
-                    <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 font-mono text-blue-300">
-                      {`{ 
-  "model": "gemini-2.5-flash",
-  "contents": [{ "parts": [{ "text": "नमस्ते भारत" }] }],
-  "generationConfig": { "voice": "Priya" }
-}`}
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center">
-                    <div className="h-12 w-0.5 bg-gradient-to-b from-blue-500 to-emerald-500 animate-pulse"></div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center text-xs font-bold text-emerald-400 uppercase tracking-tighter">
-                      <span>Response (Cloud Brain)</span>
-                      <span className="text-slate-500">200 OK - 42ms</span>
-                    </div>
-                    <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 font-mono text-emerald-300">
-                      {`{ 
-  "audio_url": "https://api.google/voice/v1/123.wav",
-  "metadata": { "processing_unit": "TPU_V5", "tokens": 45 }
-}`}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <p>
-                The API solves this by creating a direct bridge between your interface and Google’s high-performance neural engine. Instead of your computer doing the heavy lifting, it simply acts as a <strong>Terminal</strong>. It sends a small packet of data (the request) and receives the finished product (the response). 
-              </p>
-              <p>
-                This "Neural Engine" metaphor is critical. Think of your app as the cockpit of a jet. The cockpit doesn't generate the thrust; the engines under the wings do. The API is the wiring that connects your controls to that thrust. This allows developers to build "Thin Clients"—apps that are lightweight, fast, and battery-efficient—while still providing the power of a god-tier AI.
-              </p>
-            </div>
-          </section>
-
-          {/* 4. TAKEAWAY 3 EXPANDED */}
-          <section className="relative">
-            <div className="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none">04</div>
-            <div className="flex gap-4 items-center mb-6">
-              <span className="p-3 bg-cyan-500 text-white rounded-2xl shadow-lg shadow-cyan-100"><BookOpen /></span>
-              <h3 className="text-3xl md:text-4xl font-black text-slate-900">Takeaway 3: The "Bring Your Own Key" (BYOK) Revolution</h3>
-            </div>
-
-            <div className="prose prose-lg text-slate-600 space-y-8 leading-relaxed">
-              <p>
-                We are moving away from the era of "Subscriptions" and into the era of <strong>"Infrastructure Sovereignty."</strong> Pioneered by platforms like <strong>Vāṇī AI Studio</strong>, the BYOK model is a game-changer for digital transparency and security. 
-              </p>
-              <p>
-                In a traditional SaaS model, you pay the company, they pay the AI provider, and you never really know what's happening in the middle. They might be using a cheaper model to save money while charging you a premium. They might be logging your data. They might be adding a "middleman tax."
-              </p>
-
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-[2rem] border-2 border-dashed border-blue-200">
-                <h4 className="text-blue-900 font-bold mb-6 text-xl">The BYOK Security Protocol at Vāṇī AI:</h4>
-                <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0 font-bold text-blue-600">1</div>
-                    <div>
-                      <h5 className="font-bold text-slate-900">Zero-Server Storage</h5>
-                      <p className="text-sm">Your API key is never sent to Vāṇī’s servers. It resides only in your browser's encrypted local storage.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0 font-bold text-blue-600">2</div>
-                    <div>
-                      <h5 className="font-bold text-slate-900">Direct Billing</h5>
-                      <p className="text-sm">You pay Google directly for exactly what you use. No markups, no hidden platform fees.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0 font-bold text-blue-600">3</div>
-                    <div>
-                      <h5 className="font-bold text-slate-900">Identity Ownership</h5>
-                      <p className="text-sm">Your "Key" is your "Identity." If you want to move to another studio, you take your key (and your quota) with you.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <p>
-                This model is a strategist's dream because it separates the <strong>Tool</strong> from the <strong>Engine</strong>. Vāṇī AI focuses on providing the best possible user interface, the smoothest orchestration, and the most intuitive workflow—while you retain total control over your digital assets. This is the future of the internet: Decentralized tools powered by centralized engines, connected by secure, user-owned keys.
-              </p>
-            </div>
-          </section>
-
-          {/* 5. TAKEAWAY 4 EXPANDED */}
-          <section className="relative">
-            <div className="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none">05</div>
-            <div className="flex gap-4 items-center mb-6">
-              <span className="p-3 bg-red-600 text-white rounded-2xl shadow-lg shadow-red-200"><ShieldAlert /></span>
-              <h3 className="text-3xl md:text-4xl font-black text-slate-900">Takeaway 4: The Hidden Ceiling of the "Free Tier"</h3>
-            </div>
-
-            <div className="prose prose-lg text-slate-600 space-y-8 leading-relaxed">
-              <p>
-                Every superpower has a limit. In the world of cloud infrastructure, these limits are known as <strong>"Rate Limits."</strong> While Google is incredibly generous, their free tier is not a bottomless pit of compute. Understanding these constraints is what separates a professional developer from a hobbyist.
-              </p>
-
-              <div className="bg-red-50 border-2 border-red-100 rounded-[2rem] p-8 overflow-hidden relative">
-                <div className="absolute -bottom-10 -right-10 opacity-5 text-red-900">
-                  <AlertTriangle size={200} />
-                </div>
-                <h4 className="text-red-700 font-bold mb-4 flex items-center gap-2 italic">
-                  Critical Warning: The 429 Error
-                </h4>
-                <p className="text-red-900 font-medium mb-6">
-                  For high-performance audio generation, the current free-tier ceiling is <strong>15 requests per minute (RPM)</strong>.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-red-100 shadow-sm">
-                    <span className="text-sm font-bold">Standard Users</span>
-                    <span className="text-xs bg-red-600 text-white px-2 py-1 rounded">15 RPM</span>
-                  </div>
-                  <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-red-100 shadow-sm">
-                    <span className="text-sm font-bold">Pay-as-you-go</span>
-                    <span className="text-xs bg-emerald-600 text-white px-2 py-1 rounded">2000+ RPM</span>
-                  </div>
-                </div>
-              </div>
-
-              <p>
-                If your workflow—let's say you're batch-creating 50 voice-overs for a YouTube channel—exceeds this 15-request window within 60 seconds, the API will "throttle" you. You’ll receive the dreaded <strong>"429 Too Many Requests"</strong> error. 
-              </p>
-              <p>
-                Professional workflows must be architected with "Backoff Logic." Instead of just failing, your app should wait for 4 seconds, then 8 seconds, then retry. This "jitter and backoff" strategy is common in high-end systems. At Vāṇī AI, we manage this orchestration for you, ensuring that your content delivery remains consistent even when you're pushing the engine to its limits.
-              </p>
-            </div>
-          </section>
-
-          {/* 6. TAKEAWAY 5 EXPANDED */}
-          <section className="relative">
-            <div className="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none">06</div>
-            <div className="flex gap-4 items-center mb-6">
-              <span className="p-3 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-300"><Fingerprint /></span>
-              <h3 className="text-3xl md:text-4xl font-black text-slate-900">Takeaway 5: Your API Key is a Digital Fingerprint</h3>
-            </div>
-
-            <div className="prose prose-lg text-slate-600 space-y-8 leading-relaxed">
-              <p>
-                In the physical world, your key opens a door. In the digital world, your API key is much more: it is your <strong>Digital Fingerprint</strong>. It identifies your account, your billing profile, your usage history, and your trust score within the Google Cloud ecosystem. 
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6 my-12">
-                <div className="p-6 bg-white border border-slate-100 rounded-2xl text-center">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"><Lock /></div>
-                  <h6 className="font-black text-slate-900 text-xs uppercase mb-2">Rule 01</h6>
-                  <p className="text-xs">Never commit keys to public GitHub repositories.</p>
-                </div>
-                <div className="p-6 bg-white border border-slate-100 rounded-2xl text-center">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"><ShieldAlert /></div>
-                  <h6 className="font-black text-slate-900 text-xs uppercase mb-2">Rule 02</h6>
-                  <p className="text-xs">Never share screenshots of your API dashboard.</p>
-                </div>
-                <div className="p-6 bg-white border border-slate-100 rounded-2xl text-center">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"><Zap /></div>
-                  <h6 className="font-black text-slate-900 text-xs uppercase mb-2">Rule 03</h6>
-                  <p className="text-xs">Rotate your keys every 90 days for maximum safety.</p>
-                </div>
-              </div>
-
-              <p>
-                If a bad actor gets a hold of your key, they aren't just stealing a password; they are stealing your compute capacity. They can run expensive models on your dime, exhaust your free quota in milliseconds, and potentially get your account flagged for abuse. 
-              </p>
-              <p>
-                Think of your API key as a blank check that has already been signed. You must guard it with extreme prejudice. At Vāṇī AI, we advocate for the <strong>"Local Secrets"</strong> philosophy: keep your keys in your browser, or in a secure password manager like Bitwarden or 1Password. AI is a superpower, and the Gemini API is its key—but like any power, it requires responsible handling.
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-        {/* 7. SETUP GUIDE EXPANDED */}
-        <section id="setup" className="mt-40 bg-white border-4 border-slate-900 rounded-[3rem] p-8 md:p-16 shadow-2xl relative">
-          <div className="absolute top-0 right-10 -translate-y-1/2 bg-blue-600 text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-sm shadow-xl">
-            Quick Blueprint
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-12 text-center">
-            Unlock the Engine in 5 Minutes
-          </h2>
-          
-          <div className="space-y-12">
-            {[
-              { 
-                step: "01", 
-                title: "Initialize AI Studio", 
-                desc: "Head over to aistudio.google.com. This is the official playground for Gemini development. Ensure you are using a workspace or personal Gmail that you want associated with your neural assets.",
-                icon: <Globe className="text-blue-500"/> 
-              },
-              { 
-                step: "02", 
-                title: "Identity Verification", 
-                desc: "Authenticate using your primary account. This creates your identity within the Google Generative AI ecosystem. Your usage statistics will be tied to this login.",
-                icon: <Fingerprint className="text-indigo-500"/> 
-              },
-              { 
-                step: "03", 
-                title: "Gateway Navigation", 
-                desc: "On the left-hand sidebar, you will find a key icon labeled 'Get API Key'. This is the gateway to the cloud infrastructure.",
-                icon: <Key className="text-cyan-500"/> 
-              },
-              { 
-                step: "04", 
-                title: "Neural Key Generation", 
-                desc: "Click 'Create API Key in new project'. This generates a unique cryptographic string that links your browser directly to the TPU clusters in Google's data centers.",
-                icon: <Zap className="text-amber-500"/> 
-              },
-              { 
-                step: "05", 
-                title: "Encryption & Storage", 
-                desc: "Copy the key and immediately move it to a secure environment. Do not leave it in a plain text file. Your setup is now complete—you are ready to power Vāṇī AI Studio.",
-                icon: <Lock className="text-emerald-500"/> 
-              }
-            ].map((s, i) => (
-              <div key={i} className="flex flex-col md:flex-row gap-8 items-start group">
-                <div className="flex flex-col items-center">
-                  <div className="text-6xl font-black text-slate-100 group-hover:text-blue-500 transition-colors">{s.step}</div>
-                  <div className="w-1 h-full bg-slate-50 min-h-[40px]"></div>
-                </div>
-                <div className="flex-1 bg-slate-50 p-8 rounded-3xl border border-slate-100 group-hover:bg-white group-hover:shadow-xl transition-all">
-                  <div className="flex items-center gap-3 mb-4">
-                    {s.icon}
-                    <h4 className="text-xl font-black text-slate-900">{s.title}</h4>
-                  </div>
-                  <p className="text-slate-600 leading-relaxed">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <button className="px-12 py-5 bg-slate-900 text-white rounded-2xl font-black text-xl hover:bg-blue-600 transition-all shadow-2xl flex items-center gap-4 mx-auto group">
-              Start Building Now <ArrowRight className="group-hover:translate-x-2 transition-transform"/>
-            </button>
-          </div>
-        </section>
-
-        {/* 8. CONCLUSION EXPANDED */}
-        <section className="mt-40 text-center">
-          <div className="w-24 h-2 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto mb-12 rounded-full"></div>
-          <h3 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight">
-            The Horizon of <br/> Infinite Creativity
-          </h3>
-          <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-16">
-            We are not just witnessing a technological update; we are witnessing a fundamental shift in the architecture of human creativity. The walls have been replaced by bridges. The superpower is no longer a corporate secret—it is a tab open in your browser, ready to be utilized at the speed of thought.
-          </p>
-          
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-               <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse"></div>
-            </div>
-            <h4 className="text-sm font-black tracking-[0.4em] uppercase mb-6 text-blue-200">The Final Word</h4>
-            <p className="text-2xl md:text-4xl font-black mb-10 leading-snug">
-              The playing field is level. The infrastructure is ready. What world will you choose to build?
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-4 bg-white text-blue-900 rounded-2xl font-black hover:bg-blue-50 transition-colors shadow-lg">
-                Join Vāṇī AI Studio
-              </button>
-              <button className="px-8 py-4 bg-blue-500 text-white rounded-2xl font-black hover:bg-blue-400 transition-colors border border-blue-400 shadow-lg">
-                Share This Article
-              </button>
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      {/* Footer Expanded */}
-      <footer className="bg-white border-t border-slate-100 py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-            <div className="col-span-1 md:col-span-2">
-              <span className="text-3xl font-black text-slate-900 tracking-tighter">VĀṆĪ <span className="text-blue-600">AI</span></span>
-              <p className="mt-6 text-slate-500 max-w-sm leading-relaxed">
-                The world's most advanced interface for neural orchestration. Bringing the power of Google's Gemini Flash 2.5 to every creator, everywhere.
-              </p>
-            </div>
-            <div>
-              <h5 className="font-black text-xs uppercase tracking-widest text-slate-900 mb-6">Resources</h5>
-              <ul className="space-y-4 text-sm text-slate-500 font-bold">
-                <li><a href="#" className="hover:text-blue-600">Documentation</a></li>
-                <li><a href="#" className="hover:text-blue-600">API Pricing</a></li>
-                <li><a href="#" className="hover:text-blue-600">Community</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-black text-xs uppercase tracking-widest text-slate-900 mb-6">Company</h5>
-              <ul className="space-y-4 text-sm text-slate-500 font-bold">
-                <li><a href="#" className="hover:text-blue-600">Our Vision</a></li>
-                <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-blue-600">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-              &copy; 2024 Vāṇī AI Studio. Built for the era of intelligence.
-            </p>
-            <div className="flex gap-6">
-              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-600 transition-colors cursor-pointer"><Globe size={16}/></div>
-              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-600 transition-colors cursor-pointer"><Fingerprint size={16}/></div>
-              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-600 transition-colors cursor-pointer"><Server size={16}/></div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      <style dangerouslySetInnerHTML={{ __html: `
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
         @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
         }
         .animate-blob {
-          animation: blob 7s infinite;
+            animation: blob 7s infinite;
         }
-        html {
-          scroll-behavior: smooth;
+        .selection-blue::selection {
+            background-color: #bfdbfe;
+            color: #1e3a8a;
         }
-      `}} />
-    </div>
-  );
-};
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 font-sans selection-blue overflow-x-hidden">
 
-export default App;
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-2 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-500 z-50 transition-all duration-300 ease-out shadow-lg" style="width: 0%"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-blue-100/50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="https://vaniaistudio.com" class="flex items-center gap-3 group cursor-pointer">
+                <div class="relative">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl rotate-3 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                        <div class="w-5 h-5 bg-white rounded-full animate-pulse"></div>
+                    </div>
+                </div>
+                <span class="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span class="text-blue-600">AI</span></span>
+            </a>
+            <div class="hidden lg:flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
+                <a href="#intro" class="hover:text-blue-600 transition-colors">Vision</a>
+                <a href="#points" class="hover:text-blue-600 transition-colors">AI Voice Tech</a>
+                <a href="#multilingual" class="hover:text-blue-600 transition-colors">Global Reach</a>
+                <a href="#setup" class="hover:text-blue-600 transition-colors">Blueprint</a>
+                <a href="https://vaniaistudio.com" class="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
+                    Vāṇī Studio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-24 px-6 overflow-hidden bg-white">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-indigo-400 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm animate-bounce">
+                <i data-lucide="mic-2" class="w-4 h-4"></i> Multilingual Text to AI Voice Engine
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black text-slate-900 leading-[0.95] tracking-tight mb-10">
+                Text to Speech in <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 uppercase">
+                    Every Language.
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed mb-12">
+                Discover how <strong>Vāṇī AI</strong> leverages the Gemini Flash 2.5 API to provide studio-grade <strong>Text to AI Voice</strong> for creators, breaking language barriers with elite neural synthesis.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400 font-bold uppercase tracking-widest text-xs">
+                <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
+                    <i data-lucide="languages" class="w-4 h-4"></i> 100+ Languages Supported
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
+                    <i data-lucide="headphones" class="w-4 h-4"></i> High Fidelity Audio
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> Gemini Neural Engine
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 pb-40">
+        
+        <!-- 1. INTRODUCTION -->
+        <article id="intro" class="mb-32">
+            <div class="flex gap-4 items-center mb-8">
+                <div class="w-12 h-1 bg-blue-600 rounded-full"></div>
+                <span class="text-blue-600 font-black uppercase tracking-widest text-sm text-shadow">The Neural Frontier</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-10 leading-tight">
+                1. Introduction: The Key to the Neural Engine
+            </h2>
+            <div class="text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8">
+                <p class="first-letter:text-7xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                    For decades, the path to leveraging world-class Artificial Intelligence was gated by a massive hardware barrier. To even scratch the surface of neural processing, a creator needed high-end GPUs like NVIDIA A100s. It was a playground reserved for the elite. <strong>Vāṇī AI Studio</strong> marks the end of this gatekeeping era.
+                </p>
+                <p>
+                    Today, we are witnessing the third great democratization: the <strong>Neural Utility Era</strong>. By using <strong>Text to AI Voice</strong> technology powered by Google’s Gemini API, <strong>Vāṇī AI</strong> puts a supercomputer-sized brain directly into your pocket. You no longer need thousands of dollars in server clusters; you just need a browser and a vision.
+                </p>
+                
+                <div class="bg-white border-2 border-blue-100 rounded-[2rem] p-8 my-12 shadow-xl shadow-blue-100/20 relative overflow-hidden">
+                   <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                       <i data-lucide="layers" style="width: 200px; height: 200px;"></i>
+                   </div>
+                   <h4 class="text-blue-600 font-black uppercase text-sm mb-4">The Vāṇī Vision</h4>
+                   <p class="text-slate-800 font-medium italic text-xl leading-relaxed">
+                     "Our goal at Vāṇī AI is to make <strong>Text to Speech in every language</strong> as accessible as turning on a faucet. We provide the faucet; Google’s Gemini API provides the infinite water."
+                   </p>
+                </div>
+
+                <p>
+                    By shifting from local execution to cloud orchestration, the Gemini API transforms your smartphone into a remote control for a building-sized brain. At <strong>Vāṇī AI</strong>, we have optimized this pipeline, ensuring that every request for a <strong>Hindi AI voice</strong> or an English narration is processed at lightning speed using Google's latest TPU clusters.
+                </p>
+            </div>
+        </article>
+
+        <div id="points" class="space-y-40">
+            <!-- 2. TAKEAWAY 1 -->
+            <section class="relative">
+                <div class="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none select-none">02</div>
+                <div class="flex gap-4 items-center mb-6">
+                    <span class="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200"><i data-lucide="check-circle-2"></i></span>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 uppercase">High-End Tech: Free for Creators</h3>
+                </div>
+                <div class="text-lg text-slate-600 space-y-8 leading-relaxed">
+                    <p>
+                        The financial barrier to high-quality <strong>Text to Speech in every language</strong> has collapsed. Through Google AI Studio and the Vāṇī AI platform, sophistication is now available to every individual creator. This is the ultimate leveling of the playing field.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8 my-10 font-bold uppercase tracking-wider text-xs">
+                        <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:border-blue-200 transition-colors">
+                            <h5 class="font-black text-slate-900 mb-3 flex items-center gap-2"><i data-lucide="trending-up" class="text-emerald-500 w-4 h-4"></i> Old Era</h5>
+                            <p class="text-xs text-slate-400">Paid subscriptions, limited voices, expensive credits.</p>
+                        </div>
+                        <a href="https://vaniaistudio.com" class="p-6 bg-blue-900 text-white rounded-2xl shadow-xl hover:bg-blue-950 transition-colors block">
+                            <h5 class="font-black mb-3 flex items-center gap-2"><i data-lucide="zap" class="text-blue-400 w-4 h-4"></i> Vāṇī AI Era</h5>
+                            <p class="text-xs opacity-70">BYOK Model, Free Tier API, Unlimited Vision. Click to start.</p>
+                        </a>
+                    </div>
+                    <p>
+                        Whether you are building a global podcast or a <strong>Hindi AI voice</strong> assistant, the cost of the "intelligence layer" is effectively zero for new creators. This ensures that the small creator is no longer a step behind corporate giants. Competition now shifts from "who has the most capital" to "who has the best story."
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. TAKEAWAY 2 -->
+            <section class="relative">
+                <div class="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none select-none">03</div>
+                <div class="flex gap-4 items-center mb-6">
+                    <span class="p-3 bg-indigo-600 text-white rounded-2xl shadow-lg shadow-indigo-200"><i data-lucide="cpu"></i></span>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 uppercase">Text to AI Voice: Solving Hardware</h3>
+                </div>
+                <div class="text-lg text-slate-600 space-y-8 leading-relaxed">
+                    <p>
+                        Generating high-fidelity <strong>Text to AI voice</strong> narration requires massive computational power. <strong>Gemini Flash 2.5</strong>, Google's latest model, is too vast for local memory. The API bridge solves this by connecting your <strong>Vāṇī AI Studio</strong> interface directly to high-performance neural engines.
+                    </p>
+                    <div class="bg-slate-900 rounded-[2.5rem] p-6 md:p-10 my-12 shadow-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-4 text-xs font-mono text-slate-500 uppercase tracking-widest">Vāṇī AI Engine Request</span>
+                        </div>
+                        <div class="space-y-8 font-mono text-xs md:text-sm">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-xs font-bold text-blue-400 uppercase tracking-tighter">
+                                    <span>User Input</span>
+                                </div>
+                                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 text-blue-300 overflow-x-auto whitespace-pre">{
+  "text": "नमस्ते भारत, वानी एआई में आपका स्वागत है।",
+  "language": "hi-IN",
+  "voice_model": "Vani-Premium-01"
+}</div>
+                            </div>
+                            <div class="flex justify-center"><div class="h-12 w-0.5 bg-gradient-to-b from-blue-500 to-emerald-500"></div></div>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-xs font-bold text-emerald-400 uppercase tracking-tighter">
+                                    <span>AI Neural Output</span>
+                                </div>
+                                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 text-emerald-300 overflow-x-auto whitespace-pre">{
+  "status": "Voice Generated",
+  "audio_stream": "High-Quality PCM",
+  "tokens_used": 28
+}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        This "Thin Client" approach is why <strong>Vāṇī AI</strong> is so fast. Your device doesn't do the work; it just displays the brilliance of a global data center. <strong>Text to AI voice</strong> generation that used to take hours now takes milliseconds.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4. TAKEAWAY 3: BYOK -->
+            <section class="relative">
+                <div class="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none select-none">04</div>
+                <div class="flex gap-4 items-center mb-6">
+                    <span class="p-3 bg-cyan-500 text-white rounded-2xl shadow-lg shadow-cyan-100"><i data-lucide="book-open"></i></span>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 uppercase">Infrastructure Sovereignty</h3>
+                </div>
+                <div class="text-lg text-slate-600 space-y-8 leading-relaxed">
+                    <p>
+                        <strong>Vāṇī AI Studio</strong> is a pioneer in the "Bring Your Own Key" (BYOK) revolution. We believe that you should own your identity and your access to <strong>multilingual text to speech</strong>.
+                    </p>
+                    <p>
+                        In our model, the studio provides the elite interface and orchestration—optimized for <strong>Text to AI Voice</strong>—while you provide the credentials. This eliminates the "middleman tax" and ensures that your data remains private. Your API key never touches our servers; it stays encrypted in your own browser.
+                    </p>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-[2rem] border-2 border-dashed border-blue-200">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <h5 class="font-black text-blue-600 text-xs uppercase">Privacy</h5>
+                                <p class="text-sm text-slate-700 font-medium">Local-only key storage.</p>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h5 class="font-black text-blue-600 text-xs uppercase">Freedom</h5>
+                                <p class="text-sm text-slate-700 font-medium">Direct billing from Google.</p>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h5 class="font-black text-blue-600 text-xs uppercase">Control</h5>
+                                <p class="text-sm text-slate-700 font-medium">Manage your own limits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. MULTILINGUAL SECTION (NEW FOR SEO) -->
+            <section id="multilingual" class="relative">
+                <div class="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none select-none">05</div>
+                <div class="flex gap-4 items-center mb-6">
+                    <span class="p-3 bg-emerald-600 text-white rounded-2xl shadow-lg shadow-emerald-200"><i data-lucide="languages"></i></span>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 uppercase">Beyond English: Multilingual Mastery</h3>
+                </div>
+                <div class="text-lg text-slate-700 space-y-8 leading-relaxed">
+                    <p>
+                        The true test of a <strong>Text to AI Voice</strong> engine is how it handles regional nuances. <strong>Vāṇī AI</strong> excels here by providing <strong>Text to Speech in every language</strong> with local accents and emotional depth.
+                    </p>
+                    <p>
+                        Whether you are targeting a <strong>Hindi AI voice</strong> market in India or a Spanish audience in South America, our integration with Gemini API ensures that the pronunciation is flawless. Our platform is designed specifically for content creators who need high-quality audio for YouTube, TikTok, and localized marketing without the robotic "monotone" of older technologies.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg font-bold text-xs uppercase tracking-widest">Hindi AI Voice</span>
+                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg font-bold text-xs uppercase tracking-widest">Arabic Synthesis</span>
+                        <span class="px-4 py-2 bg-cyan-100 text-cyan-700 rounded-lg font-bold text-xs uppercase tracking-widest">Japanese Narration</span>
+                        <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg font-bold text-xs uppercase tracking-widest">Spanish AI Voice</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. TAKEAWAY 4 & 5 SUMMARY -->
+            <section class="relative">
+                <div class="absolute -left-12 top-0 text-9xl font-black text-blue-50 opacity-50 pointer-events-none select-none">06</div>
+                <div class="flex gap-4 items-center mb-6">
+                    <span class="p-3 bg-red-600 text-white rounded-2xl shadow-lg shadow-red-200"><i data-lucide="shield-alert"></i></span>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 uppercase">Rate Limits & Security</h3>
+                </div>
+                <div class="text-lg text-slate-600 space-y-8 leading-relaxed">
+                    <p>
+                        With great power comes the 429 Error. The free tier of Gemini allows 15 requests per minute—plenty for a single user but a ceiling for automation. At <strong>Vāṇī AI</strong>, we help you manage these limits gracefully.
+                    </p>
+                    <div class="bg-slate-900 text-white p-8 rounded-[2rem] border border-slate-700">
+                        <h4 class="text-amber-400 font-bold mb-4 flex items-center gap-2 uppercase tracking-widest text-sm"><i data-lucide="alert-triangle"></i> Pro Tip for SEO Creators</h4>
+                        <p class="text-sm opacity-80 leading-relaxed">
+                            Protect your API key like it’s your digital fingerprint. If your key is exposed, your quota will be drained. Always use a studio like <a href="https://vaniaistudio.com" class="text-blue-400 underline font-bold">Vāṇī AI</a> that handles keys locally within the browser to ensure maximum security for your <strong>Text to AI Voice</strong> assets.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 7. SETUP GUIDE -->
+        <section id="setup" class="mt-40 bg-white border-4 border-slate-900 rounded-[3rem] p-8 md:p-16 shadow-2xl relative">
+            <div class="absolute top-0 right-10 -translate-y-1/2 bg-blue-600 text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-sm shadow-xl">Setup Blueprint</div>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-12 text-center uppercase tracking-tight">Unlock Vāṇī AI Power</h2>
+            <div class="space-y-10">
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <div class="text-5xl font-black text-slate-100 group-hover:text-blue-500 transition-colors">01</div>
+                    <div class="flex-1 bg-slate-50 p-8 rounded-3xl border border-slate-100 group-hover:bg-white group-hover:shadow-xl transition-all">
+                        <h4 class="text-xl font-black text-slate-900 flex items-center gap-2"><i data-lucide="globe" class="text-blue-500"></i> Initialize AI Studio</h4>
+                        <p class="text-slate-600 mt-2">Visit <a href="https://aistudio.google.com" target="_blank" class="text-blue-600 underline">aistudio.google.com</a> and log in with your primary Gmail account.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <div class="text-5xl font-black text-slate-100 group-hover:text-blue-500 transition-colors">02</div>
+                    <div class="flex-1 bg-slate-50 p-8 rounded-3xl border border-slate-100 group-hover:bg-white group-hover:shadow-xl transition-all">
+                        <h4 class="text-xl font-black text-slate-900 flex items-center gap-2"><i data-lucide="key" class="text-indigo-500"></i> Get Your API Key</h4>
+                        <p class="text-slate-600 mt-2">Navigate to the sidebar and generate your unique Gemini API key string.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <div class="text-5xl font-black text-slate-100 group-hover:text-blue-500 transition-colors">03</div>
+                    <div class="flex-1 bg-slate-50 p-8 rounded-3xl border border-slate-100 group-hover:bg-white group-hover:shadow-xl transition-all">
+                        <h4 class="text-xl font-black text-slate-900 flex items-center gap-2"><i data-lucide="layout" class="text-cyan-500"></i> Enter Vāṇī AI Studio</h4>
+                        <p class="text-slate-600 mt-2">Paste your key into the secure <a href="https://vaniaistudio.com" class="text-blue-600 underline">Vāṇī interface</a> to activate <strong>multilingual text to speech</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <a href="https://vaniaistudio.com" class="inline-flex px-12 py-5 bg-slate-900 text-white rounded-2xl font-black text-xl hover:bg-blue-600 transition-all shadow-2xl items-center gap-4 mx-auto group">
+                    Go to Studio <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 8. CONCLUSION -->
+        <section class="mt-40 text-center">
+            <div class="w-24 h-2 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto mb-12 rounded-full"></div>
+            <h3 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight italic">Infinite Possibilities</h3>
+            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div class="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse"></div>
+                </div>
+                <p class="text-2xl md:text-4xl font-black mb-10 leading-snug">Vāṇī AI is ready. The playing field is level. What will you build?</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10 font-bold uppercase tracking-widest text-sm">
+                    <a href="https://vaniaistudio.com" class="px-8 py-4 bg-white text-blue-900 rounded-2xl shadow-lg hover:bg-blue-50 transition-colors uppercase">Start Creating</a>
+                    <button class="px-8 py-4 bg-blue-500 text-white rounded-2xl border border-blue-400 shadow-lg hover:bg-blue-400 transition-colors uppercase">Share Article</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-32 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+            <div class="col-span-1 md:col-span-2">
+                <a href="https://vaniaistudio.com" class="text-3xl font-black text-slate-900 tracking-tighter uppercase">VĀṆĪ <span class="text-blue-600">AI</span></a>
+                <p class="mt-6 text-slate-500 max-w-sm leading-relaxed text-sm">Converting <strong>Text to AI Voice</strong> in any language. Orchestrated for the next generation of global storytellers.</p>
+            </div>
+            <div>
+                <h5 class="font-black text-xs uppercase tracking-widest text-slate-900 mb-6">Tools</h5>
+                <ul class="space-y-4 text-xs text-slate-500 font-bold uppercase tracking-widest">
+                    <li><a href="index.html" class="hover:text-blue-600 transition-colors">Hindi AI Voice</a></li>
+                    <li><a href="index.html" class="hover:text-blue-600 transition-colors">Gemini Studio</a></li>
+                    <li><a href="index.html" class="hover:text-blue-600 transition-colors">Text to Voice</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-black text-xs uppercase tracking-widest text-slate-900 mb-6">Community</h5>
+                <ul class="space-y-4 text-xs text-slate-500 font-bold uppercase tracking-widest">
+                    <li><a href="#" class="hover:text-blue-600 transition-colors">Twitter</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition-colors">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto pt-10 border-t border-slate-100 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">&copy; 2024 Vāṇī AI Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const progress = document.getElementById('scroll-progress');
+            const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const currentScroll = window.scrollY;
+            if (totalScroll > 0) {
+                const percentage = (currentScroll / totalScroll) * 100;
+                progress.style.width = percentage + '%';
+            }
+        });
+    </script>
+</body>
+</html>
