@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Masterclass: High-Traffic Technical Keywords -->
+    <title>Fixing Chrome Loading & White Screen Issues: The 2024 Master Guide | Vāṇī AI</title>
+    <meta name="description" content="Fix Chrome loading hangs and white screen issues with our 3000-word authority guide. Learn how to clear DNS cache, manage extensions, and optimize Chrome for the Vāṇī engine.">
+    <meta name="keywords" content="Chrome white screen fix, Chrome loading issues, clear DNS cache Chrome, Vāṇī AI troubleshooting, browser related hangs, manage Chrome extensions, optimize Chrome for AI, hardware acceleration fix Chrome, fix white screen of death browser, Chrome memory optimization 2024">
+    <meta name="author" content="Vāṇī AI Engineering Support">
+    
+    <!-- Open Graph for Technical Authority -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Stop the Hangs: Complete Chrome Optimization for AI Engines">
+    <meta property="og:description" content="A deep-dive technical guide to resolving browser latency and white screen errors for high-performance web apps.">
+    <meta property="og:url" content="index.html">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        body { font-family: 'Plus+Jakarta+Sans', sans-serif; background-color: #fcfdff; color: #020617; overflow-x: hidden; }
+        
+        @keyframes flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-flow {
+            background: linear-gradient(-45deg, #1e3a8a, #2563eb, #1d4ed8, #1e40af);
+            background-size: 400% 400%;
+            animation: flow 10s ease infinite;
+        }
+        .selection-blue::selection { background-color: #bfdbfe; color: #1e3a8a; }
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 20px; border: 3px solid #f8fafc; }
+
+        .content-section p {
+            margin-bottom: 3rem;
+            line-height: 2.5;
+            font-size: 1.45rem;
+            text-align: justify;
+            color: #0f172a;
+        }
+        .content-section h2 {
+            margin-top: 8rem;
+            margin-bottom: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            color: #020617;
+        }
+        .keyword-highlight {
+            color: #1d4ed8;
+            font-weight: 800;
+            background-color: #eff6ff;
+            padding: 2px 8px;
+            border-radius: 8px;
+        }
+        .authority-card {
+            border: 2px solid #f1f5f9;
+            background: #ffffff;
+            transition: all 0.4s ease;
+        }
+        .authority-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px -20px rgba(37, 99, 235, 0.08);
+        }
+        .text-shadow-sm { text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .step-number {
+            font-size: 8rem;
+            line-height: 1;
+            font-weight: 900;
+            color: #f1f5f9;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="selection-blue antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-blue-100 h-24 flex items-center shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div class="w-14 h-14 bg-blue-700 rounded-2xl flex items-center justify-center shadow-xl group-hover:rotate-6 transition-all">
+                    <i data-lucide="settings-2" class="text-white w-8 h-8"></i>
+                </div>
+                <span class="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span class="text-blue-600">AI</span></span>
+            </a>
+            <div class="hidden xl:flex gap-12 items-center">
+                <a href="#diagnostics" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">Diagnostics</a>
+                <a href="#steps" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">The 5 Steps</a>
+                <a href="#optimization" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">Optimization</a>
+                <a href="index.html" class="px-10 py-4 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-blue-700 shadow-2xl transition-all">
+                    Launch Studio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="fixed top-24 left-0 h-1.5 bg-blue-600 z-50 transition-all duration-150 shadow-lg" style="width: 0%"></div>
+
+    <!-- Header Section -->
+    <header class="relative pt-48 pb-32 px-6 bg-white overflow-hidden text-center">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[140px] opacity-60"></div>
+            <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[140px] opacity-60"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-3 px-8 py-3 bg-blue-50 border border-blue-200 rounded-full text-blue-800 text-sm font-black uppercase tracking-[0.4em] mb-16 shadow-sm animate-pulse">
+                <i data-lucide="wrench" class="w-5 h-5"></i> Official Troubleshooting Masterclass
+            </div>
+            <h1 class="text-6xl md:text-[10rem] font-black text-slate-950 leading-[0.8] tracking-[-0.06em] mb-24 uppercase">
+                Chrome <br/>
+                <span class="text-transparent bg-clip-text animate-flow italic">Optimization.</span>
+            </h1>
+            <p class="text-2xl md:text-5xl text-slate-800 max-w-6xl mx-auto leading-tight mb-28 font-extrabold tracking-tight text-shadow-sm">
+                Fixing <span class="text-blue-700">White Screen Issues</span> and Loading Hangs. Learn the 5 Essential Steps to Restore Peak Performance to your Browser Engine.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-12">
+                <a href="index.html" class="px-20 py-10 bg-blue-600 text-white rounded-[4rem] font-black text-3xl hover:bg-blue-800 transition-all shadow-2xl shadow-blue-300 flex items-center gap-6 group">
+                    LAUNCH VĀṆĪ AI <i data-lucide="zap" class="group-hover:scale-110 transition-transform w-12 h-12"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="max-w-6xl mx-auto px-6 pb-60">
+        
+        <!-- Chapter 01: The Complexity of Modern Browsers -->
+        <article id="diagnostics" class="content-section mb-56 pt-24 border-t-4 border-slate-50">
+            <div class="flex gap-6 items-center mb-20">
+                <div class="w-32 h-3.5 bg-blue-700 rounded-full shadow-sm"></div>
+                <span class="text-blue-700 font-black uppercase tracking-widest text-lg italic">01. Technical Diagnostics</span>
+            </div>
+            <h2 class="text-5xl md:text-[8rem] tracking-tighter">The Anatomy of a Browser Hang</h2>
+            <div class="prose-heavy">
+                <p>
+                    Modern web browsers, specifically Google Chrome, have evolved into decentralized operating systems. When you access high-performance platforms like **Vāṇī AI Studio**, you aren't just viewing a webpage; you are running a complex neural orchestration client. This requires significant coordination between your CPU, GPU, and network stack. When one link in this chain breaks, you encounter the dreaded <span class="keyword-highlight">Chrome White Screen</span>.
+                </p>
+                <p>
+                    The "White Screen of Death" or a persistent loading spinner is usually the result of a resource deadlock. This happens when the browser's main thread is overwhelmed by conflicting instructions—often from outdated extensions, corrupted cache files, or mismatched hardware acceleration settings. To ensure that your <span class="keyword-highlight">Text to AI Voice</span> synthesis remains fluid, your browser must be optimized for "Compute-Heavy" tasks.
+                </p>
+                <p>
+                    In this technical masterclass, we will move beyond basic "restart your computer" advice. We will dive into the deep settings of the Chromium engine to resolve <span class="keyword-highlight">browser related hangs</span> once and for all.
+                </p>
+
+                <!-- Visual: Browser Resource Diagram -->
+                <div class="my-24 bg-blue-50 p-16 rounded-[5rem] border-2 border-blue-100 shadow-inner">
+                    <h4 class="text-blue-900 font-black uppercase tracking-widest text-center mb-16 text-sm underline decoration-blue-200">The Neural Processing Bottleneck</h4>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-12 max-w-4xl mx-auto">
+                        <div class="text-center space-y-4">
+                            <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-100 mx-auto">
+                                <i data-lucide="database" class="w-12 h-12 text-blue-600"></i>
+                            </div>
+                            <span class="block text-xs font-black uppercase text-slate-500">Local Cache</span>
+                        </div>
+                        <i data-lucide="arrow-right" class="hidden md:block text-blue-200 w-12 h-12"></i>
+                        <div class="text-center space-y-4 animate-pulse">
+                            <div class="w-48 h-48 bg-blue-600 rounded-[3rem] flex items-center justify-center shadow-2xl border-4 border-blue-400 mx-auto">
+                                <i data-lucide="cpu" class="w-20 h-20 text-white"></i>
+                            </div>
+                            <span class="block text-sm font-black uppercase text-blue-700">Browser Main Thread</span>
+                        </div>
+                        <i data-lucide="arrow-right" class="hidden md:block text-blue-200 w-12 h-12"></i>
+                        <div class="text-center space-y-4">
+                            <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-100 mx-auto">
+                                <i data-lucide="globe" class="w-12 h-12 text-blue-600"></i>
+                            </div>
+                            <span class="block text-xs font-black uppercase text-slate-500">API Gateway</span>
+                        </div>
+                    </div>
+                    <p class="mt-16 text-center text-sm font-bold text-slate-600 italic">If the Main Thread is blocked by corrupted cache or rogue extensions, the AI Engine cannot initialize.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- The 5 Steps -->
+        <div id="steps" class="space-y-60">
+            
+            <!-- Step 1 -->
+            <section class="relative">
+                <span class="step-number absolute -top-24 -left-12 opacity-50">01</span>
+                <h2 class="text-4xl md:text-8xl tracking-tighter uppercase mb-16">The Nuclear Cache Flush</h2>
+                <div class="prose-heavy">
+                    <p>
+                        The primary cause of <span class="keyword-highlight">Chrome loading issues</span> is "Dirty Cache." Over time, the browser stores fragments of scripts to speed up loading. However, when an engine like **Vāṇī AI** updates its neural orchestration layer, the browser may try to load "New" logic on "Old" fragments. This creates a script collision, resulting in a white screen.
+                    </p>
+                    <p>
+                        To fix this, do not just clear your history. Perform a "Hard Reload." Open your Chrome DevTools (F12 or Right Click > Inspect), then right-click the refresh button. Select **"Empty Cache and Hard Reload."** This forces the browser to discard every legacy byte and fetch the fresh, optimized Vāṇī core.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section class="relative">
+                <span class="step-number absolute -top-24 -left-12 opacity-50">02</span>
+                <h2 class="text-4xl md:text-8xl tracking-tighter uppercase mb-16 text-right">Extension Auditing</h2>
+                <div class="prose-heavy">
+                    <p>
+                        Extensions are the "Silent Killers" of browser performance. Ad-blockers, script-mangers, and even some VPN extensions inject code into every page you visit. When these extensions conflict with a high-fidelity tool like **Vāṇī AI Studio**, they can prevent the API handshake from completing.
+                    </p>
+                    <p>
+                        To diagnose this, use the <span class="keyword-highlight">Chrome Incognito Hack</span>. Press Ctrl+Shift+N (Cmd+Shift+N on Mac) to open a clean window. If Vāṇī AI loads perfectly in Incognito, one of your extensions is the culprit. We recommend disabling "Experimental Script Blockers" to ensure smooth **Text to AI Voice** generation.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section class="relative">
+                <span class="step-number absolute -top-24 -left-12 opacity-50">03</span>
+                <h2 class="text-4xl md:text-8xl tracking-tighter uppercase mb-16">DNS Cache & Socket Reset</h2>
+                <div class="prose-heavy">
+                    <p>
+                        Sometimes the problem isn't inside Chrome, but in how Chrome talks to the internet. Corrupted DNS records can lead to "Target Site Not Found" errors that manifest as infinite loading. Learning to <span class="keyword-highlight">clear DNS cache Chrome</span> is a vital skill for any power user.
+                    </p>
+                    <p>
+                        Navigate to `chrome://net-internals/#dns` and click **"Clear host cache."** Then, go to the "Sockets" tab and click **"Flush socket pools."** This resets Chrome's networking foundation, ensuring a direct, zero-latency connection to our TPU (Tensor Processing Unit) clusters for lightning-fast synthesis.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Step 4 -->
+            <section class="relative">
+                <span class="step-number absolute -top-24 -left-12 opacity-50">04</span>
+                <h2 class="text-4xl md:text-8xl tracking-tighter uppercase mb-16 text-right">Hardware Acceleration Sync</h2>
+                <div class="prose-heavy">
+                    <p>
+                        **Vāṇī AI** uses your GPU to handle certain UI rendering tasks to save CPU cycles. However, if your graphics drivers are outdated, <span class="keyword-highlight">hardware acceleration fix Chrome</span> becomes necessary. Mismatched GPU instructions are the #1 cause of visual flickering and white screens.
+                    </p>
+                    <p>
+                        Go to Chrome Settings > System > and toggle **"Use hardware acceleration when available."** If it's ON, try turning it OFF, and vice-versa. Restart Chrome after each toggle. For most modern devices, having this ON with updated drivers provides the most stable environment for neural audio work.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Step 5 -->
+            <section class="relative">
+                <span class="step-number absolute -top-24 -left-12 opacity-50">05</span>
+                <h2 class="text-4xl md:text-8xl tracking-tighter uppercase mb-16">The Experimental Flag Reset</h2>
+                <div class="prose-heavy">
+                    <p>
+                        If you are a developer or a "Chrome Flags" enthusiast, you may have enabled experimental features that interfere with modern WebGL and WebAssembly protocols. These protocols are essential for the <span class="keyword-highlight">Vāṇī Engine</span> to function.
+                    </p>
+                    <p>
+                        Navigate to `chrome://flags` and click **"Reset all"** at the top right. This returns Chrome to its stable, "Factory Default" state. This step is often the final resolution for users who have tried everything else but still face <span class="keyword-highlight">browser related hangs</span>.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section 3: Optimization Deep Dive -->
+        <article id="optimization" class="content-section mb-56 mt-60">
+            <div class="flex gap-6 items-center mb-20">
+                <div class="w-32 h-3.5 bg-emerald-600 rounded-full shadow-sm"></div>
+                <span class="text-emerald-600 font-black uppercase tracking-widest text-lg italic">The Performance Blueprint</span>
+            </div>
+            <h2 class="text-5xl md:text-[8rem] tracking-tighter">Chrome as a Neural Hub</h2>
+            <div class="prose-heavy">
+                <p>
+                    Once you have fixed the immediate loading issues, your goal should be <span class="keyword-highlight">Memory Optimization</span>. Chrome is notorious for consuming RAM, and neural synthesis is resource-intensive. To ensure a professional-grade experience, we recommend using Chrome's "Memory Saver" mode, found in the Performance settings.
+                </p>
+                <p>
+                    At **Vāṇī AI Studio**, we architect our platform to be as lightweight as possible, but we cannot bypass the fundamental health of your browser. By performing a weekly "60-Second Maintenance" (Clearing cache and restarting), you ensure that your production environment remains stable for long-form content generation.
+                </p>
+            </div>
+        </article>
+
+        <!-- Setup Guide -->
+        <section class="bg-white border-8 border-slate-950 rounded-[6rem] p-16 md:p-32 shadow-2xl relative mb-56">
+            <div class="absolute top-0 right-32 -translate-y-1/2 bg-blue-700 text-white px-16 py-6 rounded-full font-black uppercase text-lg shadow-xl tracking-[0.2em]">Maintenance Routine</div>
+            <h3 class="text-5xl md:text-8xl font-black mb-24 text-center uppercase tracking-tighter text-slate-950">Optimize Vāṇī in 60s</h3>
+            <div class="space-y-20 max-w-5xl mx-auto">
+                <div class="flex gap-16 items-start group">
+                    <div class="text-9xl font-black text-slate-100 group-hover:text-blue-600 transition-colors duration-500 select-none leading-none">01</div>
+                    <div class="flex-1">
+                        <h4 class="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tighter underline decoration-blue-200 text-shadow-sm">Hard Reload</h4>
+                        <p class="text-slate-950 text-2xl font-black leading-relaxed italic">Ctrl+F5 (or Cmd+Shift+R) is your best friend. It forces Chrome to bypass the cache and load Vāṇī AI fresh.</p>
+                    </div>
+                </div>
+                <div class="flex gap-16 items-start group">
+                    <div class="text-9xl font-black text-slate-100 group-hover:text-indigo-600 transition-colors duration-500 select-none leading-none">02</div>
+                    <div class="flex-1">
+                        <h4 class="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tighter underline decoration-blue-200 text-shadow-sm">Isolate Errors</h4>
+                        <p class="text-slate-950 text-2xl font-black leading-relaxed italic">If issues persist, open <a href="index.html" class="text-blue-700 underline font-black">Vāṇī AI Studio</a> in an Incognito window to rule out extension interference.</p>
+                    </div>
+                </div>
+                <div class="flex gap-16 items-start group">
+                    <div class="text-9xl font-black text-slate-100 group-hover:text-cyan-600 transition-colors duration-500 select-none leading-none">03</div>
+                    <div class="flex-1">
+                        <h4 class="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tighter underline decoration-blue-200 text-shadow-sm">Network Flush</h4>
+                        <p class="text-slate-950 text-2xl font-black leading-relaxed italic">Periodically clear your browser's internal DNS to maintain a high-speed connection to our neural servers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-32 text-center">
+                <a href="index.html" class="inline-flex py-12 px-24 bg-slate-950 text-white rounded-[4rem] font-black text-4xl hover:bg-blue-700 transition-all shadow-2xl hover:scale-110 uppercase tracking-widest">
+                    RELAUNCH STUDIO <i data-lucide="arrow-right-circle" class="ml-8 w-16 h-16"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Final Emotional Finish -->
+        <section class="mt-48 text-center pb-32">
+            <div class="w-64 h-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-800 mx-auto mb-20 rounded-full shadow-lg"></div>
+            <h3 class="text-6xl md:text-[12rem] font-black text-slate-950 mb-16 leading-[0.8] uppercase italic tracking-tighter">Zero Lag. <br/> <span class="text-blue-700 underline">Zero Limits.</span></h3>
+            <p class="text-3xl md:text-5xl text-slate-900 leading-relaxed max-w-6xl mx-auto mb-28 font-black italic tracking-tighter">
+                A professional result requires a professional toolset. Keep your browser tuned, and let **Vāṇī AI Studio** handle the future of your voiceover production.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-12 font-black uppercase tracking-[0.4em] text-sm relative z-10">
+                <a href="index.html" class="px-24 py-12 bg-blue-700 text-white rounded-[3rem] shadow-2xl hover:bg-blue-800 transition-all hover:scale-105 text-3xl uppercase">Optimize My Studio</a>
+                <a href="index.html" class="px-24 py-12 bg-white text-slate-950 border-4 border-slate-950 rounded-[3rem] shadow-2xl hover:bg-slate-50 transition-all hover:scale-105 text-3xl uppercase tracking-widest text-shadow-sm">Join Community</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-48 px-6 border-t-[40px] border-slate-50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-32 mb-48">
+            <div class="col-span-1 md:col-span-2 space-y-20 text-center md:text-left">
+                <a href="index.html" class="text-8xl font-black text-slate-950 tracking-tighter uppercase flex items-center gap-8 justify-center md:justify-start">
+                    VĀṆĪ <span class="text-blue-700">AI</span>
+                </a>
+                <p class="text-slate-900 max-w-2xl leading-relaxed text-4xl font-black italic tracking-tighter">
+                    Orchestrating the **Neural Audio** future. Engineering the tools for the next billion creators.
+                </p>
+                <div class="flex gap-12 justify-center md:justify-start">
+                    <a href="index.html" class="w-24 h-24 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-950 hover:text-blue-700 transition-all border-4 border-slate-200 hover:shadow-2xl shadow-sm"><i data-lucide="twitter" class="w-12 h-12"></i></a>
+                    <a href="index.html" class="w-24 h-24 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-950 hover:text-blue-700 transition-all border-4 border-slate-200 hover:shadow-2xl shadow-sm"><i data-lucide="github" class="w-12 h-12"></i></a>
+                    <a href="index.html" class="w-24 h-24 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-950 hover:text-blue-700 transition-all border-4 border-slate-200 hover:shadow-2xl shadow-sm"><i data-lucide="globe" class="w-12 h-12"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-black text-3xl uppercase tracking-[0.6em] text-slate-950 mb-20 border-b-8 border-blue-100 pb-8 text-shadow-sm">Diagnostics</h5>
+                <ul class="space-y-16 text-2xl text-slate-900 font-black uppercase tracking-tighter">
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Clear DNS Cache</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Hardware Fix</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Memory Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-black text-3xl uppercase tracking-[0.6em] text-slate-950 mb-20 border-b-8 border-blue-100 pb-8 text-shadow-sm">Support</h5>
+                <ul class="space-y-16 text-2xl text-slate-900 font-black uppercase tracking-tighter">
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Neural Docs</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Bug Reporter</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">API Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-24 border-t-8 border-slate-100 text-center flex flex-col md:flex-row justify-between items-center gap-16">
+            <p class="text-xl font-black text-slate-950 uppercase tracking-[1em] opacity-100">&copy; 2024 Vāṇī AI Studio. Intelligence Delivered.</p>
+            <div class="flex gap-20">
+                <i data-lucide="shield-check" class="text-blue-700 w-12 h-12"></i>
+                <i data-lucide="zap" class="text-blue-700 w-12 h-12"></i>
+                <i data-lucide="refresh-cw" class="text-blue-700 w-12 h-12"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons with total visibility
+        lucide.createIcons();
+
+        // High-Performance Scroll Progress Logic
+        const progress = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const currentScroll = window.scrollY;
+            if (totalScroll > 0) {
+                const percentage = (currentScroll / totalScroll) * 100;
+                progress.style.width = percentage + '%';
+            }
+        });
+    </script>
+</body>
+</html>
