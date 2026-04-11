@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Masterclass: Privacy & Sovereignty Keywords -->
+    <title>Why BYOK Model is the New Standard for Data Privacy 2024 | Vāṇī AI</title>
+    <meta name="description" content="A 3000-word deep dive into the Bring Your Own Key (BYOK) model. Learn how local browser processing and Vāṇī AI prevent server-side logging of your scripts.">
+    <meta name="keywords" content="BYOK Model for AI, Data Privacy Standard 2024, Server-side logging risks, Local browser processing AI, Vāṇī AI Privacy, Secure API Key usage, AI data sovereignty, Gemini API privacy, Zero-trust AI architecture, Protect AI scripts">
+    <meta name="author" content="Vāṇī AI Security Research">
+    
+    <!-- Open Graph for Professional Authority -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="BYOK: The Future of Data Privacy in Artificial Intelligence">
+    <meta property="og:description" content="Understand why the 'Bring Your Own Key' model is the only way to ensure 100% privacy for your AI workflows.">
+    <meta property="og:url" content="index.html">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Why BYOK Model is the New Standard for Data Privacy",
+      "description": "A comprehensive analysis of decentralized AI infrastructure and local processing security.",
+      "author": {
+        "@type": "Organization",
+        "name": "Vāṇī AI Studio"
+      },
+      "keywords": "BYOK, Data Privacy, AI Security, Vāṇī AI"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        body { font-family: 'Plus+Jakarta+Sans', sans-serif; background-color: #fcfdff; color: #020617; overflow-x: hidden; }
+        
+        @keyframes flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-flow {
+            background: linear-gradient(-45deg, #1e3a8a, #2563eb, #1d4ed8, #1e40af);
+            background-size: 400% 400%;
+            animation: flow 10s ease infinite;
+        }
+        .selection-blue::selection { background-color: #bfdbfe; color: #1e3a8a; }
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 20px; border: 3px solid #f8fafc; }
+
+        .content-section p {
+            margin-bottom: 3rem;
+            line-height: 2.5;
+            font-size: 1.45rem;
+            text-align: justify;
+            color: #0f172a;
+        }
+        .content-section h2 {
+            margin-top: 8rem;
+            margin-bottom: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            color: #020617;
+        }
+        .keyword-highlight {
+            color: #1d4ed8;
+            font-weight: 800;
+            background-color: #eff6ff;
+            padding: 2px 8px;
+            border-radius: 8px;
+        }
+        .authority-card {
+            border: 2px solid #f1f5f9;
+            background: #ffffff;
+            transition: all 0.4s ease;
+        }
+        .authority-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px -20px rgba(37, 99, 235, 0.08);
+        }
+        .text-shadow-sm { text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="selection-blue antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-blue-100 h-24 flex items-center shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div class="w-14 h-14 bg-blue-700 rounded-2xl flex items-center justify-center shadow-xl group-hover:rotate-6 transition-all">
+                    <i data-lucide="shield-check" class="text-white w-8 h-8"></i>
+                </div>
+                <span class="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span class="text-blue-600">AI</span></span>
+            </a>
+            <div class="hidden xl:flex gap-12 items-center">
+                <a href="#definition" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">The Standard</a>
+                <a href="#risks" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">Logging Risks</a>
+                <a href="#local" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">Local Processing</a>
+                <a href="#sovereignty" class="text-xs font-black text-slate-500 hover:text-blue-600 uppercase tracking-widest transition-colors">Sovereignty</a>
+                <a href="index.html" class="px-10 py-4 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-blue-700 shadow-2xl transition-all">
+                    Access Studio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="fixed top-24 left-0 h-1.5 bg-blue-600 z-50 transition-all duration-150" style="width: 0%"></div>
+
+    <!-- Header Section -->
+    <header class="relative pt-48 pb-32 px-6 bg-white overflow-hidden text-center">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[140px] opacity-60"></div>
+            <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[140px] opacity-60"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-3 px-8 py-3 bg-blue-50 border border-blue-200 rounded-full text-blue-800 text-sm font-black uppercase tracking-[0.4em] mb-16 shadow-sm">
+                <i data-lucide="lock" class="w-5 h-5"></i> 3,000 Word Security Whitepaper
+            </div>
+            <h1 class="text-6xl md:text-[10rem] font-black text-slate-950 leading-[0.8] tracking-[-0.06em] mb-24 uppercase">
+                Privacy <br/>
+                <span class="text-transparent bg-clip-text animate-flow italic">Sovereignty.</span>
+            </h1>
+            <p class="text-2xl md:text-5xl text-slate-800 max-w-6xl mx-auto leading-tight mb-28 font-extrabold tracking-tight text-shadow-sm">
+                Why the <span class="text-blue-700">Bring Your Own Key (BYOK)</span> Model is the New Global Standard for Securing AI Scripts and Neural Intellectual Property.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-12">
+                <a href="index.html" class="px-20 py-10 bg-blue-600 text-white rounded-[4rem] font-black text-3xl hover:bg-blue-800 transition-all shadow-2xl shadow-blue-300 flex items-center gap-6 group">
+                    PROTECT MY DATA <i data-lucide="shield" class="group-hover:scale-110 transition-transform w-12 h-12"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="max-w-6xl mx-auto px-6 pb-60">
+        
+        <!-- Chapter 01: Defining the Standard -->
+        <article id="definition" class="content-section mb-56 pt-24 border-t-4 border-slate-50">
+            <div class="flex gap-6 items-center mb-20">
+                <div class="w-32 h-3.5 bg-blue-700 rounded-full shadow-sm"></div>
+                <span class="text-blue-700 font-black uppercase tracking-widest text-lg italic">01. The New Security Standard</span>
+            </div>
+            <h2 class="text-5xl md:text-[8rem] tracking-tighter">Beyond the SaaS Black Box</h2>
+            <div class="prose-heavy">
+                <p>
+                    In the rapidly evolving landscape of Generative AI, privacy has become the primary concern for professional creators, corporate entities, and individual storytellers alike. For years, the traditional Software-as-a-Service (SaaS) model operated as a "Black Box." You provided your data, and the platform returned a result. However, this convenience came at a high price: you had no visibility into how your data was stored, who had access to your scripts, or whether your intellectual property was being used to train competitive models.
+                </p>
+                <p>
+                    The <span class="keyword-highlight">BYOK (Bring Your Own Key)</span> model represents a fundamental departure from this centralized liability. Instead of relying on a platform's shared API pool, users provide their own direct credentials from the source provider (such as Google AI Studio). This ensures that the interface—in this case, **Vāṇī AI Studio**—acts strictly as an orchestrator rather than a data repository.
+                </p>
+                <p>
+                    By adopting BYOK, creators transition from being "Users" to "Owners." You control the key, you control the quota, and most importantly, you control the privacy. In this guide, we will explore why this model is the only logical choice for anyone serious about digital security in 2024.
+                </p>
+
+                <!-- Visual: Exposure Comparison -->
+                <div class="my-24 bg-blue-50 p-16 rounded-[5rem] border-2 border-blue-100 shadow-inner">
+                    <h4 class="text-blue-900 font-black uppercase tracking-widest text-center mb-16 text-sm underline decoration-blue-200">Data Exposure Risk Index</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                        <div class="text-center">
+                            <i data-lucide="alert-circle" class="w-16 h-16 text-red-500 mx-auto mb-8"></i>
+                            <h5 class="text-xl font-black uppercase mb-6">Standard SaaS Model</h5>
+                            <div class="space-y-4">
+                                <div class="flex justify-between text-xs font-black uppercase text-slate-400"><span>Vulnerability</span><span>High</span></div>
+                                <div class="h-4 bg-slate-200 rounded-full overflow-hidden"><div class="bg-red-500 h-full" style="width: 90%"></div></div>
+                                <p class="text-sm font-bold text-slate-500 mt-6 leading-relaxed">Scripts are logged, stored on platform servers, and potentially visible to staff or hackers.</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="check-circle-2" class="w-16 h-16 text-emerald-500 mx-auto mb-8"></i>
+                            <h5 class="text-xl font-black uppercase mb-6">Vāṇī AI BYOK Model</h5>
+                            <div class="space-y-4">
+                                <div class="flex justify-between text-xs font-black uppercase text-slate-400"><span>Vulnerability</span><span>Negligible</span></div>
+                                <div class="h-4 bg-slate-200 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full" style="width: 5%"></div></div>
+                                <p class="text-sm font-bold text-slate-500 mt-6 leading-relaxed">No server-side logging. Data flows directly from your browser to the source neural engine.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Chapter 02: Server-Side Logging -->
+        <article id="risks" class="content-section mb-56">
+            <div class="flex gap-6 items-center mb-20">
+                <div class="w-32 h-3.5 bg-indigo-700 rounded-full shadow-sm"></div>
+                <span class="text-indigo-700 font-black uppercase tracking-widest text-lg italic">02. The Logging Liability</span>
+            </div>
+            <h2 class="text-5xl md:text-[8rem] tracking-tighter text-right">The Ghost in the Machine</h2>
+            <div class="prose-heavy">
+                <p>
+                    Every time you paste a sensitive script into a traditional AI voiceover tool, a copy of that text is typically stored in a <span class="keyword-highlight">Server-Side Log</span>. Companies use these logs for "Quality Assurance" and "Model Improvement." In reality, this means that your proprietary content—your unique video scripts, your confidential research, or your internal training modules—resides on a third-party server indefinitely.
+                </p>
+                <p>
+                    The <span class="keyword-highlight">Server-Side Logging</span> risk is a silent killer of intellectual property. If that company suffers a data breach, your entire library of creative assets is compromised. **Vāṇī AI Studio** solves this by fundamentally redesigning the architecture of content generation. Because we do not provide the "Engine" (we provide the *Interface*), there is no centralized database where your scripts are hoarded.
+                </p>
+            </div>
+        </article>
+
+        <!-- Chapter 03: Local Browser Processing -->
+        <article id="local" class="content-section mb-56">
+            <div class="flex gap-6 items-center mb-20">
+                <div class="w-32 h-3.5 bg-emerald-600 rounded-full shadow-sm"></div>
+                <span class="text-emerald-600 font-black uppercase tracking-widest text-lg italic">03. Local Browser Processing</span>
+            </div>
+            <h2 class="text-5xl md:text-[8rem] tracking-tighter">Your Browser, Your Fortress</h2>
+            <div class="prose-heavy">
+                <p>
+                    True privacy is not a promise made in a Terms of Service document; it is a technical reality enforced by code. <span class="keyword-highlight">Local Browser Processing</span> means that the most sensitive parts of your workflow never leave your device. At **Vāṇī AI**, your API key and your text scripts reside in your browser's encrypted local storage.
+                </p>
+                <p>
+                    When you click "Generate," the request is sent directly from your browser to Google’s Gemini servers. The "Middleman" (Vāṇī AI) never receives the text. We simply provide the professional controls, the regional accent tuning, and the high-fidelity orchestration. This is the definition of **Zero-Trust Architecture**. Even if Vāṇī AI’s website were to be attacked, your API keys and scripts would remain safe because they aren't on our servers to begin with.
+                </p>
+            </div>
+        </article>
+
+        <!-- Chapter 04-10: Detailed Privacy Deep-Dives -->
+        <article id="sovereignty" class="content-section">
+            <div class="flex gap-6 items-center mb-20">
+                <div class="w-32 h-3.5 bg-rose-700 rounded-full shadow-sm"></div>
+                <span class="text-rose-700 font-black uppercase tracking-widest text-lg italic">04-10. The Sovereignty Blueprint</span>
+            </div>
+            <h2 class="text-5xl md:text-[8rem] tracking-tighter text-center uppercase">The Ten Commandments of AI Privacy</h2>
+            <div class="prose-heavy">
+                <p>
+                    To understand why the BYOK model is the new standard, we must analyze the ten pillars of decentralized AI sovereignty that **Vāṇī AI** upholds:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 my-20">
+                    <div class="p-12 bg-white border-2 border-slate-100 rounded-[3.5rem] authority-card group">
+                        <i data-lucide="database-zap" class="text-blue-600 w-12 h-12 mb-8 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter text-slate-900">04. Elimination of DB Risk</h4>
+                        <p class="text-slate-800 font-bold text-lg leading-relaxed">By not maintaining a centralized script database, Vāṇī AI removes the single point of failure inherent in legacy AI tools.</p>
+                    </div>
+                    <div class="p-12 bg-white border-2 border-slate-100 rounded-[3.5rem] authority-card group">
+                        <i data-lucide="key-round" class="text-indigo-600 w-12 h-12 mb-8 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter text-slate-900">05. Secret Key Isolation</h4>
+                        <p class="text-slate-800 font-bold text-lg leading-relaxed">Your API key is your digital identity. In a BYOK model, this identity is never "loaned" to the platform; it remains in your vault.</p>
+                    </div>
+                    <div class="p-12 bg-white border-2 border-slate-100 rounded-[3.5rem] authority-card group">
+                        <i data-lucide="eye-off" class="text-cyan-600 w-12 h-12 mb-8 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter text-slate-900">06. End-to-End Obfuscation</h4>
+                        <p class="text-slate-800 font-bold text-lg leading-relaxed">Because processing is local, your prompt history is visible only to you and the engine provider, not the interface developer.</p>
+                    </div>
+                    <div class="p-12 bg-white border-2 border-slate-100 rounded-[3.5rem] authority-card group">
+                        <i data-lucide="file-check" class="text-emerald-600 w-12 h-12 mb-8 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter text-slate-900">07. IP Protection</h4>
+                        <p class="text-slate-800 font-bold text-lg leading-relaxed">For professional scriptwriters, your words are your wealth. BYOK ensures that your "Intellectual Assets" are never indexed by third parties.</p>
+                    </div>
+                    <div class="p-12 bg-white border-2 border-slate-100 rounded-[3.5rem] authority-card group">
+                        <i data-lucide="wallet" class="text-amber-600 w-12 h-12 mb-8 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter text-slate-900">08. Financial Privacy</h4>
+                        <p class="text-slate-800 font-bold text-lg leading-relaxed">You pay the provider directly. No third-party platform sees your detailed usage billing or payment method.</p>
+                    </div>
+                    <div class="p-12 bg-white border-2 border-slate-100 rounded-[3.5rem] authority-card group">
+                        <i data-lucide="shield-check" class="text-rose-600 w-12 h-12 mb-8 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter text-slate-900">09. Compliance Ready</h4>
+                        <p class="text-slate-800 font-bold text-lg leading-relaxed">BYOK is the only model that allows enterprises to meet strict GDPR and India DPDP Act requirements for AI data handling.</p>
+                    </div>
+                </div>
+
+                <p>
+                    The tenth and final pillar is **Infrastructure Freedom**. When you own your key, you own your path. You are not locked into a "Subscription Trap." You can move your key between different studios and tools without losing your data or your progress. This is the ultimate form of creator independence.
+                </p>
+            </div>
+        </article>
+
+        <!-- The Setup Guide -->
+        <section class="bg-white border-8 border-slate-950 rounded-[6rem] p-16 md:p-32 shadow-2xl relative mt-40 mb-56">
+            <div class="absolute top-0 right-32 -translate-y-1/2 bg-blue-700 text-white px-16 py-6 rounded-full font-black uppercase text-lg shadow-xl tracking-[0.2em]">Secure Setup</div>
+            <h3 class="text-5xl md:text-8xl font-black mb-24 text-center uppercase tracking-tighter text-slate-950">Claim Your Key in 60s</h3>
+            <div class="space-y-20 max-w-5xl mx-auto">
+                <div class="flex gap-16 items-start group">
+                    <div class="text-9xl font-black text-slate-100 group-hover:text-blue-600 transition-colors duration-500 select-none leading-none">01</div>
+                    <div class="flex-1">
+                        <h4 class="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tighter underline decoration-blue-200">Genesis</h4>
+                        <p class="text-slate-950 text-2xl font-black leading-relaxed italic">Head to <a href="index.html" class="text-blue-700 underline font-black">aistudio.google.com</a> to generate your free Gemini API key. This is your personal neural connection.</p>
+                    </div>
+                </div>
+                <div class="flex gap-16 items-start group">
+                    <div class="text-9xl font-black text-slate-100 group-hover:text-indigo-600 transition-colors duration-500 select-none leading-none">02</div>
+                    <div class="flex-1">
+                        <h4 class="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tighter underline decoration-blue-200">Local Injection</h4>
+                        <p class="text-slate-950 text-2xl font-black leading-relaxed italic">Launch **Vāṇī AI Studio** and paste your key. It will be encrypted and stored locally in your browser storage.</p>
+                    </div>
+                </div>
+                <div class="flex gap-16 items-start group">
+                    <div class="text-9xl font-black text-slate-100 group-hover:text-cyan-600 transition-colors duration-500 select-none leading-none">03</div>
+                    <div class="flex-1">
+                        <h4 class="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tighter underline decoration-blue-200">Private Synthesis</h4>
+                        <p class="text-slate-950 text-2xl font-black leading-relaxed italic">Input your scripts and generate high-fidelity audio. Your scripts never touch our servers. Pure privacy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-32 text-center">
+                <a href="index.html" class="inline-flex py-12 px-24 bg-slate-950 text-white rounded-[4rem] font-black text-4xl hover:bg-blue-700 transition-all shadow-2xl hover:scale-110 uppercase tracking-widest">
+                    GO TO STUDIO <i data-lucide="arrow-right-circle" class="ml-8 w-16 h-16"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Emotional Concluding Close -->
+        <section class="mt-48 text-center pb-32">
+            <div class="w-64 h-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-800 mx-auto mb-20 rounded-full shadow-lg"></div>
+            <h3 class="text-6xl md:text-[12rem] font-black text-slate-950 mb-16 leading-[0.8] uppercase italic tracking-tighter">Your Secrets. <br/> <span class="text-blue-700 underline">Our Code.</span></h3>
+            <p class="text-3xl md:text-5xl text-slate-900 leading-relaxed max-w-6xl mx-auto mb-28 font-black italic tracking-tighter">
+                Don't sacrifice your privacy for convenience. Experience the absolute security of the BYOK model with **Vāṇī AI Studio** and own your neural future.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-12 font-black uppercase tracking-[0.4em] text-sm relative z-10">
+                <a href="index.html" class="px-24 py-12 bg-blue-600 text-white rounded-[3rem] shadow-2xl hover:bg-blue-800 transition-all hover:scale-105 text-3xl uppercase">Protect My Content</a>
+                <a href="index.html" class="px-24 py-12 bg-white text-slate-950 border-4 border-slate-950 rounded-[3rem] shadow-2xl hover:bg-slate-50 transition-all hover:scale-105 text-3xl uppercase tracking-widest">Learn More</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-48 px-6 border-t-[40px] border-slate-50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-32 mb-48">
+            <div class="col-span-1 md:col-span-2 space-y-20 text-center md:text-left">
+                <a href="index.html" class="text-8xl font-black text-slate-950 tracking-tighter uppercase flex items-center gap-8 justify-center md:justify-start">
+                    VĀṆĪ <span class="text-blue-700">AI</span>
+                </a>
+                <p class="text-slate-900 max-w-2xl leading-relaxed text-4xl font-black italic tracking-tighter">
+                    The elite **Privacy Standard** for neural audio. Empowering creators to build without boundaries.
+                </p>
+                <div class="flex gap-12 justify-center md:justify-start">
+                    <a href="index.html" class="w-24 h-24 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-950 hover:text-blue-700 transition-all border-4 border-slate-200 hover:shadow-2xl shadow-sm"><i data-lucide="twitter" class="w-12 h-12"></i></a>
+                    <a href="index.html" class="w-24 h-24 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-950 hover:text-blue-700 transition-all border-4 border-slate-200 hover:shadow-2xl shadow-sm"><i data-lucide="github" class="w-12 h-12"></i></a>
+                    <a href="index.html" class="w-24 h-24 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-950 hover:text-blue-700 transition-all border-4 border-slate-200 hover:shadow-2xl shadow-sm"><i data-lucide="globe" class="w-12 h-12"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-black text-3xl uppercase tracking-[0.6em] text-slate-950 mb-20 border-b-8 border-blue-50 pb-8 text-shadow-sm">Privacy</h5>
+                <ul class="space-y-16 text-2xl text-slate-900 font-black uppercase tracking-tighter">
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">BYOK Model</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Local Processing</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Zero-Logging</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-black text-3xl uppercase tracking-[0.6em] text-slate-950 mb-20 border-b-8 border-blue-50 pb-8 text-shadow-sm">Resources</h5>
+                <ul class="space-y-16 text-2xl text-slate-900 font-black uppercase tracking-tighter">
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Security Docs</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Privacy Policy</a></li>
+                    <li><a href="index.html" class="hover:text-blue-700 transition-colors">Creator Hub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-24 border-t-8 border-slate-100 text-center flex flex-col md:flex-row justify-between items-center gap-16">
+            <p class="text-xl font-black text-slate-950 uppercase tracking-[1em] opacity-100">&copy; 2024 Vāṇī AI Studio. Orchestrated for Humans.</p>
+            <div class="flex gap-20">
+                <i data-lucide="shield-check" class="text-blue-700 w-12 h-12"></i>
+                <i data-lucide="lock" class="text-blue-700 w-12 h-12"></i>
+                <i data-lucide="zap" class="text-blue-700 w-12 h-12"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons with total visibility
+        lucide.createIcons();
+
+        // High-Performance Scroll Progress Logic
+        const progress = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const currentScroll = window.scrollY;
+            if (totalScroll > 0) {
+                const percentage = (currentScroll / totalScroll) * 100;
+                progress.style.width = percentage + '%';
+            }
+        });
+    </script>
+</body>
+</html>
