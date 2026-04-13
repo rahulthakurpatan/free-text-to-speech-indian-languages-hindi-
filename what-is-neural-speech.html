@@ -1,302 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Waves, 
-  Cpu, 
-  Zap, 
-  Mic2, 
-  MessageSquare, 
-  Activity, 
-  Globe, 
-  ShieldCheck, 
-  FastForward, 
-  Heart,
-  ArrowRight,
-  BookOpen,
-  Layers,
-  Sparkles,
-  Search,
-  CheckCircle2,
-  Info
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Neural Speech - Vāṇī AI</title>
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-const App = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const currentScroll = window.scrollY;
-      if (totalScroll > 0) {
-        setScrollProgress((currentScroll / totalScroll) * 100);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const sections = [
-    {
-      id: "phonemes",
-      title: "1. Breaking Down the Words (Phonemic Analysis)",
-      icon: <Layers className="text-blue-600" />,
-      content: "The journey of any free text to voice ai begins with understanding the smallest units of sound, known as phonemes. When you input text into Vāṇī AI, the engine doesn't just look at the letters; it analyzes how those letters combine to create sounds. For example, the word 'Apple' is processed not as five distinct letters, but as a sequence of phonetic signals. This stage is crucial because it filters out the complexity of spelling and focuses purely on the vibration of speech. By mapping text to a phonetic dictionary, the AI ensures that the foundation of the voice is technically accurate before adding any emotional layers."
-    },
-    {
-      id: "history",
-      title: "2. The History: From Robotic to Human",
-      icon: <Activity className="text-indigo-600" />,
-      content: "Speech technology has come a long way from the early days of concatenative synthesis, where pre-recorded snippets of human voice were literally 'glued' together. This old method resulted in the classic robotic, disjointed sound that lacked flow. Today, our free text to voice ai generator uses 'Neural' technology. This mimics the human brain's neural pathways, learning from thousands of hours of real human recordings. Instead of stitching clips, the AI generates a continuous, fluid wave of sound, making the transition between words invisible to the human ear."
-    },
-    {
-      id: "context",
-      title: "3. Understanding the Context (Semantic Intelligence)",
-      icon: <MessageSquare className="text-cyan-600" />,
-      content: "One of the hardest things for an AI to learn is the 'meaning' behind a sentence. A single word can change its sound based on the words surrounding it. Our neural engine analyzes the entire sentence structure to determine the right emphasis. If a sentence ends with a question mark, the free text to voice ai automatically raises the pitch at the end, just as a human would. It understands the difference between a statement of fact and a cry for help, ensuring that the narration matches the intended vibe of your script."
-    },
-    {
-      id: "prosody",
-      title: "4. Adding Pitch and Tone (Prosody Modeling)",
-      icon: <Zap className="text-amber-600" />,
-      content: "Monotone voices are boring and easy to ignore. To make our free text to voice generator stand out, we use prosody modeling. This is the science of adding 'rhythm' to speech. The AI calculates the exact frequency (pitch) and volume (tone) for every millisecond of audio. It knows which words in a sentence are 'heavy' and need more energy, and which ones are 'light.' This constant adjustment creates a melody in the voice, making long-form articles easy to listen to without the listener getting tired."
-    },
-    {
-      id: "naturalness",
-      title: "5. Natural Breathing and Pauses",
-      icon: <Heart className="text-red-600" />,
-      content: "Real people don't speak like machines; they breathe. They take short pauses between thoughts and longer ones between paragraphs. Our free text to voice ai includes sophisticated silence modeling. It inserts microscopic breaths and natural pauses where they make sense. This tiny detail is often the difference between someone clicking away from your video or staying until the end. By respecting the natural pace of human conversation, Vāṇī AI builds a deeper connection with your audience."
-    },
-    {
-      id: "vocoders",
-      title: "6. Making Sound Waves (The Vocoder Stage)",
-      icon: <Waves className="text-blue-500" />,
-      content: "After the AI has planned the sounds and the emotions, it needs to turn that data into actual sound waves that your speakers can play. This is done by a 'Vocoder.' Think of the vocoder as a digital musical instrument that takes the math from the neural network and vibrates it into audio frequencies. Our free text to voice generator produces high-fidelity 24kHz audio, ensuring that the final output is crisp, clear, and ready for professional editing in YouTube or Podcasts."
-    },
-    {
-      id: "regional",
-      title: "7. Regional Language Magic (Linguistic Nuance)",
-      icon: <Globe className="text-emerald-600" />,
-      content: "Languages like Hindi, Marathi, and Sanskrit have very specific cultural nuances. A word spoken in Mumbai might have a different tilt than the same word spoken in Delhi. Our free text to voice ai is trained on diverse linguistic datasets from across India. This allows the AI to capture the 'Soul' of the language, handling retroflex sounds and nasal vowels that are common in Indian scripts. This localized approach makes Vāṇī AI the best tool for Bharat’s growing community of regional creators."
-    },
-    {
-      id: "speed",
-      title: "8. Speed of Light: Gemini 2.5 Flash",
-      icon: <FastForward className="text-purple-600" />,
-      content: "In the past, generating high-quality neural voice required massive computing power and long waiting times. With the integration of Google's Gemini 2.5 Flash, our free text to voice generator operates with near-zero latency. You can paste a 5,000-character script and get a full audio file in just a few seconds. This speed allows creators to iterate faster, try different voices, and finish their projects in record time, all within a standard web browser."
-    },
-    {
-      id: "access",
-      title: "9. Why is it Free? (Democratizing Audio)",
-      icon: <ShieldCheck className="text-slate-600" />,
-      content: "Premium neural voices used to be locked behind expensive paywalls and corporate subscriptions. We believe that professional audio should be a right, not a luxury. By leveraging the 'Bring Your Own Key' (BYOK) model, we allow users to tap directly into Google’s free tier infrastructure. This means you get the world's most advanced free text to voice ai without paying a middleman tax. Our mission is to empower every creator, regardless of their budget, to have a global voice."
-    },
-    {
-      id: "future",
-      title: "10. The Future: Generative Audio",
-      icon: <Sparkles className="text-indigo-500" />,
-      content: "We are moving into an era of generative audio where the AI doesn't just read text; it acts. The next stage of our free text to voice ai development involves 'Emotional Control'—the ability for a user to tell the AI to sound 'Excited,' 'Sad,' or 'Authoritative' through simple prompts. The future of Vāṇī AI is an immersive studio where your scripts come to life with a soul, creating a world where the only limit to your content is your imagination."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
-      {/* Enhanced Progress Bar */}
-      <div 
-        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 z-50 transition-all duration-300 ease-out shadow-lg"
-        style={{ width: `${scrollProgress}%` }}
-      />
-
-      {/* Glassmorphism Navbar */}
-      <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-blue-100/50">
-        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
-              <Waves className="text-white w-6 h-6" />
-            </div>
-            <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span className="text-blue-600">AI</span></span>
-          </div>
-          <div className="hidden md:flex gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
-            <a href="#intro" className="hover:text-blue-600 transition-colors">Vision</a>
-            <a href="#phonemes" className="hover:text-blue-600 transition-colors">Chapters</a>
-            <a href="#setup" className="hover:text-blue-600 transition-colors">Get Started</a>
-            <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
-              Studio Access
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <header id="intro" className="relative pt-32 pb-24 px-6 bg-white overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-indigo-400 rounded-full blur-[100px]"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm animate-bounce">
-            <Zap className="w-4 h-4" /> Deep Dive Analysis
-          </div>
-          <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tight mb-10">
-            The Science of <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
-              Neural Speech.
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 italic font-medium">
-            Discover how Vāṇī AI transforms simple text into realistic human voices using the world's most advanced generative audio engines.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400 font-bold uppercase tracking-widest text-[10px]">
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg border border-slate-100"><Activity className="w-4 h-4" /> 10 Technical Chapters</div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg border border-slate-100"><Globe className="w-4 h-4" /> Multilingual Optimization</div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg border border-slate-100"><ShieldCheck className="w-4 h-4" /> Privacy BYOK Model</div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content Area */}
-      <main className="max-w-4xl mx-auto px-6 pb-40">
-        
-        {/* Intro Paragraph */}
-        <article className="mb-32 text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8">
-            <p className="first-letter:text-7xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
-              In the fast-evolving landscape of digital content, the ability to communicate through high-quality audio has become a mandatory requirement for success. Whether you are a YouTuber, a social media influencer, or a professional educator, the 'voice' of your content determines how your audience perceives your message. Traditionally, high-end text-to-speech technology was an expensive privilege, reserved for large corporations with massive budgets. However, the emergence of <strong>free text to voice ai</strong> has completely disrupted this status quo.
-            </p>
-            <p>
-              Neural Speech Synthesis is not just about making a computer 'talk.' it is about simulating the complex biological process of human speech—the way our vocal cords vibrate, the way we pause to think, and the subtle shifts in our tone based on emotion. In this detailed guide, we are breaking down the 10 core pillars of how Vāṇī AI leverages Google's Gemini 2.5 Flash architecture to provide a world-class, 100% free solution for creators globally.
-            </p>
-        </article>
-
-        {/* The 10 Points Sections */}
-        <div className="space-y-32">
-          {sections.map((s, idx) => (
-            <section key={s.id} id={s.id} className="relative group">
-               <div className="absolute -left-12 top-0 text-9xl font-black text-slate-100 opacity-50 pointer-events-none select-none group-hover:text-blue-50 transition-colors">
-                 {idx < 9 ? `0${idx + 1}` : idx + 1}
-               </div>
-               
-               <div className="relative z-10">
-                  <div className="flex gap-4 items-center mb-8">
-                    <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xl group-hover:border-blue-300 transition-all">
-                      {s.icon}
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-black text-slate-900 italic tracking-tight leading-tight">
-                      {s.title}
-                    </h3>
-                  </div>
-                  
-                  <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
-                    <p>{s.content}</p>
-                    
-                    {/* Visual Callout for each section */}
-                    <div className="bg-blue-50/50 border border-blue-100 p-6 rounded-[2rem] flex items-start gap-4 mt-10">
-                       <Info className="text-blue-600 shrink-0 mt-1" size={20} />
-                       <div className="text-sm font-bold text-blue-900 leading-relaxed">
-                         <span className="uppercase text-[10px] tracking-widest text-blue-500 block mb-1">Impact on Free Text to Voice AI</span>
-                         Our {s.title.split(':')[0]} ensures that every audio file you generate meets professional studio standards, eliminating the need for expensive hardware or voice-over artists.
-                       </div>
-                    </div>
-                  </div>
-               </div>
-            </section>
-          ))}
-        </div>
-
-        {/* Conclusion / CTA */}
-        <section className="mt-40">
-           <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
-              <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-                 <Cpu size={400} className="absolute -bottom-20 -right-20" />
-              </div>
-              
-              <div className="relative z-10 text-center">
-                 <div className="w-20 h-2 bg-blue-500 rounded-full mx-auto mb-10"></div>
-                 <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter italic">
-                    Ready to speak to <br/> the world?
-                 </h2>
-                 <p className="text-xl text-blue-100/70 max-w-xl mx-auto mb-14 leading-relaxed font-medium">
-                    The science is complex, but the experience is simple. Join thousands of creators using Vāṇī AI to power their digital stories.
-                 </p>
-                 <div className="flex flex-col sm:flex-row justify-center gap-6">
-                    <button className="px-10 py-5 bg-white text-blue-900 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all shadow-xl flex items-center justify-center gap-3">
-                      Start Converting Free <ArrowRight size={20}/>
-                    </button>
-                    <button className="px-10 py-5 bg-blue-600/20 border border-blue-500/30 text-white rounded-2xl font-black text-lg hover:bg-blue-600/40 transition-all flex items-center justify-center gap-3">
-                      View Documentation
-                    </button>
-                 </div>
-              </div>
-           </div>
-        </section>
-
-      </main>
-
-      {/* Premium SEO Footer */}
-      <footer className="bg-white border-t border-slate-100 pt-32 pb-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-            
-            {/* Brand Col */}
-            <div className="col-span-1 md:col-span-2 space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
-                  <Waves className="text-white w-6 h-6" />
-                </div>
-                <span className="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span className="text-blue-600">AI</span></span>
-              </div>
-              <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium italic">
-                Empowering the next generation of Indian creators with high-fidelity <span className="text-slate-900 font-bold">free text to voice ai</span>. Built with privacy, speed, and soul.
-              </p>
-              <div className="flex gap-6">
-                {['twitter', 'github', 'youtube'].map(social => (
-                  <div key={social} className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all cursor-pointer border border-slate-100 shadow-sm">
-                    <Search size={20} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Links Col 1 */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-blue-600 pl-4">Explore</h4>
-              <ul className="space-y-4 text-slate-500 font-bold text-sm">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Neural Studio</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Voice Catalog</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">API Dashboard</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">BYOK Guide</a></li>
-              </ul>
-            </div>
-
-            {/* Links Col 2 */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-blue-600 pl-4">Company</h4>
-              <ul className="space-y-4 text-slate-500 font-bold text-sm">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">About Mission</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Contact Indian Support</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
-               <span>&copy; 2024 Vāṇī Studio</span>
-               <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
-               <span>Built in Bharat</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">Technology stack:</span>
-              <div className="flex items-center gap-2 px-3 py-1 bg-slate-50 rounded-full border border-slate-200">
-                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                 <span className="text-[9px] font-black text-slate-600 uppercase">Gemini 2.5 Flash</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      <style dangerouslySetInnerHTML={{ __html: `
+    <style>
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }
           33% { transform: translate(30px, -50px) scale(1.1); }
@@ -309,12 +30,282 @@ const App = () => {
         html {
           scroll-behavior: smooth;
         }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
         header {
           background-image: radial-gradient(circle at 50% -20%, #eff6ff 0%, #ffffff 100%);
         }
-      `}} />
-    </div>
-  );
-};
+    </style>
+</head>
+<body>
+    <div id="root"></div>
 
-export default App;
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        /**
+         * Generic Icon component for Lucide integration in HTML/CDN setup
+         */
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [scrollProgress, setScrollProgress] = useState(0);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    const currentScroll = window.scrollY;
+                    if (totalScroll > 0) {
+                        setScrollProgress((currentScroll / totalScroll) * 100);
+                    }
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const sections = [
+                {
+                    id: "phonemes",
+                    title: "1. Breaking Down the Words (Phonemic Analysis)",
+                    icon: "layers",
+                    iconColor: "text-blue-600",
+                    content: "The journey of any free text to voice ai begins with understanding the smallest units of sound, known as phonemes. When you input text into Vāṇī AI, the engine doesn't just look at the letters; it analyzes how those letters combine to create sounds. For example, the word 'Apple' is processed not as five distinct letters, but as a sequence of phonetic signals. This stage is crucial because it filters out the complexity of spelling and focuses purely on the vibration of speech. By mapping text to a phonetic dictionary, the AI ensures that the foundation of the voice is technically accurate before adding any emotional layers."
+                },
+                {
+                    id: "history",
+                    title: "2. The History: From Robotic to Human",
+                    icon: "activity",
+                    iconColor: "text-indigo-600",
+                    content: "Speech technology has come a long way from the early days of concatenative synthesis, where pre-recorded snippets of human voice were literally 'glued' together. This old method resulted in the classic robotic, disjointed sound that lacked flow. Today, our free text to voice ai generator uses 'Neural' technology. This mimics the human brain's neural pathways, learning from thousands of hours of real human recordings. Instead of stitching clips, the AI generates a continuous, fluid wave of sound, making the transition between words invisible to the human ear."
+                },
+                {
+                    id: "context",
+                    title: "3. Understanding the Context (Semantic Intelligence)",
+                    icon: "message-square",
+                    iconColor: "text-cyan-600",
+                    content: "One of the hardest things for an AI to learn is the 'meaning' behind a sentence. A single word can change its sound based on the words surrounding it. Our neural engine analyzes the entire sentence structure to determine the right emphasis. If a sentence ends with a question mark, the free text to voice ai automatically raises the pitch at the end, just as a human would. It understands the difference between a statement of fact and a cry for help, ensuring that the narration matches the intended vibe of your script."
+                },
+                {
+                    id: "prosody",
+                    title: "4. Adding Pitch and Tone (Prosody Modeling)",
+                    icon: "zap",
+                    iconColor: "text-amber-600",
+                    content: "Monotone voices are boring and easy to ignore. To make our free text to voice generator stand out, we use prosody modeling. This is the science of adding 'rhythm' to speech. The AI calculates the exact frequency (pitch) and volume (tone) for every millisecond of audio. It knows which words in a sentence are 'heavy' and need more energy, and which ones are 'light.' This constant adjustment creates a melody in the voice, making long-form articles easy to listen to without the listener getting tired."
+                },
+                {
+                    id: "naturalness",
+                    title: "5. Natural Breathing and Pauses",
+                    icon: "heart",
+                    iconColor: "text-red-600",
+                    content: "Real people don't speak like machines; they breathe. They take short pauses between thoughts and longer ones between paragraphs. Our free text to voice ai includes sophisticated silence modeling. It inserts microscopic breaths and natural pauses where they make sense. This tiny detail is often the difference between someone clicking away from your video or staying until the end. By respecting the natural pace of human conversation, Vāṇī AI builds a deeper connection with your audience."
+                },
+                {
+                    id: "vocoders",
+                    title: "6. Making Sound Waves (The Vocoder Stage)",
+                    icon: "waves",
+                    iconColor: "text-blue-500",
+                    content: "After the AI has planned the sounds and the emotions, it needs to turn that data into actual sound waves that your speakers can play. This is done by a 'Vocoder.' Think of the vocoder as a digital musical instrument that takes the math from the neural network and vibrates it into audio frequencies. Our free text to voice generator produces high-fidelity 24kHz audio, ensuring that the final output is crisp, clear, and ready for professional editing in YouTube or Podcasts."
+                },
+                {
+                    id: "regional",
+                    title: "7. Regional Language Magic (Linguistic Nuance)",
+                    icon: "globe",
+                    iconColor: "text-emerald-600",
+                    content: "Languages like Hindi, Marathi, and Sanskrit have very specific cultural nuances. A word spoken in Mumbai might have a different tilt than the same word spoken in Delhi. Our free text to voice ai is trained on diverse linguistic datasets from across India. This allows the AI to capture the 'Soul' of the language, handling retroflex sounds and nasal vowels that are common in Indian scripts. This localized approach makes Vāṇī AI the best tool for Bharat’s growing community of regional creators."
+                },
+                {
+                    id: "speed",
+                    title: "8. Speed of Light: Gemini 2.5 Flash",
+                    icon: "fast-forward",
+                    iconColor: "text-purple-600",
+                    content: "In the past, generating high-quality neural voice required massive computing power and long waiting times. With the integration of Google's Gemini 2.5 Flash, our free text to voice generator operates with near-zero latency. You can paste a 5,000-character script and get a full audio file in just a few seconds. This speed allows creators to iterate faster, try different voices, and finish their projects in record time, all within a standard web browser."
+                },
+                {
+                    id: "access",
+                    title: "9. Why is it Free? (Democratizing Audio)",
+                    icon: "shield-check",
+                    iconColor: "text-slate-600",
+                    content: "Premium neural voices used to be locked behind expensive paywalls and corporate subscriptions. We believe that professional audio should be a right, not a luxury. By leveraging the 'Bring Your Own Key' (BYOK) model, we allow users to tap directly into Google’s free tier infrastructure. This means you get the world's most advanced free text to voice ai without paying a middleman tax. Our mission is to empower every creator, regardless of their budget, to have a global voice."
+                },
+                {
+                    id: "future",
+                    title: "10. The Future: Generative Audio",
+                    icon: "sparkles",
+                    iconColor: "text-indigo-500",
+                    content: "We are moving into an era of generative audio where the AI doesn't just read text; it acts. The next stage of our free text to voice ai development involves 'Emotional Control'—the ability for a user to tell the AI to sound 'Excited,' 'Sad,' or 'Authoritative' through simple prompts. The future of Vāṇī AI is an immersive studio where your scripts come to life with a soul, creating a world where the only limit to your content is your imagination."
+                }
+            ];
+
+            return (
+                <div className="min-h-screen text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+                    {/* Enhanced Progress Bar */}
+                    <div 
+                        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 z-50 transition-all duration-300 ease-out shadow-lg"
+                        style={{ width: `${scrollProgress}%` }}
+                    />
+
+                    {/* Navbar */}
+                    <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-blue-100/50">
+                        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+                            <div className="flex items-center gap-3 group cursor-pointer">
+                                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                                    <Icon name="waves" className="text-white" size={24} />
+                                </div>
+                                <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span className="text-blue-600">AI</span></span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
+                                <a href="#intro" className="hover:text-blue-600 transition-colors">Vision</a>
+                                <a href="#phonemes" className="hover:text-blue-600 transition-colors">Chapters</a>
+                                <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
+                                    Studio Access
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <header id="intro" className="relative pt-32 pb-24 px-6 bg-white overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px] animate-pulse"></div>
+                            <div className="absolute bottom-10 right-10 w-80 h-80 bg-indigo-400 rounded-full blur-[100px]"></div>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto text-center relative z-10">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm">
+                                <Icon name="zap" size={16} /> Deep Dive Analysis
+                            </div>
+                            <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tight mb-10">
+                                The Science of <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
+                                    Neural Speech.
+                                </span>
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 italic font-medium">
+                                Discover how Vāṇī AI transforms simple text into realistic human voices using the world's most advanced generative audio engines.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Main Content Area */}
+                    <main className="max-w-4xl mx-auto px-6 pb-40">
+                        <article className="mb-32 text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8">
+                            <p className="first-letter:text-7xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                                In the fast-evolving landscape of digital content, the ability to communicate through high-quality audio has become a mandatory requirement for success. Whether you are a YouTuber, a social media influencer, or a professional educator, the 'voice' of your content determines how your audience perceives your message.
+                            </p>
+                            <p>
+                                Neural Speech Synthesis is not just about making a computer 'talk.' it is about simulating the complex biological process of human speech—the way our vocal cords vibrate, the way we pause to think, and the subtle shifts in our tone based on emotion.
+                            </p>
+                        </article>
+
+                        {/* The 10 Points Sections */}
+                        <div className="space-y-32">
+                            {sections.map((s, idx) => (
+                                <section key={s.id} id={s.id} className="relative group">
+                                    <div className="absolute -left-12 top-0 text-9xl font-black text-slate-100 opacity-50 pointer-events-none select-none group-hover:text-blue-50 transition-colors">
+                                        {idx < 9 ? `0${idx + 1}` : idx + 1}
+                                    </div>
+                                    
+                                    <div className="relative z-10">
+                                        <div className="flex gap-4 items-center mb-8">
+                                            <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xl group-hover:border-blue-300 transition-all">
+                                                <Icon name={s.icon} className={s.iconColor} size={24} />
+                                            </div>
+                                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 italic tracking-tight leading-tight">
+                                                {s.title}
+                                            </h3>
+                                        </div>
+                                        
+                                        <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
+                                            <p>{s.content}</p>
+                                            
+                                            <div className="bg-blue-50/50 border border-blue-100 p-6 rounded-[2rem] flex items-start gap-4 mt-10">
+                                                <Icon name="info" className="text-blue-600 shrink-0 mt-1" size={20} />
+                                                <div className="text-sm font-bold text-blue-900 leading-relaxed">
+                                                    <span className="uppercase text-[10px] tracking-widest text-blue-500 block mb-1">Impact on Free Text to Voice AI</span>
+                                                    Our {s.title.split(':')[0]} ensures that every audio file you generate meets professional studio standards.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            ))}
+                        </div>
+
+                        {/* CTA Section */}
+                        <section className="mt-40">
+                            <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+                                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                                    <Icon name="cpu" className="absolute -bottom-20 -right-20" size={400} />
+                                </div>
+                                
+                                <div className="relative z-10 text-center">
+                                    <div className="w-20 h-2 bg-blue-500 rounded-full mx-auto mb-10"></div>
+                                    <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter italic text-white">
+                                        Ready to speak to <br/> the world?
+                                    </h2>
+                                    <button className="px-10 py-5 bg-white text-blue-900 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all shadow-xl flex items-center justify-center gap-3 mx-auto">
+                                        Start Converting Free <Icon name="arrow-right" size={20}/>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="bg-white border-t border-slate-100 pt-32 pb-16 px-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                                <div className="col-span-1 md:col-span-2 space-y-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                            <Icon name="waves" className="text-white" size={24} />
+                                        </div>
+                                        <span className="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span className="text-blue-600">AI</span></span>
+                                    </div>
+                                    <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium italic">
+                                        Empowering the next generation of Indian creators with high-fidelity free text to voice ai.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-blue-600 pl-4">Explore</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Neural Studio</a></li>
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Voice Catalog</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-blue-600 pl-4">Company</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Contact Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
+                                <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+                                    <span>&copy; 2024 Vāṇī Studio</span>
+                                    <span>Built in Bharat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
