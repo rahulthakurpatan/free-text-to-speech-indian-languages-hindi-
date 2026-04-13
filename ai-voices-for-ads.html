@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Small Businesses with AI Voice Ads - Vāṇī AI</title>
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        header {
+          background-image: radial-gradient(circle at 50% -20%, #eff6ff 0%, #ffffff 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        /**
+         * Generic Icon component for Lucide integration
+         */
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [scrollProgress, setScrollProgress] = useState(0);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    const currentScroll = window.scrollY;
+                    if (totalScroll > 0) {
+                        setScrollProgress((currentScroll / totalScroll) * 100);
+                    }
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const sections = [
+                {
+                    id: "budget",
+                    title: "1. Cost-Effective Ad Production: No More Studio Fees",
+                    icon: "dollar-sign",
+                    iconColor: "text-emerald-600",
+                    content: "For a small business, every rupee matters. Traditionally, creating a high-impact audio ad meant renting a studio, hiring a voice artist, and paying an editor. This could easily cost thousands before the ad even goes live. By using a free text to voice ai, you eliminate these middleman costs entirely. Vāṇī AI allows you to produce studio-grade audio for your local shop, bakery, or gym right from your laptop. This democratization of production means you can spend your budget on actually running the ads (like on Instagram or Radio) rather than just making them."
+                },
+                {
+                    id: "local",
+                    title: "2. Hyper-Local Targeting: Connecting in Local Dialects",
+                    icon: "map-pin",
+                    iconColor: "text-blue-600",
+                    content: "India is a land of many languages, and a generic English ad often fails to connect with local customers. A small business in Maharashtra needs to speak Marathi; a shop in West Bengal needs to speak Bengali. Our free text to voice ai generator supports a wide variety of Indian regional languages. By creating ads in the local tongue of your neighborhood, you build instant trust. When a customer hears an ad in their own language, they feel the business understands their needs, leading to much higher conversion rates compared to standard language ads."
+                },
+                {
+                    id: "ivr",
+                    title: "3. Professional IVR & Telephony: Sounding Like a Big Brand",
+                    icon: "phone-call",
+                    iconColor: "text-indigo-600",
+                    content: "First impressions are everything. When a customer calls your business, hearing a professional 'Welcome to our store' message makes you sound established and reliable. Usually, professional IVR (Interactive Voice Response) systems are expensive, but with Vāṇī AI, you can generate professional-grade telephony greetings for free. You can create different messages for holidays, lunch breaks, or promotional offers. Using a consistent, clear AI voice for your phone system gives your small business the 'Big Brand' feel that attracts premium clients."
+                },
+                {
+                    id: "consistency",
+                    title: "4. Brand Voice Consistency Across All Channels",
+                    icon: "shield-check",
+                    iconColor: "text-slate-600",
+                    content: "Branding is about repetition and consistency. If your Instagram ad has one voice and your WhatsApp promotional message has another, the customer gets confused. Our free text to voice ai studio allows you to choose a specific voice profile—like 'Priya' or 'Amit'—and use it for every single touchpoint. Whether it's a social media video, a radio spot, or an in-store announcement, having the same voice builds a recognizable 'audio identity' for your brand. Customers start associating that specific neural voice with your quality and service."
+                },
+                {
+                    id: "iteration",
+                    title: "5. Rapid Iteration: Testing Ads Without the Wait",
+                    icon: "zap",
+                    iconColor: "text-amber-500",
+                    content: "Marketing is often about trial and error. You might want to test if a '10% Discount' works better than a 'Buy 1 Get 1 Free' offer. In the traditional world, changing a script meant re-recording and re-editing. With our free text to voice generator, you can create five different versions of an ad in five minutes. You can change a single word or an entire paragraph and get a new audio file instantly. This speed allows small businesses to be agile, adjusting their marketing messages based on daily sales, weather changes, or local events without any delay."
+                },
+                {
+                    id: "social",
+                    title: "6. Scaling Social Media Ads (Reels and Shorts)",
+                    icon: "trending-up",
+                    iconColor: "text-pink-600",
+                    content: "Short-form video is currently the king of marketing. Small businesses are now using Reels and YouTube Shorts to showcase their products. However, recording a good voiceover with a phone microphone often sounds amateur due to background noise. By using free text to voice ai, you get a clean, crisp, and bold narration that stands out in a crowded feed. Professional voiceovers make your product videos look more expensive and well-produced, which is critical for convincing viewers to click the 'Link in Bio' or 'Shop Now' button."
+                },
+                {
+                    id: "emotion",
+                    title: "7. Building Emotional Connection with Neural Nuance",
+                    icon: "heart",
+                    iconColor: "text-red-500",
+                    content: "The biggest fear with AI is sounding 'robotic.' However, modern neural speech synthesis includes natural breathing and emotional inflections. When you use Vāṇī AI for your marketing, you aren't just getting words; you are getting a tone that fits your brand. Whether you want to sound 'Excited' for a sale or 'Compassionate' for a healthcare service, our free text to voice generator provides the depth needed to touch the listener's heart. This emotional resonance is what turns a casual listener into a loyal customer."
+                },
+                {
+                    id: "accessible",
+                    title: "8. Accessible Marketing for Every Budget",
+                    icon: "unlock",
+                    iconColor: "text-cyan-600",
+                    content: "We believe that a small chai-wala or a local boutique should have the same marketing power as a multinational corporation. Our free text to voice ai generator removes the financial barrier to professional audio production. By using the 'Bring Your Own Key' model, we ensure that the technology remains accessible to everyone. Even if you have zero marketing budget, you can still produce world-class audio ads that help your business grow. It’s about leveling the playing field for the small entrepreneurs of Bharat."
+                },
+                {
+                    id: "distribution",
+                    title: "9. Multi-Channel Distribution: WhatsApp to Radio",
+                    icon: "share-2",
+                    iconColor: "text-emerald-500",
+                    content: "Audio ads are versatile. Once you generate a high-quality file from our free text to voice tool, you can use it everywhere. Send it as a voice note in a WhatsApp broadcast to your regular customers, upload it as a background track for a Facebook video ad, or even send it to a local FM station. The high-fidelity 24kHz output ensures that the audio sounds great whether it's played on a tiny phone speaker or a large car stereo system. One conversion, endless marketing possibilities."
+                },
+                {
+                    id: "future",
+                    title: "10. Future-Proofing with Generative Audio Tools",
+                    icon: "sparkles",
+                    iconColor: "text-indigo-500",
+                    content: "Marketing is moving towards automation. In the near future, ads will be personalized for every individual user. By starting to use free text to voice ai today, you are getting your business ready for the next wave of digital marketing. You are learning how to use AI to scale your operations, making your workflow more efficient and your reach much wider. Vāṇī AI is committed to bringing you the latest updates in generative audio, ensuring that your small business always stays ahead of the competition."
+                }
+            ];
+
+            return (
+                <div className="min-h-screen text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+                    {/* Progress Bar */}
+                    <div 
+                        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 z-50 transition-all duration-300 ease-out shadow-lg"
+                        style={{ width: `${scrollProgress}%` }}
+                    />
+
+                    {/* Navbar */}
+                    <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-blue-100/50">
+                        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+                            <div className="flex items-center gap-3 group cursor-pointer">
+                                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                                    <Icon name="waves" className="text-white" size={24} />
+                                </div>
+                                <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span className="text-blue-600">AI</span></span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
+                                <a href="#intro" className="hover:text-blue-600 transition-colors">Strategy</a>
+                                <a href="#budget" className="hover:text-blue-600 transition-colors">Insights</a>
+                                <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
+                                    Launch Your Ad
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <header id="intro" className="relative pt-32 pb-24 px-6 bg-white overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px] animate-pulse"></div>
+                            <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-400 rounded-full blur-[100px]"></div>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto text-center relative z-10">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm">
+                                <Icon name="trending-up" size={16} /> Marketing Strategy
+                            </div>
+                            <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tight mb-10">
+                                Scale with <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-blue-600 to-indigo-600">
+                                    AI Voice Ads.
+                                </span>
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 italic font-medium">
+                                How small businesses in Bharat are using high-impact audio ads to grow their revenue on a shoestring budget.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Content Section */}
+                    <main className="max-w-4xl mx-auto px-6 pb-40">
+                        <article className="mb-32 text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8">
+                            <p className="first-letter:text-7xl first-letter:font-black first-letter:text-orange-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                                Small businesses are the backbone of our economy, yet they often struggle with marketing because professional production is prohibitively expensive. In the past, if you wanted a professional voiceover for your local shop's ad, you had to spend a significant portion of your monthly profit. But the game has changed.
+                            </p>
+                            <p>
+                                Today, with the power of <strong>free text to voice ai</strong>, a local entrepreneur can sound just as professional as a multi-national brand. Whether it's a promotional video for Instagram or an automated greeting for your business phone line, AI voice technology is the most powerful tool in a small business owner's arsenal. In this guide, we dive deep into how you can use Vāṇī AI to scale your brand and reach new heights.
+                            </p>
+                        </article>
+
+                        {/* Detailed 10 Points */}
+                        <div className="space-y-32">
+                            {sections.map((s, idx) => (
+                                <section key={s.id} id={s.id} className="relative group">
+                                    <div className="absolute -left-12 top-0 text-9xl font-black text-slate-100 opacity-50 pointer-events-none select-none group-hover:text-orange-50 transition-colors">
+                                        {idx < 9 ? `0${idx + 1}` : idx + 1}
+                                    </div>
+                                    
+                                    <div className="relative z-10">
+                                        <div className="flex gap-4 items-center mb-8">
+                                            <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xl group-hover:border-orange-300 transition-all">
+                                                <Icon name={s.icon} className={s.iconColor} size={24} />
+                                            </div>
+                                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 italic tracking-tight leading-tight">
+                                                {s.title}
+                                            </h3>
+                                        </div>
+                                        
+                                        <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
+                                            <p>{s.content}</p>
+                                            
+                                            <div className="bg-orange-50/50 border border-orange-100 p-6 rounded-[2rem] flex items-start gap-4 mt-10">
+                                                <Icon name="sparkles" className="text-orange-600 shrink-0 mt-1" size={20} />
+                                                <div className="text-sm font-bold text-slate-900 leading-relaxed">
+                                                    <span className="uppercase text-[10px] tracking-widest text-orange-500 block mb-1">Business Impact</span>
+                                                    Implementing this {s.title.split(':')[0]} can reduce your marketing overhead by 90% while doubling your customer engagement.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            ))}
+                        </div>
+
+                        {/* Final CTA */}
+                        <section className="mt-40">
+                            <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+                                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                                    <Icon name="trending-up" className="absolute -bottom-20 -right-20" size={400} />
+                                </div>
+                                
+                                <div className="relative z-10 text-center">
+                                    <div className="w-20 h-2 bg-orange-500 rounded-full mx-auto mb-10"></div>
+                                    <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter italic text-white">
+                                        Grow your business <br/> with a voice.
+                                    </h2>
+                                    <p className="text-xl text-blue-100/70 max-w-xl mx-auto mb-14 leading-relaxed font-medium">
+                                        Professional marketing shouldn't be expensive. Start creating high-impact audio ads for free with Vāṇī AI.
+                                    </p>
+                                    <button className="px-10 py-5 bg-white text-blue-900 rounded-2xl font-black text-lg hover:bg-orange-50 transition-all shadow-xl flex items-center justify-center gap-3 mx-auto">
+                                        Generate Your First Ad <Icon name="arrow-right" size={20}/>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="bg-white border-t border-slate-100 pt-32 pb-16 px-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                                <div className="col-span-1 md:col-span-2 space-y-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                            <Icon name="waves" className="text-white" size={24} />
+                                        </div>
+                                        <span className="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span className="text-blue-600">AI</span></span>
+                                    </div>
+                                    <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium italic">
+                                        Helping Bharat's small businesses sound big with professional-grade <span className="text-slate-900 font-bold">free text to voice ai</span> solutions.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-orange-600 pl-4">Services</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Voiceover Ads</a></li>
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">IVR Greetings</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-orange-600 pl-4">Resources</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Marketing Blog</a></li>
+                                        <li><a href="#" className="hover:text-blue-600 transition-colors">Setup Guide</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
+                                <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+                                    <span>&copy; 2024 Vāṇī Studio</span>
+                                    <span>India's Local Business Partner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
