@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RV64RB8M6S');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Emotional AI Voices - Vāṇī AI</title>
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf2f8; /* Soft Rose Background */
+        }
+        header {
+          background-image: radial-gradient(circle at 50% -20%, #fce7f3 0%, #fdf2f8 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        /**
+         * Generic Icon component for Lucide integration
+         */
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [scrollProgress, setScrollProgress] = useState(0);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    const currentScroll = window.scrollY;
+                    if (totalScroll > 0) {
+                        setScrollProgress((currentScroll / totalScroll) * 100);
+                    }
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const sections = [
+                {
+                    id: "pitch",
+                    title: "1. The Power of Pitch: Tuning the Highs and Lows",
+                    icon: "music-2",
+                    iconColor: "text-rose-600",
+                    content: "Pitch is the primary driver of emotion in any free text to voice ai narration. Think about how your voice changes when you are happy versus when you are sad. Joy usually carries a higher frequency—it feels light and airy. On the other hand, sadness or serious news usually drops the pitch to a lower, heavier level. When you are using Vāṇī AI, you can influence this by selecting different voice profiles. For example, a voice like 'Anjali' naturally has a softer, higher pitch perfect for joyful storytelling, while a voice like 'Arjun' might offer a more grounded, lower pitch for serious or dramatic scripts. Understanding how to match the pitch to the mood of your script is the first secret to building a real human connection."
+                },
+                {
+                    id: "tempo",
+                    title: "2. Speed and Tempo: Creating Urgency or Reflection",
+                    icon: "zap",
+                    iconColor: "text-amber-500",
+                    content: "The speed at which we speak tells the listener everything they need to know about our internal state. If you are excited or telling someone about a limited-time sale, your speech should be fast and energetic. If you are narrating a heartfelt memoir or a sad story, you need to slow down. Our free text to voice ai generator handles these transitions by analyzing the sentence structure. A fast tempo creates excitement and urgency, which is great for marketing ads. A slower tempo allows the words to 'breathe,' giving the audience time to process deep emotions. By choosing the right voice and pacing your script, you turn a simple audio file into a rhythmic masterpiece."
+                },
+                {
+                    id: "inflection",
+                    title: "3. Master the Inflection: The Art of Up-and-Down",
+                    icon: "trending-up",
+                    iconColor: "text-indigo-600",
+                    content: "Inflection is the 'curve' of a voice. It’s what happens at the end of a sentence. In English and Hindi, we raise our voice at the end of a question and drop it at the end of a confident statement. A flat voice sounds robotic and boring. Our free text to voice ai uses advanced neural models to predict where these inflections should happen. If your script says, 'Can you believe it?' the AI knows to put an upward inflection on 'it.' This tiny detail makes the listener feel like the AI is actually 'thinking' and 'feeling' the words rather than just reading them from a screen."
+                },
+                {
+                    id: "punctuation",
+                    title: "4. Punctuation Hacks: How to Force AI Emotions",
+                    icon: "file-edit",
+                    iconColor: "text-slate-700",
+                    content: "You don't need complex coding to add emotion to a free text to voice generator; you just need to use punctuation correctly. A comma (,) acts as a short breath, while a period (.) is a full stop. If you want a character to sound hesitant, use an ellipsis (...). If you want them to sound excited, use exclamation marks (!). These symbols tell the AI exactly when to pause and how much energy to put into the next word. By mastering 'Script Crafting,' you can guide the Vāṇī AI engine to deliver a performance that sounds like it was recorded by a professional voice artist in a real studio."
+                },
+                {
+                    id: "breathing",
+                    title: "5. The Human Touch: Natural Breathing Patterns",
+                    icon: "wind",
+                    iconColor: "text-cyan-500",
+                    content: "One of the most human things about speech is the sound of breathing. In a sad or tired voice, breaths are deeper and more frequent. In an excited voice, they are short and sharp. Vāṇī AI integrates microscopic silence gaps that mimic these human breathing patterns. This is what truly eliminates the 'AI smell' from your audio. When a listener hears those tiny, natural gaps in the speech, their brain subconsciously accepts the voice as human. This building of trust is critical for podcasts and long-form narrations where you want the listener to feel like they are having a conversation with a friend."
+                },
+                {
+                    id: "emphasis",
+                    title: "6. Word Emphasis: Highlighting the Core Message",
+                    icon: "target",
+                    iconColor: "text-rose-500",
+                    content: "In every sentence, there is one word that carries the most weight. For example, in 'I am so happy,' the word 'so' is the emotional core. A basic TTS would treat all words equally, but a neural free text to voice ai identifies the keywords and gives them more 'energy.' It might slightly increase the volume or slow down the pronunciation of that specific word to make it stand out. This ensures that the message isn't just heard, but actually understood. Using Vāṇī AI allows you to create audio where the main points are naturally highlighted, making your marketing ads much more effective."
+                },
+                {
+                    id: "joy",
+                    title: "7. Engineering Joy: Brightness and Energy",
+                    icon: "sun",
+                    iconColor: "text-orange-500",
+                    content: "To create a 'Joyful' AI voice, you need 'Brightness.' This is a combination of a fast-medium tempo and a slightly higher-than-average pitch. Joyful voices have a 'smiling' quality to them. Our free text to voice ai generator achieve this through prosody modeling. When the AI detects positive words like 'Great,' 'Amazing,' or 'Wonderful,' it adjusts the sound wave to be more vibrant. This is perfect for birthday greetings, festive offers, or inspirational quotes. A joyful voice spreads positivity and makes your brand feel approachable and friendly."
+                },
+                {
+                    id: "sadness",
+                    title: "8. Designing Sadness: Weight and Heavy Pauses",
+                    icon: "cloud-rain",
+                    iconColor: "text-blue-700",
+                    content: "Sadness is the hardest emotion to synthesize because it requires 'Weight.' A sad voice is slightly slower, has a lower pitch, and includes longer pauses between thoughts. It feels like the voice is struggling to come out. By using Vāṇī AI and choosing a deeper voice profile, you can create a somber mood for documentaries, historical stories, or emotional social messages. The AI reduces the 'brightness' of the sound wave, giving it a flat, heavy texture that resonates with the listener's empathy. This is the ultimate test of a high-quality free text to voice ai."
+                },
+                {
+                    id: "excitement",
+                    title: "9. Building Excitement: The Burst of Energy",
+                    icon: "sparkles",
+                    iconColor: "text-pink-500",
+                    content: "Excitement is about a burst of energy. It is characterized by rapid changes in pitch and a very fast tempo. Think of a sports commentator or a salesman during a clearance sale. Our free text to voice generator can handle these rapid-fire scripts with ease. The neural engine ensures that even at high speeds, the words remain clear and understandable. Excitement is contagious—if your AI voice sounds excited, your audience will feel excited too. This is a powerful psychological tool for driving clicks and engagement on YouTube Shorts and Instagram Reels."
+                },
+                {
+                    id: "connection",
+                    title: "10. The Future of Emotional Connection",
+                    icon: "users",
+                    iconColor: "text-indigo-700",
+                    content: "The goal of Vāṇī AI is not just to replace voice artists, but to expand the possibilities of what a voice can do. As we move towards a more digital world, emotional connection becomes even more valuable. By using a free text to voice ai that understands joy, sadness, and excitement, you are giving your digital presence a 'Soul.' We are constantly updating our models to provide more control over these emotional nuances. The future of audio is generative, personalized, and most importantly, emotional. Start experimenting with these secrets today and watch your audience connection grow to new heights."
+                }
+            ];
+
+            return (
+                <div className="min-h-screen text-slate-900 selection:bg-rose-100 selection:text-rose-900">
+                    {/* Progress Bar */}
+                    <div 
+                        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-rose-500 via-pink-500 to-indigo-500 z-50 transition-all duration-300 ease-out shadow-lg"
+                        style={{ width: `${scrollProgress}%` }}
+                    />
+
+                    {/* Navbar */}
+                    <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-rose-100/50">
+                        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+                            <div className="flex items-center gap-3 group cursor-pointer">
+                                <div className="w-10 h-10 bg-gradient-to-br from-rose-600 to-pink-700 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                                    <Icon name="heart" className="text-white" size={24} />
+                                </div>
+                                <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span className="text-rose-600">AI</span></span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
+                                <a href="#intro" className="hover:text-rose-600 transition-colors">Emotion</a>
+                                <a href="#pitch" className="hover:text-rose-600 transition-colors">Inflection</a>
+                                <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-rose-600 transition-all shadow-xl shadow-slate-200">
+                                    Feel the Voice
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <header id="intro" className="relative pt-32 pb-24 px-6 bg-white overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                            <div className="absolute top-20 left-10 w-96 h-96 bg-rose-400 rounded-full blur-[120px] animate-pulse"></div>
+                            <div className="absolute bottom-10 right-10 w-80 h-80 bg-pink-400 rounded-full blur-[100px]"></div>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto text-center relative z-10">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-rose-50 border border-rose-100 rounded-full text-rose-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm">
+                                <Icon name="sparkles" size={16} /> Neural Emotion Guide
+                            </div>
+                            <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tight mb-10">
+                                Voices with a <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-indigo-600">
+                                    Human Soul.
+                                </span>
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 italic font-medium">
+                                How to master the art of emotional AI speech: using pitch, inflection, and tempo to connect deep with your audience.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Main Content Area */}
+                    <main className="max-w-4xl mx-auto px-6 pb-40">
+                        <article className="mb-32 text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8">
+                            <p className="first-letter:text-7xl first-letter:font-black first-letter:text-rose-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                                Sound is the most emotional medium we have. Long before we learn to read or write, we understand the emotion in a parent's voice. We know if someone is happy or sad just by the 'tilt' of their speech. For a long time, artificial intelligence lacked this 'soul.' It could say the words, but it couldn't feel them.
+                            </p>
+                            <p>
+                                With the advent of <strong>free text to voice ai</strong> powered by neural synthesis, that gap is closing. We no longer have to settle for robotic, monotone narrations. Today, we can engineer joy, sadness, and excitement directly into our digital content. In this deep dive, we reveal the secrets of controlling 'Inflection' and 'Pitch' to build an unforgettable emotional connection with your audience using Vāṇī AI.
+                            </p>
+                        </article>
+
+                        {/* Detailed 10 Points */}
+                        <div className="space-y-32">
+                            {sections.map((s, idx) => (
+                                <section key={s.id} id={s.id} className="relative group">
+                                    <div className="absolute -left-12 top-0 text-9xl font-black text-slate-100 opacity-50 pointer-events-none select-none group-hover:text-rose-50 transition-colors">
+                                        {idx < 9 ? `0${idx + 1}` : idx + 1}
+                                    </div>
+                                    
+                                    <div className="relative z-10">
+                                        <div className="flex gap-4 items-center mb-8">
+                                            <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xl group-hover:border-rose-300 transition-all">
+                                                <Icon name={s.icon} className={s.iconColor} size={24} />
+                                            </div>
+                                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 italic tracking-tight leading-tight">
+                                                {s.title}
+                                            </h3>
+                                        </div>
+                                        
+                                        <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
+                                            <p>{s.content}</p>
+                                            
+                                            <div className="bg-rose-50/50 border border-rose-100 p-6 rounded-[2rem] flex items-start gap-4 mt-10">
+                                                <Icon name="heart" className="text-rose-600 shrink-0 mt-1" size={20} />
+                                                <div className="text-sm font-bold text-slate-900 leading-relaxed">
+                                                    <span className="uppercase text-[10px] tracking-widest text-rose-500 block mb-1">Emotion Impact</span>
+                                                    Mastering this {s.title.split(':')[0]} ensures that your free text to voice ai narration sounds authentic, building 3x more trust with your listeners.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            ))}
+                        </div>
+
+                        {/* CTA Section */}
+                        <section className="mt-40">
+                            <div className="bg-gradient-to-br from-slate-900 via-rose-900 to-indigo-950 text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+                                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                                    <Icon name="heart" className="absolute -bottom-20 -right-20" size={400} />
+                                </div>
+                                
+                                <div className="relative z-10 text-center">
+                                    <div className="w-20 h-2 bg-rose-500 rounded-full mx-auto mb-10"></div>
+                                    <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter italic text-white">
+                                        Speak to the heart, <br/> not just the ears.
+                                    </h2>
+                                    <p className="text-xl text-rose-100/70 max-w-xl mx-auto mb-14 leading-relaxed font-medium">
+                                        Turn your scripts into emotional stories. Start creating realistic, soulful voices for free with Vāṇī AI.
+                                    </p>
+                                    <button className="px-10 py-5 bg-white text-rose-900 rounded-2xl font-black text-lg hover:bg-rose-50 transition-all shadow-xl flex items-center justify-center gap-3 mx-auto">
+                                        Try Emotional Voices <Icon name="arrow-right" size={20}/>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="bg-white border-t border-slate-100 pt-32 pb-16 px-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                                <div className="col-span-1 md:col-span-2 space-y-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-rose-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                            <Icon name="heart" className="text-white" size={24} />
+                                        </div>
+                                        <span className="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span className="text-rose-600">AI</span></span>
+                                    </div>
+                                    <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium italic">
+                                        Creating deep emotional resonance through <span className="text-slate-900 font-bold">free text to voice ai</span>. India's first neural studio with a soul.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-rose-600 pl-4">Features</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="#" className="hover:text-rose-600 transition-colors">Pitch Control</a></li>
+                                        <li><a href="#" className="hover:text-rose-600 transition-colors">Inflection Engine</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-rose-600 pl-4">Learning</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="#" className="hover:text-rose-600 transition-colors">Emotional Guide</a></li>
+                                        <li><a href="#" className="hover:text-rose-600 transition-colors">TTS Mastery</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
+                                <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+                                    <span>&copy; 2024 Vāṇī Studio</span>
+                                    <span>Made with Love for Creators</span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
