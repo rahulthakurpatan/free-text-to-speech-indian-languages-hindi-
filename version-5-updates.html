@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RV64RB8M6S');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vāṇī Studio v5.0 Stable Release: What's New? - Vāṇī AI</title>
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* Slate Background */
+        }
+        header {
+          background-image: radial-gradient(circle at 50% -20%, #e2e8f0 0%, #f1f5f9 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [scrollProgress, setScrollProgress] = useState(0);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    const currentScroll = window.scrollY;
+                    if (totalScroll > 0) {
+                        setScrollProgress((currentScroll / totalScroll) * 100);
+                    }
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const sections = [
+                {
+                    id: "rendering",
+                    title: "1. Optimized High-Fidelity Rendering for Long Scripts",
+                    icon: "layers",
+                    iconColor: "text-slate-700",
+                    content: "In our previous versions, users sometimes faced minor lag while generating audio for very long scripts. In v5.0, we have completely rebuilt the rendering logic. Our free text to voice ai now handles up to 5,000 characters with zero stutter. The way the data flows from your browser to the neural engine is now more streamlined, ensuring that the 24kHz audio output remains crisp from the first word to the last. This update is a major win for audiobook creators and documentary filmmakers who need long-form narrations without any drop in sound quality."
+                },
+                {
+                    id: "voices",
+                    title: "2. 15+ New Premium Neural Voice Profiles",
+                    icon: "mic-2",
+                    iconColor: "text-blue-600",
+                    content: "Variety is key to storytelling. We've added several new voices including 'Vikram' for bold narrations and 'Meera' for soft, clear advertisements. These aren't just robotic sounds; they are trained on high-end human recordings to ensure a natural flow. Our free text to voice ai generator now offers a wider spectrum of emotions and age groups. Whether you need a young, energetic voice for a sports ad or a calm, authoritative voice for a corporate presentation, v5.0 has a profile that fits your brand's unique personality perfectly."
+                },
+                {
+                    id: "latency",
+                    title: "3. Ultra-Low Latency Processing Speeds",
+                    icon: "zap",
+                    iconColor: "text-amber-500",
+                    content: "Waiting for audio to generate can break your creative flow. With v5.0, we've integrated deeper with the Gemini 2.5 Flash architecture to cut down processing time by nearly 40%. Now, when you hit the generate button, the free text to voice ai responds almost instantly. This 'Flash' speed is especially helpful for social media managers who need to churn out multiple reels and shorts in a single session. You can now go from a written script to a downloadable MP3 in record time, making your production workflow faster than ever before."
+                },
+                {
+                    id: "bugs",
+                    title: "4. Crucial Bug Fixes: No More Audio Cutting",
+                    icon: "bug",
+                    iconColor: "text-red-600",
+                    content: "We listened to your feedback! Some users reported that the audio would sometimes cut off at the very last second of a sentence. We have fixed this 'tail-end clipping' issue in the stable release. The free text to voice ai generator now ensures that every word is fully synthesized before closing the audio stream. We also fixed a minor bug where certain Unicode characters caused the engine to skip words. Now, your scripts—whether in English or regional languages—will play back exactly as written, with 100% accuracy and no missing parts."
+                },
+                {
+                    id: "punctuation",
+                    title: "5. Smarter Punctuation Intelligence",
+                    icon: "type",
+                    iconColor: "text-indigo-600",
+                    content: "The way an AI handles commas and periods determines how human it sounds. In v5.0, we've improved the 'prosody' engine, which means the AI now understands punctuation better. Commas now result in a more natural, subtle pause, and periods have a deeper, more conclusive tone. This update makes our free text to voice ai sound much less robotic. It feels like the AI is actually reading for meaning, adding the right rhythm to your content. This is a game-changer for poets and storytellers who rely on the pace of the voice to convey emotion."
+                },
+                {
+                    id: "regional",
+                    title: "6. Native Accent Accuracy for Bharat",
+                    icon: "globe",
+                    iconColor: "text-emerald-600",
+                    content: "Indian languages are diverse and complex. In this stable release, we've fine-tuned the accents for Hindi, Marathi, and Bengali. Our free text to voice ai now captures the local 'tilt' of these languages much better than before. The pronunciations of regional words are now more native, avoiding the typical 'foreign accent' that many global TTS tools have. If you are creating content for local audiences in India, Vāṇī Studio v5.0 will help you sound more authentic and relatable, building stronger trust with your regional followers."
+                },
+                {
+                    id: "mobile-ui",
+                    title: "7. Polished Mobile UI for On-the-Go Creation",
+                    icon: "smartphone",
+                    iconColor: "text-slate-900",
+                    content: "Many of our users create while traveling. We've redesigned the mobile interface to be even more thumb-friendly. The buttons are larger, the text area is more responsive, and the voice selection grid is much easier to navigate on a small screen. This means you can manage your free text to voice ai projects while sitting in a metro or waiting in a queue. The tool feels like a native app on your smartphone browser, giving you the power of a professional audio studio right in your pocket without any clutter or confusion."
+                },
+                {
+                    id: "byok",
+                    title: "8. Enhanced BYOK Security & Key Management",
+                    icon: "shield-check",
+                    iconColor: "text-blue-700",
+                    content: "Privacy remains our top priority. In v5.0, we've improved how your API keys are stored in your local browser. The 'Bring Your Own Key' (BYOK) model is now more secure, with better encryption and faster activation. We've also added a 'Key Health' indicator that tells you if your key is working correctly or if you've hit your Google quota. This transparent approach ensures that you always know the status of your free text to voice ai engine, giving you total peace of mind while you focus on your creative work."
+                },
+                {
+                    id: "commercial",
+                    title: "9. Transparent Commercial Usage Rights",
+                    icon: "file-check",
+                    iconColor: "text-cyan-600",
+                    content: "There is often confusion about whether AI voices can be used for profit. With the v5.0 stable release, we've made it clear: all audio generated through our free text to voice ai generator belongs to you. You have full commercial rights to use these voices for monetized YouTube channels, paid advertisements, and corporate training. We want to empower small businesses and solo creators to grow their revenue without worrying about legal headaches or licensing fees. Your success is our mission, and we've built the terms to support that."
+                },
+                {
+                    id: "community",
+                    title: "10. Built on Community Feedback",
+                    icon: "users",
+                    iconColor: "text-orange-600",
+                    content: "Vāṇī Studio v5.0 isn't just a technical update; it's a community achievement. Almost every new feature and fix in this release came from a user suggestion. We are building the world's best free text to voice ai together with you. From the addition of specific regional voices to the fix for audio clipping, your emails and messages shaped this version. We are committed to remaining an open, listener-first platform. As we look towards v6.0, we will continue to iterate based on what you need to make your digital stories even more powerful and engaging."
+                }
+            ];
+
+            return (
+                <div className="min-h-screen text-slate-900 selection:bg-slate-200 selection:text-slate-900">
+                    {/* Progress Bar */}
+                    <div 
+                        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-slate-700 via-blue-600 to-indigo-600 z-50 transition-all duration-300 ease-out shadow-lg"
+                        style={{ width: `${scrollProgress}%` }}
+                    />
+
+                    {/* Navbar */}
+                    <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+                        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+                            <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.location.href='index.html'}>
+                                <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                                    <Icon name="package" className="text-white" size={24} />
+                                </div>
+                                <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span className="text-blue-600">v5.0</span></span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
+                                <a href="index.html" className="hover:text-blue-600 transition-colors">Studio</a>
+                                <a href="#rendering" className="hover:text-blue-600 transition-colors">Updates</a>
+                                <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
+                                    Release Notes
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <header id="intro" className="relative pt-32 pb-24 px-6 bg-white overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                            <div className="absolute top-20 left-10 w-96 h-96 bg-slate-300 rounded-full blur-[120px] animate-pulse"></div>
+                            <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-300 rounded-full blur-[100px]"></div>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto text-center relative z-10">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-slate-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm">
+                                <Icon name="check-circle" size={16} /> Stable Release v5.0
+                            </div>
+                            <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tight mb-10">
+                                Faster. Clearer. <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-blue-700 to-indigo-800">
+                                    More Human.
+                                </span>
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 italic font-medium">
+                                A full breakdown of the latest updates in Vāṇī Studio: Rebuilt for high-fidelity long-form free text to voice ai.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Content Area */}
+                    <main className="max-w-4xl mx-auto px-6 pb-40">
+                        <article className="mb-32 text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8 text-left">
+                            <p className="first-letter:text-7xl first-letter:font-black first-letter:text-slate-900 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                                Evolution is at the heart of everything we do at Vāṇī Studio. We believe that professional audio technology shouldn't just be accessible; it should be perfect. For the past few months, our team has been working tirelessly on the v5.0 stable release, focusing on the core elements that matter most to you: speed, sound quality, and reliability.
+                            </p>
+                            <p>
+                                The transition to <strong>free text to voice ai</strong> has been a journey of moving away from robotic synthesis toward a world where AI can speak with a soul. v5.0 marks our most significant leap forward yet. Whether you are generating a 30-second ad or a 30-minute audiobook, the system is now optimized to deliver perfection every single time. Let's dive into the 10 major pillars of this new stable release.
+                            </p>
+                        </article>
+
+                        {/* Detailed 10 Points */}
+                        <div className="space-y-32">
+                            {sections.map((s, idx) => (
+                                <section key={s.id} id={s.id} className="relative group">
+                                    <div className="absolute -left-12 top-0 text-9xl font-black text-slate-100 opacity-50 pointer-events-none select-none group-hover:text-slate-200 transition-colors">
+                                        {idx < 9 ? `0${idx + 1}` : idx + 1}
+                                    </div>
+                                    
+                                    <div className="relative z-10 text-left">
+                                        <div className="flex gap-4 items-center mb-8">
+                                            <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xl group-hover:border-blue-300 transition-all">
+                                                <Icon name={s.icon} className={s.iconColor} size={24} />
+                                            </div>
+                                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 italic tracking-tight leading-tight">
+                                                {s.title}
+                                            </h3>
+                                        </div>
+                                        
+                                        <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
+                                            <p>{s.content}</p>
+                                            
+                                            <div className="bg-slate-100/50 border border-slate-200 p-6 rounded-[2rem] flex items-start gap-4 mt-10">
+                                                <Icon name="info" className="text-slate-600 shrink-0 mt-1" size={20} />
+                                                <div className="text-sm font-bold text-slate-900 leading-relaxed">
+                                                    <span className="uppercase text-[10px] tracking-widest text-slate-500 block mb-1">Update Impact</span>
+                                                    This {s.title.split(':')[0]} ensures that your free text to voice ai projects are more stable and professional than ever before.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            ))}
+                        </div>
+
+                        {/* Final CTA */}
+                        <section className="mt-40">
+                            <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-950 text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+                                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                                    <Icon name="package" className="absolute -bottom-20 -right-20" size={400} />
+                                </div>
+                                
+                                <div className="relative z-10 text-center">
+                                    <div className="w-20 h-2 bg-blue-500 rounded-full mx-auto mb-10"></div>
+                                    <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter italic text-white">
+                                        Experience the stable <br/> power of v5.0.
+                                    </h2>
+                                    <p className="text-xl text-slate-300 max-w-xl mx-auto mb-14 leading-relaxed font-medium">
+                                        The most reliable free text to voice ai generator is here. Start your next project with Vāṇī Studio v5.0 today.
+                                    </p>
+                                    <a href="index.html" className="px-10 py-5 bg-white text-slate-900 rounded-2xl font-black text-lg hover:bg-slate-100 transition-all shadow-xl inline-flex items-center justify-center gap-3 mx-auto">
+                                        Go to Studio <Icon name="arrow-right" size={20}/>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="bg-white border-t border-slate-100 pt-32 pb-16 px-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24 text-left">
+                                <div className="col-span-1 md:col-span-2 space-y-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
+                                            <Icon name="waves" className="text-white" size={24} />
+                                        </div>
+                                        <span className="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span className="text-blue-600">v5.0</span></span>
+                                    </div>
+                                    <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium italic">
+                                        Pushing the boundaries of <span className="text-slate-900 font-bold">free text to voice ai</span> with every stable release. Built for creators by creators.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-slate-900 pl-4">Release</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Stable Notes</a></li>
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Voice Catalog</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-slate-900 pl-4">Legal</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Terms of Use</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
+                                <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+                                    <span>&copy; 2024 Vāṇī Studio</span>
+                                    <span>Stable Release Lifecycle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
