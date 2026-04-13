@@ -1,290 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RV64RB8M6S');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Vāṇī AI Studio | Get Support & Feedback</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Get in touch with Vāṇī AI Studio. Contact our support team for technical help, API key issues, or business inquiries. We are here to help Indian creators.">
+
+    <!-- 1. Primary Meta Tags (SEO Mastered) -->
+    <title>Contact Us - Vāṇī AI Free Text to Voice AI Studio Support</title>
+    <meta name="title" content="Contact Us - Vāṇī AI Free Text to Voice AI Studio Support">
+    <meta name="description" content="Have questions about our free text to voice ai app? Contact Vāṇī AI Studio for technical support, business inquiries, or feedback. We are here to help Bharat's creators.">
+    <meta name="keywords" content="Contact Vāṇī AI, Free text to voice ai support, technical help AI voice, business inquiry Vani AI, Chhattisgarh AI studio, free text to voice help">
+    <meta name="author" content="Vāṇī Studio">
     <meta name="robots" content="index, follow">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 2. Canonical URL -->
+    <link rel="canonical" href="https://freetexttovoiceai.in/contact.html">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'indi-orange': '#ea580c',
-                        'indi-blue': '#1e40af',
-                        'indi-bg': '#f8fafc'
-                    }
-                }
-            }
-        }
+    <!-- 3. JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Vāṇī AI Studio",
+      "alternateName": "Free Text to Voice AI App",
+      "url": "https://freetexttovoiceai.in/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "description": "A professional-grade free text to voice ai generator supporting 15+ Indian neural voices.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1850" }
+    }
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RV64RB8M6S');
+    </script>
+
+    <!-- Fonts & Scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body {
-            background-color: #f8fafc;
-            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
-            background-image: radial-gradient(circle at 50% -20%, #ffedd5 0%, #f8fafc 100%);
-            min-height: 100vh;
-            color: #0f172a;
-        }
+        body { background-color: #f8fafc; font-family: 'Inter', 'Noto Sans Devanagari', sans-serif; color: #0f172a; scroll-behavior: smooth; }
         .hindi-font { font-family: 'Noto Sans Devanagari', sans-serif; }
-        
-        .glass-card {
-            background: #ffffff;
-            border: 1px solid #1e293b; 
-            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
-            border-radius: 2.5rem;
-        }
-        
-        .footer-card {
-            border: 1px solid #1e293b;
-        }
-
-        .icon-box {
-            background: linear-gradient(135deg, #f97316, #1e40af);
-            color: white;
-            border-radius: 1.25rem;
-        }
-        
-        .animate-up { animation: fadeInUp 0.7s ease-out forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
-        
-        .contact-info-title {
-            color: #1e40af;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
+        .static-header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .icon-box { background: linear-gradient(135deg, #f97316, #1e40af); color: white; border-radius: 1.25rem; }
+        .glass-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.5rem; box-shadow: 0 15px 35px -10px rgba(0,0,0,0.05); }
+        .seo-box { background: #fff; padding: 35px; border-radius: 2.5rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; height: 100%; }
+        .seo-box:hover { border-color: #f97316; transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.1); }
+        .footer-main { background: #fff; border-top: 1px solid #e2e8f0; padding: 100px 0 50px 0; }
+        .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; }
+        .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
+        .faq-item { background: white; border: 1px solid #e2e8f0; border-radius: 1.5rem; padding: 25px; transition: 0.3s; }
+        .faq-item:hover { border-color: #1e40af; }
+        .contact-pill { background: #f1f5f9; border: 1px solid #e2e8f0; padding: 12px 24px; border-radius: 1rem; display: flex; items-center: center; gap: 12px; font-weight: 700; color: #475569; }
     </style>
 </head>
 <body>
-    <div id="root"></div>
 
-    <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
-
-        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
-            const iconRef = useRef(null);
-            useEffect(() => {
-                if (window.lucide && iconRef.current) {
-                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
-                    window.lucide.createIcons({ root: iconRef.current });
-                }
-            }, [name, size]);
-            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
-        };
-
-        const App = () => {
-            const [lang, setLang] = useState('en');
-
-            const i18n = {
-                hi: {
-                    tagline: "सम्पर्क करें | हम आपकी सहायता के लिए तैयार हैं",
-                    backBtn: "वापस स्टूडियो",
-                    title: "Contact Us",
-                    emailLabel: "सपोर्ट ईमेल",
-                    responseTitle: "प्रतिक्रिया समय",
-                    responseDesc: "हम आमतौर पर २४-४८ घंटों के भीतर उत्तर देते हैं।",
-                    
-                    introTitle: "हमसे सम्पर्क क्यों करें?",
-                    introDesc: "यदि आपके पास वाणी एआई स्टूडियो को बेहतर बनाने के लिए कोई सुझाव है, या आप किसी तकनीकी समस्या का सामना कर रहे हैं, तो हमारी टीम आपकी सहायता के लिए यहाँ है।",
-                    
-                    details: [
-                        { title: "तकनीकी सहायता", icon: "settings", text: "यदि आपको एपीआई की (API Key) सेट करने या ऑडियो जनरेट करने में कोई समस्या आ रही है।" },
-                        { title: "फीडबैक और सुझाव", icon: "message-square", text: "हम अपने प्लेटफॉर्म को और बेहतर बनाने के लिए आपके विचारों का स्वागत करते हैं।" },
-                        { title: "बिज़नेस पूछताछ", icon: "briefcase", text: "कोलाबोरेशन या अन्य व्यावसायिक प्रस्तावों के लिए हमें सीधे ईमेल भेजें।" }
-                    ],
-                    footerText: "भारत के डिजिटल क्रिएटर के लिए निर्मित"
-                },
-                en: {
-                    tagline: "Get in Touch | We are ready to help",
-                    backBtn: "Back to Studio",
-                    title: "Contact Us",
-                    emailLabel: "Support Email",
-                    responseTitle: "Response Time",
-                    responseDesc: "We usually respond within 24-48 hours.",
-                    
-                    introTitle: "Why Contact Us?",
-                    introDesc: "Whether you have a suggestion to improve Vāṇī AI Studio or you're facing technical difficulties, our support team is here to guide you every step of the way.",
-                    
-                    details: [
-                        { title: "Technical Support", icon: "settings", text: "Struggling with API key integration or audio synthesis errors? We've got your back." },
-                        { title: "Feedback & Ideas", icon: "message-square", text: "Your ideas help us evolve. Share your suggestions to make Vani AI better." },
-                        { title: "Business Inquiries", icon: "briefcase", text: "For collaboration or commercial proposals, feel free to reach out directly." }
-                    ],
-                    footerText: "Built for Indian Digital Creators"
-                }
-            };
-
-            const t = i18n[lang];
-
-            return (
-                <div className={`min-h-screen flex flex-col p-4 md:p-10 animate-up ${lang === 'hi' ? 'hindi-font' : ''}`}>
-                    {/* Header */}
-                    <header className="max-w-7xl mx-auto w-full flex flex-col items-center mb-16 text-center">
-                        <div className="flex w-full justify-end mb-4">
-                            <button 
-                                onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
-                                className="flex items-center gap-2 bg-indi-blue text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg hover:bg-blue-700 transition-all border border-slate-900"
-                            >
-                                <Icon name="languages" size={14} />
-                                {lang === 'hi' ? "English" : "हिन्दी"}
-                            </button>
-                        </div>
-                        <div className="icon-box p-5 shadow-xl mb-6 ring-4 ring-orange-50">
-                            <Icon name="mail" size={32} />
-                        </div>
-                        <h1 className="text-5xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</h1>
-                        <p className="text-[11px] text-indi-orange font-black uppercase tracking-[0.4em] mt-2">{t.tagline}</p>
-                    </header>
-
-                    <main className="max-w-5xl mx-auto w-full flex-1">
-                        <div className="glass-card p-8 md:p-16 border-slate-900 shadow-2xl relative overflow-hidden">
-                            
-                            {/* TOP BACK BUTTON */}
-                            <div className="mb-12">
-                                <a href="index.html" className="inline-flex items-center gap-2 text-indi-blue font-black text-xs uppercase tracking-widest hover:text-indi-orange transition-colors group">
-                                    <Icon name="arrow-left" size={16} className="group-hover:-translate-x-1 transition-transform" /> 
-                                    {t.backBtn}
-                                </a>
-                            </div>
-
-                            <div className="absolute top-0 right-0 p-12 opacity-5 -rotate-12 pointer-events-none">
-                                <Icon name="send" size={300} />
-                            </div>
-
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
-                                <div>
-                                    <h2 className="text-4xl font-black text-slate-900 mb-6 uppercase italic tracking-tighter border-b-4 border-indi-orange inline-block pb-2">{t.title}</h2>
-                                    <p className="text-lg text-slate-700 font-bold mb-10 leading-relaxed">{t.introDesc}</p>
-                                    
-                                    <div className="space-y-8">
-                                        {t.details.map((detail, idx) => (
-                                            <div key={idx} className="flex gap-5 items-start">
-                                                <div className="p-3 bg-orange-50 rounded-2xl border border-indi-orange/20 shadow-sm">
-                                                    <Icon name={detail.icon} className="text-indi-orange" size={24} />
-                                                </div>
-                                                <div>
-                                                    <h4 className="text-base font-black text-indi-blue uppercase tracking-widest mb-1 italic">{detail.title}</h4>
-                                                    <p className="text-sm text-slate-600 font-bold leading-relaxed">{detail.text}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="space-y-8">
-                                    {/* Email Card */}
-                                    <div className="p-10 bg-indi-blue text-white rounded-[3rem] border border-slate-900 shadow-2xl flex flex-col items-center text-center">
-                                        <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 border border-white/5">
-                                            <Icon name="mail" size={32} className="text-indi-orange" />
-                                        </div>
-                                        <h3 className="text-sm font-black uppercase tracking-[0.3em] text-orange-200 mb-2">{t.emailLabel}</h3>
-                                        <p className="text-xl md:text-2xl font-black tracking-tight break-all">rahulthakurpatan@gmail.com</p>
-                                        
-                                        <div className="mt-8 pt-8 border-t border-white/10 w-full">
-                                            <h4 className="text-[10px] font-black uppercase tracking-widest text-orange-200 mb-1">{t.responseTitle}</h4>
-                                            <p className="text-xs font-bold text-blue-100">{t.responseDesc}</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Location Info */}
-                                    <div className="glass-card p-8 border-slate-900 shadow-xl flex items-center gap-6">
-                                        <div className="p-4 bg-slate-50 rounded-2xl">
-                                            <Icon name="map-pin" className="text-indi-blue" size={24} />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400">Location</h4>
-                                            <p className="text-sm font-black text-slate-900 uppercase tracking-tight">Chhattisgarh, India</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* BOTTOM BACK BUTTON */}
-                            <div className="mt-20 pt-12 border-t border-slate-200 flex justify-center">
-                                <a href="index.html" className="flex items-center gap-3 bg-indi-blue text-white px-12 py-5 rounded-[2.5rem] font-black text-sm uppercase tracking-[0.2em] hover:bg-blue-800 transition-all shadow-xl border border-slate-900 active:scale-95">
-                                    <Icon name="sparkles" size={18} /> {t.backBtn}
-                                </a>
-                            </div>
-                        </div>
-                    </main>
-
-                    {/* Footer (Same as Index) */}
-                    <footer className="max-w-7xl mx-auto w-full mt-40 pb-20 border-t border-slate-900 pt-20">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-2">
-                            {[
-                                { icon: "info", title: lang === 'en' ? "About Us" : "हमारे बारे में", link: "about.html", body: "India's premium neural studio for creators looking for high-fidelity voices." },
-                                { icon: "shield-check", title: lang === 'en' ? "Privacy" : "गोपनीयता", link: "privacy-policy.html", body: "100% Client-side privacy. Your keys are never saved on servers." },
-                                { icon: "file-text", title: lang === 'en' ? "Terms" : "नियम", link: "terms.html", body: "Commercial rights included for all generated audio content." },
-                                { icon: "mail", title: lang === 'en' ? "Contact" : "संपर्क", link: "contact.html", body: "Reach out to our Indian support community for quick help." },
-                                { icon: "book-open", title: lang === 'en' ? "Blog" : "ब्लॉग", link: "blog.html", body: "Read latest tips on AI voiceovers and content monetization." }
-                            ].map((card, i) => (
-                                <a href={card.link} key={i} className="glass-card footer-card p-8 hover:border-indi-orange transition-all group shadow-sm flex flex-col">
-                                    <div className="w-12 h-12 bg-slate-100 text-indi-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indi-blue group-hover:text-white transition-all shadow-inner border border-slate-200">
-                                        <Icon name={card.icon} size={22} />
-                                    </div>
-                                    <h4 className="text-base font-black text-slate-900 mb-3 uppercase tracking-tighter italic flex items-center justify-between">
-                                        {card.title}
-                                        <Icon name="arrow-up-right" size={14} className="opacity-0 group-hover:opacity-100 transition-all" />
-                                    </h4>
-                                    <p className="text-[11px] text-slate-800 leading-relaxed font-bold">{card.body}</p>
-                                </a>
-                            ))}
-                        </div>
-                        <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-10 border-t border-slate-300 pt-16 px-6 text-[10px] font-black text-slate-800 uppercase tracking-widest italic">
-                            <div className="flex items-center gap-4">
-                                <Icon name="sparkles" className="text-indi-orange" size={26} />
-                                <div>
-                                    <p className="text-2xl font-black text-indi-blue tracking-tighter uppercase italic">Vāṇī Studio</p>
-                                    <p>Powered by Gemini Flash 2.5</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-10">
-                                <span className="flex items-center gap-2 text-slate-900"><Icon name="flag" size={14} className="text-indi-orange" /> Made in Bharat</span>
-                                <span className="flex items-center gap-2 text-slate-900"><Icon name="cpu" size={14} className="text-indi-blue" /> Version 5.0 Stable</span>
-                            </div>
-                        </div>
-                    </footer>
+    <!-- 1. HEADER -->
+    <header class="static-header py-6 px-6 md:px-12 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-6 text-left">
+                <div class="w-16 h-16 icon-box flex items-center justify-center shadow-xl shrink-0">
+                    <i data-lucide="mail" class="w-9 h-9 text-white"></i>
                 </div>
-            );
-        };
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h2>
+                    <p class="text-[13px] font-black text-slate-900 uppercase tracking-widest">Contact & Support Center</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500 items-center">
+                <a href="index.html" class="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-all shadow-md flex items-center gap-2">
+                   <i data-lucide="arrow-left" class="w-4 h-4"></i> BACK TO STUDIO
+                </a>
+            </nav>
+        </div>
+    </header>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+    <!-- 2. MAIN CONTACT CONTENT -->
+    <main class="max-w-5xl mx-auto px-6 py-20 text-left">
+        <article>
+            <div class="text-center mb-20">
+                <h1 class="text-4xl md:text-7xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-6">Let's Talk <br/> Innovation.</h1>
+                <p class="text-xl md:text-2xl font-bold text-slate-500 leading-relaxed italic max-w-2xl mx-auto">
+                    Whether you have a suggestion to improve Vāṇī AI Studio or you're facing technical difficulties, our support team is here to guide you every step of the way.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <!-- Technical Support -->
+                <div class="glass-card p-10 border-blue-100 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-6">
+                        <i data-lucide="wrench" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black uppercase italic text-slate-900 mb-4 tracking-tight">Technical Support</h3>
+                    <p class="text-sm font-semibold text-slate-500 leading-relaxed">
+                        Struggling with API key integration or <strong>free text to voice ai</strong> synthesis errors? We've got your back.
+                    </p>
+                </div>
+
+                <!-- Feedback & Ideas -->
+                <div class="glass-card p-10 border-orange-100 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-3xl flex items-center justify-center mb-6">
+                        <i data-lucide="lightbulb" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black uppercase italic text-slate-900 mb-4 tracking-tight">Feedback & Ideas</h3>
+                    <p class="text-sm font-semibold text-slate-500 leading-relaxed">
+                        Your ideas help us evolve. Share your suggestions to make our <strong>free text to voice</strong> tool even better.
+                    </p>
+                </div>
+
+                <!-- Business Inquiries -->
+                <div class="glass-card p-10 border-indigo-100 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-3xl flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black uppercase italic text-slate-900 mb-4 tracking-tight">Business Inquiries</h3>
+                    <p class="text-sm font-semibold text-slate-500 leading-relaxed">
+                        For collaboration or commercial proposals using our <strong>free text to voice ai generator</strong>, feel free to reach out.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detailed Info Section -->
+            <section class="glass-card p-10 md:p-16 bg-slate-900 text-white shadow-2xl overflow-hidden relative">
+                <div class="absolute -right-20 -bottom-20 opacity-5">
+                    <i data-lucide="mail" class="w-96 h-96"></i>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                    <div class="space-y-8">
+                        <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-orange-500">Contact Details</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-orange-500"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Support Email</p>
+                                    <p class="text-lg font-bold">rahulthakurpatan@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-blue-400"><i data-lucide="clock" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Response Time</p>
+                                    <p class="text-lg font-bold">Within 24-48 Hours</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-emerald-400"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Location</p>
+                                    <p class="text-lg font-bold">Chhattisgarh, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-slate-400 font-bold mb-8 italic">"We are committed to empowering the voice of Bharat. Send us your queries and we will get back to you as soon as possible."</p>
+                        <a href="mailto:rahulthakurpatan@gmail.com" class="inline-flex items-center gap-3 bg-orange-600 text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:bg-orange-700 transition-all uppercase">
+                            Send Email <i data-lucide="send" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="mt-20 flex justify-center">
+            <a href="index.html" class="text-blue-600 font-black uppercase tracking-widest text-xs border-2 border-blue-600 px-10 py-4 rounded-full hover:bg-blue-600 hover:text-white transition-all flex items-center gap-3">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i> Return to Studio Dashboard
+            </a>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER AREA (Consolidated with Sitemap & FAQs) -->
+    <footer class="footer-main">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Cards Section -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-32 text-left">
+                <a href="about.html" class="glass-card p-8 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="info" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-3 uppercase italic">About Us</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">Bharat's premium neural studio for digital creators.</p>
+                </a>
+                <a href="privacy-policy.html" class="glass-card p-8 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-3 uppercase italic">Privacy</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">100% Secure. Your data never leaves your browser.</p>
+                </a>
+                <a href="terms.html" class="glass-card p-8 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="file-text" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-3 uppercase italic">Terms</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">Full commercial rights for all your audio content.</p>
+                </a>
+                <a href="contact.html" class="glass-card p-8 group transition-all border-blue-600 bg-blue-50 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i data-lucide="mail" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-3 uppercase italic">Contact</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">Quick support for Indian content creators.</p>
+                </a>
+                <a href="blog.html" class="glass-card p-8 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="book-open" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-3 uppercase italic">Our Blog</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">Master AI monetization and storytelling tips.</p>
+                </a>
+            </div>
+
+            <!-- SEO TEXT BOXES -->
+            <section id="seo-content" class="py-20 border-t border-slate-100 text-left">
+                <div class="text-center mb-24">
+                    <h2 class="text-4xl md:text-7xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-6">Expert Free Text <br class="hidden md:block" /> to Voice AI</h2>
+                    <p class="text-slate-400 font-bold uppercase tracking-widest text-xs tracking-[0.3em]">The ultimate free text to voice ai app for creators</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="mic-2" class="w-6 h-6 text-orange-500"></i> 1. Free Text to Speech Online</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Vāṇī AI is the best <strong>free text to speech tool</strong> available online in 2026. Simply paste your text, choose a voice, and get natural human-like audio in seconds. No signup required.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="globe" class="w-6 h-6 text-orange-500"></i> 2. 100+ Languages Supported</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Our <strong>free text to voice AI</strong> supports over 100 languages. Hindi, English, Tamil, Telugu, Bengali, and all major Indian languages included.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="youtube" class="w-6 h-6 text-orange-500"></i> 3. Free Text to Voice for YouTube</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Create professional YouTube voiceovers using our <strong>free text to voice AI tool</strong>. Perfect for faceless YouTube channels in any language.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="key" class="w-6 h-6 text-orange-500"></i> 4. Use Your Own API Key — Free</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Get a free Gemini API key from Google AI Studio and use our <strong>free text to speech studio</strong> at zero cost. 100% private and secure.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="zap" class="w-6 h-6 text-orange-500"></i> 5. Instant Voice Generation</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Our <strong>free text to voice AI</strong> generates audio in milliseconds. Powered by Gemini Flash 2.5 — the fastest AI model available online.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="graduation-cap" class="w-6 h-6 text-orange-500"></i> 6. Free Text to Speech for Education</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Convert notes and textbooks into audio. Make education more accessible with the best <strong>free text to speech</strong> technology available today.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="dollar-sign" class="w-6 h-6 text-orange-500"></i> 7. 100% Free — No Subscription</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Unlike other tools that charge monthly fees, Vāṇī AI is completely free. No subscription. No watermarks. Just pure <strong>free text to speech</strong>.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="volume-2" class="w-6 h-6 text-orange-500"></i> 8. 15+ Realistic AI Voices</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Choose from 15+ realistic voices in our <strong>free text to voice AI studio</strong>. The widest selection of voices in any free text to speech tool.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="shield-check" class="w-6 h-6 text-orange-500"></i> 9. Professional-Grade Privacy</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">By keeping your generation strictly client-side, we ensure that your sensitive business data and scripts remain entirely under your control.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="smartphone" class="w-6 h-6 text-orange-500"></i> 10. Multi-Device Accessibility</h3>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Experience a seamless <strong>free text to voice ai generator</strong> on any screen — optimized for mobile and desktop creators.</p>
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="mt-20 glass-card p-12 md:p-20 border-slate-900 bg-slate-900 text-white shadow-2xl">
+                   <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-8 text-orange-500">What is Vāṇī AI?</h2>
+                   <p class="text-lg md:text-xl font-medium leading-relaxed text-slate-300">
+                     Vāṇī AI is a completely <strong>free text to voice AI studio</strong> built on Google's Gemini Flash 2.5 API. It is the most advanced free text to speech tool available online in 2026. Whether you are a YouTube creator, a teacher, a student, or a business owner — Vāṇī AI gives you access to professional-grade AI voices at zero cost. Our free text to voice AI supports 100+ languages, 15+ realistic voices, and works directly in your browser with no downloads required. We use a BYOK (Bring Your Own Key) model — meaning your Gemini API key stays private in your own browser. No data is stored on our servers. Start using the best free text to speech tool today — no signup, no payment, no limits.
+                   </p>
+                </div>
+            </section>
+
+            <!-- C. SITEMAP LINKS -->
+            <section id="sitemap" class="py-24 bg-slate-50/80 rounded-[4rem] px-10 border border-slate-100 mb-20 text-left">
+                <h2 class="text-3xl font-black text-slate-900 mb-14 uppercase italic tracking-tighter">Vāṇī Studio Creator Guides</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-8">
+                    <a href="how-to-get-api-key.html" class="sitemap-link">1. How to Generate a Free Gemini API Key</a>
+                    <a href="best-voices-for-youtube.html" class="sitemap-link">2. Best Hindi AI Voices for YouTube Shorts</a>
+                    <a href="earn-money-ai-voice.html" class="sitemap-link">3. Monetization Secrets for Faceless Channels</a>
+                    <a href="vani-ai-vs-elevenlabs.html" class="sitemap-link">4. Vāṇī AI vs ElevenLabs: Creator Comparison</a>
+                    <a href="why-byok-is-safe.html" class="sitemap-link">5. Why BYOK Model is the New Standard</a>
+                    <a href="write-better-tts-scripts.html" class="sitemap-link">6. How to Write High-Conversion Scripts</a>
+                    <a href="fix-chrome-loading-issues.html" class="sitemap-link">7. Fixing Chrome Loading & White Screens</a>
+                    <a href="ai-voice-for-elearning.html" class="sitemap-link">8. Using AI Voices for E-Learning Content</a>
+                    <a href="create-podcast-with-ai.html" class="sitemap-link">9. Podcast Magic: Start Without a Mic</a>
+                    <a href="voice-profiles-masterclass.html" class="sitemap-link">10. Masterclass: 15+ Neural Voice Profiles</a>
+                    <a href="regional-languages-guide.html" class="sitemap-link">11. Guide to Marathi, Bengali & Sanskrit Voices</a>
+                    <a href="secure-your-api-key.html" class="sitemap-link">12. Prevent Your Google API Key from Theft</a>
+                    <a href="what-is-neural-speech.html" class="sitemap-link">13. The Science of Neural Speech Synthesis</a>
+                    <a href="ai-voices-for-ads.html" class="sitemap-link">14. Scaling Small Businesses with AI Ads</a>
+                    <a href="emotional-ai-voices.html" class="sitemap-link">15. Creating Emotional AI Voices: Joy & Sadness</a>
+                    <a href="seo-for-audio-content.html" class="sitemap-link">16. SEO for AI Content: Rank Your Narrations</a>
+                    <a href="mobile-vs-desktop-guide.html" class="sitemap-link">17. Mobile vs Desktop: Vāṇī AI Optimization</a>
+                    <a href="version-5-updates.html" class="sitemap-link">18. Vāṇī Studio v5.0 Stable Release: What's New?</a>
+                    <a href="beginner-to-pro-masterclass.html" class="sitemap-link">19. Professional AI Voice Producer Roadmap</a>
+                    <a href="future-of-indian-ai.html" class="sitemap-link">20. The Future of Indian AI: Language Barriers</a>
+                </div>
+            </section>
+
+            <!-- Copyright -->
+            <div class="text-center pt-24 border-t border-slate-100 flex flex-col items-center">
+                <div class="w-20 h-2 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mb-10"></div>
+                <p class="text-[11px] font-black uppercase tracking-[0.5em] text-slate-400">© 2026 Vāṇī Studio — Made with Love in Bharat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize icons
+        lucide.createIcons();
     </script>
 </body>
-</html>
+    </html>
