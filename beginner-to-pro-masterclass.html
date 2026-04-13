@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RV64RB8M6S');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional AI Voice Producer Roadmap - Vāṇī AI</title>
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        header {
+          background-image: radial-gradient(circle at 50% -20%, #eff6ff 0%, #f8fafc 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [scrollProgress, setScrollProgress] = useState(0);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    const currentScroll = window.scrollY;
+                    if (totalScroll > 0) {
+                        setScrollProgress((currentScroll / totalScroll) * 100);
+                    }
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const sections = [
+                {
+                    id: "setup",
+                    title: "1. Mastering the BYOK Environment",
+                    icon: "key",
+                    iconColor: "text-blue-600",
+                    content: "An expert producer knows that the foundation of a good workflow is a stable environment. Vāṇī AI operates on a 'Bring Your Own Key' (BYOK) model, which gives you direct access to professional-grade neural engines for free. To start your journey, you must first master the setup of your Google AI Studio key. This ensures that you aren't reliant on third-party platform limits. By managing your own keys, you unlock a free text to voice ai experience that is both private and highly scalable. An expert always keeps a backup key ready to ensure that long-form production projects are never interrupted by quota resets."
+                },
+                {
+                    id: "scripts",
+                    title: "2. Scripting for the Ear, Not the Eye",
+                    icon: "file-text",
+                    iconColor: "text-slate-700",
+                    content: "Writing for AI speech is an art form. Beginner producers often copy-paste text directly from blogs, which can sound disjointed when read aloud. To become an expert, you must learn to write 'phonetically.' Use shorter sentences, add natural pauses using punctuation, and avoid overly complex words that might confuse the neural engine. When you use our free text to voice ai generator, think about how the listener will hear the words. Break your long paragraphs into smaller, digestible chunks. This not only improves the flow of the narration but also prevents the AI from sounding robotic during long-form conversions."
+                },
+                {
+                    id: "voice-matching",
+                    title: "3. Strategic Voice Profile Selection",
+                    icon: "mic-2",
+                    iconColor: "text-amber-600",
+                    content: "A professional producer never picks a voice at random. Every project has a 'persona.' Is it a luxury car ad? Use a deep, authoritative voice like 'Arjun.' Is it a friendly tutorial for kids? A sweet and soft voice like 'Priya' works better. Our free text to voice ai offers 15+ premium profiles, each with a unique emotional tilt. Experts spend time testing different voices for the same script to see which one resonates best with the target audience. Matching the right voice to your content is what separates an amateur audio file from a world-class production."
+                },
+                {
+                    id: "punctuation",
+                    title: "4. Punctuation as Your Directing Tool",
+                    icon: "type",
+                    iconColor: "text-indigo-600",
+                    content: "In the world of AI voice production, punctuation marks are your directing commands. A comma isn't just a grammatical requirement; it's a breath. A period isn't just the end of a sentence; it's a conclusion. Advanced producers use ellipses (...) to create a sense of hesitation or mystery, and exclamation marks (!) to inject energy. By mastering these symbols in our free text to voice ai generator, you can control the rhythm of the narration. You are effectively 'directing' the AI artist to pause, speed up, or slow down, ensuring the final output sounds like it was recorded in a studio by a human."
+                },
+                {
+                    id: "batching",
+                    title: "5. Batch Processing for Large Scale Projects",
+                    icon: "layers",
+                    iconColor: "text-blue-700",
+                    content: "Producing an audiobook or a 20-minute documentary requires a different strategy than a 15-second reel. Expert producers use 'Batch Processing.' Instead of generating one giant file, they break the script into chapters or scenes. This allows for better control over the emotional tone of each section. Using our free text to voice ai, you can generate multiple segments and then stitch them together in your editing software. This method also helps you manage your API quota more effectively, ensuring that your high-fidelity rendering remains consistent across the entire length of the project."
+                },
+                {
+                    id: "fidelity",
+                    title: "6. Audio Fidelity and Post-Production",
+                    icon: "volume-2",
+                    iconColor: "text-emerald-600",
+                    content: "While our free text to voice ai generator produces high-quality 24kHz audio, an expert producer knows that the job doesn't end with the 'Download' button. To achieve world-class sound, you should learn basic post-production. Use a simple equalizer (EQ) to add warmth to the voice, or a compressor to make it sound punchy for radio-style ads. Since Vāṇī AI provides clean, neural output, it serves as the perfect 'raw' file for your professional audio workstation. This combination of AI generation and human editing is the secret to producing audio that is indistinguishable from reality."
+                },
+                {
+                    id: "regional",
+                    title: "7. Mastering Regional Nuances",
+                    icon: "globe",
+                    iconColor: "text-cyan-600",
+                    content: "The true power of Vāṇī AI lies in its ability to handle regional languages like Hindi, Marathi, and Sanskrit. A beginner might overlook the importance of local accents, but an expert uses them to build trust. When creating content for the Indian market, ensure you are using the correct Unicode characters for your script. Our free text to voice ai engine is optimized to recognize these subtle linguistic patterns. By producing audio in the native tongue of your audience, you increase engagement and build a deeper cultural connection that global, English-only tools simply cannot match."
+                },
+                {
+                    id: "ethics",
+                    title: "8. Rights, Ethics, and Ownership",
+                    icon: "shield-check",
+                    iconColor: "text-slate-800",
+                    content: "A professional producer always stays legally compliant. One of the biggest advantages of using our free text to voice ai generator is the clarity of ownership. All audio generated belongs to you. This means you can monetize your YouTube channel or sell your voiceover services to clients without any copyright strikes. Experts always keep records of their production and ensure that they aren't using AI to impersonate real people without permission. Ethical production is the key to building a long-term, sustainable career in the AI voice industry."
+                },
+                {
+                    id: "testing",
+                    title: "9. Cross-Device Quality Control",
+                    icon: "smartphone",
+                    iconColor: "text-indigo-500",
+                    content: "How does your audio sound on a $500 pair of headphones versus a $10 smartphone speaker? An expert producer tests their output on multiple devices. Before finalizing a project, listen to your free text to voice ai narration on different hardwares. You might find that you need to adjust the volume or the speed to make it clear for mobile listeners. Since Vāṇī AI allows for unlimited free generations, don't be afraid to tweak and re-generate until the audio sounds perfect on every screen. Quality control is the hallmark of a true professional."
+                },
+                {
+                    id: "learning",
+                    title: "10. Continuous Skill Upgrading",
+                    icon: "sparkles",
+                    iconColor: "text-amber-500",
+                    content: "The world of neural speech is moving at lightning speed. To remain an expert, you must stay updated with the latest releases. Whether it's the move to Gemini 2.5 Flash or the introduction of new emotional profiles, Vāṇī AI is constantly evolving. A professional producer reads the release notes, experiments with new features, and shares their findings with the community. By treating your free text to voice ai studio as a living tool that grows with you, you ensure that your skills remain at the cutting edge, making you a highly sought-after expert in the new digital economy."
+                }
+            ];
+
+            return (
+                <div className="min-h-screen text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+                    {/* Progress Bar */}
+                    <div 
+                        className="fixed top-0 left-0 h-2 bg-gradient-to-r from-blue-600 via-amber-400 to-indigo-600 z-50 transition-all duration-300 ease-out shadow-lg"
+                        style={{ width: `${scrollProgress}%` }}
+                    />
+
+                    {/* Navbar */}
+                    <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-blue-100/50">
+                        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+                            <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.location.href='index.html'}>
+                                <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                                    <Icon name="award" className="text-white" size={24} />
+                                </div>
+                                <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">VĀṆĪ <span className="text-blue-600">PRO</span></span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
+                                <a href="index.html" className="hover:text-blue-600 transition-colors">Studio</a>
+                                <a href="#setup" className="hover:text-blue-600 transition-colors">Roadmap</a>
+                                <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
+                                    Expert Access
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <header id="intro" className="relative pt-32 pb-24 px-6 bg-white overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px] animate-pulse"></div>
+                            <div className="absolute bottom-10 right-10 w-80 h-80 bg-amber-400 rounded-full blur-[100px]"></div>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto text-center relative z-10">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-sm">
+                                <Icon name="star" size={16} /> Mastery Course v1.0
+                            </div>
+                            <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tight mb-10">
+                                Become a <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-amber-500 to-indigo-800">
+                                    Voice Pro.
+                                </span>
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 italic font-medium">
+                                A complete roadmap to mastering the art of high-fidelity free text to voice ai production for creators.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Content Area */}
+                    <main className="max-w-4xl mx-auto px-6 pb-40 text-left">
+                        <article className="mb-32 text-lg md:text-xl text-slate-700 leading-[1.8] space-y-8">
+                            <p className="first-letter:text-7xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                                The transition from a beginner who just 'uses' AI to a professional who 'produces' with it is a journey of precision. In today's digital world, anyone can generate a voice, but very few can craft an audio experience that truly resonates with a listener's soul. The key lies in understanding the subtle features of your tools and the psychology of sound.
+                            </p>
+                            <p>
+                                Whether you are building a personal brand or helping local businesses grow, mastering a <strong>free text to voice ai</strong> studio like Vāṇī AI gives you a massive competitive edge. It allows you to produce high-end content at a speed and cost that was previously impossible. This roadmap is designed to take you through the 10 critical stages of professional voice production, ensuring that your work is always world-class.
+                            </p>
+                        </article>
+
+                        {/* Detailed 10 Points */}
+                        <div className="space-y-32">
+                            {sections.map((s, idx) => (
+                                <section key={s.id} id={s.id} className="relative group">
+                                    <div className="absolute -left-12 top-0 text-9xl font-black text-slate-100 opacity-50 pointer-events-none select-none group-hover:text-blue-50 transition-colors">
+                                        {idx < 9 ? `0${idx + 1}` : idx + 1}
+                                    </div>
+                                    
+                                    <div className="relative z-10">
+                                        <div className="flex gap-4 items-center mb-8">
+                                            <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xl group-hover:border-blue-300 transition-all">
+                                                <Icon name={s.icon} className={s.iconColor} size={24} />
+                                            </div>
+                                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 italic tracking-tight leading-tight">
+                                                {s.title}
+                                            </h3>
+                                        </div>
+                                        
+                                        <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
+                                            <p>{s.content}</p>
+                                            
+                                            <div className="bg-blue-50/50 border border-blue-100 p-6 rounded-[2rem] flex items-start gap-4 mt-10">
+                                                <Icon name="check-circle" className="text-blue-600 shrink-0 mt-1" size={20} />
+                                                <div className="text-sm font-bold text-slate-900 leading-relaxed">
+                                                    <span className="uppercase text-[10px] tracking-widest text-blue-500 block mb-1">Pro Insight</span>
+                                                    Following this {s.title.split(':')[0]} ensures that your free text to voice ai narration sounds like it was recorded in a professional studio.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            ))}
+                        </div>
+
+                        {/* Final CTA */}
+                        <section className="mt-40">
+                            <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+                                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                                    <Icon name="award" className="absolute -bottom-20 -right-20" size={400} />
+                                </div>
+                                
+                                <div className="relative z-10 text-center">
+                                    <div className="w-20 h-2 bg-amber-500 rounded-full mx-auto mb-10"></div>
+                                    <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tighter italic text-white">
+                                        Start your journey <br/> to expertise.
+                                    </h2>
+                                    <p className="text-xl text-blue-100/70 max-w-xl mx-auto mb-14 leading-relaxed font-medium">
+                                        The roadmap is ready. The studio is open. Start producing professional-grade free text to voice ai today with Vāṇī AI.
+                                    </p>
+                                    <a href="index.html" className="px-10 py-5 bg-white text-blue-900 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all shadow-xl inline-flex items-center justify-center gap-3 mx-auto">
+                                        Launch Studio <Icon name="arrow-right" size={20}/>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="bg-white border-t border-slate-100 pt-32 pb-16 px-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24 text-left">
+                                <div className="col-span-1 md:col-span-2 space-y-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
+                                            <Icon name="waves" className="text-white" size={24} />
+                                        </div>
+                                        <span className="text-3xl font-black tracking-tighter uppercase text-slate-900">VĀṆĪ <span className="text-blue-600">PRO</span></span>
+                                    </div>
+                                    <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium italic">
+                                        Building the next generation of professional <span className="text-slate-900 font-bold">free text to voice ai</span> producers. Your global voice starts here.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-blue-600 pl-4">Roadmap</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Beginner Guide</a></li>
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Expert Hacks</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 mb-8 border-l-4 border-blue-600 pl-4">Contact</h4>
+                                    <ul className="space-y-4 text-slate-500 font-bold text-sm">
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                                        <li><a href="index.html" className="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
+                                <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+                                    <span>&copy; 2024 Vāṇī Studio</span>
+                                    <span>Engineered for Creativity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
