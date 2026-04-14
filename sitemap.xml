@@ -1,163 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Main Home Page -->
+  <!-- 1. MAIN HUB (Priority 1.0) -->
   <url>
     <loc>https://freetexttovoiceai.in/</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
 
-  <!-- Static Pages -->
+  <!-- 2. NEWS/BLOG ARCHIVE (Priority 0.9) -->
   <url>
-    <loc>https://freetexttovoiceai.in/about.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://freetexttovoiceai.in/privacy-policy.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.30</priority>
-  </url>
-  <url>
-    <loc>https://freetexttovoiceai.in/terms.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.30</priority>
-  </url>
-  <url>
-    <loc>https://freetexttovoiceai.in/contact.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <loc>https://freetexttovoiceai.in/blog.html</loc>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
   </url>
 
-  <!-- Blog Posts -->
+  <!-- 3. LATEST ARTICLES (Priority 0.85) -->
   <url>
     <loc>https://freetexttovoiceai.in/how-to-get-api-key.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/best-voices-for-youtube.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-08T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/earn-money-ai-voice.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-07T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/vani-ai-vs-elevenlabs.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-06T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/why-byok-is-safe.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-05T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/write-better-tts-scripts.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-04T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/fix-chrome-loading-issues.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-03T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/ai-voice-for-elearning.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-02T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/create-podcast-with-ai.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-04-01T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/voice-profiles-masterclass.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-31T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/regional-languages-guide.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-30T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/secure-your-api-key.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-29T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/what-is-neural-speech.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-28T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/ai-voices-for-ads.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-27T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/emotional-ai-voices.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-26T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/seo-for-audio-content.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-25T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/mobile-vs-desktop-guide.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-24T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/version-5-updates.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-23T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/beginner-to-pro-masterclass.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-22T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://freetexttovoiceai.in/future-of-indian-ai.html</loc>
-    <lastmod>2024-05-20T10:00:00+00:00</lastmod>
+    <lastmod>2026-03-21T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
+  </url>
+
+  <!-- 4. STATIC PAGES (Priority 0.5) -->
+  <url>
+    <loc>https://freetexttovoiceai.in/about.html</loc>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://freetexttovoiceai.in/contact.html</loc>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://freetexttovoiceai.in/privacy-policy.html</loc>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://freetexttovoiceai.in/terms.html</loc>
+    <lastmod>2026-04-09T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
   </url>
 
 </urlset>
