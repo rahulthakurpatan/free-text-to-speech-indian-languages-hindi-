@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Analytics and Notifications -->
+    <script>
+      window.PushDotifyConfig = {
+        title: "Get Instant Updates",
+        desc: "Subscribe to get notified about our latest posts and offers!",
+        color: "#4f46e5",
+        delay: 2000
+      };
+    </script>
+    <script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RV64RB8M6S');
+    </script>
+
+    <!-- SEO Vitals -->
+    <title>Chrome White Screen While Using AI Tools — 15 Real Fixes That Actually Work</title>
+    <meta name="title" content="Chrome White Screen While Using AI Tools — 15 Real Fixes That Actually Work">
+    <meta name="description" content="A deeply technical, practical guide to fixing Chrome white screen, GPU crashes, and rendering failures when using AI voice tools, ChatGPT, or browser editors on Windows and Android.">
+    <meta name="keywords" content="Chrome white screen, Google Chrome blank screen, Chrome loading forever, Chrome not loading AI tools, AI tool white screen, Gemini white screen, Chrome stuck loading, GPU acceleration Chrome, browser white screen Android, Chrome display issues, Vāṇī AI, freetexttovoiceai">
+    <meta name="author" content="Rahul, Lead Content Strategist at Vāṇī Studio">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://freetexttovoiceai.in/fix-chrome-loading-issues-2026.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Chrome White Screen While Using AI Tools — 15 Real Fixes That Actually Work on Windows and Android",
+      "author": { "@type": "Person", "name": "Rahul" },
+      "publisher": { "@type": "Organization", "name": "Vāṇī AI" },
+      "datePublished": "2026-05-30",
+      "description": "An exhaustive technical troubleshooting guide resolving Chromium renderer crashes, hardware acceleration conflicts, and memory limit failures specifically triggered by heavy browser-based AI workflows."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Why does Chrome turn completely white when I use an AI voice generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A white screen happens when the Chrome 'renderer process' crashes due to memory overload or GPU acceleration conflicts, while the main browser shell stays open. AI tools require heavy local RAM to buffer audio blobs and run WebAssembly, which frequently pushes low-end devices past their limits."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I fix the Chrome white screen issue on my Android phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On Android, the issue is almost always tied to the 'Android System WebView' or aggressive background memory killing. You must update WebView via the Play Store, clear the Chrome cache (not just history), and disable battery optimization for your browser to prevent it from killing AI tasks."
+        }
+      }]
+    }
+    </script>
+
+    <!-- UI Dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; color: #0f172a; scroll-behavior: smooth; }
+        .static-header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .icon-box { background: linear-gradient(135deg, #1e40af, #f59e0b); color: white; border-radius: 1.25rem; }
+        .content-article h1 { font-size: 3.5rem; line-height: 1.05; font-weight: 900; margin-bottom: 3.5rem; text-transform: uppercase; font-style: italic; color: #0f172a; text-align: left; }
+        .content-article h2 { font-size: 2.6rem; font-weight: 900; color: #1e40af; margin-top: 8rem; margin-bottom: 3rem; text-transform: uppercase; font-style: italic; border-left: 16px solid #f59e0b; padding-left: 40px; line-height: 1.1; text-align: left; }
+        .content-article h3 { font-size: 2rem; font-weight: 900; color: #334155; margin-top: 5rem; margin-bottom: 2rem; text-align: left; }
+        .content-article p { font-size: 1.5rem; line-height: 2.7; color: #475569; margin-bottom: 4.5rem; font-weight: 500; text-align: left; }
+        .pro-tip-box { background: #f0f9ff; border-left: 10px solid #0ea5e9; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .warning-box { background: #fff1f2; border-left: 10px solid #e11d48; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .insight-card { background: white; border: 1px solid #e2e8f0; padding: 50px; border-radius: 3rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05); }
+        .chart-container { background: white; border: 1px solid #e2e8f0; border-radius: 3rem; padding: 50px; margin: 70px 0; }
+        .custom-loader { border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .voice-grid-btn { border: 2px solid #f1f5f9; text-align: left; padding: 14px; border-radius: 1.25rem; transition: all 0.2s; background: white; min-width: 140px; }
+        .voice-grid-btn.active { border-color: #f97316; background: #fff7ed; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin: 70px 0; background: white; border-radius: 3rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        th { background: #0f172a; color: white; padding: 35px; font-size: 13px; text-transform: uppercase; text-align: left; letter-spacing: 2px; }
+        td { padding: 35px; border-bottom: 1px solid #f1f5f9; font-size: 18px; font-weight: 700; color: #475569; }
+        .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; display: block; padding: 4px 0; }
+        .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="static-header py-10 px-6 md:px-12 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-8 text-left">
+                <div class="w-20 h-20 icon-box flex items-center justify-center shadow-2xl shrink-0">
+                    <i data-lucide="compass" class="w-12 h-12 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h1>
+                    <p class="text-[14px] font-black text-slate-900 uppercase tracking-widest leading-none text-left">Creator Workflow Optimization Unit</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500 items-center">
+                <a href="blog.html" class="hover:text-orange-600 transition-all italic text-left">Ecosystem Log</a>
+                <a href="#article" class="hover:text-orange-600 transition-all italic text-left">THE RESEARCH</a>
+                <a href="index.html" class="bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-orange-600 transition-all shadow-xl flex items-center gap-2 font-black uppercase text-[10px] tracking-widest"><i data-lucide="radio" class="w-4 h-4"></i> STUDIO HOME</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="studio" class="py-12 md:py-24 bg-slate-50/80 border-b border-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-700 to-orange-500 opacity-20"></div>
+        <div id="root">
+            <div class="flex flex-col items-center justify-center min-h-[650px] text-center px-6">
+                <div class="custom-loader"></div>
+                <h2 class="mt-10 text-2xl font-black text-slate-800 uppercase italic tracking-tighter text-center">Loading AI Sandbox...</h2>
+            </div>
+        </div>
+    </section>
+
+    <main id="article" class="max-w-6xl mx-auto px-6 py-32 text-left">
+        <article class="content-article">
+            
+            <div class="mb-40 text-left">
+                <p class="text-orange-600 font-black uppercase tracking-[0.7em] mb-10 italic text-left">Technical Troubleshooting • Browser Infrastructure</p>
+                <h1>Chrome White Screen While Using AI Tools — 15 Real Fixes That Actually Work on Windows and Android</h1>
+                
+                <div class="insight-card border-l-[20px] border-indigo-600">
+                    <p class="text-2xl font-black text-slate-800 italic m-0 leading-tight">
+                        "It is 1:30 AM. A creator has spent the last three hours researching a dense video script. They open a browser-based AI text-to-speech studio, paste 1,500 words into the text box, select a voice profile, and click 'Generate.' The laptop fan begins to whine. The loading wheel spins for four seconds. And then—suddenly—the entire Google Chrome window turns blindingly white. There is no error code. There is no 'Aw, Snap!' popup. The tab is entirely blank, completely frozen, while the CPU usage silently hits 98% in the background. The work is gone. The workflow is shattered."
+                    </p>
+                </div>
+
+                <p class="mt-20 text-left">
+                    If you are building a modern content ecosystem, you are likely operating almost entirely out of a browser. The era of downloading heavy, localized software is fading, replaced by browser-based AI generation studios, massive cloud editors, and persistent API connections. But there is a severe technical consequence to this shift: we are forcing our browsers to do things they were fundamentally never designed to do. 
+                </p>
+                <p class="text-left">
+                    When you experience a "Chrome white screen" while rendering an AI voiceover or loading a heavy AI canvas, it is rarely a random glitch. It is a catastrophic failure of the Chromium renderer process. Your browser is attempting to process massive base64 audio blobs, execute heavy WebAssembly Wasm modules, and hardware-accelerate complex UI elements all at the exact same moment. If your system's GPU pipeline hiccups for even a millisecond, or if your Android phone's RAM hits a hard cap, the renderer thread dies. The main browser shell stays open (which is why the window does not close), but the canvas it was painting on goes entirely blank.
+                </p>
+                <p class="text-left">
+                    This is not a generic "clear your history and restart your router" guide. If you are running automated faceless channels or relying on heavy AI tools, generic advice is useless. This is an exhaustive, deeply technical analysis of browser memory pipelines, hardware acceleration conflicts, and Android WebView limitations. We will break down exactly why AI tools break Chrome, and provide the exact 15 technical fixes required to stabilize your digital workflow permanently.
+                </p>
+
+                <div class="chart-container text-left relative">
+                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">Interactive Browser Memory & Rendering Stability Simulator</h3>
+                    <p class="text-sm font-bold text-slate-500 mb-10 text-center">Adjust the parameters below to see how hardware acceleration and Wasm (WebAssembly) payload size mathematically impact the probability of a Chromium renderer crash (White Screen).</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto text-slate-800">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">GPU Acceleration Status:</label>
+                            <select id="langSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="hindi">Enabled (High Crash Risk on Low-end)</option>
+                                <option value="regional" selected>Disabled (Stable CPU Fallback)</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">AI Payload Size (Script Length): <span id="trust-display" class="text-indigo-600 font-bold">85</span></label>
+                            <input type="range" id="trustSlider" min="10" max="100" step="5" value="85" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Tab Isolation Protocol:</label>
+                            <select id="paceSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="basic">10+ Background Tabs Running</option>
+                                <option value="opt" selected>Single Tab Isolation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full h-[320px] bg-slate-900 rounded-[2rem] overflow-hidden p-6 border-4 border-slate-950">
+                        <canvas id="growthCanvas" class="w-full h-full"></canvas>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-black uppercase text-slate-400 mt-4 px-4">
+                        <span>Initiate Processing</span>
+                        <span>Buffer Assembly</span>
+                        <span>Final Audio Render</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>1. Why AI Tools Break Chrome More Often Than Normal Websites</h2>
+            <p>
+                To fix the problem, you must understand the architecture. When you load a normal website (like a blog or a news portal), your browser simply parses HTML, applies CSS styling, and loads static images. It is a lightweight task. 
+            </p>
+            <p>
+                However, when you open an AI studio, the browser fundamentally changes its operational state. Heavy AI platforms execute massive chunks of JavaScript and WebAssembly (Wasm) directly in your browser's local memory to encrypt API keys, compress text, and handle WebSocket data streams. When you request a 2,000-word text-to-speech generation, the server does not send back a simple audio link; it often sends back a massive, continuous stream of raw binary data. Chrome must intercept this binary string, decode it into a workable audio Blob in your system's RAM, and then draw the audio waveform on your screen using HTML5 Canvas.
+            </p>
+            <div class="warning-box border-indigo-600 bg-indigo-50">
+                <h4 class="text-2xl font-black text-slate-900 mb-4">The Renderer Crash Anatomy</h4>
+                <p class="text-xl m-0 leading-relaxed text-indigo-900">Chrome operates on a multi-process architecture. Every tab has its own dedicated "renderer process." When an AI tool causes a massive RAM spike (e.g., trying to decode a 50MB audio blob while simultaneously running a graphics-heavy UI), the operating system's GPU scheduler might drop a frame. If the Chromium compositor detects a severe hang in the graphics pipeline, it terminates the renderer process to protect the OS. The result? The UI engine stops drawing pixels. The screen goes white. No error. Just a blank void.</p>
+            </div>
+            <p>
+                This fragility is compounded when creators attempt to run multiple AI tabs simultaneously, a common practice we observe in our analysis of <a href="text-to-voice-youtube-architecture.html" class="text-indigo-600 underline font-black">text-to-voice workflow architectures</a>.
+            </p>
+
+            <h2>2. 15 Real Fixes That Actually Work (Windows & Android)</h2>
+            <p>
+                Forget clearing your browsing history; that solves nothing regarding renderer crashes. Below are the actual technical interventions required to stabilize an overloaded AI workflow.
+            </p>
+
+            <h3>The Core Desktop Interventions (Windows / Mac)</h3>
+
+            <p><strong>1. Disable Hardware Acceleration (The Ultimate Fix):</strong> This solves 80% of white screen issues. Hardware acceleration forces Chrome to use your GPU (graphics card) to render UI elements. If you are on a laptop with integrated graphics or an unstable GPU driver, the heavy Wasm load of an AI tool will crash the GPU pipeline. <br><em>Fix:</em> Go to Chrome Settings > System > Toggle OFF "Use graphics acceleration when available" > Relaunch.</p>
+
+            <p><strong>2. Clear the Specific GPU Shader Cache:</strong> Sometimes the cache of pre-compiled graphics instructions becomes corrupted, causing immediate white screens on AI canvases. <br><em>Fix (Windows):</em> Press Win+R, type `%localappdata%\Google\Chrome\User Data\ShaderCache`, and delete all files inside the folder.</p>
+
+            <p><strong>3. Change the ANGLE Graphics Backend:</strong> Chromium uses ANGLE to translate graphics commands. The default setting often conflicts with older Intel or AMD graphics. <br><em>Fix:</em> Type `chrome://flags/#use-angle` in the address bar. Change it from "Default" to "OpenGL" or "D3D11". Relaunch.</p>
+
+            <p><strong>4. Disable Aggressive Ad-Blockers on AI Domains:</strong> Tools like uBlock Origin or Brave Shields forcefully intercept network requests. AI studios rely on persistent WebSocket connections to stream data. If an extension blocks the heartbeat ping, the AI tool hangs indefinitely, resulting in a blank render. Whitelist the specific AI domain.</p>
+
+            <p><strong>5. Isolate the Memory Heap (Single Tab Workflow):</strong> Chrome sets a hard memory limit per tab (usually around 2GB-4GB depending on the system). If you are running YouTube, a heavy Google Doc, and an AI generator in the same window, Chrome's memory manager will aggressively throttle the background tabs. Run your AI generation in a completely separate, isolated Chrome window.</p>
+
+            <p><strong>6. Increase Windows Pagefile Size:</strong> If your physical RAM maxes out during a massive AI text-to-speech generation, Windows uses virtual memory (Pagefile) on your SSD. If this is disabled or too small, Chrome will instantly white-screen. <br><em>Fix:</em> Search Windows for "Advanced System Settings" > Performance > Advanced > Virtual Memory > Change > Set to System Managed Size.</p>
+
+            <p><strong>7. Purge Corrupted Chrome Profiles:</strong> If your specific Google profile is corrupted with thousands of synced extension data points, it will crash under load. <br><em>Fix:</em> Create a brand new Chrome Profile (Click your face icon top right > Add). Do not sync extensions. Use this clean profile *exclusively* for your AI workflow.</p>
+
+            <p><strong>8. Override Software Rendering List:</strong> If you *must* use hardware acceleration but it keeps crashing, you can force Chrome to ignore its internal blacklist of older GPUs. <br><em>Fix:</em> Go to `chrome://flags/#ignore-gpu-blocklist` and enable it.</p>
+
+            <h3>The Core Mobile Interventions (Android)</h3>
+
+            <p><strong>9. Force Update Android System WebView:</strong> This is the absolute most critical fix for mobile. Android apps (and Chrome itself on mobile) rely on WebView to render internet pages. If this core system component is outdated, heavy JavaScript AI tools will instantly turn the screen white. <br><em>Fix:</em> Open Google Play Store > Search "Android System WebView" > Click Update.</p>
+
+            <p><strong>10. Disable Chrome Battery Optimization:</strong> Android OS is ruthless. If it detects Chrome using heavy CPU (which AI tools do), the OS will silently kill the Chrome background process to save battery. When you switch back to the tab, it is white. <br><em>Fix:</em> Settings > Apps > Chrome > Battery > Set to "Unrestricted".</p>
+
+            <p><strong>11. Disable "Memory Saver" for AI Sites:</strong> Chrome's new Memory Saver feature puts inactive tabs to sleep. If an AI tool is generating a 5-minute audio file in the background and Memory Saver kicks in, the generation is destroyed. <br><em>Fix:</em> Chrome Settings > Performance > Memory Saver > Add your AI tool's URL to the "Always keep these sites active" list.</p>
+
+            <p><strong>12. Clear Chrome's Site-Specific Storage:</strong> Do not just clear cache; clear the local storage for the AI tool. AI apps store massive temporary data blobs in local storage. If this exceeds your mobile quota, the app crashes. <br><em>Fix:</em> Chrome Settings > Site Settings > Data Stored > Search the AI tool > Clear all data.</p>
+
+            <p><strong>13. Change DNS Provider (Timeout Fix):</strong> Sometimes a white screen is actually a silent network timeout. The browser requested the AI interface, but your ISP dropped the packet. <br><em>Fix:</em> Chrome Settings > Privacy and Security > Use Secure DNS > Change to Cloudflare (1.1.1.1) or Google (Public DNS).</p>
+
+            <p><strong>14. Split Your Scripts into Batches:</strong> This is a behavioral fix. No matter how powerful your phone is, pasting 3,000 words into a browser-based TTS tool will max out the Wasm memory heap. Split your scripts into 500-word chunks. If you struggle with this, read our specific guide on <a href="write-better-tts-scripts.html" class="text-indigo-600 underline font-black">how to format scripts for AI narration</a>.</p>
+
+            <p><strong>15. The "Desktop Site" Toggle Hack:</strong> Many AI web apps have poorly optimized mobile CSS that crashes the Android renderer when a keyboard pops up. <br><em>Fix:</em> Click the three dots in Chrome mobile and check "Desktop site". This forces the browser to load the stable desktop rendering pipeline, often bypassing mobile-specific UI crashes.</p>
+
+            <h2>3. Why Hardware Acceleration Causes White Screens</h2>
+            <p>
+                Let us look deeper into Fix #1. Why does turning *off* graphics acceleration fix an AI text tool? 
+            </p>
+            <p>
+                When Hardware Acceleration is ON, Chrome takes tasks like drawing text, animating loading spinners, and decoding video, and hands them over to your computer's GPU. This is highly efficient for normal browsing. However, many laptops (especially those popular among budget creators) use integrated graphics (like Intel UHD or basic AMD Radeon Vega). 
+            </p>
+            <p>
+                When you initiate a heavy AI task, the browser suddenly demands massive immediate processing. If the integrated GPU is busy or if the Windows graphics driver has a micro-stutter, it fails to respond to Chrome's compositor in time. Chrome assumes the graphics process is permanently dead and terminates the renderer. By turning Hardware Acceleration OFF, you force Chrome to use your CPU (the main processor) for rendering. While the CPU is technically slower at drawing graphics, it is vastly more stable and less prone to sudden pipeline crashes.
+            </p>
+
+            <h2>4. Why Android Users Face Disproportionate AI Tool Issues</h2>
+            <p>
+                We observe a massive volume of creators building entire channels solely from their mobile devices, a trend extensively documented in our <a href="regional-languages-guide.html" class="text-indigo-600 underline font-black">regional languages mobile workflow analysis</a>. However, Android is an extremely hostile environment for complex web applications.
+            </p>
+            <p>
+                The primary issue is RAM. A desktop PC has a swap file; if it runs out of physical RAM, it borrows from the hard drive. Android does not do this efficiently. If you have a 4GB RAM phone, the Android OS consumes 1.5GB immediately. Background apps take another 1GB. When you open Chrome and load an AI tool, you have very little headroom. 
+            </p>
+            <p>
+                The moment you switch away from the Chrome app to copy a script from WhatsApp or Google Keep, the Android `LowMemoryKiller` daemon notices Chrome using 800MB of RAM in the background and instantly terminates the process to keep the phone feeling smooth. When you switch back to Chrome, the app has to completely reload the page—destroying whatever AI generation was in progress. Managing an Android workflow requires militant tab discipline. Close everything else. Turn off battery optimization. Keep the screen awake.
+            </p>
+
+            <h2>5. Why AI Voice Tools Sometimes Freeze During Audio Generation</h2>
+            <p>
+                You click generate. The wheel spins. Two minutes pass. Nothing happens. This specific freeze (which often precedes a white screen) is usually a result of **WebSocket Timeouts**.
+            </p>
+            <p>
+                Modern AI voice tools (like the secure API sandbox model we advocate for) do not generate audio locally. They send your text to massive cloud servers (like Google's TPU clusters). The browser opens a WebSocket connection to wait for the response. However, if your script is massive, the cloud might take 90 seconds to process it. Many consumer-grade routers, corporate firewalls, or cheap VPNs have an aggressive "idle timeout" rule. If no data travels across a connection for 60 seconds, the router silently kills the connection. 
+            </p>
+            <p>
+                The server finishes the audio and tries to send it back, but the connection is dead. Your browser, unaware the connection died, keeps spinning the loading wheel forever until the internal memory limits are breached and the page crashes. The fix? Disable your VPN, switch to stable DNS, and generate in smaller batches.
+            </p>
+
+            <h2>6. Common Mistakes That Sabotage Creator Browsers</h2>
+            <p>
+                Many creators are their own worst enemies when it comes to browser stability. Here are the behaviors that guarantee failure:
+                <br><br><strong>1. The Extension Hoarder:</strong> Having 25 extensions active (Grammarly, ad-blockers, coupon finders, crypto wallets) means that 25 separate scripts are injecting themselves into the AI tool's DOM (Document Object Model) simultaneously. This causes massive memory leaks.
+                <br><strong>2. The 100-Tab Myth:</strong> Chrome does not "handle" 100 tabs well; it suspends them. But if you are using an AI tool that requires active focus, those suspended tabs still eat into your CPU cache limits.
+                <br><strong>3. Fake Android Cleaners:</strong> Apps that promise to "boost phone speed" literally operate by randomly killing background processes. They are the leading cause of Chrome reloading tabs unexpectedly. Delete them immediately.
+            </p>
+
+            <h2>7. Chrome vs Edge vs Brave for AI Tools</h2>
+            <p>
+                If your Chrome profile is irreparably corrupted, switching browsers is often faster than debugging. But which is best for AI workflows?
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Underlying Engine</th>
+                        <th>AI Workflow Stability</th>
+                        <th>Known Issues</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Chrome</strong></td>
+                        <td>Blink / V8</td>
+                        <td>Medium (High memory usage)</td>
+                        <td>Prone to renderer crashes on low RAM. Aggressive tab sleeping.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Edge</strong></td>
+                        <td>Blink / V8</td>
+                        <td>Very High (Superior memory management)</td>
+                        <td>Sleeping tabs feature must be disabled for active generation domains.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brave Browser</strong></td>
+                        <td>Blink / V8</td>
+                        <td>Low (Strict default security)</td>
+                        <td>Aggressive anti-fingerprinting shields frequently block AI WebSocket connections.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Many elite creators maintain two browsers: Chrome for daily usage and research, and an entirely stripped-down, extension-free installation of Microsoft Edge used *exclusively* for generating AI content and uploading to YouTube. This isolation strategy prevents workflow contamination.
+            </p>
+
+            <h2>8. The Future of Browser-Based AI Creation (2026–2030)</h2>
+            <p>
+                The instability we experience today is a transitional pain. We are currently forcing legacy browser architecture to run next-generation workloads. 
+            </p>
+            <p>
+                Moving toward 2030, the integration of **WebGPU** (the successor to WebGL) will become standard across all mobile and desktop browsers. WebGPU allows web applications to interface directly with the graphics card with vastly lower overhead, meaning the browser will no longer need to rely on brittle abstraction layers that cause white screens. Furthermore, operating systems will begin to natively partition "AI Tasks" from standard web browsing, allocating dedicated RAM pipelines so that a heavy text-to-speech rendering cannot physically crash the entire browser UI. Until then, survival depends on disciplined workflow management.
+            </p>
+
+            <h2>Conclusion: Systemize Your Workflow</h2>
+            <p>
+                A Chrome white screen is not a ghost in the machine; it is a mathematical failure of memory or graphics processing. When you push a browser-based AI tool, you are operating heavy machinery. You must respect the limits of your hardware. Turn off hardware acceleration if you lack a dedicated GPU, isolate your AI tabs to prevent memory leaks, aggressively manage your Android cache, and format your scripts intelligently. By implementing these technical boundaries, you transform a frustrating, crash-prone process into a stable, highly scalable content factory.
+            </p>
+
+            <section id="faqs" class="mt-40 pt-20 border-t border-slate-100 text-left">
+                <h2 class="text-center mb-20 text-4xl font-black uppercase italic text-center">Troubleshooting FAQ</h2>
+                <div class="space-y-12">
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Will reinstalling Chrome fix the white screen issue permanently?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">Usually, no. Reinstalling Chrome just installs the same version. If you log back into your Google account, Chrome will sync the exact same corrupted extensions and settings that caused the crash in the first place. Creating a fresh, unsynced Chrome Profile is vastly more effective than a full reinstall.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Why does my AI voice tool work in Incognito mode but crash normally?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">This is the classic symptom of an extension conflict. Incognito mode disables all your browser extensions by default. If an AI tool works flawlessly in Incognito, it proves that an ad-blocker, VPN, or script-blocking extension in your normal browser profile is intercepting the AI's network requests and causing the crash.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Does clearing my browser cache actually help with AI rendering?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">Clearing basic browsing history does nothing. However, clearing the "Site Data" for the specific AI tool, or clearing the Windows "Shader Cache" folder, forces the browser to re-download clean JavaScript bundles and re-compile graphics instructions, which often resolves persistent rendering loops.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="mt-20 flex justify-center text-center">
+            <a href="#studio" class="bg-indigo-600 text-white px-16 py-8 rounded-[3.5rem] font-black text-3xl shadow-2xl hover:bg-orange-600 transition-all uppercase flex items-center gap-8 active:scale-95 text-center">
+                Launch Stable Studio <i data-lucide="zap" class="w-10 h-10 text-white"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-main py-24 border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-40 text-left">
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">The Studio</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="index.html" class="sitemap-link">Studio Home</a>
+                        <a href="how-to-get-api-key.html" class="sitemap-link">Get API Key</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">Resources</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="best-faceless-youtube-channel-ideas-ai-voice-2026.html" class="sitemap-link">2026 Niche Ideas</a>
+                        <a href="text-to-speech-massive-articles-directory-free-text-to-speech.html" class="sitemap-link font-black text-indigo-600">Full Directory</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-24 border-t border-slate-100 flex flex-col items-center">
+                <div class="w-24 h-2 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full mb-12"></div>
+                <p class="text-[12px] font-black uppercase tracking-[0.6em] text-slate-400 text-center">© 2026 Vāṇī Studio — Supporting Zero-Budget Creator Sovereignty in Bharat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('growthCanvas');
+            const langSelect = document.getElementById('langSelect');
+            const trustSlider = document.getElementById('trustSlider');
+            const paceSelect = document.getElementById('paceSelect');
+            
+            const trustDisplay = document.getElementById('trust-display');
+            const retentionScore = document.getElementById('retention-score');
+            const fatigueScore = document.getElementById('fatigue-score');
+            const shareScore = document.getElementById('share-score');
+
+            if(!canvas || !langSelect || !trustSlider || !paceSelect) return;
+            const ctx = canvas.getContext('2d');
+            
+            let time = 0;
+
+            const resizeCanvas = () => {
+                const rect = canvas.parentNode.getBoundingClientRect();
+                canvas.width = rect.width - 48;
+                canvas.height = rect.height - 48;
+            };
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const drawGraph = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const lang = langSelect.value;
+                const trust = parseInt(trustSlider.value); // representing payload size here
+                const pace = paceSelect.value;
+
+                if(trustDisplay) trustDisplay.textContent = trust;
+
+                // Growth Index (VVI) repurposed for Stability Index
+                // HW Accel Enabled + High Payload = High Crash Risk (Lower line)
+                let vvi = (lang === 'regional' ? 1.8 : 0.4); 
+                vvi *= (110 - trust) / 50; // Higher payload = lower stability
+                if(pace === 'opt') vvi *= 1.5; // Isolation improves stability
+
+                const retention = Math.min(99, Math.floor(vvi * 30));
+                
+                if (retentionScore) retentionScore.textContent = retention + "%";
+                if (fatigueScore) fatigueScore.textContent = vvi > 1.5 ? "Stable" : "High Crash Risk";
+                if (shareScore) shareScore.textContent = vvi > 1.5 ? "Optimal" : "Memory Leak Likely";
+
+                // Draw grid lines
+                ctx.strokeStyle = '#334155';
+                ctx.lineWidth = 1;
+                for (let i = 1; i < 5; i++) {
+                    const y = (canvas.height / 5) * i;
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+
+                // Title label
+                ctx.fillStyle = '#94a3b8';
+                ctx.font = '10px Inter, sans-serif';
+                ctx.fillText('BROWSER RENDERER MEMORY STABILITY INDEX', 10, 20);
+
+                // Draw stability curves
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = lang === 'regional' ? '#10b981' : '#e11d48'; // Red for crash risk
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height * 0.9);
+
+                for (let x = 0; x < canvas.width; x++) {
+                    const progress = x / canvas.width;
+                    const growth = Math.pow(progress, 1.5) * vvi * (canvas.height * 0.3);
+                    
+                    // Add volatility/shake if crash risk is high
+                    let volatility = (lang === 'hindi' && trust > 60) ? Math.random() * 15 : 0;
+                    
+                    const yVal = (canvas.height * 0.85) - growth + Math.sin(progress * 15 - time) * 6 + volatility;
+                    ctx.lineTo(x, yVal);
+                }
+                ctx.stroke();
+
+                time += 0.05;
+                requestAnimationFrame(drawGraph);
+            };
+
+            drawGraph();
+            langSelect.addEventListener('change', drawGraph);
+            trustSlider.addEventListener('input', drawGraph);
+            paceSelect.addEventListener('change', drawGraph);
+        });
+    </script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [isConfigured, setIsConfigured] = useState(false);
+            const [apiKey, setApiKey] = useState('');
+            const [text, setText] = useState('Voice is 15% of retention; your narrative logic is the remaining 85%. Use this text to speech convertor sandbox to test your script structures instantly.');
+            const [voiceProfile, setVoiceProfile] = useState('Charon');
+            const [audioUrl, setAudioUrl] = useState(null);
+            const [isGenerating, setIsGenerating] = useState(false);
+            const [error, setError] = useState(null);
+
+            useEffect(() => {
+                const saved = localStorage.getItem('vani_v5_key');
+                if (saved) { setApiKey(saved); setIsConfigured(true); }
+                if(window.lucide) window.lucide.createIcons();
+            }, []);
+
+            const voices = [
+                { id: 'Charon', name: 'Arjun', desc: 'Narrator/Deep', gender: 'M' },
+                { id: 'Leda', name: 'Priya', desc: 'Warm Story', gender: 'F' },
+                { id: 'Aoede', name: 'Anjali', desc: 'Soft Narrative', gender: 'F' },
+                { id: 'Kore', name: 'Amit', desc: 'Confident/Bold', gender: 'M' },
+                { id: 'Iapetus', name: 'George', desc: 'Classic Pro', gender: 'M' },
+                { id: 'Autonoe', name: 'Shreya', desc: 'Educational', gender: 'F' },
+                { id: 'Zephyr', name: 'Kabir', desc: 'Airy/Calm', gender: 'M' },
+                { id: 'Puck', name: 'Ishaan', desc: 'Youthful/Energetic', gender: 'M' },
+                { id: 'Fenrir', name: 'Vikram', desc: 'Powerful/Grave', gender: 'M' },
+                { id: 'Orus', name: 'Rohan', desc: 'Neutral News', gender: 'M' },
+                { id: 'Enceladus', name: 'Meera', desc: 'Stable/Mature', gender: 'F' },
+                { id: 'Umbriel', name: 'Rishi', desc: 'Mysterious', gender: 'M' },
+                { id: 'Algieba', name: 'Zara', desc: 'Elegant/Premium', gender: 'F' },
+                { id: 'Despina', name: 'Kavya', desc: 'Cheerful/Bubbly', gender: 'F' },
+                { id: 'Algenib', name: 'Aryan', desc: 'Dynamic Ads', gender: 'M' },
+                { id: 'Rasalgethi', name: 'Dev', desc: 'Authoritative', gender: 'M' },
+                { id: 'Laomedeia', name: 'Sana', desc: 'Sweet/Kind', gender: 'F' },
+                { id: 'Achernar', name: 'Yash', desc: 'Heroic/Bold', gender: 'M' },
+                { id: 'Alnilam', name: 'Sameer', desc: 'Friendly/Talky', gender: 'M' },
+                { id: 'Schedar', name: 'Tara', desc: 'Wise/Old', gender: 'F' },
+                { id: 'Gacrux', name: 'Arnav', desc: 'Tech/Review', gender: 'M' },
+                { id: 'Pulcherrima', name: 'Diya', desc: 'Poetic/Dreamy', gender: 'F' },
+                { id: 'Achird', name: 'Ravi', desc: 'Solid/Clear', gender: 'M' },
+                { id: 'Zubenelgenubi', name: 'Aditya', desc: 'Deep/Smooth', gender: 'M' },
+                { id: 'Vindemiatrix', name: 'Kiara', desc: 'Corporate/Pro', gender: 'F' },
+                { id: 'Sadachbia', name: 'Nisha', desc: 'Fast/Active', gender: 'F' },
+                { id: 'Sadaltager', name: 'Varun', desc: 'Gravely/Vlog', gender: 'M' },
+                { id: 'Sulafat', name: 'Isha', desc: 'Intimate/Close', gender: 'F' },
+                { id: 'Callirrhoe', name: 'Neha', desc: 'Brisk/Modern', gender: 'F' },
+                { id: 'Erinome', name: 'Pooja', desc: 'Motherly/Soft', gender: 'F' }
+            ];
+
+            const pcmToWav = (b64) => {
+                const bin = atob(b64);
+                const bytes = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+                const pcm = new Int16Array(bytes.buffer);
+                const buffer = new ArrayBuffer(44 + pcm.length * 2);
+                const view = new DataView(buffer);
+                const s = (o, str) => { for (let i = 0; i < str.length; i++) view.setUint8(o + i, str.charCodeAt(i)); };
+                s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length * 2, true); s(8, 'WAVE'); s(12, 'fmt ');
+                view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+                view.setUint32(24, 24000, true); view.setUint32(28, 48000, true); view.setUint16(32, 2, true);
+                view.setUint16(34, 16, true); s(36, 'data'); view.setUint32(40, pcm.length * 2, true);
+                for (let i = 0; i < pcm.length; i++) view.setInt16(44 + i * 2, pcm[i], true);
+                return new Blob([buffer], { type: 'audio/wav' });
+            };
+
+            const generateAudio = async () => {
+                if (!text.trim()) return;
+                setIsGenerating(true); setError(null); setAudioUrl(null);
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: text }] }],
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
+                            }
+                        })
+                    });
+                    const data = await response.json();
+                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    if (!b64) throw new Error("API Key Invalid or Limit Reached.");
+                    const url = URL.createObjectURL(pcmToWav(b64));
+                    setAudioUrl(url);
+                } catch (err) { setError(err.message); } finally { setIsGenerating(false); }
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto px-4 text-left">
+                    {!isConfigured ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-12 bg-white rounded-[3rem] border border-slate-100 shadow-xl text-left text-left">
+                            <div className="text-left">
+                                <h2 className="text-4xl font-black italic uppercase text-indigo-600 mb-8 leading-none text-left">Text to Speech <br/> Convertor</h2>
+                                <div className="space-y-6 text-left">
+                                    <div className="flex gap-4 items-start"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">1</div><p class="text-sm font-bold text-slate-500">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" className="text-indigo-600 underline">Google AI Studio</a> to get your free private key.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div><p class="text-sm font-bold text-slate-500 text-left">Paste that key in the box below.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">3</div><p class="text-sm font-bold text-slate-500 text-left text-left">Type your text and click generate. It's that easy!</p></div>
+                                </div>
+                                <a href="https://aistudio.google.com/app/apikey" target="_blank" className="mt-10 inline-flex items-center gap-2 text-xs font-black uppercase text-orange-600 hover:underline">Get Private Key <Icon name="external-link" size={14}/></a>
+                            </div>
+                            <div className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-200 text-center">
+                                <Icon name="zap" size={40} className="text-indigo-600 mb-6 mx-auto" />
+                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="Paste AIza... Key" className="w-full p-5 rounded-2xl border-2 border-slate-200 mb-6 outline-none focus:border-indigo-600 font-mono text-center" />
+                                <button onClick={() => { if(apiKey.length > 20) { localStorage.setItem('vani_v5_key', apiKey); setIsConfigured(true); }}} className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all text-center">Activate Studio</button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+                            <div className="lg:col-span-8 space-y-6 text-left">
+                                <textarea value={text} onChange={(e) => setText(e.target.value)} className="w-full h-80 p-8 rounded-[2.5rem] border-2 border-slate-100 bg-white text-xl font-bold text-slate-900 outline-none focus:border-indigo-400 transition-all resize-none shadow-inner custom-scrollbar text-left" />
+                                <div className="h-64 overflow-y-auto pr-4 custom-scrollbar bg-white/50 p-4 rounded-[2rem] border border-slate-100 shadow-inner">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
+                                        {voices.map(v => (
+                                            <button key={v.id} onClick={() => setVoiceProfile(v.id)} className={`voice-grid-btn ${voiceProfile === v.id ? 'active border-orange-500 shadow-inner' : 'hover:border-slate-300'}`}>
+                                                <p className={`text-[10px] font-black uppercase ${voiceProfile === v.id ? 'text-orange-600' : 'text-slate-800'}`}>{v.name}</p>
+                                                <p className="text-[7px] font-bold text-slate-400 uppercase italic leading-none mt-1">{v.desc}</p>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <button onClick={generateAudio} disabled={isGenerating || !text.trim()} className="w-full py-10 bg-indigo-600 text-white rounded-[2rem] text-2xl font-black shadow-xl hover:bg-orange-600 transition-all flex items-center justify-center gap-4 text-center">
+                                    {isGenerating ? <div className="custom-loader" style={{width: 24, height: 24}}></div> : <Icon name="play" size={24} />}
+                                    {isGenerating ? "PROCESSING LOGIC..." : "GENERATE AUDIO"}
+                                </button>
+                                {error && <p className="p-4 bg-red-50 text-red-600 text-[10px] font-black rounded-xl border border-red-100">{error}</p>}
+                            </div>
+                            <div className="lg:col-span-4 text-left">
+                                <div className="p-10 border-2 border-dashed border-slate-200 rounded-[3rem] text-center min-h-[500px] flex flex-col justify-center sticky top-28 bg-white shadow-xl">
+                                    <h2 className="text-xl font-black uppercase italic text-slate-900 border-b pb-4 mb-12 text-center text-center text-center">Text to Speech <br/> Convertor</h2>
+                                    {!audioUrl ? (<div className="opacity-20 flex flex-col items-center"><Icon name="music" size={60} /><p className="text-[10px] font-black uppercase mt-4">Awaiting Logic</p></div>) : (
+                                        <div className="space-y-12 animate-up text-center text-center">
+                                            <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100"><audio src={audioUrl} controls className="w-full" autoPlay /></div>
+                                            <a href={audioUrl} download="Vani_Workflow_Audio.wav" className="w-full py-4 bg-white border-2 border-indigo-600 text-indigo-600 rounded-2xl font-black uppercase flex items-center justify-center gap-2 hover:bg-blue-50 transition-all text-center">Download WAV</a>
+                                        </div>
+                                    )}
+                                    <button onClick={() => {localStorage.removeItem('vani_v5_key'); setIsConfigured(false);}} className="mt-20 py-3 text-[9px] font-black uppercase text-slate-400 border border-slate-100 rounded-xl hover:text-red-500 transition-all text-center">Reset Studio Node</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
