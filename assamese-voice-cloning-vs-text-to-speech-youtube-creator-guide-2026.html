@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Analytics and Notifications -->
+    <script>
+      window.PushDotifyConfig = {
+        title: "Get Instant Updates",
+        desc: "Subscribe to get simple creator tips and free tool updates!",
+        color: "#4f46e5",
+        delay: 2000
+      };
+    </script>
+    <script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RV64RB8M6S');
+    </script>
+
+    <!-- SEO Vitals -->
+    <title>Assamese Voice Cloning vs Text to Speech — Which Should Creators Choose in 2026?</title>
+    <meta name="title" content="Assamese Voice Cloning vs Assamese Text to Speech — Which One Should Creators Choose?">
+    <meta name="description" content="A simple, practical guide comparing Assamese voice cloning and text-to-speech. Learn which AI voice technology is best for YouTube, education, and storytelling channels.">
+    <meta name="keywords" content="Assamese voice cloning, Assamese text to speech, Assamese AI voice, Assamese YouTube creators, Assamese narration, Assamese educational content, Assamese podcasts, Assamese storytelling channels, Assamese audiobook creation, Vāṇī AI, freetexttovoiceai">
+    <meta name="author" content="Rahul, Creator Strategy Unit at Vāṇī Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Extended Long-Tail Canonical URL -->
+    <link rel="canonical" href="https://freetexttovoiceai.in/assamese-voice-cloning-vs-text-to-speech-youtube-creator-guide-2026.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Assamese Voice Cloning vs Assamese Text to Speech — Which One Should Creators Choose?",
+      "author": { "@type": "Person", "name": "Rahul" },
+      "publisher": { "@type": "Organization", "name": "Vāṇī AI" },
+      "datePublished": "2026-09-30",
+      "description": "An exhaustive, highly practical decision guide helping Assamese digital creators choose between custom voice cloning and free text-to-speech workflows for long-term channel growth."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the difference between Voice Cloning and Text to Speech?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text-to-Speech (TTS) uses pre-made, high-quality computer voices that are ready to use instantly. Voice Cloning is when you record your own human voice for many minutes, give it to the computer, and the computer tries to build a new voice that sounds exactly like you."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is Assamese voice cloning free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually, no. High-quality voice cloning takes a lot of computer power. Websites that offer cloning will almost always ask you to pay a monthly subscription fee. Standard Text-to-Speech is much easier to find for free using browser-based tools."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Which option is better for a beginner YouTube channel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Text-to-Speech is much better for beginners. It is free, instant, and does not require you to record any samples. It allows you to focus purely on writing good scripts and uploading consistently."
+        }
+      }]
+    }
+    </script>
+
+    <!-- UI Dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; color: #0f172a; scroll-behavior: smooth; }
+        .static-header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .icon-box { background: linear-gradient(135deg, #1e40af, #f59e0b); color: white; border-radius: 1.25rem; }
+        .content-article h1 { font-size: 3.5rem; line-height: 1.05; font-weight: 900; margin-bottom: 3.5rem; text-transform: uppercase; font-style: italic; color: #0f172a; text-align: left; }
+        .content-article h2 { font-size: 2.6rem; font-weight: 900; color: #1e40af; margin-top: 8rem; margin-bottom: 3rem; text-transform: uppercase; font-style: italic; border-left: 16px solid #f59e0b; padding-left: 40px; line-height: 1.1; text-align: left; }
+        .content-article h3 { font-size: 2rem; font-weight: 900; color: #334155; margin-top: 5rem; margin-bottom: 2rem; text-align: left; }
+        .content-article p { font-size: 1.5rem; line-height: 2.7; color: #475569; margin-bottom: 4.5rem; font-weight: 500; text-align: left; }
+        .pro-tip-box { background: #f0f9ff; border-left: 10px solid #0ea5e9; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .warning-box { background: #fff1f2; border-left: 10px solid #e11d48; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .insight-card { background: white; border: 1px solid #e2e8f0; padding: 50px; border-radius: 3rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05); }
+        .chart-container { background: white; border: 1px solid #e2e8f0; border-radius: 3rem; padding: 50px; margin: 70px 0; }
+        .custom-loader { border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .voice-grid-btn { border: 2px solid #f1f5f9; text-align: left; padding: 14px; border-radius: 1.25rem; transition: all 0.2s; background: white; min-width: 140px; }
+        .voice-grid-btn.active { border-color: #f97316; background: #fff7ed; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin: 70px 0; background: white; border-radius: 3rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        th { background: #0f172a; color: white; padding: 35px; font-size: 13px; text-transform: uppercase; text-align: left; letter-spacing: 2px; }
+        td { padding: 35px; border-bottom: 1px solid #f1f5f9; font-size: 18px; font-weight: 700; color: #475569; }
+        .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; display: block; padding: 4px 0; }
+        .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="static-header py-10 px-6 md:px-12 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-8 text-left">
+                <div class="w-20 h-20 icon-box flex items-center justify-center shadow-2xl shrink-0">
+                    <i data-lucide="split-square-horizontal" class="w-12 h-12 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h1>
+                    <p class="text-[14px] font-black text-slate-900 uppercase tracking-widest leading-none text-left">Creator Strategy Unit</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500 items-center">
+                <a href="#directory" class="hover:text-orange-600 transition-all italic text-left font-black">RESOURCE DIRECTORY</a>
+                <a href="#article" class="hover:text-orange-600 transition-all italic text-left">READ GUIDE</a>
+                <a href="index.html" class="bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-orange-600 transition-all shadow-xl flex items-center gap-2 font-black uppercase text-[10px] tracking-widest"><i data-lucide="radio" class="w-4 h-4"></i> STUDIO HOME</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="studio" class="py-12 md:py-24 bg-slate-50/80 border-b border-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-700 to-orange-500 opacity-20"></div>
+        <div id="root">
+            <div class="flex flex-col items-center justify-center min-h-[650px] text-center px-6">
+                <div class="custom-loader"></div>
+                <h2 class="mt-10 text-2xl font-black text-slate-800 uppercase italic tracking-tighter text-center">Loading Simple Audio Tool...</h2>
+            </div>
+        </div>
+    </section>
+
+    <main id="article" class="max-w-6xl mx-auto px-6 py-32 text-left">
+        <article class="content-article">
+            
+            <div class="mb-40 text-left">
+                <p class="text-orange-600 font-black uppercase tracking-[0.7em] mb-10 italic text-left">Workflow Comparison Guide • 2026</p>
+                <h1>Assamese Voice Cloning vs Assamese Text to Speech — Which One Should Creators Choose?</h1>
+                
+                <div class="insight-card border-l-[20px] border-indigo-600">
+                    <p class="text-2xl font-black text-slate-800 italic m-0 leading-tight">
+                        "Imagine a person living in Silchar who loves researching ancient Assamese history. For three months, he writes detailed notes. When it is time to make his first YouTube video, he spends three frustrating days trying to record his own voice. The neighbor's dog barks. The fan makes noise. He stutters. After finishing, he realizes making videos this way is too painful. He opens his computer looking for a solution. He finds two options: he can use a pre-made 'Text-to-Speech' voice, or he can use 'Voice Cloning' to make the computer sound exactly like him. He sits there, completely confused, unsure which path will save his time without ruining his channel."
+                    </p>
+                </div>
+
+                <p class="mt-20 text-left">
+                    If you are making YouTube videos, podcasts, or educational content in Assam today, you will eventually face the same choice as the historian in our story. The old way of doing things—recording everything manually with a microphone—is too slow for the modern internet.
+                </p>
+                <p class="text-left">
+                    To grow on YouTube, you must upload videos consistently. You cannot disappear for three weeks because you have a sore throat. This need for speed has pushed thousands of creators toward AI voice technology. But as you start exploring, you will see many confusing terms. You will see some people selling "Voice Cloning" services, while others tell you to just use simple "Text to Speech."
+                </p>
+                <p class="text-left">
+                    In this guide, I will make the decision incredibly simple for you. We will not use difficult software words. We will compare exactly what these two technologies are, how much they cost, how easy they are to use on a mobile phone, and what the audience actually prefers to hear. Whether you are a beginner starting your first channel or an educator trying to speed up your lesson creation, this guide will tell you exactly which tool to choose.
+                </p>
+
+                <div class="chart-container text-left relative">
+                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">Creator Consistency & Workflow Stress Tracker</h3>
+                    <p class="text-sm font-bold text-slate-500 mb-10 text-center">Play with the options below. See how your choice of voice tool mathematically changes how much time you save and how consistently you can upload videos.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto text-slate-800">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Audio Workflow Chosen:</label>
+                            <select id="langSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="hindi">Voice Cloning (Complex/Paid)</option>
+                                <option value="regional" selected>Text-to-Speech (Simple/Free)</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Creator Free Time (1-100): <span id="trust-display" class="text-indigo-600 font-bold">85</span></label>
+                            <input type="range" id="trustSlider" min="10" max="100" step="5" value="85" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Content Goal:</label>
+                            <select id="paceSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="basic">1 Video A Month</option>
+                                <option value="opt" selected>Daily Uploads (Consistency)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full h-[320px] bg-slate-900 rounded-[2rem] overflow-hidden p-6 border-4 border-slate-950">
+                        <canvas id="growthCanvas" class="w-full h-full"></canvas>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-black uppercase text-slate-400 mt-4 px-4">
+                        <span>Setup Phase (Day 1)</span>
+                        <span>Mid-Month Execution</span>
+                        <span>Long-Term Upload Output</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>1. Why More Assamese Creators Are Looking Beyond Traditional Voice Recording</h2>
+            <p>
+                Let us be honest about the reality of content creation. It is very hard work. If you are a teacher making an educational video, writing the lesson takes hours. Finding the right pictures takes hours. 
+            </p>
+            <p>
+                When it is finally time to record your voice, your energy is low. You pick up your phone to record, but a motorcycle drives past your house. You have to start again. You say a date incorrectly. You have to start again. This cycle of recording, fixing mistakes, and dealing with noise is called "Production Friction." It is the number one reason why people give up on YouTube.
+            </p>
+            <p>
+                Creators in Assam realize that to grow, they must upload videos regularly. They cannot let production friction stop them. They need a system where they can just write their thoughts and instantly get a clean, quiet, perfect audio file. This need for speed leads them directly to AI voice tools.
+            </p>
+
+            <h2>2. Understanding Assamese Text to Speech in Simple Words</h2>
+            <p>
+                **Text-to-Speech (TTS)** is the simplest and most common tool. 
+            </p>
+            <p>
+                Imagine a library of completely fake, but very human-sounding voices. The computer has already built these voices for you. You go to a website, you pick a voice from a list (maybe a deep voice for a documentary, or a soft voice for a story). Then, you type your Assamese script into an empty box. You press generate, and the computer instantly reads your words using that pre-made voice.
+            </p>
+            <p>
+                It is exactly what the free tool at the top of this page does. It requires zero setup. You do not need to train it. It is ready to work the second you open the website. This is the foundation of the faceless channels we discussed heavily in our <a href="how-assamese-youtube-channels-grow-with-ai-voice-without-showing-face-beginner-guide.html" class="text-indigo-600 underline font-black">Assamese beginner YouTube guide</a>.
+            </p>
+
+            <h2>3. Understanding Assamese Voice Cloning in Simple Words</h2>
+            <p>
+                **Voice Cloning** is much more complicated. 
+            </p>
+            <p>
+                Instead of using a pre-made voice from a list, you want the computer to sound exactly like *you*. To do this, you have to "train" the computer. You sit down in a very quiet room with a good microphone. You read sentences out loud for maybe 10 to 30 minutes. You upload these recordings to a special website.
+            </p>
+            <p>
+                The computer listens to your recordings, studies how you pronounce words, and builds a digital copy of your voice. Later, when you type a new script, the computer will read it out loud, and it will sound like you are the one speaking. It is a digital copy of your vocal cords.
+            </p>
+
+            <h2>4. Key Differences Between Voice Cloning and Text to Speech</h2>
+            <p>
+                Which one is better? Let us compare them across the things that actually matter to a creator.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Text-to-Speech (TTS)</th>
+                        <th>Voice Cloning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Setup Time</strong></td>
+                        <td>Zero. Instant. Ready to use immediately.</td>
+                        <td>Slow. Requires recording clean audio samples first.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost</strong></td>
+                        <td>Many high-quality free options available online.</td>
+                        <td>Almost always requires an expensive monthly subscription.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consistency</strong></td>
+                        <td>Perfect. The voice never changes.</td>
+                        <td>Varies. Sometimes the clone mispronounces words strangely.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Privacy</strong></td>
+                        <td>High. You are just using a public tool.</td>
+                        <td>Low. You are giving your voice data to a private company.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>5. Which Option Is Better for Different Types of Assamese Creators?</h2>
+            <p>
+                Your choice depends entirely on what kind of videos you are making.
+            </p>
+
+            <h3>The Educational & Exam Prep Creator</h3>
+            <p>
+                <strong>Winner: Text-to-Speech.</strong> Students listening to APSC notes do not care about your personal voice texture. They care about clear facts. Standard TTS provides a calm, neutral, and highly authoritative tone perfect for long learning sessions. See our full <a href="best-free-assamese-voice-generator-educational-e-learning-videos-complete-guide-2026.html" class="text-indigo-600 underline font-black">Educational Guide</a> for more.
+            </p>
+
+            <h3>The Audiobook Creator</h3>
+            <p>
+                <strong>Winner: Text-to-Speech.</strong> Reading a 200-page book takes massive effort. Generating it via standard TTS using browser tools saves you hundreds of hours, and avoids the monthly subscription fees voice cloning sites charge for long audio. Explore the workflow in our <a href="how-to-create-assamese-audiobooks-using-free-ai-voice-tools-complete-guide-2026.html" class="text-indigo-600 underline font-black">Audiobook Creation Guide</a>.
+            </p>
+
+            <h3>The Local News Channel</h3>
+            <p>
+                <strong>Winner: Text-to-Speech.</strong> News requires speed. When a story breaks, you need the video out in 30 minutes. You do not have time to mess with voice cloning software. Standard TTS is an instant delivery mechanism.
+            </p>
+
+            <h3>The Personal Vlog or Storyteller</h3>
+            <p>
+                <strong>Winner: Voice Cloning (or Manual Recording).</strong> If your channel is built heavily around your personality, your face, and your personal life stories, a generic TTS voice will sound fake. If you must use AI, cloning your own voice maintains your personal brand.
+            </p>
+
+            <h2>6. Audience Perspective: Do Viewers Actually Notice the Difference?</h2>
+            <p>
+                This is the secret that most tech companies will not tell you: **The viewer does not care as much as you think.**
+            </p>
+            <p>
+                If a viewer is watching a documentary about the history of Guwahati, their brain is focused on the pictures and the facts. If the voice is clear and the pacing is calm, the brain accepts it. 
+            </p>
+            <p>
+                A viewer will only swipe away if the voice is annoying. A badly trained Voice Clone often sounds glitchy and weird, like an old radio. A standard, high-quality Text-to-Speech voice sounds like a professional news anchor. In most informational niches, standard TTS provides a much safer and more comfortable listening experience.
+            </p>
+
+            <h2>7. Content Categories Where Text to Speech Works Extremely Well</h2>
+            <p>
+                Standard TTS is the absolute king of "Faceless Channels." It dominates:
+            </p>
+            <ul class="list-none space-y-6 text-left pl-0">
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-green-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Fact Channels:</strong> "Top 5 Places to Visit in Assam." The objective tone fits perfectly.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-green-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>YouTube Shorts:</strong> For fast, 60-second videos, you just need clear delivery. We break this down in our <a href="assamese-text-to-speech-youtube-shorts-complete-beginner-guide-2026.html" class="text-indigo-600 underline font-black">Assamese Shorts Guide</a>.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-green-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Financial Explainers:</strong> Explaining business or money concepts requires a serious, emotionless delivery.</span></li>
+            </ul>
+
+            <h2>8. Content Categories Where Voice Cloning May Be Useful</h2>
+            <p>
+                Voice cloning is a luxury tool. It is useful for:
+            </p>
+            <ul class="list-none space-y-6 text-left pl-0">
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-blue-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Famous Creators:</strong> If an established Assamese YouTuber wants to translate their videos into English without losing their specific voice style, cloning is excellent.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-blue-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Podcasts with a Specific Host:</strong> If a podcast is marketed around a specific person's identity, but that person is too busy to record, cloning their voice maintains the brand. However, for most beginners, starting a podcast with standard TTS is far easier. Read our <a href="how-assamese-creators-build-podcasts-using-free-ai-voice-tools-2026.html" class="text-indigo-600 underline font-black">Podcast Creation Guide</a> to see why.</span></li>
+            </ul>
+
+            <h2>9. Cost and Maintenance Comparison</h2>
+            <p>
+                Let us look at the reality of maintaining a YouTube channel for a whole year.
+            </p>
+            <p>
+                <strong>Text-to-Speech (TTS):</strong> You can use browser-based tools (like the Vāṇī sandbox) entirely for free. There is zero maintenance. You just paste text and download audio. 
+            </p>
+            <p>
+                <strong>Voice Cloning:</strong> To clone a voice well, you usually need a paid subscription to a foreign website (often costing $10 to $20 a month). If the website updates its software, your cloned voice might suddenly sound different, forcing you to record new training samples. It is a high-maintenance, high-cost path that is completely unnecessary for 90% of beginner creators.
+            </p>
+
+            <h2>10. Complete Creator Workflow Comparison</h2>
+            <p>
+                To prove which is easier, look at the steps required for both.
+            </p>
+            <div class="warning-box border-indigo-600 bg-indigo-50">
+                <h4 class="text-2xl font-black text-slate-900 mb-4">The Workflow Reality</h4>
+                <p class="text-xl m-0 leading-relaxed text-indigo-900">
+                <strong>The TTS Workflow:</strong><br>
+                1. Write script.<br>
+                2. Paste in browser tool & click generate.<br>
+                3. Download audio and edit video.<br>
+                <em>Done in 3 steps.</em><br><br>
+                <strong>The Voice Cloning Workflow:</strong><br>
+                1. Write script.<br>
+                2. Find a quiet room and record 15 minutes of your voice (if not done yet).<br>
+                3. Upload the recording to a paid website and wait for training.<br>
+                4. Paste new script & generate.<br>
+                5. Listen carefully because the clone often mispronounces Assamese words.<br>
+                6. Re-generate multiple times to fix glitches.<br>
+                7. Download audio and edit video.<br>
+                <em>A long, frustrating, multi-step process.</em>
+                </p>
+            </div>
+
+            <h2>11. Common Mistakes Creators Make</h2>
+            <p>
+                If you choose Text-to-Speech, you must avoid the "Robotic Mistake." The tool is smart, but it needs your help to sound human.
+            </p>
+            <p>
+                You must add commas (,) to force the voice to pause and breathe. If the AI mispronounces an Assamese word (like a town name), you must spell it phonetically in English letters until it sounds right. If you do not guide the tool, the video will fail. We explain how to write perfect scripts for AI in our <a href="best-assamese-ai-voice-generator-free-human-sounding-tools-youtube-education.html" class="text-indigo-600 underline font-black">Assamese AI voice tool guide</a>.
+            </p>
+
+            <h2>12. Mobile-Only Creator Setup</h2>
+            <p>
+                If you are creating content on an Android phone, Voice Cloning is incredibly difficult. Managing large audio sample files and navigating heavy subscription websites will constantly crash your mobile browser.
+            </p>
+            <p>
+                Standard Text-to-Speech is designed for mobile. You can open a simple web page, paste your text, and save the audio directly to your phone. It is lightweight and fast. If your Chrome browser ever freezes while doing this, it just means your phone memory is full. Read our <a href="fix-chrome-loading-issues.html" class="text-indigo-600 underline font-black">browser troubleshooting guide</a> for a quick fix.
+            </p>
+
+            <h2>13. Best Free Assamese Text to Speech Options</h2>
+            <p>
+                If you choose the practical path (TTS), here are the best tools:
+            </p>
+            <p>
+                <strong>1. Vāṇī Studio (Browser Sandbox):</strong> The tool at the top of this page is the best for long-term creators. It uses a "BYOK" (Bring Your Own Key) method. You get a free key from Google once, paste it, and generate unlimited audio for free without monthly limits.
+            </p>
+            <p>
+                <strong>2. CapCut Native Voice:</strong> Very easy for making quick YouTube Shorts inside the editing app, but the voice options are limited.
+            </p>
+
+            <h2>14. Future of Assamese Voice Content</h2>
+            <p>
+                In the future, the gap between Voice Cloning and Text-to-Speech will disappear. AI tools will become so advanced that a standard text-to-speech voice will have all the emotional range of a human actor. 
+            </p>
+            <p>
+                However, for the next few years, the winning strategy remains the same: use simple, reliable tools to output high-quality information consistently. The creators who win are not those with the fanciest software; they are the ones who upload valuable content every single day.
+            </p>
+
+            <h2>15. Final Decision Framework</h2>
+            <p>
+                If you are still confused, use this simple rule:
+            </p>
+            <p>
+                <strong>Choose Voice Cloning ONLY IF:</strong>
+                <br>• You already have a famous YouTube channel and want to dub it into another language.
+                <br>• Your face and personal identity are the main product of your channel.
+                <br>• You have a budget to pay monthly software fees.
+            </p>
+            <p>
+                <strong>Choose Free Text-to-Speech IF:</strong>
+                <br>• You are a beginner starting a faceless channel.
+                <br>• You make educational, historical, or factual videos.
+                <br>• You are editing on a mobile phone.
+                <br>• You want to create content for free and upload consistently without stress.
+            </p>
+            <p>
+                For 99% of Assamese creators reading this, standard Text-to-Speech is the absolute best choice. Start simple, build your channel, and let the information be the star of the show.
+            </p>
+
+            <section id="faqs" class="mt-40 pt-20 border-t border-slate-100 text-left">
+                <h2 class="text-center mb-20 text-4xl font-black uppercase italic text-center">Creator Questions Answered</h2>
+                <div class="space-y-12">
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Will YouTube reject my channel if I use Text-to-Speech?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">No. YouTube does not reject channels simply for using AI voices. They reject channels that copy text from the internet without adding their own original research and editing. If you write your own script, you are safe. We explain this in detail in our <a href="can-assamese-ai-voice-channels-get-monetized-youtube-complete-policy-guide-2026.html" class="text-blue-600 underline">monetization policy guide</a>.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Do I have to pay to use the AI tool on this website?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">No, the sandbox tool provided here is completely free. It uses a BYOK (Bring Your Own Key) system. You get a free key directly from Google, paste it into the box, and you can generate audio safely without paying any monthly subscription. It is the best way for beginners to start.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Is it hard to learn how to write scripts for AI?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">It is very easy. The main rule is to write short sentences and use commas to force the computer to take a breath. If a word sounds wrong, just change the spelling in your script to make it sound correct phonetically. It takes only a few days of practice to master it.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="mt-20 flex justify-center text-center">
+            <a href="#studio" class="bg-indigo-600 text-white px-16 py-8 rounded-[3.5rem] font-black text-3xl shadow-2xl hover:bg-orange-600 transition-all uppercase flex items-center gap-8 active:scale-95 text-center">
+                Launch Creator Studio <i data-lucide="zap" class="w-10 h-10 text-white"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-main py-24 border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-40 text-left">
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">The Studio</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="index.html" class="sitemap-link">Studio Home</a>
+                        <a href="how-to-get-api-key.html" class="sitemap-link">Get Free Key</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">Resources</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="complete-assamese-text-to-speech-resource-hub-tools-youtube-audiobooks-podcasts-2026.html" class="sitemap-link">Assamese Resource Hub</a>
+                        <a href="text-to-speech-massive-articles-directory-free-text-to-speech.html" class="sitemap-link font-black text-indigo-600">All Audio Guides</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Strategic Internal Linking Directory (2 Rows x 4) -->
+            <div class="mt-20 pt-20 border-t border-slate-100">
+                <h3 class="text-sm font-black text-slate-900 mb-8 uppercase tracking-widest text-center">Explore More Creator Guides</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Box 1 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="how-assamese-youtube-channels-grow-with-ai-voice-without-showing-face-beginner-guide.html" class="hover:text-indigo-600">Faceless Channel Guide</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">Learn the exact steps beginners use to build faceless Assamese YouTube channels.</p>
+                    </div>
+                    <!-- Box 2 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="assamese-text-to-speech-youtube-shorts-complete-beginner-guide-2026.html" class="hover:text-indigo-600">YouTube Shorts Guide</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">Master the art of creating 60-second viral Shorts using free text-to-speech tools.</p>
+                    </div>
+                    <!-- Box 3 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="best-free-assamese-voice-generator-educational-e-learning-videos-complete-guide-2026.html" class="hover:text-indigo-600">Educational Video Guide</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">How teachers and students use AI voice for APSC notes and digital learning.</p>
+                    </div>
+                    <!-- Box 4 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="how-assamese-creators-build-podcasts-using-free-ai-voice-tools-2026.html" class="hover:text-indigo-600">Start an Assamese Podcast</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">Build a digital radio show using mobile-first audio creation workflows.</p>
+                    </div>
+                    <!-- Box 5 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="how-to-create-assamese-audiobooks-using-free-ai-voice-tools-complete-guide-2026.html" class="hover:text-indigo-600">Audiobook Creation Guide</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">Turn classic literature and folk tales into beautiful, long-form audiobooks.</p>
+                    </div>
+                    <!-- Box 6 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="can-assamese-ai-voice-channels-get-monetized-youtube-complete-policy-guide-2026.html" class="hover:text-indigo-600">YouTube Monetization Rules</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">Understand YouTube's exact policies for monetizing AI voice content safely.</p>
+                    </div>
+                    <!-- Box 7 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="byok-meaning-bring-your-own-key-ai-tools-subscription-fatigue-2026.html" class="hover:text-indigo-600">BYOK Meaning Explained</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">How Bring Your Own Key systems save creators from expensive monthly subscriptions.</p>
+                    </div>
+                    <!-- Box 8 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm"><a href="fix-chrome-loading-issues.html" class="hover:text-indigo-600">Browser Troubleshooting</a></h4>
+                        <p class="text-xs text-slate-500 line-clamp-2">Fix Chrome white screen crashes and memory overload when using AI tools.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regional Language Focus (4 Rows x 4 Links) -->
+            <div class="mt-20 pt-20 border-t border-slate-100 bg-slate-900 -mx-6 px-6 md:-mx-12 md:px-12 py-16 rounded-3xl">
+                <h3 class="text-sm font-black text-white mb-8 uppercase tracking-widest text-center">Regional AI Voice Ecosystems</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4">
+                    <div>
+                        <h4 class="font-bold text-indigo-400 mb-2 text-xs uppercase tracking-wider">Bengali Ecosystem</h4>
+                        <ul class="space-y-2">
+                            <li><a href="best-free-bengali-text-to-speech-ai-tools-2026.html" class="text-xs text-slate-400 hover:text-white transition-all block">Bengali Voice Tools Comparison</a></li>
+                            <li><a href="bengali-free-text-to-voice-ai.html" class="text-xs text-slate-400 hover:text-white transition-all block">Bengali Free AI Generator</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-indigo-400 mb-2 text-xs uppercase tracking-wider">Marathi Ecosystem</h4>
+                        <ul class="space-y-2">
+                            <li><a href="best-marathi-text-to-speech-tools-free-realistic-ai-voice-generator-youtube.html" class="text-xs text-slate-400 hover:text-white transition-all block">Marathi Voice Tools Comparison</a></li>
+                            <li><a href="marathi-free-text-to-voice-ai.html" class="text-xs text-slate-400 hover:text-white transition-all block">Marathi Free AI Generator</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-indigo-400 mb-2 text-xs uppercase tracking-wider">Tamil Ecosystem</h4>
+                        <ul class="space-y-2">
+                            <li><a href="best-tamil-ai-voice-generator-free-complete-guide-youtube-shorts-reels-creators-2026.html" class="text-xs text-slate-400 hover:text-white transition-all block">Tamil Shorts Workflow Guide</a></li>
+                            <li><a href="tamil-free-text-to-voice-ai.html" class="text-xs text-slate-400 hover:text-white transition-all block">Tamil Free AI Generator</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-indigo-400 mb-2 text-xs uppercase tracking-wider">Gujarati Ecosystem</h4>
+                        <ul class="space-y-2">
+                            <li><a href="best-free-gujarati-text-to-speech-ai-tools-2026.html" class="text-xs text-slate-400 hover:text-white transition-all block">Gujarati Business Channels</a></li>
+                            <li><a href="gujarati-free-text-to-voice-ai.html" class="text-xs text-slate-400 hover:text-white transition-all block">Gujarati Free AI Generator</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-24 flex flex-col items-center">
+                <div class="w-24 h-2 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full mb-12"></div>
+                <p class="text-[12px] font-black uppercase tracking-[0.6em] text-slate-400 text-center">© 2026 Vāṇī Studio — Helping beginners create content.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('growthCanvas');
+            const langSelect = document.getElementById('langSelect');
+            const trustSlider = document.getElementById('trustSlider');
+            const paceSelect = document.getElementById('paceSelect');
+            
+            const trustDisplay = document.getElementById('trust-display');
+            const retentionScore = document.getElementById('retention-score');
+            const fatigueScore = document.getElementById('fatigue-score');
+            const shareScore = document.getElementById('share-score');
+
+            if(!canvas || !langSelect || !trustSlider || !paceSelect) return;
+            const ctx = canvas.getContext('2d');
+            
+            let time = 0;
+
+            const resizeCanvas = () => {
+                const rect = canvas.parentNode.getBoundingClientRect();
+                canvas.width = rect.width - 48;
+                canvas.height = rect.height - 48;
+            };
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const drawGraph = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const lang = langSelect.value;
+                const trust = parseInt(trustSlider.value); // Creator Free Time
+                const pace = paceSelect.value; // Content Goal
+
+                if(trustDisplay) trustDisplay.textContent = trust;
+
+                // Growth Index (VVI) repurposed for Workflow Output / Consistency
+                let vvi = (lang === 'regional' ? 1.8 : 0.4); // TTS allows much faster and easier output
+                vvi *= (trust / 50); // More free time = more videos made
+                if(pace === 'opt') vvi *= 1.3; // Daily goal pushes output higher if tools are easy
+
+                const retention = Math.min(99, Math.floor(vvi * 33));
+
+                if (retentionScore) retentionScore.textContent = "Workflow Output: " + retention + "%";
+                if (fatigueScore) fatigueScore.textContent = vvi > 1.4 ? "High Consistency" : "Creator Burnout";
+                if (shareScore) shareScore.textContent = vvi > 1.4 ? "Channel Grows Safely" : "Uploads Stop Completely";
+
+                // Draw grid lines
+                ctx.strokeStyle = '#334155';
+                ctx.lineWidth = 1;
+                for (let i = 1; i < 5; i++) {
+                    const y = (canvas.height / 5) * i;
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+
+                // Title label
+                ctx.fillStyle = '#94a3b8';
+                ctx.font = '10px Inter, sans-serif';
+                ctx.fillText('HOW TOOL CHOICE AFFECTS UPLOAD CONSISTENCY OVER TIME', 10, 20);
+
+                // Draw stability curves
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = lang === 'regional' ? '#10b981' : '#e11d48'; // Green for TTS (high output), Red for Cloning (burnout)
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height * 0.9);
+
+                for (let x = 0; x < canvas.width; x++) {
+                    const progress = x / canvas.width;
+                    // Voice cloning (hindi selection) often drops off over time due to frustration/friction
+                    const curvePower = lang === 'regional' ? 1.4 : 2.7; 
+                    const growth = Math.pow(progress, curvePower) * vvi * (canvas.height * 0.35);
+                    
+                    const yVal = (canvas.height * 0.85) - growth + Math.sin(progress * 15 - time) * 4;
+                    ctx.lineTo(x, yVal);
+                }
+                ctx.stroke();
+
+                time += 0.05;
+                requestAnimationFrame(drawGraph);
+            };
+
+            drawGraph();
+            langSelect.addEventListener('change', drawGraph);
+            trustSlider.addEventListener('input', drawGraph);
+            paceSelect.addEventListener('change', drawGraph);
+        });
+    </script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [isConfigured, setIsConfigured] = useState(false);
+            const [apiKey, setApiKey] = useState('');
+            const [text, setText] = useState('Voice is 15% of retention; your narrative logic is the remaining 85%. Use this text to speech convertor sandbox to test your script structures instantly.');
+            const [voiceProfile, setVoiceProfile] = useState('Charon');
+            const [audioUrl, setAudioUrl] = useState(null);
+            const [isGenerating, setIsGenerating] = useState(false);
+            const [error, setError] = useState(null);
+
+            useEffect(() => {
+                const saved = localStorage.getItem('vani_v5_key');
+                if (saved) { setApiKey(saved); setIsConfigured(true); }
+                if(window.lucide) window.lucide.createIcons();
+            }, []);
+
+            const voices = [
+                { id: 'Charon', name: 'Arjun', desc: 'Narrator/Deep', gender: 'M' },
+                { id: 'Leda', name: 'Priya', desc: 'Warm Story', gender: 'F' },
+                { id: 'Aoede', name: 'Anjali', desc: 'Soft Narrative', gender: 'F' },
+                { id: 'Kore', name: 'Amit', desc: 'Confident/Bold', gender: 'M' },
+                { id: 'Iapetus', name: 'George', desc: 'Classic Pro', gender: 'M' },
+                { id: 'Autonoe', name: 'Shreya', desc: 'Educational', gender: 'F' },
+                { id: 'Zephyr', name: 'Kabir', desc: 'Airy/Calm', gender: 'M' },
+                { id: 'Puck', name: 'Ishaan', desc: 'Youthful/Energetic', gender: 'M' },
+                { id: 'Fenrir', name: 'Vikram', desc: 'Powerful/Grave', gender: 'M' },
+                { id: 'Orus', name: 'Rohan', desc: 'Neutral News', gender: 'M' },
+                { id: 'Enceladus', name: 'Meera', desc: 'Stable/Mature', gender: 'F' },
+                { id: 'Umbriel', name: 'Rishi', desc: 'Mysterious', gender: 'M' },
+                { id: 'Algieba', name: 'Zara', desc: 'Elegant/Premium', gender: 'F' },
+                { id: 'Despina', name: 'Kavya', desc: 'Cheerful/Bubbly', gender: 'F' },
+                { id: 'Algenib', name: 'Aryan', desc: 'Dynamic Ads', gender: 'M' },
+                { id: 'Rasalgethi', name: 'Dev', desc: 'Authoritative', gender: 'M' },
+                { id: 'Laomedeia', name: 'Sana', desc: 'Sweet/Kind', gender: 'F' },
+                { id: 'Achernar', name: 'Yash', desc: 'Heroic/Bold', gender: 'M' },
+                { id: 'Alnilam', name: 'Sameer', desc: 'Friendly/Talky', gender: 'M' },
+                { id: 'Schedar', name: 'Tara', desc: 'Wise/Old', gender: 'F' },
+                { id: 'Gacrux', name: 'Arnav', desc: 'Tech/Review', gender: 'M' },
+                { id: 'Pulcherrima', name: 'Diya', desc: 'Poetic/Dreamy', gender: 'F' },
+                { id: 'Achird', name: 'Ravi', desc: 'Solid/Clear', gender: 'M' },
+                { id: 'Zubenelgenubi', name: 'Aditya', desc: 'Deep/Smooth', gender: 'M' },
+                { id: 'Vindemiatrix', name: 'Kiara', desc: 'Corporate/Pro', gender: 'F' },
+                { id: 'Sadachbia', name: 'Nisha', desc: 'Fast/Active', gender: 'F' },
+                { id: 'Sadaltager', name: 'Varun', desc: 'Gravely/Vlog', gender: 'M' },
+                { id: 'Sulafat', name: 'Isha', desc: 'Intimate/Close', gender: 'F' },
+                { id: 'Callirrhoe', name: 'Neha', desc: 'Brisk/Modern', gender: 'F' },
+                { id: 'Erinome', name: 'Pooja', desc: 'Motherly/Soft', gender: 'F' }
+            ];
+
+            const pcmToWav = (b64) => {
+                const bin = atob(b64);
+                const bytes = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+                const pcm = new Int16Array(bytes.buffer);
+                const buffer = new ArrayBuffer(44 + pcm.length * 2);
+                const view = new DataView(buffer);
+                const s = (o, str) => { for (let i = 0; i < str.length; i++) view.setUint8(o + i, str.charCodeAt(i)); };
+                s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length * 2, true); s(8, 'WAVE'); s(12, 'fmt ');
+                view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+                view.setUint32(24, 24000, true); view.setUint32(28, 48000, true); view.setUint16(32, 2, true);
+                view.setUint16(34, 16, true); s(36, 'data'); view.setUint32(40, pcm.length * 2, true);
+                for (let i = 0; i < pcm.length; i++) view.setInt16(44 + i * 2, pcm[i], true);
+                return new Blob([buffer], { type: 'audio/wav' });
+            };
+
+            const generateAudio = async () => {
+                if (!text.trim()) return;
+                setIsGenerating(true); setError(null); setAudioUrl(null);
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: text }] }],
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
+                            }
+                        })
+                    });
+                    const data = await response.json();
+                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    if (!b64) throw new Error("API Key Invalid or Limit Reached.");
+                    const url = URL.createObjectURL(pcmToWav(b64));
+                    setAudioUrl(url);
+                } catch (err) { setError(err.message); } finally { setIsGenerating(false); }
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto px-4 text-left">
+                    {!isConfigured ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-12 bg-white rounded-[3rem] border border-slate-100 shadow-xl text-left text-left">
+                            <div className="text-left">
+                                <h2 className="text-4xl font-black italic uppercase text-indigo-600 mb-8 leading-none text-left"><strong>Free Text To Speech <br/> Converter Assamese</strong></h2>
+                                <div className="space-y-6 text-left">
+                                    <div className="flex gap-4 items-start"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">1</div><p class="text-sm font-bold text-slate-500">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" className="text-indigo-600 underline">Google AI Studio</a> to get your free private key.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div><p class="text-sm font-bold text-slate-500 text-left">Paste that key in the box below.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">3</div><p class="text-sm font-bold text-slate-500 text-left text-left">Type your text and click generate. It's very easy!</p></div>
+                                </div>
+                                <a href="https://aistudio.google.com/app/apikey" target="_blank" className="mt-10 inline-flex items-center gap-2 text-xs font-black uppercase text-orange-600 hover:underline">Get Private Key <Icon name="external-link" size={14}/></a>
+                            </div>
+                            <div className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-200 text-center">
+                                <Icon name="zap" size={40} className="text-indigo-600 mb-6 mx-auto" />
+                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="Paste AIza... Key" className="w-full p-5 rounded-2xl border-2 border-slate-200 mb-6 outline-none focus:border-indigo-600 font-mono text-center" />
+                                <button onClick={() => { if(apiKey.length > 20) { localStorage.setItem('vani_v5_key', apiKey); setIsConfigured(true); }}} className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all text-center">Start Audio Tool</button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+                            <div className="lg:col-span-8 space-y-6 text-left">
+                                <textarea value={text} onChange={(e) => setText(e.target.value)} className="w-full h-80 p-8 rounded-[2.5rem] border-2 border-slate-100 bg-white text-xl font-bold text-slate-900 outline-none focus:border-indigo-400 transition-all resize-none shadow-inner custom-scrollbar text-left" />
+                                <div className="h-64 overflow-y-auto pr-4 custom-scrollbar bg-white/50 p-4 rounded-[2rem] border border-slate-100 shadow-inner">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
+                                        {voices.map(v => (
+                                            <button key={v.id} onClick={() => setVoiceProfile(v.id)} className={`voice-grid-btn ${voiceProfile === v.id ? 'active border-orange-500 shadow-inner' : 'hover:border-slate-300'}`}>
+                                                <p className={`text-[10px] font-black uppercase ${voiceProfile === v.id ? 'text-orange-600' : 'text-slate-800'}`}>{v.name}</p>
+                                                <p className="text-[7px] font-bold text-slate-400 uppercase italic leading-none mt-1">{v.desc}</p>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <button onClick={generateAudio} disabled={isGenerating || !text.trim()} className="w-full py-10 bg-indigo-600 text-white rounded-[2rem] text-2xl font-black shadow-xl hover:bg-orange-600 transition-all flex items-center justify-center gap-4 text-center">
+                                    {isGenerating ? <div className="custom-loader" style={{width: 24, height: 24}}></div> : <Icon name="play" size={24} />}
+                                    {isGenerating ? "MAKING AUDIO..." : "MAKE AUDIO NOW"}
+                                </button>
+                                {error && <p className="p-4 bg-red-50 text-red-600 text-[10px] font-black rounded-xl border border-red-100">{error}</p>}
+                            </div>
+                            <div className="lg:col-span-4 text-left">
+                                <div className="p-10 border-2 border-dashed border-slate-200 rounded-[3rem] text-center min-h-[500px] flex flex-col justify-center sticky top-28 bg-white shadow-xl">
+                                    <h2 className="text-xl font-black uppercase italic text-slate-900 border-b pb-4 mb-12 text-center text-center text-center">Simple Audio <br/> Download</h2>
+                                    {!audioUrl ? (<div className="opacity-20 flex flex-col items-center"><Icon name="music" size={60} /><p className="text-[10px] font-black uppercase mt-4">Waiting For Text</p></div>) : (
+                                        <div className="space-y-12 animate-up text-center text-center">
+                                            <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100"><audio src={audioUrl} controls className="w-full" autoPlay /></div>
+                                            <a href={audioUrl} download="My_Assamese_Audio.wav" className="w-full py-4 bg-white border-2 border-indigo-600 text-indigo-600 rounded-2xl font-black uppercase flex items-center justify-center gap-2 hover:bg-blue-50 transition-all text-center">Download Audio</a>
+                                        </div>
+                                    )}
+                                    <button onClick={() => {localStorage.removeItem('vani_v5_key'); setIsConfigured(false);}} className="mt-20 py-3 text-[9px] font-black uppercase text-slate-400 border border-slate-100 rounded-xl hover:text-red-500 transition-all text-center">Reset Tool</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
