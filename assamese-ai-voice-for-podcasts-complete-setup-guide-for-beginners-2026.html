@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Analytics and Notifications -->
+    <script>
+      window.PushDotifyConfig = {
+        title: "Get Instant Updates",
+        desc: "Subscribe to get simple podcasting tips and free tool updates!",
+        color: "#4f46e5",
+        delay: 2000
+      };
+    </script>
+    <script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RV64RB8M6S');
+    </script>
+
+    <!-- SEO Vitals -->
+    <title>Assamese AI Voice for Podcasts — Complete Setup Guide for Beginners</title>
+    <meta name="title" content="Assamese AI Voice for Podcasts — Complete Setup Guide for Beginners">
+    <meta name="description" content="A highly practical, beginner-friendly field guide explaining how to start an Assamese podcast using a mobile phone and free AI voice text-to-speech tools.">
+    <meta name="keywords" content="Assamese podcast, Assamese AI voice, Assamese podcast creation, Assamese text to speech, Assamese audio content, Assamese narration, Assamese podcast workflow, Assamese educational podcast, Vāṇī AI, freetexttovoiceai">
+    <meta name="author" content="Rahul, Audio Strategy Unit at Vāṇī Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Extended Long-Tail Canonical URL -->
+    <link rel="canonical" href="https://freetexttovoiceai.in/assamese-ai-voice-for-podcasts-complete-setup-guide-for-beginners-2026.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Assamese AI Voice for Podcasts — Complete Setup Guide for Beginners",
+      "author": { "@type": "Person", "name": "Rahul" },
+      "publisher": { "@type": "Organization", "name": "Vāṇī AI" },
+      "datePublished": "2026-06-03",
+      "description": "An exhaustive, highly practical guide detailing how Assamese creators build long-form audio podcasts using browser-based AI voice tools without requiring expensive microphones or recording studios."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What equipment do I need to start an Assamese podcast?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you use an AI voice, you do not need any recording equipment. You only need a smartphone, an internet connection, a free notes app to write your script, and a free browser tool to generate the audio."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are podcasts popular in regional languages like Assamese?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, passive audio listening is growing rapidly. Many commuters, students, and workers prefer to listen to educational or cultural stories in their native language while their hands and eyes are busy."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I monetize a podcast that uses an AI voice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Platforms focus on the originality of the information. If you write your own researched scripts and provide genuine educational or entertainment value, the podcast can attract local sponsorships, regardless of the voice used."
+        }
+      }]
+    }
+    </script>
+
+    <!-- UI Dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; color: #0f172a; scroll-behavior: smooth; }
+        .static-header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .icon-box { background: linear-gradient(135deg, #1e40af, #f59e0b); color: white; border-radius: 1.25rem; }
+        .content-article h1 { font-size: 3.5rem; line-height: 1.05; font-weight: 900; margin-bottom: 3.5rem; text-transform: uppercase; font-style: italic; color: #0f172a; text-align: left; }
+        .content-article h2 { font-size: 2.6rem; font-weight: 900; color: #1e40af; margin-top: 8rem; margin-bottom: 3rem; text-transform: uppercase; font-style: italic; border-left: 16px solid #f59e0b; padding-left: 40px; line-height: 1.1; text-align: left; }
+        .content-article h3 { font-size: 2rem; font-weight: 900; color: #334155; margin-top: 5rem; margin-bottom: 2rem; text-align: left; }
+        .content-article p { font-size: 1.5rem; line-height: 2.7; color: #475569; margin-bottom: 4.5rem; font-weight: 500; text-align: left; }
+        .pro-tip-box { background: #f0f9ff; border-left: 10px solid #0ea5e9; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .warning-box { background: #fff1f2; border-left: 10px solid #e11d48; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .insight-card { background: white; border: 1px solid #e2e8f0; padding: 50px; border-radius: 3rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05); }
+        .chart-container { background: white; border: 1px solid #e2e8f0; border-radius: 3rem; padding: 50px; margin: 70px 0; }
+        .custom-loader { border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .voice-grid-btn { border: 2px solid #f1f5f9; text-align: left; padding: 14px; border-radius: 1.25rem; transition: all 0.2s; background: white; min-width: 140px; }
+        .voice-grid-btn.active { border-color: #f97316; background: #fff7ed; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin: 70px 0; background: white; border-radius: 3rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        th { background: #0f172a; color: white; padding: 35px; font-size: 13px; text-transform: uppercase; text-align: left; letter-spacing: 2px; }
+        td { padding: 35px; border-bottom: 1px solid #f1f5f9; font-size: 18px; font-weight: 700; color: #475569; }
+        .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; display: block; padding: 4px 0; }
+        .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="static-header py-10 px-6 md:px-12 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-8 text-left">
+                <div class="w-20 h-20 icon-box flex items-center justify-center shadow-2xl shrink-0">
+                    <i data-lucide="headphones" class="w-12 h-12 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h1>
+                    <p class="text-[14px] font-black text-slate-900 uppercase tracking-widest leading-none text-left">Audio Strategy Unit</p>
+                </div>
+            </div>
+            
+            <!-- Dynamic Language Search Box Integration -->
+            <div class="w-full lg:w-96 relative group hidden md:block">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
+                </div>
+                <input type="text" id="langSearch" placeholder="Search language tools (e.g., Assamese)..." class="w-full pl-12 pr-4 py-3 bg-slate-100 border-2 border-slate-200 rounded-full text-sm font-bold text-slate-700 focus:outline-none focus:border-indigo-500 focus:bg-white transition-all shadow-inner placeholder-slate-400">
+            </div>
+
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500 items-center">
+                <a href="blog.html" class="hover:text-orange-600 transition-all italic text-left">Ecosystem Log</a>
+                <a href="#article" class="hover:text-orange-600 transition-all italic text-left">READ GUIDE</a>
+                <a href="index.html" class="bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-orange-600 transition-all shadow-xl flex items-center gap-2 font-black uppercase text-[10px] tracking-widest"><i data-lucide="radio" class="w-4 h-4"></i> STUDIO HOME</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="studio" class="py-12 md:py-24 bg-slate-50/80 border-b border-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-700 to-orange-500 opacity-20"></div>
+        <div id="root">
+            <div class="flex flex-col items-center justify-center min-h-[650px] text-center px-6">
+                <div class="custom-loader"></div>
+                <h2 class="mt-10 text-2xl font-black text-slate-800 uppercase italic tracking-tighter text-center">Loading Simple Audio Tool...</h2>
+            </div>
+        </div>
+    </section>
+
+    <main id="article" class="max-w-6xl mx-auto px-6 py-32 text-left">
+        <article class="content-article">
+            
+            <div class="mb-40 text-left">
+                <p class="text-orange-600 font-black uppercase tracking-[0.7em] mb-10 italic text-left">Step-by-Step Audio Guide • 2026</p>
+                <h1>Assamese AI Voice for Podcasts — Complete Setup Guide for Beginners</h1>
+                
+                <div class="insight-card border-l-[20px] border-indigo-600">
+                    <p class="text-2xl font-black text-slate-800 italic m-0 leading-tight">
+                        "There is a young man who drives a commercial truck between Guwahati and Tinsukia. For many hours every day, he holds the steering wheel and watches the highway. He cannot look at his mobile phone to watch a YouTube video, but he can listen. Over the last few years, he stopped listening to simple music and started looking for long audio stories, history discussions, and local news summaries in his native language. He noticed that audio is special because it fits perfectly into the busy, traveling parts of our lives. When he finally decided he wanted to share his own travel stories, he realized he didn't need to buy a video camera. He just needed a way to create clear audio."
+                    </p>
+                </div>
+
+                <p class="mt-20 text-left">
+                    Welcome to this simple, beginner-friendly guide. If you have useful knowledge, interesting stories, or educational facts to share, you do not have to become a traditional "YouTuber" who stands in front of a camera. You can become a podcaster.
+                </p>
+                <p class="text-left">
+                    For many people in Assam, the idea of starting a podcast sounds very expensive. You might think you need to buy a large, professional microphone, rent a quiet studio room, and learn difficult editing software. Five years ago, that was true. Today, it is completely false. 
+                </p>
+                <p class="text-left">
+                    By using free computer tools called "AI Voice Generators," anyone can write a script on their mobile phone and have a clear, calm, professional voice read it out loud. You can produce an entire 15-minute podcast episode while sitting in a noisy bus stand. In this guide, I will explain exactly how to do this. I will not use fancy technical words. We will learn how to write a good script, how to make the computer voice sound natural, and how to upload your audio so people across Assam can listen to it. Let us start your audio journey.
+                </p>
+
+                <div class="chart-container text-left relative">
+                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">Podcast Listener Attention Tracker</h3>
+                    <p class="text-sm font-bold text-slate-500 mb-10 text-center">Play with the options below. See how the way you use the AI voice changes how long people will listen to your podcast episode.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto text-slate-800">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Podcast Topic Quality:</label>
+                            <select id="langSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="hindi">Boring / Repetitive Facts</option>
+                                <option value="regional" selected>Helpful Local Information</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Voice Pacing Quality (1-100): <span id="trust-display" class="text-indigo-600 font-bold">85</span></label>
+                            <input type="range" id="trustSlider" min="10" max="100" step="5" value="85" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Episode Length:</label>
+                            <select id="paceSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="basic">1 Hour (Too long for beginners)</option>
+                                <option value="opt" selected>15 Minutes (Perfect chunk)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full h-[320px] bg-slate-900 rounded-[2rem] overflow-hidden p-6 border-4 border-slate-950">
+                        <canvas id="growthCanvas" class="w-full h-full"></canvas>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-black uppercase text-slate-400 mt-4 px-4">
+                        <span>First 2 Minutes (Deciding)</span>
+                        <span>Middle of Episode (Listening)</span>
+                        <span>End of Episode (Subscribing)</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>1. Why Podcast Consumption Is Growing in Regional Languages</h2>
+            <p>
+                Think about your own daily routine. How much time do you spend traveling? How much time do you spend doing simple chores at home? During these times, you cannot stare at a YouTube video because your eyes need to look at the road or your hands are busy.
+            </p>
+            <p>
+                This is why audio is so powerful. It allows people to "multitask." A student can listen to an audio lesson about the Ahom Kings while walking to college. A local businessman can listen to an explainer about a new government rule while managing his shop. 
+            </p>
+            <p>
+                While there are many podcasts in English and Hindi, people strongly prefer to learn complex things in their mother tongue. When an Assamese person hears a clear, calm explanation in Assamese, they feel a sense of trust. It feels like a smart local friend is giving them good advice. Because there are very few Assamese podcasts available today, the demand for local audio content is much higher than the supply.
+            </p>
+
+            <h2>2. Why Many Assamese Creators Want to Start Podcasts</h2>
+            <p>
+                Why are smart people choosing audio instead of making video channels? The answer is "production effort."
+            </p>
+            <div class="pro-tip-box">
+                <h4 class="text-2xl font-black text-slate-900 mb-4">The Freedom of Audio</h4>
+                <p class="text-xl m-0 leading-relaxed">
+                Making a video is stressful. You have to comb your hair, clean the room behind you, make sure the lighting is good, and look directly at the camera. If you stutter, you have to cut the video.<br><br>
+                Making a podcast is freeing. You can write your script while sitting in your bed wearing old clothes. If you use an AI voice, you do not even need to find a silent room. You focus 100% of your energy on gathering good facts and writing a good script. This is why many introverted (shy) people make excellent podcast creators. They let their words do the work.
+                </p>
+            </div>
+            <p>
+                We saw this same desire for "faceless" freedom when we studied how people make <a href="how-assamese-youtube-channels-grow-with-ai-voice-without-showing-face-beginner-guide.html" class="text-indigo-600 underline font-black">Assamese YouTube Shorts</a>. Audio content is the ultimate faceless format.
+            </p>
+
+            <h2>3. Understanding Podcast Listener Behavior</h2>
+            <p>
+                A podcast listener behaves differently than someone watching a quick funny video. 
+            </p>
+            <p>
+                When a person puts their earphones in and clicks play on a 15-minute podcast episode, they are committing their time to you. They are usually doing something else (like driving or cooking), so they do not want the audio to be chaotic. They want the voice to be calm, steady, and clear. 
+            </p>
+            <p>
+                If you provide good information in a comfortable voice, they will form a habit. They will listen to your new episode every Tuesday morning. This builds deep loyalty. They trust your voice in their ears.
+            </p>
+
+            <h2>4. What Makes a Good Assamese Podcast Voice</h2>
+            <p>
+                If you use the AI tool poorly, the voice will sound robotic and the listener will get a headache. A good podcast voice must have:
+            </p>
+            <p>
+                <strong>1. Listening Comfort:</strong> The volume must be steady. The voice cannot suddenly shout and then whisper. AI voices are naturally very consistent, which is great for long listening sessions.
+                <br><strong>2. Proper Pacing:</strong> Humans breathe. A robot does not. If your script has no commas, the AI will speak 100 words in one breath. You must force the AI to pause. We will learn how to do this in Section 8.
+                <br><strong>3. Correct Pronunciation:</strong> The computer must say local Assamese words correctly, or the listener will lose trust.
+            </p>
+
+            <h2>5. Best Podcast Categories for Assamese AI Voice</h2>
+            <p>
+                Not every topic works well with an AI voice. An AI voice cannot do comedy or angry political debates. It is best used for calm, informative topics.
+            </p>
+            <ul class="list-none space-y-6 text-left pl-0">
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Educational & Exam Preparation:</strong> Reading out important current affairs or summarizing NCERT chapters in Assamese. Students listen to these repeatedly while traveling to coaching centers.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>History and Culture:</strong> Explaining the great battles of Assam, the history of tea gardens, or ancient monuments. People love listening to these like bedtime stories.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Folk Tales and Literature:</strong> Converting classic Assamese literature into short audio stories. This overlaps heavily with our <a href="how-to-create-assamese-audiobooks-using-free-ai-voice-tools-complete-guide-2026.html" class="text-indigo-600 underline font-black">Assamese Audiobook Guide</a>.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Current Affairs:</strong> Summarizing the week's top news stories in a calm, unbiased voice.</span></li>
+            </ul>
+
+            <h2>6. Best Assamese AI Voice Options for Podcast Creation</h2>
+            <p>
+                Because a podcast episode is long (10 to 15 minutes), you need a tool that does not put a small limit on how many words you can type. Many famous internet tools will ask you to pay money after just one episode.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool Name</th>
+                        <th>Narration Quality</th>
+                        <th>Ease of Use for Podcasts</th>
+                        <th>Important Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Vāṇī Studio (Browser Sandbox)</strong></td>
+                        <td>Very Good (Clear and calm)</td>
+                        <td>Excellent (No monthly limits on words)</td>
+                        <td>You must generate a free API key first. This "BYOK" method is the secret to free long audio.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Edge (Read Aloud)</strong></td>
+                        <td>Good (Sounds very natural)</td>
+                        <td>Poor (Hard to save long files)</td>
+                        <td>You have to use a laptop and screen-record the audio, which takes too much time.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Translate Audio</strong></td>
+                        <td>Bad (Sounds like a robot)</td>
+                        <td>Medium</td>
+                        <td>Do not use this. Listeners will get a headache from the flat, boring robot voice.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>
+                To make full podcast episodes without paying monthly software fees, you must use tools that connect directly to APIs. We have written a very simple explanation of this in our <a href="byok-meaning-bring-your-own-key-ai-tools-subscription-fatigue-2026.html" class="text-indigo-600 underline font-black">BYOK Ecosystem Guide</a>. It takes five minutes to set up, and then you have free audio forever.
+            </p>
+
+            <h2>7. Complete Podcast Creation Workflow</h2>
+            <p>
+                How do you actually make Episode 1? Follow this exact path.
+            </p>
+
+            <div class="warning-box border-indigo-600 bg-indigo-50">
+                <h4 class="text-2xl font-black text-slate-900 mb-4">The Podcast Checklist</h4>
+                <p class="text-xl m-0 leading-relaxed text-indigo-900">
+                <strong>1. Topic & Research:</strong> Choose a topic. Example: "The History of Majuli." Gather 10 interesting facts.<br><br>
+                <strong>2. The Script:</strong> Open the Google Keep app on your phone. Write the podcast like you are talking to a friend. Start with a hook: "Did you know the world's largest river island is shrinking?"<br><br>
+                <strong>3. AI Voice Generation:</strong> Copy the text. Open your Chrome browser, go to the free audio tool on this page, paste the text, and download the audio file to your phone.<br><br>
+                <strong>4. Audio Editing:</strong> Download a free app like VN Editor. Import the audio. If you want, add a very soft, royalty-free background music track to make it sound professional. Turn the music volume down very low.<br><br>
+                <strong>5. Publishing:</strong> Save the final audio. You are now ready to upload it.
+                </p>
+            </div>
+
+            <h2>8. How to Write Better Podcast Scripts</h2>
+            <p>
+                Writing for the ear is different from writing for the eye. 
+            </p>
+            <p>
+                If you copy a paragraph from a school textbook, it will sound terrible when spoken. You must write **Conversationally**. Use short sentences. Use words that normal people use every day. 
+            </p>
+            <p>
+                When moving from one topic to the next, use transition phrases like, "Now, let us look at the second reason..." This helps the listener's brain stay organized. Most importantly, design your pauses. Use commas (,) to make the AI voice take a tiny breath. Use three dots (...) before a big reveal to create suspense.
+            </p>
+
+            <h2>9. How AI Voice Influences Podcast Retention</h2>
+            <p>
+                "Retention" means how long people keep listening. 
+            </p>
+            <p>
+                The biggest advantage of the AI voice is that it never makes mistakes. A human might mumble, cough, or speak too quickly when they get excited. This uneven pacing can break the listener's concentration. A good AI voice delivers the information at a perfectly steady speed. If the script is interesting and the speed is comfortable, the listener will easily finish the 15-minute episode without feeling tired.
+            </p>
+
+            <h2>10. Common Podcasting Mistakes Beginners Make</h2>
+            <p>
+                Please avoid these errors that make people stop listening:
+            </p>
+            <ul class="list-none space-y-6 text-left pl-0">
+                <li class="flex gap-4 items-start"><Icon name="x-circle" className="text-red-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>The 3-Minute Music Intro:</strong> Many beginners put loud music at the start of their podcast for 2 minutes before the voice begins. The listener will get bored and leave. Start speaking within the first 5 seconds.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="x-circle" className="text-red-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Copying Textbooks:</strong> Never copy a Wikipedia page and paste it into the AI voice tool. Textbooks use very hard words that sound unnatural. Always rewrite the facts simply.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="x-circle" className="text-red-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Inconsistent Publishing:</strong> If you upload Episode 1 on Monday, and Episode 2 three months later, people will forget about you. Upload regularly every single week.</span></li>
+            </ul>
+
+            <h2>11. Mobile-Only Podcast Creation Setup</h2>
+            <p>
+                You can run a complete podcast studio from a cheap Android phone. You do not need a laptop.
+            </p>
+            <p>
+                The most important rule for mobile creators is managing your phone's memory. When you use your browser (like Chrome) to generate a 15-minute audio file, it uses a lot of RAM. If your screen suddenly goes white, your phone memory is full. You must close other apps. We have a helpful list of simple solutions for this in our <a href="fix-chrome-loading-issues.html" class="text-indigo-600 underline font-black">Chrome browser fix guide</a>.
+            </p>
+            <p>
+                Always delete the old audio files from your phone's storage after you upload your episode. Keep your phone clean so it runs fast.
+            </p>
+
+            <h2>12. AI Voice vs Human Voice for Podcasts</h2>
+            <p>
+                Which is better? It depends entirely on your format.
+            </p>
+            <p>
+                If you want to do interviews with guests, or if you are doing a comedy show where you need to laugh, you **must** use your human voice. AI cannot do natural back-and-forth conversations yet.
+            </p>
+            <p>
+                But, if you are doing a scripted show—explaining history, reading stories, or summarizing news—AI voice is superior for beginners. It provides perfect clarity, absolute consistency, and saves you hours of frustrating recording time. If you want a deeper comparison, read our detailed <a href="assamese-ai-voice-vs-human-voice-youtube-growth-comparison-2026.html" class="text-indigo-600 underline font-black">AI vs Human Voice Analysis</a>.
+            </p>
+
+            <h2>13. Can Assamese Podcasts Be Monetized?</h2>
+            <p>
+                Yes, but you must be realistic. If you upload your podcast episodes to YouTube, you must follow the YouTube monetization rules. YouTube does not ban AI voices, but they ban "Reused Content." If your script is highly original and helpful, you can earn YouTube ad revenue. We explain exactly what YouTube checks in our <a href="can-assamese-ai-voice-channels-get-monetized-youtube-complete-policy-guide-2026.html" class="text-indigo-600 underline font-black">AI Voice Monetization Guide</a>.
+            </p>
+            <p>
+                However, for podcasts, the best money often comes from **Local Sponsorships**. If you have a popular Assamese podcast about education, a local coaching center might pay you to mention their name at the start of your episode. Because your audience trusts you, local businesses find this very valuable.
+            </p>
+
+            <h2>14. Building a Long-Term Assamese Podcast Brand</h2>
+            <p>
+                A podcast is not a quick viral video. It is a long-term library. 
+            </p>
+            <p>
+                Choose one specific niche (e.g., "Assam History") and stick to it. Over time, you will have 50 episodes. A new listener might find Episode 50, enjoy it, and then go back and listen to all 49 old episodes. This creates massive watch-time and deep loyalty. 
+            </p>
+
+            <h2>15. Future Opportunities for Assamese Podcasts</h2>
+            <p>
+                The demand for listening while travelling or working is only going to grow. The smartphone is the new radio, but the listener gets to choose exactly what they want to hear.
+            </p>
+            <p>
+                The creators who start building their podcast library today, using the free AI tools available to them, will become the trusted digital voices of the region tomorrow. 
+            </p>
+
+            <h2>Conclusion: Record Your First Episode Today</h2>
+            <p>
+                Do not wait for a perfect idea. Do not wait until you have money for a microphone. Your phone is a complete production studio. Write a simple, 5-minute script about a local story or a helpful fact. Paste it into the free audio tool above. Generate the voice. Upload it. The only difference between a listener and a creator is the decision to press publish. Start your podcast today.
+            </p>
+
+            <section id="faqs" class="mt-40 pt-20 border-t border-slate-100 text-left">
+                <h2 class="text-center mb-20 text-4xl font-black uppercase italic text-center">Questions Beginners Often Ask</h2>
+                <div class="space-y-12">
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Where can I publish my Assamese podcast?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">The easiest place is YouTube. You upload the audio file with a simple, unmoving picture (like your podcast logo) on the screen. You can also use free apps like "Spotify for Podcasters," which automatically puts your audio on music apps. Educational creators often share audio files directly in Telegram groups.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">How do I make the AI voice pronounce difficult Assamese words correctly?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">Computers sometimes get confused by local town names. Use "phonetic spelling." This means you write the word in English letters exactly how it sounds to your ear (for example, dragging out vowels). Keep testing the audio until the computer says it correctly.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Do I have to pay to use the audio tool on this page?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">No. The tool at the top of this page is completely free to use. It requires you to get a free API key from Google (which acts like a safe password). Once you paste that key, you can generate as many podcast episodes as you want without any monthly fees.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="mt-20 flex justify-center text-center">
+            <a href="#studio" class="bg-indigo-600 text-white px-16 py-8 rounded-[3.5rem] font-black text-3xl shadow-2xl hover:bg-orange-600 transition-all uppercase flex items-center gap-8 active:scale-95 text-center">
+                Try The Free Audio Tool <i data-lucide="zap" class="w-10 h-10 text-white"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-main py-24 border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-40 text-left">
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">The Studio</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="index.html" class="sitemap-link">Studio Home</a>
+                        <a href="how-to-get-api-key.html" class="sitemap-link">Get Free Key</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">Resources</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="best-assamese-ai-voice-generator-free-human-sounding-tools-youtube-education.html" class="sitemap-link">Assamese Tools Guide</a>
+                        <a href="text-to-speech-massive-articles-directory-free-text-to-speech.html" class="sitemap-link font-black text-indigo-600">All Audio Guides</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-24 border-t border-slate-100 flex flex-col items-center">
+                <div class="w-24 h-2 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full mb-12"></div>
+                <p class="text-[12px] font-black uppercase tracking-[0.6em] text-slate-400 text-center">© 2026 Vāṇī Studio — Helping beginners create audio content.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('growthCanvas');
+            const langSelect = document.getElementById('langSelect');
+            const trustSlider = document.getElementById('trustSlider');
+            const paceSelect = document.getElementById('paceSelect');
+            
+            const trustDisplay = document.getElementById('trust-display');
+            const retentionScore = document.getElementById('retention-score');
+            const fatigueScore = document.getElementById('fatigue-score');
+            const shareScore = document.getElementById('share-score');
+
+            if(!canvas || !langSelect || !trustSlider || !paceSelect) return;
+            const ctx = canvas.getContext('2d');
+            
+            let time = 0;
+
+            const resizeCanvas = () => {
+                const rect = canvas.parentNode.getBoundingClientRect();
+                canvas.width = rect.width - 48;
+                canvas.height = rect.height - 48;
+            };
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const drawGraph = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const lang = langSelect.value;
+                const trust = parseInt(trustSlider.value); // Pacing Quality
+                const pace = paceSelect.value; // Episode Length
+
+                if(trustDisplay) trustDisplay.textContent = trust;
+
+                // Growth Index (VVI) repurposed for Podcast Retention
+                let vvi = (lang === 'regional' ? 1.6 : 0.5); // Helpful info retains much better than boring facts
+                vvi *= (trust / 50); // Good pacing prevents ear fatigue
+                if(pace === 'opt') vvi *= 1.4; // 15 mins is perfect for beginner listener habits
+
+                const retention = Math.min(99, Math.floor(vvi * 35));
+
+                if (retentionScore) retentionScore.textContent = "Listeners Retained: " + retention + "%";
+                if (fatigueScore) fatigueScore.textContent = vvi > 1.5 ? "Engaged Listening" : "Listeners getting bored";
+                if (shareScore) shareScore.textContent = vvi > 1.5 ? "Will Subscribe!" : "Turned it off early";
+
+                // Draw grid lines
+                ctx.strokeStyle = '#334155';
+                ctx.lineWidth = 1;
+                for (let i = 1; i < 5; i++) {
+                    const y = (canvas.height / 5) * i;
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+
+                // Title label
+                ctx.fillStyle = '#94a3b8';
+                ctx.font = '10px Inter, sans-serif';
+                ctx.fillText('HOW PACING & TOPIC KEEP LISTENERS HOOKED', 10, 20);
+
+                // Draw stability curves
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = lang === 'regional' ? '#10b981' : '#e11d48'; // Green for helpful/good, Red for boring/bad
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height * 0.9);
+
+                for (let x = 0; x < canvas.width; x++) {
+                    const progress = x / canvas.width;
+                    // Steep drop off for boring audio. Flat stable line for good audio.
+                    const curvePower = lang === 'regional' ? 1.4 : 2.8; 
+                    const growth = Math.pow(progress, curvePower) * vvi * (canvas.height * 0.35);
+                    
+                    const yVal = (canvas.height * 0.85) - growth + Math.sin(progress * 15 - time) * 3;
+                    ctx.lineTo(x, yVal);
+                }
+                ctx.stroke();
+
+                time += 0.05;
+                requestAnimationFrame(drawGraph);
+            };
+
+            drawGraph();
+            langSelect.addEventListener('change', drawGraph);
+            trustSlider.addEventListener('input', drawGraph);
+            paceSelect.addEventListener('change', drawGraph);
+        });
+    </script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [isConfigured, setIsConfigured] = useState(false);
+            const [apiKey, setApiKey] = useState('');
+            const [text, setText] = useState('Voice is 15% of retention; your narrative logic is the remaining 85%. Use this text to speech convertor sandbox to test your script structures instantly.');
+            const [voiceProfile, setVoiceProfile] = useState('Charon');
+            const [audioUrl, setAudioUrl] = useState(null);
+            const [isGenerating, setIsGenerating] = useState(false);
+            const [error, setError] = useState(null);
+
+            useEffect(() => {
+                const saved = localStorage.getItem('vani_v5_key');
+                if (saved) { setApiKey(saved); setIsConfigured(true); }
+                if(window.lucide) window.lucide.createIcons();
+            }, []);
+
+            const voices = [
+                { id: 'Charon', name: 'Arjun', desc: 'Narrator/Deep', gender: 'M' },
+                { id: 'Leda', name: 'Priya', desc: 'Warm Story', gender: 'F' },
+                { id: 'Aoede', name: 'Anjali', desc: 'Soft Narrative', gender: 'F' },
+                { id: 'Kore', name: 'Amit', desc: 'Confident/Bold', gender: 'M' },
+                { id: 'Iapetus', name: 'George', desc: 'Classic Pro', gender: 'M' },
+                { id: 'Autonoe', name: 'Shreya', desc: 'Educational', gender: 'F' },
+                { id: 'Zephyr', name: 'Kabir', desc: 'Airy/Calm', gender: 'M' },
+                { id: 'Puck', name: 'Ishaan', desc: 'Youthful/Energetic', gender: 'M' },
+                { id: 'Fenrir', name: 'Vikram', desc: 'Powerful/Grave', gender: 'M' },
+                { id: 'Orus', name: 'Rohan', desc: 'Neutral News', gender: 'M' },
+                { id: 'Enceladus', name: 'Meera', desc: 'Stable/Mature', gender: 'F' },
+                { id: 'Umbriel', name: 'Rishi', desc: 'Mysterious', gender: 'M' },
+                { id: 'Algieba', name: 'Zara', desc: 'Elegant/Premium', gender: 'F' },
+                { id: 'Despina', name: 'Kavya', desc: 'Cheerful/Bubbly', gender: 'F' },
+                { id: 'Algenib', name: 'Aryan', desc: 'Dynamic Ads', gender: 'M' },
+                { id: 'Rasalgethi', name: 'Dev', desc: 'Authoritative', gender: 'M' },
+                { id: 'Laomedeia', name: 'Sana', desc: 'Sweet/Kind', gender: 'F' },
+                { id: 'Achernar', name: 'Yash', desc: 'Heroic/Bold', gender: 'M' },
+                { id: 'Alnilam', name: 'Sameer', desc: 'Friendly/Talky', gender: 'M' },
+                { id: 'Schedar', name: 'Tara', desc: 'Wise/Old', gender: 'F' },
+                { id: 'Gacrux', name: 'Arnav', desc: 'Tech/Review', gender: 'M' },
+                { id: 'Pulcherrima', name: 'Diya', desc: 'Poetic/Dreamy', gender: 'F' },
+                { id: 'Achird', name: 'Ravi', desc: 'Solid/Clear', gender: 'M' },
+                { id: 'Zubenelgenubi', name: 'Aditya', desc: 'Deep/Smooth', gender: 'M' },
+                { id: 'Vindemiatrix', name: 'Kiara', desc: 'Corporate/Pro', gender: 'F' },
+                { id: 'Sadachbia', name: 'Nisha', desc: 'Fast/Active', gender: 'F' },
+                { id: 'Sadaltager', name: 'Varun', desc: 'Gravely/Vlog', gender: 'M' },
+                { id: 'Sulafat', name: 'Isha', desc: 'Intimate/Close', gender: 'F' },
+                { id: 'Callirrhoe', name: 'Neha', desc: 'Brisk/Modern', gender: 'F' },
+                { id: 'Erinome', name: 'Pooja', desc: 'Motherly/Soft', gender: 'F' }
+            ];
+
+            const pcmToWav = (b64) => {
+                const bin = atob(b64);
+                const bytes = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+                const pcm = new Int16Array(bytes.buffer);
+                const buffer = new ArrayBuffer(44 + pcm.length * 2);
+                const view = new DataView(buffer);
+                const s = (o, str) => { for (let i = 0; i < str.length; i++) view.setUint8(o + i, str.charCodeAt(i)); };
+                s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length * 2, true); s(8, 'WAVE'); s(12, 'fmt ');
+                view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+                view.setUint32(24, 24000, true); view.setUint32(28, 48000, true); view.setUint16(32, 2, true);
+                view.setUint16(34, 16, true); s(36, 'data'); view.setUint32(40, pcm.length * 2, true);
+                for (let i = 0; i < pcm.length; i++) view.setInt16(44 + i * 2, pcm[i], true);
+                return new Blob([buffer], { type: 'audio/wav' });
+            };
+
+            const generateAudio = async () => {
+                if (!text.trim()) return;
+                setIsGenerating(true); setError(null); setAudioUrl(null);
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: text }] }],
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
+                            }
+                        })
+                    });
+                    const data = await response.json();
+                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    if (!b64) throw new Error("API Key Invalid or Limit Reached.");
+                    const url = URL.createObjectURL(pcmToWav(b64));
+                    setAudioUrl(url);
+                } catch (err) { setError(err.message); } finally { setIsGenerating(false); }
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto px-4 text-left">
+                    {!isConfigured ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-12 bg-white rounded-[3rem] border border-slate-100 shadow-xl text-left text-left">
+                            <div className="text-left">
+                                <h2 className="text-4xl font-black italic uppercase text-indigo-600 mb-8 leading-none text-left"><strong>Free Text To Speech <br/> Converter Assamese</strong></h2>
+                                <div className="space-y-6 text-left">
+                                    <div className="flex gap-4 items-start"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">1</div><p class="text-sm font-bold text-slate-500">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" className="text-indigo-600 underline">Google AI Studio</a> to get your free private key.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div><p class="text-sm font-bold text-slate-500 text-left">Paste that key in the box below.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">3</div><p class="text-sm font-bold text-slate-500 text-left text-left">Type your text and click generate. It's very easy!</p></div>
+                                </div>
+                                <a href="https://aistudio.google.com/app/apikey" target="_blank" className="mt-10 inline-flex items-center gap-2 text-xs font-black uppercase text-orange-600 hover:underline">Get Private Key <Icon name="external-link" size={14}/></a>
+                            </div>
+                            <div className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-200 text-center">
+                                <Icon name="zap" size={40} className="text-indigo-600 mb-6 mx-auto" />
+                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="Paste AIza... Key" className="w-full p-5 rounded-2xl border-2 border-slate-200 mb-6 outline-none focus:border-indigo-600 font-mono text-center" />
+                                <button onClick={() => { if(apiKey.length > 20) { localStorage.setItem('vani_v5_key', apiKey); setIsConfigured(true); }}} className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all text-center">Start Audio Tool</button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+                            <div className="lg:col-span-8 space-y-6 text-left">
+                                <textarea value={text} onChange={(e) => setText(e.target.value)} className="w-full h-80 p-8 rounded-[2.5rem] border-2 border-slate-100 bg-white text-xl font-bold text-slate-900 outline-none focus:border-indigo-400 transition-all resize-none shadow-inner custom-scrollbar text-left" />
+                                <div className="h-64 overflow-y-auto pr-4 custom-scrollbar bg-white/50 p-4 rounded-[2rem] border border-slate-100 shadow-inner">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
+                                        {voices.map(v => (
+                                            <button key={v.id} onClick={() => setVoiceProfile(v.id)} className={`voice-grid-btn ${voiceProfile === v.id ? 'active border-orange-500 shadow-inner' : 'hover:border-slate-300'}`}>
+                                                <p className={`text-[10px] font-black uppercase ${voiceProfile === v.id ? 'text-orange-600' : 'text-slate-800'}`}>{v.name}</p>
+                                                <p className="text-[7px] font-bold text-slate-400 uppercase italic leading-none mt-1">{v.desc}</p>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <button onClick={generateAudio} disabled={isGenerating || !text.trim()} className="w-full py-10 bg-indigo-600 text-white rounded-[2rem] text-2xl font-black shadow-xl hover:bg-orange-600 transition-all flex items-center justify-center gap-4 text-center">
+                                    {isGenerating ? <div className="custom-loader" style={{width: 24, height: 24}}></div> : <Icon name="play" size={24} />}
+                                    {isGenerating ? "MAKING AUDIO..." : "MAKE AUDIO NOW"}
+                                </button>
+                                {error && <p className="p-4 bg-red-50 text-red-600 text-[10px] font-black rounded-xl border border-red-100">{error}</p>}
+                            </div>
+                            <div className="lg:col-span-4 text-left">
+                                <div className="p-10 border-2 border-dashed border-slate-200 rounded-[3rem] text-center min-h-[500px] flex flex-col justify-center sticky top-28 bg-white shadow-xl">
+                                    <h2 className="text-xl font-black uppercase italic text-slate-900 border-b pb-4 mb-12 text-center text-center text-center">Simple Audio <br/> Download</h2>
+                                    {!audioUrl ? (<div className="opacity-20 flex flex-col items-center"><Icon name="music" size={60} /><p className="text-[10px] font-black uppercase mt-4">Waiting For Text</p></div>) : (
+                                        <div className="space-y-12 animate-up text-center text-center">
+                                            <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100"><audio src={audioUrl} controls className="w-full" autoPlay /></div>
+                                            <a href={audioUrl} download="My_Assamese_Podcast.wav" className="w-full py-4 bg-white border-2 border-indigo-600 text-indigo-600 rounded-2xl font-black uppercase flex items-center justify-center gap-2 hover:bg-blue-50 transition-all text-center">Download Audio</a>
+                                        </div>
+                                    )}
+                                    <button onClick={() => {localStorage.removeItem('vani_v5_key'); setIsConfigured(false);}} className="mt-20 py-3 text-[9px] font-black uppercase text-slate-400 border border-slate-100 rounded-xl hover:text-red-500 transition-all text-center">Reset Tool</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
