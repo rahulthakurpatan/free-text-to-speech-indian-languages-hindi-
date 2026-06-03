@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Analytics and Notifications -->
+    <script>
+      window.PushDotifyConfig = {
+        title: "Get Educational Updates",
+        desc: "Subscribe to learn simple current affairs workflows and get free AI tools!",
+        color: "#4f46e5",
+        delay: 2000
+      };
+    </script>
+    <script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RV64RB8M6S');
+    </script>
+
+    <!-- SEO Vitals -->
+    <title>How Assamese Creators Use AI Voice for Daily Current Affairs</title>
+    <meta name="title" content="How Assamese Creators Use AI Voice for Daily Current Affairs and Exam Updates">
+    <meta name="description" content="A practical guide for Assamese creators showing how to build daily current affairs and APSC exam update channels using free AI voice and mobile workflows.">
+    <meta name="keywords" content="Assamese current affairs, Assamese AI voice, Assamese exam updates, Assamese text to speech, Assamese news narration, Assamese government exam preparation, Assamese educational audio, Assamese daily news, Vāṇī AI, freetexttovoiceai">
+    <meta name="author" content="Rahul, Educational Content Strategist at Vāṇī Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Extended Long-Tail Canonical URL -->
+    <link rel="canonical" href="https://freetexttovoiceai.in/how-assamese-creators-use-ai-voice-for-daily-current-affairs-exam-updates.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Assamese Creators Use AI Voice for Daily Current Affairs and Exam Updates",
+      "author": { "@type": "Person", "name": "Rahul" },
+      "publisher": { "@type": "Organization", "name": "Vāṇī AI" },
+      "datePublished": "2026-10-10",
+      "description": "An exhaustive, highly practical guide detailing how Assamese educational creators build daily current affairs channels using free browser-based text-to-speech tools."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do creators make daily Assamese current affairs videos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Creators read morning newspapers, write short summary notes in Google Keep, paste them into a free browser-based Assamese AI voice generator, and put the audio over simple bullet-point slides using an app like CapCut."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Why is AI voice good for current affairs channels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Current affairs require speed and daily publishing. AI voice allows a creator to write a script and generate clear, professional audio in seconds without needing a quiet room or a microphone, ensuring they never miss a daily upload."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can Assamese current affairs channels get monetized?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If the creator researches the news, writes original summaries, and presents the information clearly with educational slides, YouTube considers it valuable original content and allows monetization, even if an AI voice reads the script."
+        }
+      }]
+    }
+    </script>
+
+    <!-- UI Dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; color: #0f172a; scroll-behavior: smooth; }
+        .static-header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .icon-box { background: linear-gradient(135deg, #1e40af, #f59e0b); color: white; border-radius: 1.25rem; }
+        .content-article h1 { font-size: 3.5rem; line-height: 1.05; font-weight: 900; margin-bottom: 3.5rem; text-transform: uppercase; font-style: italic; color: #0f172a; text-align: left; }
+        .content-article h2 { font-size: 2.6rem; font-weight: 900; color: #1e40af; margin-top: 8rem; margin-bottom: 3rem; text-transform: uppercase; font-style: italic; border-left: 16px solid #f59e0b; padding-left: 40px; line-height: 1.1; text-align: left; }
+        .content-article h3 { font-size: 2rem; font-weight: 900; color: #334155; margin-top: 5rem; margin-bottom: 2rem; text-align: left; }
+        .content-article p { font-size: 1.5rem; line-height: 2.7; color: #475569; margin-bottom: 4.5rem; font-weight: 500; text-align: left; }
+        .pro-tip-box { background: #f0f9ff; border-left: 10px solid #0ea5e9; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .warning-box { background: #fff1f2; border-left: 10px solid #e11d48; padding: 50px; border-radius: 3rem; margin: 70px 0; }
+        .insight-card { background: white; border: 1px solid #e2e8f0; padding: 50px; border-radius: 3rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05); }
+        .chart-container { background: white; border: 1px solid #e2e8f0; border-radius: 3rem; padding: 50px; margin: 70px 0; }
+        .custom-loader { border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .voice-grid-btn { border: 2px solid #f1f5f9; text-align: left; padding: 14px; border-radius: 1.25rem; transition: all 0.2s; background: white; min-width: 140px; }
+        .voice-grid-btn.active { border-color: #f97316; background: #fff7ed; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin: 70px 0; background: white; border-radius: 3rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        th { background: #0f172a; color: white; padding: 35px; font-size: 13px; text-transform: uppercase; text-align: left; letter-spacing: 2px; }
+        td { padding: 35px; border-bottom: 1px solid #f1f5f9; font-size: 18px; font-weight: 700; color: #475569; }
+        .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; display: block; padding: 4px 0; }
+        .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="static-header py-10 px-6 md:px-12 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-8 text-left">
+                <div class="w-20 h-20 icon-box flex items-center justify-center shadow-2xl shrink-0">
+                    <i data-lucide="newspaper" class="w-12 h-12 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h1>
+                    <p class="text-[14px] font-black text-slate-900 uppercase tracking-widest leading-none text-left">Educational Research Unit</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500 items-center">
+                <a href="blog.html" class="hover:text-orange-600 transition-all italic text-left">Ecosystem Log</a>
+                <a href="#article" class="hover:text-orange-600 transition-all italic text-left">READ GUIDE</a>
+                <a href="index.html" class="bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-orange-600 transition-all shadow-xl flex items-center gap-2 font-black uppercase text-[10px] tracking-widest"><i data-lucide="radio" class="w-4 h-4"></i> STUDIO HOME</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="studio" class="py-12 md:py-24 bg-slate-50/80 border-b border-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-700 to-orange-500 opacity-20"></div>
+        <div id="root">
+            <div class="flex flex-col items-center justify-center min-h-[650px] text-center px-6">
+                <div class="custom-loader"></div>
+                <h2 class="mt-10 text-2xl font-black text-slate-800 uppercase italic tracking-tighter text-center">Loading Simple Audio Tool...</h2>
+            </div>
+        </div>
+    </section>
+
+    <main id="article" class="max-w-6xl mx-auto px-6 py-32 text-left">
+        <article class="content-article">
+            
+            <div class="mb-40 text-left">
+                <p class="text-orange-600 font-black uppercase tracking-[0.7em] mb-10 italic text-left">Creator Workflow Guide • 2026</p>
+                <h1>How Assamese Creators Use AI Voice for Daily Current Affairs and Exam Updates</h1>
+                
+                <div class="insight-card border-l-[20px] border-indigo-600">
+                    <p class="text-2xl font-black text-slate-800 italic m-0 leading-tight">
+                        "There is a man in Guwahati who distributes newspapers every morning. Over the years, he noticed something interesting. Students and young job seekers would buy the paper, but they did not have time to read every long article. They would quickly scan the headlines while standing at the bus stop, looking for facts important for the APSC exams. They needed the news, but they needed it fast, simple, and easy to consume while travelling. He realized that if someone could summarize those newspapers into a clear, 5-minute audio clip every single morning in Assamese, thousands of students would listen to it. But waking up at 5 AM to record a perfect voiceover every day is exhausting. That is when he discovered how modern creators use browser tools to speak for them."
+                    </p>
+                </div>
+
+                <p class="mt-20 text-left">
+                    Welcome to this highly practical guide. If you are reading this, you probably already know that there is a massive demand for current affairs and exam-related information in Assam. Thousands of students prepare for state and central government exams every year. To succeed, they need to know what is happening in the world, in India, and especially in Assam, every single day.
+                </p>
+                <p class="text-left">
+                    However, finding this information compiled cleanly in the Assamese language is difficult. This creates a huge opportunity for YouTube creators. The problem is that running a "Daily News" or "Current Affairs" channel is the hardest type of channel to maintain. If you miss a day, the news becomes old. You have to wake up, research, write, record your voice, edit the video, and upload it before 9:00 AM. For most people, recording their own voice quickly in a noisy morning house is the biggest roadblock.
+                </p>
+                <p class="text-left">
+                    This is why the smartest creators in Assam have completely stopped using microphones. They use free Assamese AI voice generators to do the heavy lifting. In this guide, I will explain exactly how they do it. I will not use fancy corporate words. I will show you the exact daily workflow, how to write short scripts that students love, and how to build a channel that can eventually earn money, all using just your mobile phone.
+                </p>
+
+                <div class="chart-container text-left relative">
+                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">Daily Publishing Consistency Simulator</h3>
+                    <p class="text-sm font-bold text-slate-500 mb-10 text-center">Play with the options below. See how removing the physical friction of recording your own voice affects your ability to upload a current affairs video every single morning.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto text-slate-800">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Audio Recording Method:</label>
+                            <select id="langSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="hindi">Human Voice (Manual Recording)</option>
+                                <option value="regional" selected>AI Voice (Browser Generation)</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Time Available in Morning (1-100): <span id="trust-display" class="text-indigo-600 font-bold">85</span></label>
+                            <input type="range" id="trustSlider" min="10" max="100" step="5" value="85" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-black uppercase text-slate-400">Visual Editing Style:</label>
+                            <select id="paceSelect" class="w-full p-3 bg-slate-100 rounded-xl border-2 border-slate-200 font-bold">
+                                <option value="basic">Heavy Video Editing (Slow)</option>
+                                <option value="opt" selected>Simple Bullet Point Slides (Fast)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full h-[320px] bg-slate-900 rounded-[2rem] overflow-hidden p-6 border-4 border-slate-950">
+                        <canvas id="growthCanvas" class="w-full h-full"></canvas>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-black uppercase text-slate-400 mt-4 px-4">
+                        <span>Day 1 (Motivated)</span>
+                        <span>Day 15 (Getting Tired)</span>
+                        <span>Day 30 (Channel Consistency)</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>1. Why Daily Current Affairs Content Is Growing in Assam</h2>
+            <p>
+                The demand for current affairs is strictly tied to the job market. Every time the Assam government announces vacancies for police, administrative services, or teaching jobs, the search volume on YouTube for "Assam Current Affairs" skyrockets. 
+            </p>
+            <p>
+                Students do not want to watch an hour-long TV news debate to find one useful fact. They want a creator to do the hard work of reading The Assam Tribune, summarizing the 10 most important points, and delivering it in a clear 5-minute video. 
+            </p>
+            <p>
+                Because mobile internet is cheap, students listen to these updates while sitting in a shared auto, waiting for a college class, or doing household chores. This creates a massive opportunity for "audio-first" content. The video does not need to have expensive camera work; the audio needs to be clear, and the facts need to be accurate. We observed this exact same audience behavior in our <a href="best-free-assamese-voice-generator-educational-e-learning-videos-complete-guide-2026.html" class="text-indigo-600 underline font-black">educational content guide</a>.
+            </p>
+
+            <h2>2. Why Many Creators Choose AI Voice for Current Affairs</h2>
+            <p>
+                If you run a current affairs channel, you are fighting against the clock. 
+            </p>
+            <p>
+                If an important news event happens at 8:00 PM, you want a video about it uploaded by 8:00 AM the next morning. If you use your own voice, you have to find a quiet time to record. You might make a mistake reading a complex political name and have to record it again. You have to edit the audio to remove your breathing sounds.
+            </p>
+            <div class="pro-tip-box">
+                <h4 class="text-2xl font-black text-slate-900 mb-4">The Speed Advantage</h4>
+                <p class="text-xl m-0 leading-relaxed">Using an AI voice generator changes the workflow completely. You just type the news points into a browser. You click a button, and you instantly get a perfect, studio-quality audio file that is ready to use. There are no mistakes, no background noise, and no wasted time. This speed is the only reason solo creators can compete with big news companies.</p>
+            </div>
+
+            <h2>3. Understanding the Audience</h2>
+            <p>
+                Who is watching your videos? 
+                <br>• <strong>The Exam Aspirant:</strong> They watch to memorize dates, names, and places. They pause the video to take notes.
+                <br>• <strong>The Busy Professional:</strong> They listen while driving or working. They just want to know what is happening in the state without reading a long article.
+                <br>• <strong>The Student:</strong> They need simple explanations of complicated government policies.
+            </p>
+            <p>
+                None of these people care if your video has fancy background music or cinematic transitions. They care about utility. If your video saves them 20 minutes of reading the newspaper, they will subscribe and watch every single day.
+            </p>
+
+            <h2>4. What Makes a Good Current Affairs AI Voice</h2>
+            <p>
+                Not every AI voice is suitable for news. If you choose a voice that sounds like a cartoon character or speaks too excitedly, the audience will not trust the information.
+            </p>
+            <p>
+                A good news voice must be **Neutral and Authoritative**. It should sound like a professional news anchor on the radio. It must speak clearly, and most importantly, it must not rush. When delivering a fact (like "The new bridge is 4.9 kilometers long"), the voice must pause slightly so the student's brain can register the number. This requires proper scripting, which we will cover in Section 8.
+            </p>
+
+            <h2>5. Types of Current Affairs Content That Work Well</h2>
+            <p>
+                You do not have to just do "Daily News." There are many sub-categories that are very popular:
+            </p>
+            <ul class="list-none space-y-6 text-left pl-0">
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Daily Top 10 Facts:</strong> A simple 3-minute video covering the 10 biggest headlines of the day.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Weekly Assam Roundup:</strong> A 15-minute video posted every Sunday summarizing all the state news. Students love this for weekend revision.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Government Scheme Explainers:</strong> When a new scheme (like Orunodoi) is updated, a dedicated video explaining who gets it, the rules, and the dates is highly searched.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="check-circle" className="text-orange-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Science and Tech Updates:</strong> Very popular for exam preparation, focusing on space missions (ISRO), new digital apps, and medical discoveries.</span></li>
+            </ul>
+
+            <h2>6. Best Assamese AI Voice Tools for Current Affairs Content</h2>
+            <p>
+                Because you are publishing daily, you cannot use a tool that charges you a subscription fee or limits how many words you can generate. You need free, reliable tools.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool Name</th>
+                        <th>Speed for Daily Publishing</th>
+                        <th>Assamese Pronunciation</th>
+                        <th>Creator Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Vāṇī Studio (Browser Sandbox)</strong></td>
+                        <td>Very Fast (Runs in browser, no app load time)</td>
+                        <td>Excellent (Handles complex political names if spelled phonetically)</td>
+                        <td>Requires a free API key. Perfect for daily, unlimited long-form news scripts.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CapCut App Text-to-Speech</strong></td>
+                        <td>Fast (Inside the video editor)</td>
+                        <td>Moderate (Can sometimes sound stiff)</td>
+                        <td>Good for quick 60-second News Shorts, but lacks deep control for long exam videos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Edge (Read Aloud)</strong></td>
+                        <td>Slow (Requires screen recording setup)</td>
+                        <td>High (Very natural pacing)</td>
+                        <td>Too slow for a fast morning news workflow. Better for weekly videos.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>
+                For daily content, browser-based sandboxes using a direct connection (the BYOK method) are the industry standard. They bypass expensive monthly fees and allow unlimited daily generation. We explain how this saves creators money in our <a href="byok-meaning-bring-your-own-key-ai-tools-subscription-fatigue-2026.html" class="text-indigo-600 underline font-black">BYOK beginner guide</a>. If you use browser tools on a mobile phone, make sure to read our <a href="fix-chrome-loading-issues.html" class="text-indigo-600 underline font-black">Chrome troubleshooting guide</a> to prevent the browser from crashing when you paste long news scripts.
+            </p>
+
+            <h2>7. Complete Daily Publishing Workflow</h2>
+            <p>
+                How do you actually make a daily news video before 9 AM? Here is the exact system used by successful creators.
+            </p>
+
+            <div class="warning-box border-indigo-600 bg-indigo-50">
+                <h4 class="text-2xl font-black text-slate-900 mb-4">The Morning Creator Routine</h4>
+                <p class="text-xl m-0 leading-relaxed text-indigo-900">
+                <strong>6:00 AM - News Collection:</strong> Open 3 reliable news apps on your phone. Find 5 important stories.<br><br>
+                <strong>6:30 AM - Script Writing:</strong> Open Google Keep. Write 3 short sentences for each story in simple Assamese. (Total script: about 300 words).<br><br>
+                <strong>7:00 AM - Voice Generation:</strong> Copy the text. Open the free AI tool in Chrome. Paste the text, generate the audio, and download the `.wav` file.<br><br>
+                <strong>7:15 AM - Video Creation:</strong> Open VN Editor. Put the audio file in. Use Canva to make 5 simple slides with bullet points. Put the slides over the audio. Turn on Auto-Captions.<br><br>
+                <strong>7:45 AM - Publishing:</strong> Export the video and upload it to YouTube with the date in the title (e.g., "Assam Current Affairs - 12 October 2026").
+                </p>
+            </div>
+
+            <h2>8. Writing Better Current Affairs Scripts</h2>
+            <p>
+                An AI voice will perfectly read exactly what you type. If your script is confusing, the audio will be confusing. 
+            </p>
+            <p>
+                <strong>Use Short Sentences:</strong> Never use a sentence longer than 15 words. Break long ideas into two sentences.
+                <br><strong>Fact-First Writing:</strong> Do not write long introductions. A student wants facts. "Today, the Chief Minister announced a new bridge in Majuli. It will cost 500 Crore Rupees. It will be finished in 2028."
+                <br><strong>Use Commas for Pauses:</strong> If you write "500 Crore Rupees", put a comma after it so the AI takes a tiny breath. "It will cost 500 Crore Rupees, and it will be finished..." This helps the student digest the number. For more advanced scripting techniques, review our guide on <a href="write-better-tts-scripts.html" class="text-indigo-600 underline font-black">how to make AI voices sound human</a>.
+            </p>
+
+            <h2>9. How Competitive Exam Students Use Audio Current Affairs</h2>
+            <p>
+                Students do not watch these videos for fun. They watch them for **Revision**. 
+            </p>
+            <p>
+                Many students will download your YouTube video as an audio file or listen to it repeatedly while travelling to their coaching center. Because they listen repeatedly, they hate long, loud musical intros or unnecessary talking. They want you to get straight to the point. If your channel becomes a reliable, clean source of daily facts, they will trust you entirely for their exam preparation.
+            </p>
+
+            <h2>10. Common Mistakes Creators Make</h2>
+            <p>
+                Avoid these simple errors that cause viewers to unsubscribe:
+            </p>
+            <ul class="list-none space-y-6 text-left pl-0">
+                <li class="flex gap-4 items-start"><Icon name="x-circle" className="text-red-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Copying News Directly:</strong> Never copy a paragraph from a newspaper website and paste it into the AI generator. Newspapers use very formal, heavy words. When spoken out loud, it sounds unnatural and boring. You must rewrite the news in your own simple words.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="x-circle" className="text-red-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Information Overload:</strong> Do not try to cover 20 news items in one video. It is too much to remember. Cover the 5 or 7 most important items perfectly.</span></li>
+                <li class="flex gap-4 items-start"><Icon name="x-circle" className="text-red-500 mt-2 shrink-0"/><span class="text-xl leading-relaxed"><strong>Inconsistent Uploads:</strong> If you claim to be a "Daily News" channel but you miss three days a week, the audience will stop trusting you and go to a competitor. Consistency is everything in news.</span></li>
+            </ul>
+
+            <h2>11. Mobile-Only Setup for Daily Current Affairs Channels</h2>
+            <p>
+                You can run a highly profitable news channel using only a mid-range Android phone. 
+            </p>
+            <p>
+                The key is organizing your apps. Keep your news apps, Google Keep, Chrome, Canva, and VN Editor in one folder on your home screen. Because you will be rendering videos every day, you must manage your phone's storage. After you upload a video to YouTube, immediately delete the project from VN Editor and delete the pictures from your gallery. If your phone memory is full, the AI voice generator in Chrome will freeze. Keep your digital workspace clean.
+            </p>
+
+            <h2>12. AI Voice vs Human Voice for News Content</h2>
+            <p>
+                Is it better to read the news yourself? 
+            </p>
+            <p>
+                If you are a trained news anchor with a deep, powerful voice and a soundproof room, yes. However, for 99% of normal people, recording daily news manually is stressful. You will stumble over complex international names, you will clear your throat, and the background noise of morning traffic will ruin your audio. 
+            </p>
+            <p>
+                The AI voice provides **Absolute Consistency**. It sounds exactly the same on a Monday morning as it does on a Friday night. It removes the stress of performance, allowing you to focus 100% of your energy on gathering accurate facts. We compared these workflows deeply in our <a href="assamese-ai-voice-vs-human-voice-youtube-growth-comparison-2026.html" class="text-indigo-600 underline font-black">AI vs Human Voice guide</a>.
+            </p>
+
+            <h2>13. Can Current Affairs Channels Be Monetized?</h2>
+            <p>
+                Yes, but you must prove your effort to YouTube.
+            </p>
+            <p>
+                If you use an AI voice, you cannot just show a blank screen or stolen TV news footage. That will be rejected as "Reused Content." 
+            </p>
+            <p>
+                To get monetized, your video must have educational value. If you research the facts, write the summary script yourself, and put those facts as clear bullet points on a slide that you made in Canva, YouTube sees that as highly valuable original content. You did the work of a journalist and an editor. YouTube happily pays ad revenue for this type of structured information. Read our full <a href="can-assamese-ai-voice-channels-get-monetized-youtube-complete-policy-guide-2026.html" class="text-indigo-600 underline font-black">monetization policy guide</a> to understand the rules perfectly.
+            </p>
+
+            <h2>14. Building a Long-Term Current Affairs Channel</h2>
+            <p>
+                Do not think of your channel as just a place for daily videos. Think of it as a **Library**.
+            </p>
+            <p>
+                Create Playlists. Have one playlist for "Daily News", one for "Weekly Summaries", and one for "Assam History Facts." When an exam date approaches, students will not watch today's video; they will go to your playlists and binge-watch the last six months of your weekly summaries. By organizing your content, you turn old news into highly valuable exam revision material that gets views for months.
+            </p>
+
+            <h2>15. Future of Assamese Audio Current Affairs</h2>
+            <p>
+                The way people consume information is getting faster. In the future, students will rely heavily on audio summaries to prepare for exams while they do other tasks. 
+            </p>
+            <p>
+                The creators who will dominate the Assamese educational space in 2030 are the ones who start building their daily discipline today. The AI voice is an incredible tool, but it is just a tool. Your ability to find good news, write it simply, and publish it every single morning is what will build a massive, loyal audience.
+            </p>
+
+            <h2>Conclusion: Start Your First News Update Today</h2>
+            <p>
+                You do not need a studio. You do not need to show your face. Open a newspaper right now. Find 3 interesting facts. Write a 100-word script on your phone. Paste it into the free audio tool at the top of this page. Generate the voice, put a picture over it, and upload it to YouTube. The only difference between a successful creator and someone who just watches YouTube is the willingness to press the upload button.
+            </p>
+
+            <section id="faqs" class="mt-40 pt-20 border-t border-slate-100 text-left">
+                <h2 class="text-center mb-20 text-4xl font-black uppercase italic text-center">Creator Questions Answered</h2>
+                <div class="space-y-12">
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">How do I get the AI to pronounce Assamese politicians' names correctly?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">You must use phonetic spelling. If the computer struggles with a name written formally, spell it out in English letters exactly how it sounds to your ear. Exaggerate the vowels if you have to. Test the audio until the computer says the name perfectly, then save that spelling for future use.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Are YouTube Shorts good for Current Affairs?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">Yes! A 60-second YouTube Short is perfect for highlighting a single, very important piece of news or explaining one new government scheme. You can use Shorts to get new subscribers quickly, and long videos for detailed daily roundups. See our <a href="assamese-text-to-speech-youtube-shorts-complete-beginner-guide-2026.html" class="text-blue-600 underline">Shorts guide</a> for the exact setup.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h4 class="text-xl font-black uppercase text-blue-800 mb-2 italic text-left">Is it legal to read newspaper facts on YouTube?</h4>
+                        <p class="text-base font-semibold text-slate-600 leading-relaxed text-left">Facts cannot be copyrighted. Everyone is allowed to talk about the fact that a new bridge was built. However, you cannot copy the exact sentences written by a journalist in a newspaper. You must read the facts and write your own sentences to summarize the information. This is called fair use reporting.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="mt-20 flex justify-center text-center">
+            <a href="#studio" class="bg-indigo-600 text-white px-16 py-8 rounded-[3.5rem] font-black text-3xl shadow-2xl hover:bg-orange-600 transition-all uppercase flex items-center gap-8 active:scale-95 text-center">
+                Try The Free Audio Tool <i data-lucide="zap" class="w-10 h-10 text-white"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-main py-24 border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-40 text-left">
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">The Studio</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="index.html" class="sitemap-link">Studio Home</a>
+                        <a href="how-to-get-api-key.html" class="sitemap-link">Get Free Key</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xs font-black text-slate-900 mb-6 uppercase tracking-widest text-left">Resources</h3>
+                    <div class="space-y-4 text-left">
+                        <a href="best-assamese-ai-voice-generator-free-human-sounding-tools-youtube-education.html" class="sitemap-link">Assamese Tools Guide</a>
+                        <a href="text-to-speech-massive-articles-directory-free-text-to-speech.html" class="sitemap-link font-black text-indigo-600">All Creator Guides</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-24 border-t border-slate-100 flex flex-col items-center">
+                <div class="w-24 h-2 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full mb-12"></div>
+                <p class="text-[12px] font-black uppercase tracking-[0.6em] text-slate-400 text-center">© 2026 Vāṇī Studio — Helping beginners create content.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('growthCanvas');
+            const langSelect = document.getElementById('langSelect');
+            const trustSlider = document.getElementById('trustSlider');
+            const paceSelect = document.getElementById('paceSelect');
+            
+            const trustDisplay = document.getElementById('trust-display');
+            const retentionScore = document.getElementById('retention-score');
+            const fatigueScore = document.getElementById('fatigue-score');
+            const shareScore = document.getElementById('share-score');
+
+            if(!canvas || !langSelect || !trustSlider || !paceSelect) return;
+            const ctx = canvas.getContext('2d');
+            
+            let time = 0;
+
+            const resizeCanvas = () => {
+                const rect = canvas.parentNode.getBoundingClientRect();
+                canvas.width = rect.width - 48;
+                canvas.height = rect.height - 48;
+            };
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const drawGraph = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const lang = langSelect.value;
+                const trust = parseInt(trustSlider.value); // Morning Time Available
+                const pace = paceSelect.value; // Editing Style
+
+                if(trustDisplay) trustDisplay.textContent = trust;
+
+                // Growth Index (VVI) repurposed for Daily Consistency Tracker
+                let vvi = (lang === 'regional' ? 1.8 : 0.4); // AI Voice makes daily publishing possible
+                vvi *= (trust / 50); // More time helps, but AI lowers the time requirement
+                if(pace === 'opt') vvi *= 1.3; // Simple editing allows sustainable daily uploads
+
+                const retention = Math.min(99, Math.floor(vvi * 34));
+
+                if (retentionScore) retentionScore.textContent = "Upload Consistency: " + retention + "%";
+                if (fatigueScore) fatigueScore.textContent = vvi > 1.5 ? "Sustainable Routine" : "High Burnout Risk";
+                if (shareScore) shareScore.textContent = vvi > 1.5 ? "Channel Grows Safely" : "Missed Uploads";
+
+                // Draw grid lines
+                ctx.strokeStyle = '#334155';
+                ctx.lineWidth = 1;
+                for (let i = 1; i < 5; i++) {
+                    const y = (canvas.height / 5) * i;
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+
+                // Title label
+                ctx.fillStyle = '#94a3b8';
+                ctx.font = '10px Inter, sans-serif';
+                ctx.fillText('HOW AI WORKFLOWS MAINTAIN DAILY UPLOAD CONSISTENCY', 10, 20);
+
+                // Draw stability curves
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = lang === 'regional' ? '#10b981' : '#e11d48'; // Green for AI (stable), Red for Human Voice (burnout drop)
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height * 0.9);
+
+                for (let x = 0; x < canvas.width; x++) {
+                    const progress = x / canvas.width;
+                    // Human voice daily recording (hindi) drops off heavily due to exhaustion
+                    const curvePower = lang === 'regional' ? 1.4 : 2.8; 
+                    const growth = Math.pow(progress, curvePower) * vvi * (canvas.height * 0.35);
+                    
+                    const yVal = (canvas.height * 0.85) - growth + Math.sin(progress * 15 - time) * 4;
+                    ctx.lineTo(x, yVal);
+                }
+                ctx.stroke();
+
+                time += 0.05;
+                requestAnimationFrame(drawGraph);
+            };
+
+            drawGraph();
+            langSelect.addEventListener('change', drawGraph);
+            trustSlider.addEventListener('input', drawGraph);
+            paceSelect.addEventListener('change', drawGraph);
+        });
+    </script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [isConfigured, setIsConfigured] = useState(false);
+            const [apiKey, setApiKey] = useState('');
+            const [text, setText] = useState('Voice is 15% of retention; your narrative logic is the remaining 85%. Use this text to speech convertor sandbox to test your script structures instantly.');
+            const [voiceProfile, setVoiceProfile] = useState('Charon');
+            const [audioUrl, setAudioUrl] = useState(null);
+            const [isGenerating, setIsGenerating] = useState(false);
+            const [error, setError] = useState(null);
+
+            useEffect(() => {
+                const saved = localStorage.getItem('vani_v5_key');
+                if (saved) { setApiKey(saved); setIsConfigured(true); }
+                if(window.lucide) window.lucide.createIcons();
+            }, []);
+
+            const voices = [
+                { id: 'Charon', name: 'Arjun', desc: 'Narrator/Deep', gender: 'M' },
+                { id: 'Leda', name: 'Priya', desc: 'Warm Story', gender: 'F' },
+                { id: 'Aoede', name: 'Anjali', desc: 'Soft Narrative', gender: 'F' },
+                { id: 'Kore', name: 'Amit', desc: 'Confident/Bold', gender: 'M' },
+                { id: 'Iapetus', name: 'George', desc: 'Classic Pro', gender: 'M' },
+                { id: 'Autonoe', name: 'Shreya', desc: 'Educational', gender: 'F' },
+                { id: 'Zephyr', name: 'Kabir', desc: 'Airy/Calm', gender: 'M' },
+                { id: 'Puck', name: 'Ishaan', desc: 'Youthful/Energetic', gender: 'M' },
+                { id: 'Fenrir', name: 'Vikram', desc: 'Powerful/Grave', gender: 'M' },
+                { id: 'Orus', name: 'Rohan', desc: 'Neutral News', gender: 'M' },
+                { id: 'Enceladus', name: 'Meera', desc: 'Stable/Mature', gender: 'F' },
+                { id: 'Umbriel', name: 'Rishi', desc: 'Mysterious', gender: 'M' },
+                { id: 'Algieba', name: 'Zara', desc: 'Elegant/Premium', gender: 'F' },
+                { id: 'Despina', name: 'Kavya', desc: 'Cheerful/Bubbly', gender: 'F' },
+                { id: 'Algenib', name: 'Aryan', desc: 'Dynamic Ads', gender: 'M' },
+                { id: 'Rasalgethi', name: 'Dev', desc: 'Authoritative', gender: 'M' },
+                { id: 'Laomedeia', name: 'Sana', desc: 'Sweet/Kind', gender: 'F' },
+                { id: 'Achernar', name: 'Yash', desc: 'Heroic/Bold', gender: 'M' },
+                { id: 'Alnilam', name: 'Sameer', desc: 'Friendly/Talky', gender: 'M' },
+                { id: 'Schedar', name: 'Tara', desc: 'Wise/Old', gender: 'F' },
+                { id: 'Gacrux', name: 'Arnav', desc: 'Tech/Review', gender: 'M' },
+                { id: 'Pulcherrima', name: 'Diya', desc: 'Poetic/Dreamy', gender: 'F' },
+                { id: 'Achird', name: 'Ravi', desc: 'Solid/Clear', gender: 'M' },
+                { id: 'Zubenelgenubi', name: 'Aditya', desc: 'Deep/Smooth', gender: 'M' },
+                { id: 'Vindemiatrix', name: 'Kiara', desc: 'Corporate/Pro', gender: 'F' },
+                { id: 'Sadachbia', name: 'Nisha', desc: 'Fast/Active', gender: 'F' },
+                { id: 'Sadaltager', name: 'Varun', desc: 'Gravely/Vlog', gender: 'M' },
+                { id: 'Sulafat', name: 'Isha', desc: 'Intimate/Close', gender: 'F' },
+                { id: 'Callirrhoe', name: 'Neha', desc: 'Brisk/Modern', gender: 'F' },
+                { id: 'Erinome', name: 'Pooja', desc: 'Motherly/Soft', gender: 'F' }
+            ];
+
+            const pcmToWav = (b64) => {
+                const bin = atob(b64);
+                const bytes = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+                const pcm = new Int16Array(bytes.buffer);
+                const buffer = new ArrayBuffer(44 + pcm.length * 2);
+                const view = new DataView(buffer);
+                const s = (o, str) => { for (let i = 0; i < str.length; i++) view.setUint8(o + i, str.charCodeAt(i)); };
+                s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length * 2, true); s(8, 'WAVE'); s(12, 'fmt ');
+                view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+                view.setUint32(24, 24000, true); view.setUint32(28, 48000, true); view.setUint16(32, 2, true);
+                view.setUint16(34, 16, true); s(36, 'data'); view.setUint32(40, pcm.length * 2, true);
+                for (let i = 0; i < pcm.length; i++) view.setInt16(44 + i * 2, pcm[i], true);
+                return new Blob([buffer], { type: 'audio/wav' });
+            };
+
+            const generateAudio = async () => {
+                if (!text.trim()) return;
+                setIsGenerating(true); setError(null); setAudioUrl(null);
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: text }] }],
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
+                            }
+                        })
+                    });
+                    const data = await response.json();
+                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    if (!b64) throw new Error("API Key Invalid or Limit Reached.");
+                    const url = URL.createObjectURL(pcmToWav(b64));
+                    setAudioUrl(url);
+                } catch (err) { setError(err.message); } finally { setIsGenerating(false); }
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto px-4 text-left">
+                    {!isConfigured ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-12 bg-white rounded-[3rem] border border-slate-100 shadow-xl text-left text-left">
+                            <div className="text-left">
+                                <h2 className="text-4xl font-black italic uppercase text-indigo-600 mb-8 leading-none text-left"><strong>Free Text To Speech <br/> Converter Assamese</strong></h2>
+                                <div className="space-y-6 text-left">
+                                    <div className="flex gap-4 items-start"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">1</div><p class="text-sm font-bold text-slate-500">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" className="text-indigo-600 underline">Google AI Studio</a> to get your free private key.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div><p class="text-sm font-bold text-slate-500 text-left">Paste that key in the box below.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">3</div><p class="text-sm font-bold text-slate-500 text-left text-left">Type your text and click generate. It's very easy!</p></div>
+                                </div>
+                                <a href="https://aistudio.google.com/app/apikey" target="_blank" className="mt-10 inline-flex items-center gap-2 text-xs font-black uppercase text-orange-600 hover:underline">Get Private Key <Icon name="external-link" size={14}/></a>
+                            </div>
+                            <div className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-200 text-center">
+                                <Icon name="zap" size={40} className="text-indigo-600 mb-6 mx-auto" />
+                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="Paste AIza... Key" className="w-full p-5 rounded-2xl border-2 border-slate-200 mb-6 outline-none focus:border-indigo-600 font-mono text-center" />
+                                <button onClick={() => { if(apiKey.length > 20) { localStorage.setItem('vani_v5_key', apiKey); setIsConfigured(true); }}} className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all text-center">Start Audio Tool</button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+                            <div className="lg:col-span-8 space-y-6 text-left">
+                                <textarea value={text} onChange={(e) => setText(e.target.value)} className="w-full h-80 p-8 rounded-[2.5rem] border-2 border-slate-100 bg-white text-xl font-bold text-slate-900 outline-none focus:border-indigo-400 transition-all resize-none shadow-inner custom-scrollbar text-left" />
+                                <div className="h-64 overflow-y-auto pr-4 custom-scrollbar bg-white/50 p-4 rounded-[2rem] border border-slate-100 shadow-inner">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
+                                        {voices.map(v => (
+                                            <button key={v.id} onClick={() => setVoiceProfile(v.id)} className={`voice-grid-btn ${voiceProfile === v.id ? 'active border-orange-500 shadow-inner' : 'hover:border-slate-300'}`}>
+                                                <p className={`text-[10px] font-black uppercase ${voiceProfile === v.id ? 'text-orange-600' : 'text-slate-800'}`}>{v.name}</p>
+                                                <p className="text-[7px] font-bold text-slate-400 uppercase italic leading-none mt-1">{v.desc}</p>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <button onClick={generateAudio} disabled={isGenerating || !text.trim()} className="w-full py-10 bg-indigo-600 text-white rounded-[2rem] text-2xl font-black shadow-xl hover:bg-orange-600 transition-all flex items-center justify-center gap-4 text-center">
+                                    {isGenerating ? <div className="custom-loader" style={{width: 24, height: 24}}></div> : <Icon name="play" size={24} />}
+                                    {isGenerating ? "MAKING AUDIO..." : "MAKE AUDIO NOW"}
+                                </button>
+                                {error && <p className="p-4 bg-red-50 text-red-600 text-[10px] font-black rounded-xl border border-red-100">{error}</p>}
+                            </div>
+                            <div className="lg:col-span-4 text-left">
+                                <div className="p-10 border-2 border-dashed border-slate-200 rounded-[3rem] text-center min-h-[500px] flex flex-col justify-center sticky top-28 bg-white shadow-xl">
+                                    <h2 className="text-xl font-black uppercase italic text-slate-900 border-b pb-4 mb-12 text-center text-center text-center">Simple Audio <br/> Download</h2>
+                                    {!audioUrl ? (<div className="opacity-20 flex flex-col items-center"><Icon name="music" size={60} /><p className="text-[10px] font-black uppercase mt-4">Waiting For Text</p></div>) : (
+                                        <div className="space-y-12 animate-up text-center text-center">
+                                            <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100"><audio src={audioUrl} controls className="w-full" autoPlay /></div>
+                                            <a href={audioUrl} download="My_Lesson_Audio.wav" className="w-full py-4 bg-white border-2 border-indigo-600 text-indigo-600 rounded-2xl font-black uppercase flex items-center justify-center gap-2 hover:bg-blue-50 transition-all text-center">Download Audio</a>
+                                        </div>
+                                    )}
+                                    <button onClick={() => {localStorage.removeItem('vani_v5_key'); setIsConfigured(false);}} className="mt-20 py-3 text-[9px] font-black uppercase text-slate-400 border border-slate-100 rounded-xl hover:text-red-500 transition-all text-center">Reset Tool</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
