@@ -2,14 +2,14 @@
 <html lang="hi-IN">
 <head>
     <script>
-  window.PushDotifyConfig = {
-    title: "Get Instant Updates",
-    desc: "Subscribe to get notified about our latest posts and offers!",
-    color: "#4f46e5",
-    delay: 2000
-  };
-</script>
-<script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+      window.PushDotifyConfig = {
+        title: "Get Instant Updates",
+        desc: "Subscribe to get notified about our latest posts and offers!",
+        color: "#4f46e5",
+        delay: 2000
+      };
+    </script>
+    <script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
 
     <meta name="google-adsense-account" content="ca-pub-2057359438981933">
     <meta charset="UTF-8">
@@ -73,15 +73,15 @@
       gtag('config', 'G-RV64RB8M6S');
     </script>
 
-    <!-- UI Assets -->
+    <!-- UI Assets (Fixed: Using stable cdnjs links instead of unpkg) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.3/babel.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.300.0/umd/lucide.min.js" crossorigin></script>
 
     <style>
         body { background-color: #f8fafc; font-family: 'Inter', 'Noto Sans Devanagari', sans-serif; color: #0f172a; scroll-behavior: smooth; }
@@ -94,8 +94,8 @@
         .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; display: block; padding: 4px 0; text-align: left; }
         .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
         
-        .content-article h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 900; margin-bottom: 3.5rem; text-transform: uppercase; italic: true; letter-spacing: -0.04em; color: #0f172a; text-align: left; }
-        .content-article h2 { font-size: 2.4rem; font-weight: 900; color: #1e40af; margin-top: 6.5rem; margin-bottom: 2.5rem; text-transform: uppercase; italic: true; border-left: 15px solid #f97316; padding-left: 35px; line-height: 1.1; }
+        .content-article h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 900; margin-bottom: 3.5rem; text-transform: uppercase; font-style: italic; letter-spacing: -0.04em; color: #0f172a; text-align: left; }
+        .content-article h2 { font-size: 2.4rem; font-weight: 900; color: #1e40af; margin-top: 6.5rem; margin-bottom: 2.5rem; text-transform: uppercase; font-style: italic; border-left: 15px solid #f97316; padding-left: 35px; line-height: 1.1; }
         .content-article h3 { font-size: 1.6rem; font-weight: 900; color: #334155; margin-top: 4rem; margin-bottom: 1.5rem; }
         .content-article p { font-size: 1.4rem; line-height: 2.4; color: #475569; margin-bottom: 4.5rem; font-weight: 500; text-align: left; }
         .story-box { background: #fff7ed; border: 4px dashed #f97316; padding: 65px; border-radius: 5rem; margin: 90px 0; position: relative; }
@@ -299,7 +299,8 @@
     </footer>
 
     <!-- REACT STUDIO LOGIC -->
-    <script type="text/babel">
+    <!-- Fixed: Added data-presets to ensure Babel compiles the JSX correctly -->
+    <script type="text/babel" data-presets="react,env">
         const { useState, useEffect, useRef } = React;
         const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
             const iconRef = useRef(null);
@@ -315,7 +316,7 @@
         const App = () => {
             const [isConfigured, setIsConfigured] = useState(false);
             const [apiKey, setApiKey] = useState('');
-            const [text, setText] = useState('नमस्ते! क्या एआई आवाज़ से यूट्यूब पर पैसा कमाया जा सकता है? इसका जवाब है हाँ, अगर आप सही तरीका अपनाते हैं। चलिए आज आपकी अर्निंग जर्नी शुरू करते हैं।');
+            const [text, setText] = useState('नमस्ते! क्या एआई आवाज़ से यूट्यूब पर पैसा कमाया जा सकता है? इसका जवाब है हाँ, अगर आप सही तरीका अपनाते हैं। चलिए आज आपकी अर्निंग जर्नी शुरू करते हैं।');
             const [voiceProfile, setVoiceProfile] = useState('Charon');
             const [audioUrl, setAudioUrl] = useState(null);
             const [isGenerating, setIsGenerating] = useState(false);
@@ -370,12 +371,31 @@
                             }
                         })
                     });
+                    
+                    if (response.status === 429) throw new Error("Limit Reached. Please wait 60 seconds.");
                     const data = await response.json();
-                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    
+                    // Fixed: Robust API Error handling
+                    if (data.error) {
+                        throw new Error(data.error.message || "API Error occurred.");
+                    }
+                    
+                    let b64 = null;
+                    if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts) {
+                        const part = data.candidates[0].content.parts.find(p => p.inlineData);
+                        if (part && part.inlineData) {
+                            b64 = part.inlineData.data;
+                        }
+                    }
+
                     if (!b64) throw new Error("API Key Error or Limit Reached.");
                     const url = URL.createObjectURL(pcmToWav(b64));
                     setAudioUrl(url);
-                } catch (err) { setError(err.message); } finally { setIsGenerating(false); }
+                } catch (err) { 
+                    setError(err.message); 
+                } finally { 
+                    setIsGenerating(false); 
+                }
             };
 
             return (
@@ -437,6 +457,11 @@
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
-    <script>lucide.createIcons();</script>
+    <script>
+        // Fixed: Added safety check before loading icons
+        if(window.lucide) {
+           window.lucide.createIcons();
+        }
+    </script>
 </body>
 </html>
