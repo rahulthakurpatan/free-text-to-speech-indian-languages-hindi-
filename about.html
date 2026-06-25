@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <script>
-  window.PushDotifyConfig = {
-    title: "Get Instant Updates",
-    desc: "Subscribe to get notified about our latest posts and offers!",
-    color: "#4f46e5",
-    delay: 2000
-  };
-</script>
-<script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+      window.PushDotifyConfig = {
+        title: "Get Instant Updates",
+        desc: "Subscribe to get notified about our latest posts and offers!",
+        color: "#4f46e5",
+        delay: 2000
+      };
+    </script>
+    <script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
 
     <meta name="google-adsense-account" content="ca-pub-2057359438981933">
     <meta charset="UTF-8">
@@ -48,12 +48,15 @@
       gtag('config', 'G-RV64RB8M6S');
     </script>
 
-    <!-- Fonts & Scripts -->
+    <!-- Fonts & Scripts (Fixed to cdnjs for stability) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.3/babel.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.300.0/umd/lucide.min.js" crossorigin></script>
 
     <style>
         body { background-color: #f8fafc; font-family: 'Inter', 'Noto Sans Devanagari', sans-serif; color: #0f172a; scroll-behavior: smooth; }
@@ -68,8 +71,12 @@
         .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
         .faq-item { background: white; border: 1px solid #e2e8f0; border-radius: 1.5rem; padding: 25px; transition: 0.3s; }
         .faq-item:hover { border-color: #1e40af; }
+        .custom-loader { border: 4px solid #f3f3f3; border-top: 4px solid #f97316; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+        .voice-btn { border: 2px solid #e2e8f0; transition: all 0.2s; text-align: left; padding: 15px; border-radius: 1.5rem; }
+        .voice-btn.active { border-color: #f97316; background: #fff7ed; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
     </style>
 </head>
 <body>
@@ -85,7 +92,7 @@
                     <h2 class="text-3xl md:text-4xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h2>
                     <p class="text-[13px] font-black text-slate-900 uppercase tracking-widest">Tool Specification & About Us</p>
                     <p class="text-[11px] font-semibold text-slate-500 mt-2 leading-relaxed max-w-2xl hidden sm:block">
-                        Vāṇī AI is a high-performance <strong>free text to voice ai app</strong> designed to convert scripts into human-like audio using the most advanced 
+                        Vāṇī AI is a high-performance <a href="free-text-to-voice-ai-generator-no-credit-card-required-india.html" class="text-indigo-600 underline font-black">free text to voice ai app</a> designed to convert scripts into human-like audio using the most advanced 
                         multimodal neural synthesis technology available today.
                     </p>
                 </div>
@@ -98,14 +105,25 @@
         </div>
     </header>
 
-    <!-- 2. MAIN TOOL FOCUS CONTENT -->
+    <!-- 2. TTS STUDIO MOUNTED HERE -->
+    <section id="studio" class="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative overflow-hidden mb-10">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-blue-600 to-indigo-700 opacity-20"></div>
+        <div id="root">
+            <div class="flex flex-col items-center justify-center min-h-[500px] text-center px-6">
+                <div class="custom-loader"></div>
+                <h2 class="mt-10 text-2xl font-black text-slate-800 uppercase italic tracking-tighter">Loading Vāṇī AI Studio...</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MAIN TOOL FOCUS CONTENT -->
     <main class="max-w-6xl mx-auto px-6 py-20 text-left">
         <article class="space-y-20">
             <!-- Introduction Section -->
             <section>
                 <h1 class="text-4xl md:text-7xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-8">Redefining Neural <br/> Audio Engineering.</h1>
                 <p class="text-xl md:text-2xl font-bold text-slate-600 leading-relaxed italic max-w-4xl">
-                    "Vāṇī AI Studio is more than just a converter; it is India's most powerful <strong>free text to voice</strong> engine, meticulously crafted to deliver studio-quality voiceovers for the next generation of digital storytellers."
+                    "Vāṇī AI Studio is more than just a converter; it is India's most powerful <a href="top-5-best-free-text-to-speech-generator-on-internet.html" class="text-indigo-600 underline">free text to voice</a> engine, meticulously crafted to deliver studio-quality voiceovers for the next generation of digital storytellers."
                 </p>
             </section>
 
@@ -116,10 +134,10 @@
                         <i data-lucide="cpu" class="w-6 h-6"></i> The Neural Core
                     </div>
                     <p class="text-lg font-bold text-slate-700 leading-relaxed">
-                        At the heart of our <strong>free text to voice ai generator</strong> lies Google’s Gemini 2.5 Flash engine. This enables us to process up to 5,000 characters per request with zero stutter, providing high-fidelity 24kHz audio output that sounds clear on both smartphone speakers and studio monitors.
+                        At the heart of our <a href="best-text-to-speech-ai-tools-compared-2026.html" class="text-indigo-600 underline">free text to voice ai generator</a> lies Google’s Gemini 2.5 Flash engine. This enables us to process up to 5,000 characters per request with zero stutter, providing high-fidelity 24kHz audio output that sounds clear on both smartphone speakers and studio monitors.
                     </p>
                     <p class="text-lg font-bold text-slate-700 leading-relaxed">
-                        Unlike traditional TTS tools, Vāṇī AI understands context. It recognizes the difference between a question, a statement, and an exclamation, automatically adjusting the pitch and tone to match human emotions.
+                        Unlike traditional TTS tools, Vāṇī AI understands context. It recognizes the difference between a question, a statement, and an exclamation, automatically adjusting the pitch and tone to match <a href="emotional-ai-voices.html" class="text-indigo-600 underline">human emotions</a>.
                     </p>
                 </section>
 
@@ -130,11 +148,11 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mt-1 shrink-0"></i>
-                            <p class="text-base font-bold text-slate-700"><strong>Native Indian Support:</strong> Optimized accents for Hindi, Marathi, Bengali, and Sanskrit.</p>
+                            <p class="text-base font-bold text-slate-700"><strong>Native Indian Support:</strong> Optimized accents for <a href="index.html" class="text-indigo-600 underline">Hindi</a>, <a href="marathi-free-text-to-voice-ai.html" class="text-indigo-600 underline">Marathi</a>, <a href="bengali-free-text-to-voice-ai.html" class="text-indigo-600 underline">Bengali</a>, and <a href="sanskrit-free-text-to-voice-ai.html" class="text-indigo-600 underline">Sanskrit</a>.</p>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mt-1 shrink-0"></i>
-                            <p class="text-base font-bold text-slate-700"><strong>Zero Data Logging:</strong> We use a BYOK model, ensuring your scripts never touch our database.</p>
+                            <p class="text-base font-bold text-slate-700"><strong>Zero Data Logging:</strong> We use a <a href="why-byok-is-safe.html" class="text-indigo-600 underline">BYOK model</a>, ensuring your scripts never touch our database.</p>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mt-1 shrink-0"></i>
@@ -157,11 +175,11 @@
                     </div>
                     <div class="space-y-4">
                         <h4 class="text-xl font-black uppercase italic text-white border-b border-white/20 pb-4">Full Unicode Support</h4>
-                        <p class="text-sm font-bold text-slate-400 leading-relaxed">Handling complex regional characters perfectly, ensuring that Sanskrit and Marathi pronunciations are 100% native.</p>
+                        <p class="text-sm font-bold text-slate-400 leading-relaxed">Handling complex regional characters perfectly, ensuring that <a href="regional-languages-guide.html" class="text-indigo-300 underline">regional pronunciations</a> are 100% native.</p>
                     </div>
                     <div class="space-y-4">
                         <h4 class="text-xl font-black uppercase italic text-white border-b border-white/20 pb-4">Democratized Access</h4>
-                        <p class="text-sm font-bold text-slate-400 leading-relaxed">By eliminating the subscription trap, we provide every creator in Bharat with equal access to world-class <strong>free text to voice</strong> tech.</p>
+                        <p class="text-sm font-bold text-slate-400 leading-relaxed">By eliminating the subscription trap, we provide every creator in Bharat with equal access to world-class <a href="paid-vs-free-text-to-speech.html" class="text-indigo-300 underline">free text to voice</a> tech.</p>
                     </div>
                 </div>
             </section>
@@ -171,13 +189,13 @@
         <div class="mt-32 flex flex-col items-center">
             <div class="w-16 h-1 bg-indigo-600 rounded-full mb-10"></div>
             <h3 class="text-2xl font-black uppercase italic text-center mb-10">Ready to build your digital voice?</h3>
-            <a href="index.html" class="bg-orange-600 text-white px-16 py-6 rounded-[2.5rem] font-black text-2xl shadow-2xl hover:bg-orange-700 transition-all uppercase flex items-center gap-6 active:scale-95">
+            <a href="#studio" class="bg-orange-600 text-white px-16 py-6 rounded-[2.5rem] font-black text-2xl shadow-2xl hover:bg-orange-700 transition-all uppercase flex items-center gap-6 active:scale-95">
                 Launch Studio <i data-lucide="wand-2" class="w-8 h-8"></i>
             </a>
         </div>
     </main>
 
-    <!-- 3. FOOTER AREA (Same as Home) -->
+    <!-- 4. FOOTER AREA (Same as Home) -->
     <footer class="footer-main">
         <div class="max-w-7xl mx-auto px-6">
             
@@ -229,7 +247,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="mic-2" class="w-6 h-6 text-orange-500"></i> 1. Free Text to Speech Online</h3>
-                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Vāṇī AI is the best <strong>free text to speech tool</strong> available online in 2026. Simply paste your text, choose a voice, and get natural human-like audio in seconds. No signup required. No hidden charges. The easiest free text to voice AI experience on the web.</p>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Vāṇī AI is the best <a href="best-free-text-to-speech-tools-hindi-videos-2026-guide.html" class="text-indigo-600 underline">free text to speech tool</a> available online in 2026. Simply paste your text, choose a voice, and get natural human-like audio in seconds. No signup required. No hidden charges. The easiest free text to voice AI experience on the web.</p>
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="globe" class="w-6 h-6 text-orange-500"></i> 2. 100+ Languages Supported</h3>
@@ -237,11 +255,11 @@
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="youtube" class="w-6 h-6 text-orange-500"></i> 3. Free Text to Voice for YouTube</h3>
-                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Create professional YouTube voiceovers using our <strong>free text to voice AI tool</strong>. No microphone needed. No recording setup needed. Just type your script and download studio-quality audio. Perfect for faceless YouTube channels in any language.</p>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Create professional <a href="best-voices-for-youtube.html" class="text-indigo-600 underline">YouTube voiceovers</a> using our <strong>free text to voice AI tool</strong>. No microphone needed. No recording setup needed. Just type your script and download studio-quality audio. Perfect for <a href="how-indian-creators-build-faceless-youtube-channels-free-ai-voice-tools-2026.html" class="text-indigo-600 underline">faceless YouTube channels</a> in any language.</p>
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="key" class="w-6 h-6 text-orange-500"></i> 4. Use Your Own API Key — Free</h3>
-                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Vāṇī AI runs on a Bring Your Own Key model. Get a free Gemini API key from Google AI Studio and use our <strong>free text to speech studio</strong> at zero cost. Your key stays in your browser only — 100% private and secure.</p>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Vāṇī AI runs on a Bring Your Own Key model. Get a <a href="how-to-get-api-key.html" class="text-indigo-600 underline">free Gemini API key</a> from Google AI Studio and use our <strong>free text to speech studio</strong> at zero cost. Your key stays in your browser only — 100% private and secure.</p>
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="zap" class="w-6 h-6 text-orange-500"></i> 5. Instant Voice Generation</h3>
@@ -249,7 +267,7 @@
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="graduation-cap" class="w-6 h-6 text-orange-500"></i> 6. Free Text to Speech for Education</h3>
-                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Convert notes and textbooks into audio. Make education more accessible with the best <strong>free text to speech</strong> technology available today. Students can listen to their study material while commuting or relaxing.</p>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed"><a href="ai-voice-for-elearning.html" class="text-indigo-600 underline">Convert notes and textbooks into audio</a>. Make education more accessible with the best <strong>free text to speech</strong> technology available today. Students can listen to their study material while commuting or relaxing.</p>
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="dollar-sign" class="w-6 h-6 text-orange-500"></i> 7. 100% Free — No Subscription</h3>
@@ -257,7 +275,7 @@
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="volume-2" class="w-6 h-6 text-orange-500"></i> 8. 15+ Realistic AI Voices</h3>
-                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Choose from 15+ realistic voices in our <strong>free text to voice AI studio</strong>. Authoritative voices for news. Calm voices for storytelling. High-energy voices for viral shorts. The widest selection of voices in any free tool.</p>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Choose from 15+ <a href="voice-profiles-masterclass.html" class="text-indigo-600 underline">realistic voices</a> in our <strong>free text to voice AI studio</strong>. Authoritative voices for news. Calm voices for storytelling. High-energy voices for viral shorts. The widest selection of voices in any free tool.</p>
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="shield-check" class="w-6 h-6 text-orange-500"></i> 9. Professional-Grade Privacy</h3>
@@ -265,7 +283,7 @@
                     </div>
                     <div class="seo-box">
                         <h3 class="text-xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-3"><i data-lucide="smartphone" class="w-6 h-6 text-orange-500"></i> 10. Multi-Device Accessibility</h3>
-                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Experience a seamless <strong>free text to voice ai generator</strong> on any screen. Vāṇī AI is fully responsive, optimized for both mobile and desktop creators who need studio-grade production power on the move.</p>
+                        <p class="text-sm font-semibold text-slate-600 leading-relaxed">Experience a seamless <a href="mobile-vs-desktop-guide.html" class="text-indigo-600 underline">free text to voice ai generator</a> on any screen. Vāṇī AI is fully responsive, optimized for both mobile and desktop creators who need studio-grade production power on the move.</p>
                     </div>
                 </div>
 
@@ -273,7 +291,7 @@
                 <div class="mt-20 glass-card p-12 md:p-20 border-slate-900 bg-slate-900 text-white shadow-2xl">
                    <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-8 text-orange-500">What is Vāṇī AI Studio?</h2>
                    <p class="text-lg md:text-xl font-medium leading-relaxed text-slate-300">
-                     Vāṇī AI is a completely <strong>free text to voice AI studio</strong> built on Google's Gemini Flash 2.5 API. It is the most advanced free text to speech tool available online in 2026. Whether you are a YouTube creator, a teacher, a student, or a business owner — Vāṇī AI gives you access to professional-grade AI voices at zero cost. Our <strong>free text to voice ai generator</strong> supports 100+ languages, 15+ realistic voices, and works directly in your browser with no downloads required. We use a BYOK (Bring Your Own Key) model — meaning your Gemini API key stays private in your own browser. No data is stored on our servers. Start using the best free text to speech tool today — no signup, no payment, no limits.
+                     Vāṇī AI is a completely <strong>free text to voice AI studio</strong> built on Google's Gemini Flash 2.5 API. It is the most advanced free text to speech tool available online in 2026. Whether you are a YouTube creator, a teacher, a student, or a business owner — Vāṇī AI gives you access to professional-grade AI voices at zero cost. Our <a href="top-5-best-free-text-to-speech-generator-on-internet.html" class="text-orange-400 underline">free text to voice ai generator</a> supports 100+ languages, 15+ realistic voices, and works directly in your browser with no downloads required. We use a BYOK (Bring Your Own Key) model — meaning your Gemini API key stays private in your own browser. No data is stored on our servers. Start using the best free text to speech tool today — no signup, no payment, no limits.
                    </p>
                 </div>
             </section>
@@ -315,7 +333,7 @@
                     </div>
                     <div class="faq-item">
                         <h4 class="font-black text-xl text-blue-700 mb-4 uppercase tracking-tight italic">2. Is it really 100% free?</h4>
-                        <p class="text-sm font-bold text-slate-500 leading-relaxed">Yes. By using the BYOK (Bring Your Own Key) model with Google Gemini API, you get unlimited access to <strong>free text to voice ai</strong> without subscription fees.</p>
+                        <p class="text-sm font-bold text-slate-500 leading-relaxed">Yes. By using the BYOK (Bring Your Own Key) model with Google Gemini API, you get unlimited access to <a href="free-text-to-speech-home-studio-setup-india.html" class="text-indigo-600 underline">free text to voice ai</a> without subscription fees.</p>
                     </div>
                     <div class="faq-item">
                         <h4 class="font-black text-xl text-blue-700 mb-4 uppercase tracking-tight italic">3. Which audio format is supported?</h4>
@@ -327,11 +345,11 @@
                     </div>
                     <div class="faq-item">
                         <h4 class="font-black text-xl text-blue-700 mb-4 uppercase tracking-tight italic">5. Can I use the audio for monetization?</h4>
-                        <p class="text-sm font-bold text-slate-500 leading-relaxed">Absolutely! All audio generated through our tool belongs to you. You have full commercial rights for YouTube, Instagram, and paid ads.</p>
+                        <p class="text-sm font-bold text-slate-500 leading-relaxed">Absolutely! All audio generated through our tool belongs to you. You have full commercial rights for <a href="how-to-monetize-faceless-youtube-channels-ai-voice-india.html" class="text-indigo-600 underline">YouTube</a>, Instagram, and paid ads.</p>
                     </div>
                     <div class="faq-item">
                         <h4 class="font-black text-xl text-blue-700 mb-4 uppercase tracking-tight italic">6. How secure is the BYOK model?</h4>
-                        <p class="text-sm font-bold text-slate-500 leading-relaxed">Your API key is stored locally in your browser's memory. It never touches our servers, ensuring your data and credentials stay 100% private.</p>
+                        <p class="text-sm font-bold text-slate-500 leading-relaxed">Your API key is stored locally in your browser's memory. It never touches our servers, ensuring your data and credentials stay <a href="secure-no-signup-free-text-to-voice-ai-generator-for-private-scripts.html" class="text-indigo-600 underline">100% private</a>.</p>
                     </div>
                     <div class="faq-item">
                         <h4 class="font-black text-xl text-blue-700 mb-4 uppercase tracking-tight italic">7. Does it support regional accents?</h4>
@@ -357,9 +375,188 @@
         </div>
     </footer>
 
+    <!-- 5. REACT STUDIO LOGIC -->
+    <script type="text/babel" data-presets="react,env">
+        const { useState, useEffect, useRef } = React;
+
+        const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (window.lucide && iconRef.current) {
+                    iconRef.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px; height:${size}px"></i>`;
+                    window.lucide.createIcons({ root: iconRef.current });
+                }
+            }, [name, size]);
+            return <span ref={iconRef} className={`inline-flex items-center justify-center ${className}`}></span>;
+        };
+
+        const App = () => {
+            const [isConfigured, setIsConfigured] = useState(false);
+            const [apiKey, setApiKey] = useState('');
+            const [text, setText] = useState('नमस्ते! Vāṇī AI स्टूडियो में आपका स्वागत है। हमारा यह टूल खास क्रिएटर्स के लिए बनाया गया है।');
+            const [voiceProfile, setVoiceProfile] = useState('Charon');
+            const [audioUrl, setAudioUrl] = useState(null);
+            const [isGenerating, setIsGenerating] = useState(false);
+            const [error, setError] = useState(null);
+            const audioRef = useRef(null);
+
+            useEffect(() => {
+                const saved = localStorage.getItem('vani_v5_key');
+                if (saved) { setApiKey(saved); setIsConfigured(true); }
+                if(window.lucide) window.lucide.createIcons();
+            }, []);
+
+            const voices = [
+                { id: 'Charon', name: 'Arjun', desc: 'Bold Narrator', gender: 'M' },
+                { id: 'Leda', name: 'Priya', desc: 'Warm Story', gender: 'F' },
+                { id: 'Aoede', name: 'Anjali', desc: 'Soft Narrative', gender: 'F' },
+                { id: 'Kore', name: 'Amit', desc: 'Confident', gender: 'M' },
+                { id: 'Enceladus', name: 'Sagar', desc: 'High Energy', gender: 'M' },
+                { id: 'Fenrir', name: 'Rahul', desc: 'Smooth Male', gender: 'M' },
+                { id: 'Callirrhoe', name: 'Kavita', desc: 'Mature/Deep', gender: 'F' },
+                { id: 'Iapetus', name: 'George', desc: 'Classic Pro', gender: 'M' }
+            ];
+
+            const pcmToWav = (b64) => {
+                const bin = atob(b64);
+                const bytes = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+                const pcm = new Int16Array(bytes.buffer);
+                const buffer = new ArrayBuffer(44 + pcm.length * 2);
+                const view = new DataView(buffer);
+                const s = (o, str) => { for (let i = 0; i < str.length; i++) view.setUint8(o + i, str.charCodeAt(i)); };
+                s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length * 2, true); s(8, 'WAVE'); s(12, 'fmt ');
+                view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+                view.setUint32(24, 24000, true); view.setUint32(28, 48000, true); view.setUint16(32, 2, true);
+                view.setUint16(34, 16, true); s(36, 'data'); view.setUint32(40, pcm.length * 2, true);
+                for (let i = 0; i < pcm.length; i++) view.setInt16(44 + i * 2, pcm[i], true);
+                return new Blob([buffer], { type: 'audio/wav' });
+            };
+
+            const generateAudio = async () => {
+                if (!text.trim()) return;
+                setIsGenerating(true); setError(null); setAudioUrl(null);
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: text }] }],
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
+                            }
+                        })
+                    });
+                    
+                    if (response.status === 429) throw new Error("Free Limit Reached. Please wait 60 seconds.");
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        throw new Error(data.error.message || "API Error occurred.");
+                    }
+                    
+                    let b64 = null;
+                    if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts) {
+                        const part = data.candidates[0].content.parts.find(p => p.inlineData);
+                        if (part && part.inlineData) {
+                            b64 = part.inlineData.data;
+                        }
+                    }
+
+                    if (!b64) throw new Error("Invalid API Key or Limit Reached.");
+                    const url = URL.createObjectURL(pcmToWav(b64));
+                    setAudioUrl(url);
+                } catch (err) { setError(err.message); } finally { setIsGenerating(false); }
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto px-4 text-left">
+                    {!isConfigured ? (
+                        <div className="glass-card p-10 md:p-20 border-2 border-orange-100 flex flex-col md:flex-row gap-16 items-center text-left">
+                            <div className="flex-1 text-left">
+                                <span className="bg-orange-50 text-orange-600 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Easy Activation</span>
+                                <h2 className="text-4xl md:text-6xl font-black mb-10 italic uppercase text-blue-800 leading-[1.1] tracking-tighter text-left">Unlock Vāṇī AI <br/> Studio Free</h2>
+                                <div className="space-y-6 mb-12 text-left">
+                                    <div className="flex gap-4 items-start text-left">
+                                        <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shrink-0 shadow-lg text-center">1</div>
+                                        <div>
+                                            <p className="text-base font-black text-slate-800 uppercase italic leading-none">Get Free API Key</p>
+                                            <p className="text-sm font-bold text-slate-500 mt-1">Get your free key from Google AI Studio.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4 items-start text-left">
+                                        <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shrink-0 shadow-lg text-center">2</div>
+                                        <div>
+                                            <p className="text-base font-black text-slate-800 uppercase italic leading-none">Paste & Activate</p>
+                                            <p className="text-sm font-bold text-slate-500 mt-1 text-left">Paste it here to unlock 20+ viral voices.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4 items-start text-left">
+                                        <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shrink-0 shadow-lg text-center">3</div>
+                                        <div>
+                                            <p className="text-base font-black text-slate-800 uppercase italic leading-none">Start Production</p>
+                                            <p className="text-sm font-bold text-slate-500 mt-1 text-left">Scale your YouTube income for zero cost.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="https://aistudio.google.com/app/apikey" target="_blank" className="bg-white border-2 border-orange-500 text-orange-600 px-10 py-5 rounded-[2rem] font-black text-xs uppercase hover:bg-orange-50 transition-all inline-flex items-center gap-4 shadow-2xl"><Icon name="key" size={18}/> Get Free Gemini API Key</a>
+                            </div>
+                            <div className="w-full max-w-sm glass-card p-12 border-slate-900 shadow-2xl relative text-center">
+                                <Icon name="shield-check" size={48} className="text-blue-600 mb-8 mx-auto" />
+                                <h3 className="text-xs font-black uppercase text-center mb-10 tracking-[0.3em] text-slate-400 italic text-center">Activation Hub</h3>
+                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="Paste AIza Key" className="w-full p-6 rounded-[2rem] border-2 border-slate-200 bg-slate-50 mb-8 text-center font-mono text-xl outline-none focus:border-blue-600 transition-all" />
+                                <button onClick={() => { if(apiKey.length > 20) { localStorage.setItem('vani_v5_key', apiKey); setIsConfigured(true); }}} className="w-full py-7 bg-orange-600 text-white rounded-[2.5rem] font-black text-2xl shadow-2xl hover:bg-orange-700 active:scale-95 transition-all uppercase tracking-tighter">Enter Studio</button>
+                                <p className="mt-8 text-[10px] font-bold text-slate-400 text-center uppercase tracking-tight">Your key stays 100% private in your browser storage.</p>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left text-left">
+                            <div className="lg:col-span-8 space-y-6 text-left">
+                                <textarea value={text} onChange={(e) => setText(e.target.value)} className="w-full h-80 p-8 rounded-[2.5rem] border-2 border-slate-100 bg-white text-2xl font-bold text-slate-900 outline-none focus:border-orange-400 transition-all resize-none shadow-inner custom-scrollbar text-left" />
+                                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 text-left">
+                                    {voices.map(v => (
+                                        <button key={v.id} onClick={() => setVoiceProfile(v.id)} className={`voice-btn ${voiceProfile === v.id ? 'active border-orange-500 shadow-inner' : 'hover:border-slate-300'}`}>
+                                            <div className="flex justify-between items-start mb-1 text-left">
+                                                <p className={`text-[11px] font-black uppercase ${voiceProfile === v.id ? 'text-orange-600' : 'text-slate-800'}`}>{v.name}</p>
+                                                <span className={`text-[7px] font-bold px-1 rounded ${v.gender === 'M' ? 'bg-blue-100 text-blue-700' : 'bg-pink-100 text-pink-700'}`}>{v.gender}</span>
+                                            </div>
+                                            <p className="text-[8px] font-bold text-slate-400 leading-tight uppercase italic text-left">{v.desc}</p>
+                                        </button>
+                                    ))}
+                                </div>
+                                <button onClick={generateAudio} disabled={isGenerating || !text.trim()} className="w-full py-10 bg-blue-800 text-white rounded-[3rem] text-3xl font-black shadow-2xl hover:bg-blue-900 transition-all flex items-center justify-center gap-6">
+                                    {isGenerating ? <div className="custom-loader" style={{width: 32, height: 32}}></div> : <Icon name="zap" size={32} className="text-orange-400" />}
+                                    {isGenerating ? "GENERATING VOICE..." : "GENERATE AI VOICE"}
+                                </button>
+                                {error && <div className="p-4 bg-red-50 text-red-700 rounded-2xl border border-red-100 text-xs font-black text-left">{error}</div>}
+                            </div>
+                            <div className="lg:col-span-4 text-left">
+                                <div className="p-10 border-2 border-dashed border-slate-200 rounded-[4rem] text-center min-h-[500px] flex flex-col justify-center sticky top-28 bg-white/50 backdrop-blur-sm shadow-xl text-center">
+                                    <h3 className="text-[10px] font-black uppercase mb-12 italic tracking-[0.2em] text-slate-400 border-b pb-6 text-center text-center">Studio Output</h3>
+                                    {!audioUrl ? (<div className="opacity-20 flex flex-col items-center text-center text-center"><Icon name="music" size={72} className="mb-6 text-center"/><p className="text-[11px] font-black uppercase tracking-widest text-center text-center">Script Required</p></div>) : (
+                                        <div className="space-y-12 animate-up text-center">
+                                            <div className="p-8 bg-blue-50/50 rounded-[3rem] border border-blue-100 shadow-inner text-center text-center"><audio src={audioUrl} controls className="w-full" autoPlay /></div>
+                                            <a href={audioUrl} download="Vani_Monetization_Audio.wav" className="w-full py-6 bg-white border-2 border-blue-800 text-blue-800 rounded-[2rem] font-black uppercase flex items-center justify-center gap-3 hover:bg-blue-50 transition-all text-center">Download WAV</a>
+                                        </div>
+                                    )}
+                                    <button onClick={() => {localStorage.removeItem('vani_v5_key'); setIsConfigured(false);}} className="w-full mt-20 py-4 text-[11px] font-black uppercase text-slate-400 hover:text-red-600 border border-slate-100 rounded-2xl transition-all text-center">Reset Studio Key</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+
     <script>
-        // Initialize icons
-        lucide.createIcons();
+        if(window.lucide) {
+           window.lucide.createIcons();
+        }
     </script>
 </body>
-            </html>
+</html>
