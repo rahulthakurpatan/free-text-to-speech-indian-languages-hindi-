@@ -72,7 +72,9 @@
     <!-- UI Dependencies -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fixed: Using stable cdnjs links instead of unpkg -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.300.0/umd/lucide.min.js" crossorigin></script>
 
     <style>
         body { background-color: #f8fafc; font-family: 'Inter', sans-serif; color: #0f172a; scroll-behavior: smooth; }
@@ -463,8 +465,7 @@
 
             <h2>Section 6: Common Mistakes When Choosing A Niche</h2>
             <p>
-                The biggest error is **Chasing Trends Instead of Building Libraries.** 
-            </p>
+                The biggest error is **Chasing Trends Instead of Building Libraries.** </p>
             <p>
                 Many beginners see a viral comedy video and try to replicate it using an AI voice. It fails. Then they try a gaming video. It fails. They constantly switch topics. YouTube's algorithm relies on categorization. If you post about history on Monday and cricket on Tuesday, the algorithm does not know who to show your videos to. 
             </p>
@@ -565,9 +566,10 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Fixed: Using stable cdnjs links instead of unpkg -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.3/babel.min.js" crossorigin></script>
 
     <script>
         window.addEventListener('load', () => {
@@ -657,7 +659,8 @@
         });
     </script>
 
-    <script type="text/babel">
+    <!-- Fixed: Added data-presets -->
+    <script type="text/babel" data-presets="react,env">
         const { useState, useEffect, useRef } = React;
         const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
             const iconRef = useRef(null);
@@ -749,8 +752,23 @@
                             }
                         })
                     });
+                    
+                    if (response.status === 429) throw new Error("Limit Reached. Please wait 60 seconds.");
                     const data = await response.json();
-                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    
+                    // Fixed: Robust API Error handling
+                    if (data.error) {
+                        throw new Error(data.error.message || "API Error occurred.");
+                    }
+                    
+                    let b64 = null;
+                    if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts) {
+                        const part = data.candidates[0].content.parts.find(p => p.inlineData);
+                        if (part && part.inlineData) {
+                            b64 = part.inlineData.data;
+                        }
+                    }
+
                     if (!b64) throw new Error("API Key Invalid or Limit Reached.");
                     const url = URL.createObjectURL(pcmToWav(b64));
                     setAudioUrl(url);
@@ -764,9 +782,10 @@
                             <div className="text-left">
                                 <h2 className="text-4xl font-black italic uppercase text-indigo-600 mb-8 leading-none text-left">Free Text To Speech <br/> Converter Assamese</h2>
                                 <div className="space-y-6 text-left">
-                                    <div className="flex gap-4 items-start"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">1</div><p class="text-sm font-bold text-slate-500">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" className="text-indigo-600 underline">Google AI Studio</a> to get your free private key.</p></div>
-                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div><p class="text-sm font-bold text-slate-500 text-left">Paste that key in the box below.</p></div>
-                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">3</div><p class="text-sm font-bold text-slate-500 text-left text-left">Type your text and click generate. It's very easy!</p></div>
+                                    {/* Fixed class to className */}
+                                    <div className="flex gap-4 items-start"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">1</div><p className="text-sm font-bold text-slate-500">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" className="text-indigo-600 underline">Google AI Studio</a> to get your free private key.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div><p className="text-sm font-bold text-slate-500 text-left">Paste that key in the box below.</p></div>
+                                    <div className="flex gap-4 items-start text-left"><div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">3</div><p className="text-sm font-bold text-slate-500 text-left text-left">Type your text and click generate. It's very easy!</p></div>
                                 </div>
                                 <a href="https://aistudio.google.com/app/apikey" target="_blank" className="mt-10 inline-flex items-center gap-2 text-xs font-black uppercase text-orange-600 hover:underline">Get Private Key <Icon name="external-link" size={14}/></a>
                             </div>
@@ -815,6 +834,13 @@
         };
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
+    </script>
+
+    <!-- Fixed: Added fallback for lucide icons just in case -->
+    <script>
+        if(window.lucide) {
+           window.lucide.createIcons();
+        }
     </script>
 </body>
 </html>
