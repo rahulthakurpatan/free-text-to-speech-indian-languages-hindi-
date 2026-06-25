@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi-IN">
 <head>
-<script>
+    <script>
   window.PushDotifyConfig = {
     title: "Get Instant Updates",
     desc: "Subscribe to get notified about our latest posts and offers!",
@@ -31,7 +31,7 @@
     <meta property="og:image" content="https://freetexttovoiceai.in/og-image-main-v2.jpg">
 
     <!-- 2. CANONICAL URL (Rule 3) -->
-    <link rel="canonical" href="https://freetexttovoiceai.in/Eleven-Labs-Quality-Free-AI-Voice-Studio.html">
+    <link rel="canonical" href="https://freetexttovoiceai.in/Eleven-Labs-Quality-Free-AI-Voice-Studio">
 
     <!-- 3. SOFTWARE & FAQ SCHEMA (Rule 2) -->
     <script type="application/ld+json">
@@ -80,15 +80,15 @@
       gtag('config', 'G-RV64RB8M6S');
     </script>
 
-    <!-- UI Assets -->
+    <!-- UI Assets (Fixed: Using stable cdnjs links instead of unpkg) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.3/babel.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.300.0/umd/lucide.min.js" crossorigin></script>
 
     <style>
         body { background-color: #f8fafc; font-family: 'Inter', 'Noto Sans Devanagari', sans-serif; color: #0f172a; scroll-behavior: smooth; }
@@ -338,7 +338,8 @@
     </footer>
 
     <!-- REACT LOGIC SCRIPT (The Premium Studio) -->
-    <script type="text/babel">
+    <!-- Fixed: Added data-presets to ensure Babel compiles the JSX correctly -->
+    <script type="text/babel" data-presets="react,env">
         const { useState, useEffect, useRef } = React;
 
         const Icon = ({ name, className = "w-5 h-5", size = 20 }) => {
@@ -355,7 +356,7 @@
         const App = () => {
             const [isConfigured, setIsConfigured] = useState(false);
             const [apiKey, setApiKey] = useState('');
-            const [text, setText] = useState('नमस्ते, आपका स्वागत है वाणी एआई स्टूडियो में। अब आप एडम और नताशा जैसी प्रीमियम आवाज़ों का आनंद बिल्कुल मुफ्त में ले सकते हैं।');
+            const [text, setText] = useState('नमस्ते, आपका स्वागत है वाणी एआई स्टूडियो में। अब आप एडम और नताशा जैसी प्रीमियम आवाज़ों का आनंद बिल्कुल मुफ्त में ले सकते हैं।');
             const [voiceProfile, setVoiceProfile] = useState('Charon');
             const [audioUrl, setAudioUrl] = useState(null);
             const [isGenerating, setIsGenerating] = useState(false);
@@ -413,9 +414,23 @@
                             }
                         })
                     });
+                    
                     if (response.status === 429) throw new Error("Free Limit Reached. Wait 1 min.");
                     const data = await response.json();
-                    const b64 = data.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                    
+                    // Fixed: Robust API Error handling
+                    if (data.error) {
+                        throw new Error(data.error.message || "API Error occurred.");
+                    }
+                    
+                    let b64 = null;
+                    if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts) {
+                        const part = data.candidates[0].content.parts.find(p => p.inlineData);
+                        if (part && part.inlineData) {
+                            b64 = part.inlineData.data;
+                        }
+                    }
+
                     if (!b64) throw new Error("Invalid Response or API Key.");
                     const url = URL.createObjectURL(pcmToWav(b64));
                     setAudioUrl(url);
@@ -460,7 +475,8 @@
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-blue-800 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">Master Hub</div>
                                 <Icon name="shield-check" size={48} className="text-blue-600 mb-8 mx-auto" />
                                 <h3 className="text-xs font-black uppercase text-center mb-10 tracking-[0.3em] text-slate-400 italic italic">Activation Box</h3>
-                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="AIzaSy... Key Here" class="w-full p-6 rounded-[2rem] border-2 border-slate-200 bg-slate-50 mb-8 text-center font-mono text-xl outline-none focus:border-blue-600 transition-all" />
+                                {/* Fixed: class to className */}
+                                <input type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="AIzaSy... Key Here" className="w-full p-6 rounded-[2rem] border-2 border-slate-200 bg-slate-50 mb-8 text-center font-mono text-xl outline-none focus:border-blue-600 transition-all" />
                                 <button onClick={() => { if(apiKey.length > 20) { localStorage.setItem('vani_v5_key', apiKey); setIsConfigured(true); }}} className="w-full py-7 bg-orange-600 text-white rounded-[2.5rem] font-black text-2xl shadow-2xl hover:bg-orange-700 active:scale-95 transition-all uppercase tracking-tighter">Open Vāṇī Studio</button>
                                 <p className="mt-8 text-[10px] font-bold text-slate-400 text-center uppercase tracking-tight">Your key stays 100% private in your browser storage.</p>
                             </div>
@@ -533,8 +549,11 @@
         root.render(<App />);
     </script>
 
+    <!-- Fixed: Added safety check before loading icons -->
     <script>
-        lucide.createIcons();
+        if(window.lucide) {
+           window.lucide.createIcons();
+        }
     </script>
 </body>
 </html>
