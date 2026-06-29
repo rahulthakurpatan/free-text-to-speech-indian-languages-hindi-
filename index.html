@@ -137,15 +137,17 @@
       <!-- ======================================================= -->
     <!-- PREMIUM SAAS-STYLE MEGA NAVIGATION MENU START           -->
     <!-- ======================================================= -->
-    <nav class="bg-white border-b border-slate-200 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] relative z-[60] hidden lg:block">
-        <div class="max-w-7xl mx-auto px-6 flex justify-center h-16">
-            <ul class="flex items-center gap-1">
+    <nav class="sticky top-0 w-full z-[100] bg-blue-50/80 backdrop-blur-lg border-b border-blue-100 shadow-sm hidden lg:block transition-all">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between h-14">
+            
+            <!-- LEFT SIDE: MEGA DROPDOWNS -->
+            <ul class="flex items-center gap-1 h-full">
                 
                 <!-- 1. AI STUDIOS (FULL WIDTH MEGA MENU) -->
                 <li class="group h-full">
-                    <button class="h-full px-6 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-slate-600 group-hover:text-blue-700 transition-colors cursor-pointer">
-                        <i data-lucide="mic-2" class="w-4 h-4 text-blue-600"></i> AI Studios 
-                        <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                    <button class="h-full px-4 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-blue-900 group-hover:text-orange-600 transition-colors cursor-pointer">
+                        <i data-lucide="mic-2" class="w-4 h-4 text-orange-500"></i> AI Studios 
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
                     <!-- Mega Dropdown Panel -->
                     <div class="absolute left-0 top-full w-full bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
@@ -213,11 +215,11 @@
                     </div>
                 </li>
 
-                <!-- 2. CREATOR GUIDES (SaaS STYLE DROPDOWN) -->
+                <!-- 2. CREATOR GUIDES (SAAS STYLE DROPDOWN) -->
                 <li class="group h-full relative">
-                    <button class="h-full px-6 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-slate-600 group-hover:text-orange-600 transition-colors cursor-pointer">
-                        <i data-lucide="book-open" class="w-4 h-4 text-orange-500"></i> Guides 
-                        <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                    <button class="h-full px-4 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-blue-900 group-hover:text-blue-600 transition-colors cursor-pointer">
+                        <i data-lucide="book-open" class="w-4 h-4 text-blue-500"></i> Guides 
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
                     <!-- Dropdown Panel -->
                     <div class="absolute left-0 top-full w-[600px] bg-white border border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-3xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 mt-2">
@@ -249,9 +251,9 @@
 
                 <!-- 3. MONETIZATION (SAAS STYLE DROPDOWN) -->
                 <li class="group h-full relative">
-                    <button class="h-full px-6 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-slate-600 group-hover:text-green-600 transition-colors cursor-pointer">
+                    <button class="h-full px-4 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-blue-900 group-hover:text-green-600 transition-colors cursor-pointer">
                         <i data-lucide="circle-dollar-sign" class="w-4 h-4 text-green-500"></i> Monetization 
-                        <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
                     <!-- Dropdown Panel -->
                     <div class="absolute left-0 top-full w-[600px] bg-white border border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-3xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 mt-2">
@@ -278,9 +280,9 @@
 
                 <!-- 4. TECH & FIXES -->
                 <li class="group h-full relative">
-                    <button class="h-full px-6 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-slate-600 group-hover:text-red-600 transition-colors cursor-pointer">
+                    <button class="h-full px-4 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-blue-900 group-hover:text-red-600 transition-colors cursor-pointer">
                         <i data-lucide="settings" class="w-4 h-4 text-red-500"></i> Tech & Fixes 
-                        <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
                     <!-- Dropdown Panel -->
                     <div class="absolute right-0 md:left-0 top-full w-[350px] bg-white border border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-3xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 mt-2">
@@ -293,32 +295,22 @@
                         </ul>
                     </div>
                 </li>
-
-                <!-- 5. ECOSYSTEM -->
-                <li class="group h-full relative">
-                    <button class="h-full px-6 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-slate-600 group-hover:text-purple-600 transition-colors cursor-pointer">
-                        <i data-lucide="layers" class="w-4 h-4 text-purple-500"></i> Ecosystem 
-                        <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
-                    </button>
-                    <!-- Dropdown Panel -->
-                    <div class="absolute right-0 top-full w-[280px] bg-white border border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-3xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 mt-2">
-                        <ul class="space-y-1">
-                            <li><a href="about.html" class="flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-slate-50 text-sm font-bold text-slate-700 hover:text-purple-600 transition-all">About Studio <i data-lucide="info" class="w-4 h-4 opacity-50"></i></a></li>
-                            <li><a href="blog.html" class="flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-slate-50 text-sm font-bold text-slate-700 hover:text-purple-600 transition-all">Creator Blog <i data-lucide="book-open" class="w-4 h-4 opacity-50"></i></a></li>
-                            <li><a href="sitemap-directory.html" class="flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-slate-50 text-sm font-bold text-slate-700 hover:text-purple-600 transition-all">Full Directory <i data-lucide="list" class="w-4 h-4 opacity-50"></i></a></li>
-                            <li><a href="contact.html" class="flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-slate-50 text-sm font-bold text-slate-700 hover:text-purple-600 transition-all">Contact Us <i data-lucide="mail" class="w-4 h-4 opacity-50"></i></a></li>
-                            <li><a href="privacy-policy.html" class="flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-slate-50 text-sm font-bold text-slate-700 hover:text-purple-600 transition-all">Privacy Policy <i data-lucide="shield" class="w-4 h-4 opacity-50"></i></a></li>
-                        </ul>
-                    </div>
-                </li>
-
             </ul>
+
+            <!-- RIGHT SIDE: THE 5 FIXED TOP-LEVEL LINKS -->
+            <ul class="flex items-center gap-5 h-full">
+                <li><a href="blog.html" class="text-[11px] font-black uppercase tracking-widest text-blue-900 hover:text-indigo-600 transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-3 h-3"></i> Blog</a></li>
+                <li><a href="about.html" class="text-[11px] font-black uppercase tracking-widest text-blue-900 hover:text-indigo-600 transition-colors flex items-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> About</a></li>
+                <li><a href="contact.html" class="text-[11px] font-black uppercase tracking-widest text-blue-900 hover:text-indigo-600 transition-colors flex items-center gap-1"><i data-lucide="mail" class="w-3 h-3"></i> Contact</a></li>
+                <li><a href="privacy-policy.html" class="text-[11px] font-black uppercase tracking-widest text-blue-900 hover:text-indigo-600 transition-colors flex items-center gap-1"><i data-lucide="shield" class="w-3 h-3"></i> Privacy</a></li>
+                <li><a href="terms.html" class="text-[11px] font-black uppercase tracking-widest text-blue-900 hover:text-indigo-600 transition-colors flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> Terms</a></li>
+            </ul>
+
         </div>
     </nav>
     <!-- ======================================================= -->
     <!-- PREMIUM SAAS-STYLE MEGA NAVIGATION MENU END             -->
     <!-- ======================================================= -->
-
     <!-- 2. STUDIO SECTION (React) -->
     <section id="studio" class="py-12 md:py-24 bg-slate-50/50 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-blue-600 to-indigo-700 opacity-20"></div>
