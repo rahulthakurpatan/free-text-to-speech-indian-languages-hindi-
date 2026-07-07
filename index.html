@@ -135,26 +135,36 @@
               
         </div>
          <!-- ======================================================= -->
-<!-- STICKY GLASSMORPHISM MEGA MENU (WITH ICONS)             -->
+<!-- STICKY GLASSMORPHISM MEGA MENU (RESPONSIVE)             -->
 <!-- ======================================================= -->
-<nav class="sticky top-0 w-full z-[100] bg-blue-50/90 backdrop-blur-2xl border-b border-blue-200 hidden lg:block transition-all">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between h-14">
+<nav class="sticky top-0 w-full z-[100] bg-blue-50/90 backdrop-blur-2xl border-b border-blue-200 transition-all">
+    
+    <!-- MOBILE TOGGLE BUTTON (Visible only on mobile) -->
+    <div class="lg:hidden flex items-center justify-between px-6 h-14 cursor-pointer" onclick="document.getElementById('mobile-menu-wrapper').classList.toggle('hidden')">
+        <span class="text-[12px] font-black uppercase tracking-widest text-slate-800 flex items-center gap-2">
+            <i data-lucide="menu" class="w-5 h-5 text-blue-600"></i> Menu
+        </span>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-blue-600"></i>
+    </div>
+
+    <!-- MAIN MENU WRAPPER -->
+    <div id="mobile-menu-wrapper" class="hidden lg:flex flex-col lg:flex-row justify-between max-w-7xl mx-auto px-6 h-auto lg:h-14 absolute lg:relative top-full lg:top-0 left-0 w-full bg-white/95 backdrop-blur-3xl lg:bg-transparent shadow-2xl lg:shadow-none max-h-[85vh] overflow-y-auto lg:overflow-visible pb-8 lg:pb-0">
         
         <!-- LEFT SIDE: MEGA DROPDOWNS -->
-        <ul class="flex items-center gap-2 h-full">
+        <ul class="flex flex-col lg:flex-row items-start lg:items-center gap-2 h-auto lg:h-full w-full lg:w-auto pt-4 lg:pt-0">
             
             <!-- 1. AI STUDIOS (MEGA MENU) -->
-            <li class="group h-full">
-                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-orange-600 transition-colors cursor-pointer">
-                    <i data-lucide="mic-2" class="w-4 h-4 text-orange-500"></i> AI Studios 
+            <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-100">
+                <button class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-orange-600 transition-colors cursor-pointer">
+                    <span class="flex items-center gap-2"><i data-lucide="mic-2" class="w-4 h-4 text-orange-500"></i> AI Studios</span> 
                     <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
                 <!-- Glassmorphism Dropdown Panel -->
-                <div class="absolute left-0 top-full w-full bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-[2.5rem]">
-                    <div class="max-w-7xl mx-auto p-10 grid grid-cols-12 gap-10">
+                <div class="hidden group-hover:block relative lg:absolute left-0 top-full lg:top-full w-full bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-none lg:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible transition-all duration-300 transform lg:-translate-y-2 lg:group-hover:translate-y-0 rounded-b-[2.5rem] z-50">
+                    <div class="max-w-7xl mx-auto p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
                         
                         <!-- Featured Global Card -->
-                        <div class="col-span-3">
+                        <div class="col-span-1 lg:col-span-3 hidden md:block">
                             <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-800 rounded-[2rem] p-8 text-white h-full shadow-xl relative overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300 border border-blue-400/30">
                                 <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl -translate-y-10 translate-x-10"></div>
                                 <div>
@@ -171,7 +181,7 @@
                         </div>
                         
                         <!-- Link Columns (Decorated with Icons) -->
-                        <div class="col-span-9 grid grid-cols-4 gap-x-8 gap-y-6">
+                        <div class="col-span-1 lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
                             <div>
                                 <h4 class="text-[11px] font-black uppercase tracking-widest text-orange-600 mb-4 border-b border-orange-100 pb-3 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> North & East</h4>
                                 <ul class="space-y-2">
@@ -222,13 +232,13 @@
             </li>
 
             <!-- 2. CREATOR GUIDES -->
-            <li class="group h-full relative">
-                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-blue-600 transition-colors cursor-pointer">
-                    <i data-lucide="book-open" class="w-4 h-4 text-blue-500"></i> Guides 
+            <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-100">
+                <button class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-blue-600 transition-colors cursor-pointer">
+                    <span class="flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4 text-blue-500"></i> Guides</span> 
                     <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
-                <div class="absolute left-0 top-full w-[650px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
-                    <div class="grid grid-cols-2 gap-3">
+                <div class="hidden group-hover:block relative lg:absolute left-0 top-full lg:top-full w-full lg:w-[650px] bg-white/95 backdrop-blur-3xl lg:border-b lg:border-slate-200 shadow-none lg:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-none lg:rounded-b-3xl p-5 lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible transition-all duration-300 transform lg:-translate-y-2 lg:group-hover:translate-y-0 z-50">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <a href="beginner-to-pro-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
                             <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="rocket" class="w-6 h-6"></i></div>
                             <div><h5 class="text-sm font-black text-slate-900 mb-1">Beginner Masterclass</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Go from zero to pro AI creator.</p></div>
@@ -255,13 +265,13 @@
             </li>
 
             <!-- 3. MONETIZATION -->
-            <li class="group h-full relative">
-                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-green-600 transition-colors cursor-pointer">
-                    <i data-lucide="circle-dollar-sign" class="w-4 h-4 text-green-500"></i> Monetization 
+            <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-100">
+                <button class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-green-600 transition-colors cursor-pointer">
+                    <span class="flex items-center gap-2"><i data-lucide="circle-dollar-sign" class="w-4 h-4 text-green-500"></i> Monetization</span> 
                     <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
-                <div class="absolute left-0 top-full w-[650px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
-                    <div class="grid grid-cols-2 gap-3">
+                <div class="hidden group-hover:block relative lg:absolute left-0 top-full lg:top-full w-full lg:w-[650px] bg-white/95 backdrop-blur-3xl lg:border-b lg:border-slate-200 shadow-none lg:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-none lg:rounded-b-3xl p-5 lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible transition-all duration-300 transform lg:-translate-y-2 lg:group-hover:translate-y-0 z-50">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <a href="earn-money-ai-voice.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
                             <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
                             <div><h5 class="text-sm font-black text-slate-900 mb-1">Earn with AI Voice</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Blueprint for 2026 YouTube income.</p></div>
@@ -283,12 +293,12 @@
             </li>
 
             <!-- 4. TECH & FIXES -->
-            <li class="group h-full relative">
-                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-red-600 transition-colors cursor-pointer">
-                    <i data-lucide="settings" class="w-4 h-4 text-red-500"></i> Tech & Fixes 
+            <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-100">
+                <button class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-red-600 transition-colors cursor-pointer">
+                    <span class="flex items-center gap-2"><i data-lucide="settings" class="w-4 h-4 text-red-500"></i> Tech & Fixes</span> 
                     <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
-                <div class="absolute right-0 top-full w-[380px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                <div class="hidden group-hover:block relative lg:absolute right-0 lg:left-auto top-full lg:top-full w-full lg:w-[380px] bg-white/95 backdrop-blur-3xl lg:border-b lg:border-slate-200 shadow-none lg:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-none lg:rounded-b-3xl p-4 lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible transition-all duration-300 transform lg:-translate-y-2 lg:group-hover:translate-y-0 z-50">
                     <ul class="space-y-1">
                         <li><a href="how-to-get-api-key.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="key" class="w-4 h-4"></i></div> Get Free API Key</a></li>
                         <li><a href="why-byok-is-safe.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="shield-check" class="w-4 h-4"></i></div> Why BYOK is 100% Safe</a></li>
@@ -300,8 +310,8 @@
             </li>
         </ul>
 
-        <!-- RIGHT SIDE: THE 5 FIXED TOP-LEVEL LINKS -->
-        <ul class="flex items-center gap-6 h-full">
+        <!-- RIGHT SIDE: 5 FIXED TOP-LEVEL LINKS -->
+        <ul class="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6 h-auto lg:h-full w-full lg:w-auto mt-6 lg:mt-0 pb-6 lg:pb-0 px-4 lg:px-0 border-t lg:border-none border-slate-200 pt-4 lg:pt-0">
             <li><a href="blog.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="layout-grid" class="w-3 h-3 text-indigo-500"></i> Blog</a></li>
             <li><a href="about.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="info" class="w-3 h-3 text-indigo-500"></i> About</a></li>
             <li><a href="contact.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-3 h-3 text-indigo-500"></i> Contact</a></li>
@@ -314,7 +324,6 @@
 <!-- ======================================================= -->
 <!-- STICKY GLASSMORPHISM MEGA MENU END                      -->
 <!-- ======================================================= -->
-     
     </header>
 
     
