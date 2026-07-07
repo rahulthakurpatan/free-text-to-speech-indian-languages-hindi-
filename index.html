@@ -134,203 +134,211 @@
             </nav>
               
         </div>
-    <!-- ======================================================= -->
-<!-- UNIFIED HORIZONTAL SCROLLABLE MENU (DESKTOP & MOBILE)  -->
+   <!-- ======================================================= -->
+<!-- STICKY GLASSMORPHISM HORIZONTAL NAV (MOBILE SWIPEABLE)  -->
 <!-- ======================================================= -->
 <style>
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .scrollbar-none::-webkit-scrollbar {
+    /* Mobile me extra clean look ke liye horizontal scrollbar hide karne ka style */
+    .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .scrollbar-none {
+    .no-scrollbar {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
 </style>
 
-<nav class="sticky top-0 w-full z-[100] bg-blue-50/95 backdrop-blur-2xl border-b border-blue-200 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-2 sm:gap-4">
+<nav class="sticky top-0 w-full z-[100] bg-blue-50/90 backdrop-blur-2xl border-b border-blue-200 transition-all">
+    
+    <!-- Navigation Container -->
+    <div class="max-w-7xl mx-auto px-4 h-14 flex items-center w-full">
         
-        <!-- Brand Logo (Fixed on left) -->
-        <a href="index.html" class="flex items-center gap-2 text-[13px] font-black uppercase tracking-widest text-blue-900 shrink-0 z-30">
-            <i data-lucide="waves" class="w-5 h-5 text-blue-600"></i> Vāṇī Studio
-        </a>
-
-        <!-- Horizontally Scrollable Menu Wrapper (Mobile + Desktop) -->
-        <div class="flex-1 overflow-x-auto scrollbar-none flex items-center h-full">
-            <ul class="flex items-center gap-1 sm:gap-2 h-full whitespace-nowrap px-1">
+        <!-- ======================================================= -->
+        <!-- UNIFIED NAVIGATION BAR                                  -->
+        <!-- Mobile: Horizontal Scrollable | Desktop: Standard Row  -->
+        <!-- ======================================================= -->
+        <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap no-scrollbar w-full h-full lg:overflow-visible lg:whitespace-normal lg:justify-between">
+            
+            <!-- Left Side Group (Dropdowns & Primary Links) -->
+            <div class="flex items-center gap-2 h-full lg:overflow-visible">
                 
                 <!-- 1. AI STUDIOS (MEGA MENU) -->
-                <li class="group h-full flex items-center shrink-0">
-                    <button class="h-9 px-3 sm:px-4 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-800 hover:text-orange-600 hover:bg-white/60 transition-all cursor-pointer">
-                        <i data-lucide="mic-2" class="w-3.5 h-3.5 text-orange-500"></i> AI Studios 
+                <li class="group h-full flex items-center shrink-0 lg:relative">
+                    <button class="h-9 px-3 lg:h-full lg:px-4 flex items-center gap-1.5 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-800 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none group-hover:text-orange-600 transition-colors cursor-pointer">
+                        <i data-lucide="mic-2" class="w-3.5 h-3.5 lg:w-4 h-4 text-orange-500"></i> AI Studios 
                         <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
-                    
-                    <!-- Mega Dropdown Panel (Fixed to screen width to prevent clipping) -->
-                    <div class="fixed left-0 right-0 top-14 w-full max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-3xl p-5 sm:p-8 lg:p-10">
-                        <div class="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-10">
-                            
+                    <!-- Glassmorphism Dropdown Panel -->
+                    <div class="absolute left-0 top-full w-full bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-[2.5rem] z-50">
+                        <div class="max-w-7xl mx-auto p-10 grid grid-cols-12 gap-10">
                             <!-- Featured Global Card -->
-                            <div class="lg:col-span-3 shrink-0">
-                                <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-800 rounded-2xl sm:rounded-[2rem] p-6 lg:p-8 text-white shadow-xl relative overflow-hidden flex flex-col justify-between border border-blue-400/30">
+                            <div class="col-span-3">
+                                <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-800 rounded-[2rem] p-8 text-white h-full shadow-xl relative overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300 border border-blue-400/30">
                                     <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl -translate-y-10 translate-x-10"></div>
                                     <div>
-                                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-white/20 backdrop-blur-md rounded-xl lg:rounded-2xl flex items-center justify-center mb-4 lg:mb-6 shadow-inner">
-                                            <i data-lucide="globe-2" class="w-5 h-5 lg:w-6 lg:h-6 text-white"></i>
+                                        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                                            <i data-lucide="globe-2" class="w-6 h-6 text-white"></i>
                                         </div>
-                                        <h3 class="text-xl lg:text-2xl font-black uppercase italic tracking-tighter mb-2 drop-shadow-md">Global Hub</h3>
+                                        <h3 class="text-2xl font-black uppercase italic tracking-tighter mb-2 drop-shadow-md">Global Hub</h3>
                                         <p class="text-[11px] font-bold text-blue-100 leading-relaxed mb-6">Access our complete ecosystem of 24+ languages from one dashboard.</p>
                                     </div>
-                                    <a href="about-hindi-marathi-kannada-bengali-tamil-punjabi-gujarati-malayalam-telugu-urdu-odia-assamese-bhojpuri-sanskrit-maithili-konkani-arabic-swahili-nepali-sinhala-burmese-khmer-tagalog-amharic-text-to-speech.html" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white bg-white/20 hover:bg-white hover:text-blue-700 py-2.5 px-5 rounded-full transition-colors w-max shadow-sm">
+                                    <a href="about-hindi-marathi-kannada-bengali-tamil-punjabi-gujarati-malayalam-telugu-urdu-odia-assamese-bhojpuri-sanskrit-maithili-konkani-arabic-swahili-nepali-sinhala-burmese-khmer-tagalog-amharic-text-to-speech.html" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white bg-white/20 hover:bg-white hover:text-blue-700 py-3 px-6 rounded-full transition-colors w-max shadow-sm">
                                         View Ecosystem <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                     </a>
                                 </div>
                             </div>
                             
-                            <!-- Link Columns -->
-                            <div class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                            <!-- Link Columns (Decorated with Icons) -->
+                            <div class="col-span-9 grid grid-cols-4 gap-x-8 gap-y-6">
                                 <div>
-                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-orange-600 mb-3 border-b border-orange-100 pb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> North & East</h4>
-                                    <ul class="space-y-1.5 whitespace-normal">
-                                        <li><a href="index.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="mic" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i> Hindi Studio</a></li>
-                                        <li><a href="bhojpuri-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="music" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i> Bhojpuri Studio</a></li>
-                                        <li><a href="bengali-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="radio" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i> Bengali Studio</a></li>
-                                        <li><a href="assamese-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i> Assamese Studio</a></li>
-                                        <li><a href="odia-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i> Odia Studio</a></li>
-                                        <li><a href="maithili-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="speaker" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i> Maithili Studio</a></li>
+                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-orange-600 mb-4 border-b border-orange-100 pb-3 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> North & East</h4>
+                                    <ul class="space-y-2">
+                                        <li><a href="index.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-orange-400"></i> Hindi Studio</a></li>
+                                        <li><a href="bhojpuri-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-orange-400"></i> Bhojpuri Studio</a></li>
+                                        <li><a href="bengali-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-orange-400"></i> Bengali Studio</a></li>
+                                        <li><a href="assamese-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-orange-400"></i> Assamese Studio</a></li>
+                                        <li><a href="odia-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-orange-400"></i> Odia Studio</a></li>
+                                        <li><a href="maithili-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-orange-400"></i> Maithili Studio</a></li>
                                     </ul>
                                 </div>
-
                                 <div>
-                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-blue-600 mb-3 border-b border-blue-100 pb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> West & South</h4>
-                                    <ul class="space-y-1.5 whitespace-normal">
-                                        <li><a href="marathi-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="mic" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i> Marathi Studio</a></li>
-                                        <li><a href="gujarati-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="music" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i> Gujarati Studio</a></li>
-                                        <li><a href="tamil-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="radio" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i> Tamil Studio</a></li>
-                                        <li><a href="telugu-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i> Telugu Studio</a></li>
-                                        <li><a href="kannada-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i> Kannada Studio</a></li>
-                                        <li><a href="malayalam-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-blue-600"><i data-lucide="speaker" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i> Malayalam Studio</a></li>
+                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-blue-600 mb-4 border-b border-blue-100 pb-3 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> West & South</h4>
+                                    <ul class="space-y-2">
+                                        <li><a href="marathi-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-blue-400"></i> Marathi Studio</a></li>
+                                        <li><a href="gujarati-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-blue-400"></i> Gujarati Studio</a></li>
+                                        <li><a href="tamil-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-blue-400"></i> Tamil Studio</a></li>
+                                        <li><a href="telugu-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-400"></i> Telugu Studio</a></li>
+                                        <li><a href="kannada-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-blue-400"></i> Kannada Studio</a></li>
+                                        <li><a href="malayalam-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-blue-400"></i> Malayalam Studio</a></li>
                                     </ul>
                                 </div>
-
                                 <div>
-                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-emerald-600 mb-3 border-b border-emerald-100 pb-2 flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Global Voices</h4>
-                                    <ul class="space-y-1.5 whitespace-normal">
-                                        <li><a href="urdu-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-emerald-600"><i data-lucide="mic" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Urdu Studio</a></li>
-                                        <li><a href="arabic-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-emerald-600"><i data-lucide="music" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Arabic Studio</a></li>
-                                        <li><a href="nepali-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-emerald-600"><i data-lucide="radio" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Nepali Studio</a></li>
-                                        <li><a href="sanskrit-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-emerald-600"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Sanskrit Studio</a></li>
-                                        <li><a href="punjabi-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-emerald-600"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Punjabi Studio</a></li>
-                                        <li><a href="konkani-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-emerald-600"><i data-lucide="speaker" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Konkani Studio</a></li>
+                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-emerald-600 mb-4 border-b border-emerald-100 pb-3 flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Global Voices</h4>
+                                    <ul class="space-y-2">
+                                        <li><a href="urdu-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-emerald-500"></i> Urdu Studio</a></li>
+                                        <li><a href="arabic-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-emerald-500"></i> Arabic Studio</a></li>
+                                        <li><a href="nepali-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-emerald-500"></i> Nepali Studio</a></li>
+                                        <li><a href="sanskrit-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-500"></i> Sanskrit Studio</a></li>
+                                        <li><a href="punjabi-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-emerald-500"></i> Punjabi Studio</a></li>
+                                        <li><a href="konkani-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-emerald-500"></i> Konkani Studio</a></li>
                                     </ul>
                                 </div>
-
                                 <div>
-                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-rose-500 mb-3 border-b border-rose-100 pb-2 flex items-center gap-2"><i data-lucide="trending-up" class="w-3.5 h-3.5"></i> New Markets</h4>
-                                    <ul class="space-y-1.5 whitespace-normal">
-                                        <li><a href="swahili-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-rose-600"><i data-lucide="mic" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Swahili Studio</a></li>
-                                        <li><a href="sinhala-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-rose-600"><i data-lucide="music" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Sinhala Studio</a></li>
-                                        <li><a href="burmese-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-rose-600"><i data-lucide="radio" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Burmese Studio</a></li>
-                                        <li><a href="tagalog-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-rose-600"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Tagalog Studio</a></li>
-                                        <li><a href="amharic-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-rose-600"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Amharic Studio</a></li>
-                                        <li><a href="khmer-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[12px] sm:text-[13px] font-bold text-slate-600 hover:text-rose-600"><i data-lucide="speaker" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Khmer Studio</a></li>
+                                    <h4 class="text-[11px] font-black uppercase tracking-widest text-rose-500 mb-4 border-b border-rose-100 pb-3 flex items-center gap-2"><i data-lucide="trending-up" class="w-3.5 h-3.5"></i> New Markets</h4>
+                                    <ul class="space-y-2">
+                                        <li><a href="swahili-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-rose-400"></i> Swahili Studio</a></li>
+                                        <li><a href="sinhala-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-rose-400"></i> Sinhala Studio</a></li>
+                                        <li><a href="burmese-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-rose-400"></i> Burmese Studio</a></li>
+                                        <li><a href="tagalog-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-400"></i> Tagalog Studio</a></li>
+                                        <li><a href="amharic-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-rose-400"></i> Amharic Studio</a></li>
+                                        <li><a href="khmer-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-rose-400"></i> Khmer Studio</a></li>
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </li>
 
                 <!-- 2. CREATOR GUIDES -->
-                <li class="group h-full flex items-center shrink-0">
-                    <button class="h-9 px-3 sm:px-4 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-800 hover:text-blue-600 hover:bg-white/60 transition-all cursor-pointer">
-                        <i data-lucide="book-open" class="w-3.5 h-3.5 text-blue-500"></i> Guides 
+                <li class="group h-full flex items-center shrink-0 lg:relative">
+                    <button class="h-9 px-3 lg:h-full lg:px-4 flex items-center gap-1.5 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-800 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none group-hover:text-blue-600 transition-colors cursor-pointer">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5 lg:w-4 h-4 text-blue-500"></i> Guides 
                         <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
-                    <div class="fixed left-0 right-0 top-14 w-full max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-3xl p-5 sm:p-8">
-                        <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                            <a href="beginner-to-pro-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="rocket" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">Beginner Masterclass</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Go from zero to pro AI creator.</p></div>
+                    <!-- Dropdown Panel -->
+                    <div class="absolute left-0 top-full w-[650px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="beginner-to-pro-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="rocket" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">Beginner Masterclass</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Go from zero to pro AI creator.</p></div>
                             </a>
-                            <a href="voice-profiles-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="users-2" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">15+ Neural Profiles</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Pick the perfect voice for your niche.</p></div>
+                            <a href="voice-profiles-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="users-2" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">15+ Neural Profiles</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Pick the perfect voice for your niche.</p></div>
                             </a>
-                            <a href="write-better-tts-scripts.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="pen-tool" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">High-Conversion Scripts</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Write scripts that retain viewers.</p></div>
+                            <a href="write-better-tts-scripts.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="pen-tool" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">High-Conversion Scripts</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Write scripts that retain viewers.</p></div>
                             </a>
-                            <a href="ai-voice-for-elearning.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">E-Learning Courses</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Create educational content easily.</p></div>
+                            <a href="ai-voice-for-elearning.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">E-Learning Courses</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Create educational content easily.</p></div>
+                            </a>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-100 text-center">
+                            <a href="sitemap-directory.html" class="text-[11px] font-black uppercase text-blue-600 hover:text-blue-800 flex items-center gap-2 justify-center tracking-widest">
+                                Explore All 40+ Creator Guides <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
                 </li>
 
                 <!-- 3. MONETIZATION -->
-                <li class="group h-full flex items-center shrink-0">
-                    <button class="h-9 px-3 sm:px-4 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-800 hover:text-green-600 hover:bg-white/60 transition-all cursor-pointer">
-                        <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 text-green-500"></i> Monetization 
+                <li class="group h-full flex items-center shrink-0 lg:relative">
+                    <button class="h-9 px-3 lg:h-full lg:px-4 flex items-center gap-1.5 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-800 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none group-hover:text-green-600 transition-colors cursor-pointer">
+                        <i data-lucide="circle-dollar-sign" class="w-3.5 h-3.5 lg:w-4 h-4 text-green-500"></i> Monetization 
                         <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
-                    <div class="fixed left-0 right-0 top-14 w-full max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-3xl p-5 sm:p-8">
-                        <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                            <a href="earn-money-ai-voice.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">Earn with AI Voice</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Blueprint for 2026 YouTube income.</p></div>
+                    <!-- Dropdown Panel -->
+                    <div class="absolute left-0 top-full w-[650px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="earn-money-ai-voice.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">Earn with AI Voice</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Blueprint for 2026 YouTube income.</p></div>
                             </a>
-                            <a href="earn-money-faceless-storytelling.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="video" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">Faceless Channels</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Make money without a camera.</p></div>
+                            <a href="earn-money-faceless-storytelling.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="video" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">Faceless Channels</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Make money without a camera.</p></div>
                             </a>
-                            <a href="Can-AI-Voice-(Text-to-Speech)-Really-Make-Money-on-YouTube-in-2026.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="alert-circle" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">The Brutal Reality</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Will YouTube monetize you? Read this.</p></div>
+                            <a href="Can-AI-Voice-(Text-to-Speech)-Really-Make-Money-on-YouTube-in-2026.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="alert-circle" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">The Brutal Reality</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Will YouTube monetize you? Read this.</p></div>
                             </a>
-                            <a href="paid-vs-free-text-to-speech.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-slate-100 whitespace-normal">
-                                <div class="w-10 h-10 bg-cyan-50 text-cyan-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="scale" class="w-5 h-5"></i></div>
-                                <div><h5 class="text-xs sm:text-sm font-black text-slate-900 mb-1">Paid vs Free TTS</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Don't waste money on subscriptions.</p></div>
+                            <a href="paid-vs-free-text-to-speech.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                                <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="scale" class="w-6 h-6"></i></div>
+                                <div><h5 class="text-sm font-black text-slate-900 mb-1">Paid vs Free TTS</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Don't waste money on subscriptions.</p></div>
                             </a>
                         </div>
                     </div>
                 </li>
 
                 <!-- 4. TECH & FIXES -->
-                <li class="group h-full flex items-center shrink-0">
-                    <button class="h-9 px-3 sm:px-4 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-800 hover:text-red-600 hover:bg-white/60 transition-all cursor-pointer">
-                        <i data-lucide="settings" class="w-3.5 h-3.5 text-red-500"></i> Tech & Fixes 
+                <li class="group h-full flex items-center shrink-0 lg:relative">
+                    <button class="h-9 px-3 lg:h-full lg:px-4 flex items-center gap-1.5 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-800 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none group-hover:text-red-600 transition-colors cursor-pointer">
+                        <i data-lucide="settings" class="w-3.5 h-3.5 lg:w-4 h-4 text-red-500"></i> Tech & Fixes 
                         <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
-                    <div class="fixed left-0 right-0 top-14 w-full max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-3xl p-5 sm:p-8">
-                        <div class="max-w-md mx-auto space-y-2 whitespace-normal">
-                            <a href="how-to-get-api-key.html" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[12px] sm:text-[13px] font-bold text-slate-700 hover:text-red-600 border border-slate-100"><i data-lucide="key" class="w-4 h-4 text-slate-500"></i> Get Free API Key</a>
-                            <a href="why-byok-is-safe.html" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[12px] sm:text-[13px] font-bold text-slate-700 hover:text-red-600 border border-slate-100"><i data-lucide="shield-check" class="w-4 h-4 text-slate-500"></i> Why BYOK is Safe</a>
-                            <a href="fix-chrome-loading-issues.html" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[12px] sm:text-[13px] font-bold text-slate-700 hover:text-red-600 border border-slate-100"><i data-lucide="monitor-x" class="w-4 h-4 text-slate-500"></i> Fix White Screen Issue</a>
-                            <a href="vani-ai-vs-elevenlabs.html" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[12px] sm:text-[13px] font-bold text-slate-700 hover:text-red-600 border border-slate-100"><i data-lucide="swords" class="w-4 h-4 text-slate-500"></i> Vāṇī AI vs ElevenLabs</a>
-                        </div>
+                    <!-- Dropdown Panel -->
+                    <div class="absolute right-0 lg:left-0 top-full w-[380px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                        <ul class="space-y-1">
+                            <li><a href="how-to-get-api-key.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="key" class="w-4 h-4"></i></div> Get Free API Key</a></li>
+                            <li><a href="why-byok-is-safe.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="shield-check" class="w-4 h-4"></i></div> Why BYOK is 100% Safe</a></li>
+                            <li><a href="fix-chrome-loading-issues.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="monitor-x" class="w-4 h-4"></i></div> Fix Chrome White Screen</a></li>
+                            <li><a href="vani-ai-vs-elevenlabs.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="swords" class="w-4 h-4"></i></div> Vāṇī AI vs ElevenLabs</a></li>
+                        </ul>
                     </div>
                 </li>
+            </div>
 
-                <!-- Separator line -->
-                <li class="h-4 w-[1px] bg-slate-300 mx-1 shrink-0"></li>
-
-                <!-- TOP LEVEL DIRECT LINKS -->
-                <li class="shrink-0"><a href="blog.html" class="h-9 px-3 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 hover:bg-white/60 transition-all"><i data-lucide="layout-grid" class="w-3.5 h-3.5 text-indigo-500"></i> Blog</a></li>
-                <li class="shrink-0"><a href="about.html" class="h-9 px-3 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 hover:bg-white/60 transition-all"><i data-lucide="info" class="w-3.5 h-3.5 text-indigo-500"></i> About</a></li>
-                <li class="shrink-0"><a href="contact.html" class="h-9 px-3 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 hover:bg-white/60 transition-all"><i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-500"></i> Contact</a></li>
-                <li class="shrink-0"><a href="privacy-policy.html" class="h-9 px-3 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 hover:bg-white/60 transition-all"><i data-lucide="shield" class="w-3.5 h-3.5 text-indigo-500"></i> Privacy</a></li>
-                <li class="shrink-0"><a href="terms.html" class="h-9 px-3 rounded-xl flex items-center gap-1.5 text-[11px] sm:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 hover:bg-white/60 transition-all"><i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-500"></i> Terms</a></li>
-
-            </ul>
-        </div>
-
+            <!-- Right Side Group (Regular Pages Links) -->
+            <div class="flex items-center gap-2 h-full lg:overflow-visible">
+                <li class="shrink-0 h-full flex items-center"><a href="blog.html" class="h-9 px-3 lg:h-auto lg:px-0 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none transition-colors flex items-center gap-1.5"><i data-lucide="layout-grid" class="w-3.5 h-3.5 lg:w-3 lg:h-3 text-indigo-500"></i> Blog</a></li>
+                
+                <li class="shrink-0 h-full flex items-center"><a href="about.html" class="h-9 px-3 lg:h-auto lg:px-0 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none transition-colors flex items-center gap-1.5"><i data-lucide="info" class="w-3.5 h-3.5 lg:w-3 lg:h-3 text-indigo-500"></i> About</a></li>
+                
+                <li class="shrink-0 h-full flex items-center"><a href="contact.html" class="h-9 px-3 lg:h-auto lg:px-0 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 lg:w-3 lg:h-3 text-indigo-500"></i> Contact</a></li>
+                
+                <li class="shrink-0 h-full flex items-center"><a href="privacy-policy.html" class="h-9 px-3 lg:h-auto lg:px-0 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none transition-colors flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5 lg:w-3 lg:h-3 text-indigo-500"></i> Privacy</a></li>
+                
+                <li class="shrink-0 h-full flex items-center"><a href="terms.html" class="h-9 px-3 lg:h-auto lg:px-0 text-[11px] lg:text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 bg-white/60 border border-blue-100 rounded-full lg:bg-transparent lg:border-none lg:rounded-none transition-colors flex items-center gap-1.5"><i data-lucide="file-text" class="w-3.5 h-3.5 lg:w-3 lg:h-3 text-indigo-500"></i> Terms</a></li>
+            </div>
+            
+        </ul>
     </div>
 </nav>
+<!-- ======================================================= -->
+<!-- STICKY GLASSMORPHISM HORIZONTAL NAV END                 -->
+<!-- ======================================================= -->
     </header>
 
     
