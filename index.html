@@ -134,12 +134,12 @@
             </nav>
               
         </div>
-  <!-- ======================================================= -->
-<!-- STICKY GLASSMORPHISM MEGA MENU (NATIVE MOBILE DRAWER)   -->
-<!-- ======================================================= -->
+ <!-- ========================================================================================== -->
+<!-- START OF VANI STUDIO STICKY GLASSMORPHISM MEGA MENU (NATIVE MOBILE DRAWER & DESKTOP ROW)   -->
+<!-- ========================================================================================== -->
 <nav class="sticky top-0 w-full z-[100] bg-blue-50/90 backdrop-blur-2xl border-b border-blue-200/80 transition-all">
     
-    <!-- MOBILE HEADER BAR (Visible only on mobile) -->
+    <!-- 1. MOBILE HEADER BAR (Visible only on mobile screens) -->
     <div class="lg:hidden flex items-center justify-between px-6 h-14 bg-white/60 backdrop-blur-md">
         <a href="index.html" class="text-[13px] font-black uppercase tracking-widest text-blue-900 flex items-center gap-2">
             <i data-lucide="waves" class="w-5 h-5 text-blue-600"></i> Vāṇī Studio
@@ -149,10 +149,10 @@
         </button>
     </div>
 
-    <!-- DRAWER OVERLAY (Darkens background on mobile when open) -->
-    <div id="drawer-overlay" class="fixed inset-0 bg-slate-900/60 z-[105] hidden lg:hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleDrawer(false)"></div>
+    <!-- 2. DRAWER OVERLAY (Darkens background on mobile when open) -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-slate-900/60 z-[105] hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleDrawer(false)"></div>
 
-    <!-- MAIN MENU WRAPPER (Left Drawer on Mobile / Horizontal Row on Desktop) -->
+    <!-- 3. MAIN MENU WRAPPER (Left Drawer on Mobile / Horizontal Row on Desktop) -->
     <div id="mobile-drawer" class="fixed lg:relative top-0 left-0 h-[100dvh] lg:h-14 w-[300px] lg:w-full bg-slate-50 lg:bg-transparent shadow-2xl lg:shadow-none z-[110] lg:z-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 flex flex-col lg:flex-row lg:justify-between max-w-7xl mx-auto px-0 lg:px-6 overflow-y-auto lg:overflow-visible">
         
         <!-- MOBILE DRAWER HEADER & CLOSE BUTTON -->
@@ -168,9 +168,8 @@
         <!-- LEFT SIDE: MEGA DROPDOWNS -->
         <ul class="flex flex-col lg:flex-row items-start lg:items-center gap-0 lg:gap-1 h-auto lg:h-full w-full lg:w-auto pt-4 lg:pt-0">
             
-            <!-- 1. AI STUDIOS (MEGA MENU) -->
+            <!-- A. AI STUDIOS (MEGA DROPDOWN) -->
             <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-200/50">
-                <!-- Button triggers accordion on mobile, hover triggers on desktop -->
                 <button onclick="toggleMobileSubmenu('submenu-ai-studios')" class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-6 lg:px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 lg:group-hover:text-orange-600 transition-colors cursor-pointer">
                     <span class="flex items-center gap-2.5"><i data-lucide="mic-2" class="w-4 h-4 text-orange-500"></i> AI Studios</span> 
                     <i id="submenu-ai-studios-chevron" data-lucide="chevron-down" class="w-4 h-4 lg:w-3.5 lg:h-3.5 text-blue-400 transition-transform duration-300 lg:group-hover:rotate-180"></i>
@@ -252,7 +251,7 @@
                 </div>
             </li>
 
-            <!-- 2. CREATOR GUIDES -->
+            <!-- B. CREATOR GUIDES -->
             <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-200/50">
                 <button onclick="toggleMobileSubmenu('submenu-guides')" class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-6 lg:px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 lg:group-hover:text-blue-600 transition-colors cursor-pointer">
                     <span class="flex items-center gap-2.5"><i data-lucide="book-open" class="w-4 h-4 text-blue-500"></i> Guides</span> 
@@ -292,7 +291,7 @@
                 </div>
             </li>
 
-            <!-- 3. MONETIZATION -->
+            <!-- C. MONETIZATION -->
             <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-200/50">
                 <button onclick="toggleMobileSubmenu('submenu-monetization')" class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-6 lg:px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 lg:group-hover:text-green-600 transition-colors cursor-pointer">
                     <span class="flex items-center gap-2.5"><i data-lucide="badge-dollar-sign" class="w-4 h-4 text-green-500"></i> Monetization</span> 
@@ -332,7 +331,7 @@
                 </div>
             </li>
 
-            <!-- 4. TECH & FIXES -->
+            <!-- D. TECH & FIXES -->
             <li class="group h-auto lg:h-full w-full lg:w-auto border-b lg:border-none border-slate-200/50">
                 <button onclick="toggleMobileSubmenu('submenu-tech')" class="w-full lg:w-auto h-auto lg:h-full py-4 lg:py-0 px-6 lg:px-4 flex justify-between lg:justify-start items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 lg:group-hover:text-red-600 transition-colors cursor-pointer">
                     <span class="flex items-center gap-2.5"><i data-lucide="cog" class="w-4 h-4 text-red-500"></i> Tech & Fixes</span> 
@@ -369,7 +368,7 @@
             </li>
         </ul>
 
-        <!-- RIGHT SIDE: FIXED TOP-LEVEL LINKS -->
+        <!-- 4. RIGHT SIDE: FIXED TOP-LEVEL LINKS -->
         <ul class="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6 h-auto lg:h-full w-full lg:w-auto mt-6 lg:mt-0 pb-12 lg:pb-0 px-6 lg:px-0 border-t lg:border-none border-slate-200 pt-6 lg:pt-0">
             <li><a href="blog.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2"><i data-lucide="newspaper" class="w-4 h-4 lg:w-3.5 lg:h-3.5 text-indigo-500"></i> Blog</a></li>
             <li><a href="about.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 lg:w-3.5 lg:h-3.5 text-indigo-500"></i> About</a></li>
@@ -381,26 +380,36 @@
     </div>
 </nav>
 
-<!-- LIGHTWEIGHT RESPONSIVE NAVIGATION SCRIPT -->
+<!-- 5. LIGHTWEIGHT NAVIGATION CONTROLLER SCRIPT -->
 <script>
-    // Mobile Drawer Open/Close Handler
+    // Handles Mobile Sidebar Slide-In & Fade Effects
     function toggleDrawer(open) {
         const drawer = document.getElementById('mobile-drawer');
         const overlay = document.getElementById('drawer-overlay');
+        
         if (open) {
+            // Slides the drawer into the screen view on mobile
             drawer.classList.remove('-translate-x-full');
+            drawer.classList.add('translate-x-0');
+            
+            // Displays the backdrop shadow layer
             overlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevents background body scroll
+            overlay.classList.add('block');
+            document.body.style.overflow = 'hidden'; 
         } else {
+            // Hides the drawer back to the left side
             drawer.classList.add('-translate-x-full');
+            drawer.classList.remove('translate-x-0');
+            
+            // Hides backdrop shadow
             overlay.classList.add('hidden');
+            overlay.classList.remove('block');
             document.body.style.overflow = '';
         }
     }
 
-    // Native Accordion Toggle for Mobile Devices
+    // Handles Nested Accordions on Touch Devices
     function toggleMobileSubmenu(submenuId) {
-        // Run only on mobile screen widths
         if (window.innerWidth < 1024) {
             const submenu = document.getElementById(submenuId);
             const chevron = document.getElementById(submenuId + '-chevron');
@@ -408,7 +417,7 @@
             if (submenu) {
                 const isOpen = !submenu.classList.contains('hidden');
                 
-                // Close all other submenus first for a clean accordion effect
+                // Automatically close other accordions first for clean interaction
                 const submenus = ['submenu-ai-studios', 'submenu-guides', 'submenu-monetization', 'submenu-tech'];
                 submenus.forEach(id => {
                     const el = document.getElementById(id);
@@ -417,7 +426,7 @@
                     if (chev) chev.classList.remove('rotate-180');
                 });
 
-                // Toggle target submenu
+                // Toggle selected category list
                 if (!isOpen) {
                     submenu.classList.remove('hidden');
                     if (chevron) chevron.classList.add('rotate-180');
@@ -426,20 +435,35 @@
         }
     }
 
-    // Reset styles on window resize to avoid desktop-mobile transition bugs
+    // Resets visibility states on viewport layout adjustments
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 1024) {
             document.body.style.overflow = '';
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            
+            if (drawer) {
+                drawer.classList.remove('translate-x-0');
+                drawer.classList.add('-translate-x-full');
+            }
+            if (overlay) {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('block');
+            }
+
             const submenus = ['submenu-ai-studios', 'submenu-guides', 'submenu-monetization', 'submenu-tech'];
             submenus.forEach(id => {
                 const el = document.getElementById(id);
                 const chev = document.getElementById(id + '-chevron');
-                if (el) el.classList.add('hidden'); // Lets desktop CSS hover handle it
+                if (el) el.classList.add('hidden'); 
                 if (chev) chev.classList.remove('rotate-180');
             });
         }
     });
 </script>
+<!-- ========================================================================================== -->
+<!-- END OF VANI STUDIO STICKY GLASSMORPHISM MEGA MENU                                         -->
+<!-- ========================================================================================== -->
     </header>
 
     
