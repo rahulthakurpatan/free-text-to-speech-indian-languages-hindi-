@@ -310,7 +310,213 @@
 <!-- ======================================================= -->
 <!-- STICKY GLASSMORPHISM MEGA MENU END                      -->
 <!-- ======================================================= -->
-     
+     <!-- ======================================================= -->
+<!-- MOBILE NATIVE SIDE DRAWER MENU (ONLY FOR MOBILE)        -->
+<!-- ======================================================= -->
+
+<!-- 1. MOBILE TOP STICKY BAR (Visible only on lg screens and below) -->
+<div class="sticky top-0 w-full z-[90] bg-white/90 backdrop-blur-lg border-b border-slate-200 h-14 flex items-center justify-between px-6 lg:hidden shadow-sm">
+    <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center shadow-md">
+            <i data-lucide="waves" class="text-white w-4 h-4"></i>
+        </div>
+        <span class="text-sm font-black uppercase tracking-tighter text-slate-900">Vāṇī <span class="text-blue-600">AI</span></span>
+    </div>
+    
+    <!-- Hamburger Button to Open Drawer -->
+    <button id="openMobileDrawerBtn" class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-900 bg-blue-50 px-4 py-2 rounded-full hover:bg-blue-100 transition-colors">
+        <i data-lucide="menu" class="w-4 h-4 text-blue-600"></i> Menu
+    </button>
+</div>
+
+<!-- 2. THE DRAWER OVERLAY & SIDEBAR -->
+<div id="mobileDrawerWrapper" class="fixed inset-0 z-[200] hidden">
+    
+    <!-- Dark Transparent Overlay (Clicks outside close the menu) -->
+    <div id="mobileDrawerOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 cursor-pointer"></div>
+    
+    <!-- Sidebar Content (Slides from left) -->
+    <div id="mobileDrawerContent" class="absolute top-0 left-0 w-[85%] max-w-sm h-full bg-white shadow-[30px_0_60px_-15px_rgba(0,0,0,0.3)] flex flex-col transform -translate-x-full transition-transform duration-300 ease-out">
+        
+        <!-- Drawer Header with Close Button -->
+        <div class="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50/50">
+            <span class="text-xs font-black uppercase tracking-[0.2em] text-slate-500">Navigation</span>
+            <button id="closeMobileDrawerBtn" class="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors active:scale-90">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+        
+        <!-- Drawer Scrollable Links -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-2 custom-scrollbar">
+            
+            <!-- FIXED TOP LINKS (Blog, About, etc.) -->
+            <div class="border-b border-slate-100 pb-6 mb-4 space-y-4">
+                <a href="blog.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="book-open" class="w-4 h-4"></i></div> Blog</a>
+                <a href="about.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="info" class="w-4 h-4"></i></div> About Studio</a>
+                <a href="contact.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="mail" class="w-4 h-4"></i></div> Contact Help</a>
+                <a href="privacy-policy.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="shield" class="w-4 h-4"></i></div> Privacy Policy</a>
+            </div>
+
+            <!-- ACCORDION 1: AI STUDIOS -->
+            <details class="group border-b border-slate-100 pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="mic-2" class="w-5 h-5 text-orange-500"></i> AI Studios</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-orange-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-4 pb-6 space-y-6">
+                    
+                    <!-- North & East -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-orange-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-orange-400"></div> North & East</h5>
+                        <div class="space-y-4">
+                            <a href="index.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Hindi Studio</a>
+                            <a href="bhojpuri-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Bhojpuri Studio</a>
+                            <a href="bengali-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Bengali Studio</a>
+                            <a href="assamese-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Assamese Studio</a>
+                            <a href="odia-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Odia Studio</a>
+                            <a href="maithili-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Maithili Studio</a>
+                        </div>
+                    </div>
+
+                    <!-- West & South -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div> West & South</h5>
+                        <div class="space-y-4">
+                            <a href="marathi-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Marathi Studio</a>
+                            <a href="gujarati-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Gujarati Studio</a>
+                            <a href="tamil-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Tamil Studio</a>
+                            <a href="telugu-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Telugu Studio</a>
+                            <a href="kannada-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Kannada Studio</a>
+                            <a href="malayalam-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Malayalam Studio</a>
+                        </div>
+                    </div>
+
+                    <!-- Global Voices -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> Global Voices</h5>
+                        <div class="space-y-4">
+                            <a href="urdu-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Urdu Studio</a>
+                            <a href="arabic-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Arabic Studio</a>
+                            <a href="nepali-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Nepali Studio</a>
+                            <a href="sanskrit-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Sanskrit Studio</a>
+                            <a href="punjabi-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Punjabi Studio</a>
+                            <a href="konkani-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Konkani Studio</a>
+                        </div>
+                    </div>
+
+                    <!-- Emerging Markets -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-rose-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-rose-400"></div> New Markets</h5>
+                        <div class="space-y-4">
+                            <a href="swahili-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Swahili Studio</a>
+                            <a href="sinhala-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Sinhala Studio</a>
+                            <a href="burmese-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Burmese Studio</a>
+                            <a href="tagalog-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Tagalog Studio</a>
+                            <a href="amharic-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Amharic Studio</a>
+                            <a href="khmer-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Khmer Studio</a>
+                        </div>
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- ACCORDION 2: GUIDES -->
+            <details class="group border-b border-slate-100 pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5 text-blue-500"></i> Creator Guides</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-blue-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-2 pb-6 space-y-4">
+                    <a href="beginner-to-pro-masterclass.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Beginner Masterclass</a>
+                    <a href="voice-profiles-masterclass.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">15+ Neural Profiles</a>
+                    <a href="write-better-tts-scripts.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">High-Conversion Scripts</a>
+                    <a href="ai-voice-for-elearning.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">E-Learning Courses</a>
+                    <a href="seo-for-audio-content.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">SEO for Audio Content</a>
+                </div>
+            </details>
+
+            <!-- ACCORDION 3: MONETIZATION -->
+            <details class="group border-b border-slate-100 pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="circle-dollar-sign" class="w-5 h-5 text-green-500"></i> Monetization</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-green-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-2 pb-6 space-y-4">
+                    <a href="earn-money-ai-voice.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">Earn with AI Voice</a>
+                    <a href="earn-money-faceless-storytelling.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">Faceless Channels</a>
+                    <a href="Can-AI-Voice-(Text-to-Speech)-Really-Make-Money-on-YouTube-in-2026.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">The Brutal Reality Guide</a>
+                    <a href="paid-vs-free-text-to-speech.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">Paid vs Free TTS</a>
+                </div>
+            </details>
+
+            <!-- ACCORDION 4: TECH & FIXES -->
+            <details class="group pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="settings" class="w-5 h-5 text-red-500"></i> Tech & Fixes</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-red-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-2 pb-6 space-y-4">
+                    <a href="how-to-get-api-key.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Get Free API Key</a>
+                    <a href="why-byok-is-safe.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Why BYOK is 100% Safe</a>
+                    <a href="fix-chrome-loading-issues.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Fix Chrome White Screen</a>
+                    <a href="vani-ai-vs-elevenlabs.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Vāṇī AI vs ElevenLabs</a>
+                    <a href="what-is-neural-speech.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Science of Neural Speech</a>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</div>
+
+<!-- 3. MOBILE MENU JAVASCRIPT LOGIC -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('openMobileDrawerBtn');
+        const closeBtn = document.getElementById('closeMobileDrawerBtn');
+        const wrapper = document.getElementById('mobileDrawerWrapper');
+        const overlay = document.getElementById('mobileDrawerOverlay');
+        const content = document.getElementById('mobileDrawerContent');
+
+        function openDrawer() {
+            // Remove hidden to make it display:block
+            wrapper.classList.remove('hidden');
+            // Small delay to allow CSS transitions to trigger
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0');
+                overlay.classList.add('opacity-100');
+                
+                content.classList.remove('-translate-x-full');
+                content.classList.add('translate-x-0');
+                
+                // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
+            }, 10);
+        }
+
+        function closeDrawer() {
+            // Start slide out animations
+            overlay.classList.remove('opacity-100');
+            overlay.classList.add('opacity-0');
+            
+            content.classList.remove('translate-x-0');
+            content.classList.add('-translate-x-full');
+            
+            // Wait for transition to finish before hiding display
+            setTimeout(() => {
+                wrapper.classList.add('hidden');
+                // Restore background scrolling
+                document.body.style.overflow = '';
+            }, 300); // 300ms matches the CSS duration-300
+        }
+
+        if(openBtn) openBtn.addEventListener('click', openDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        if(overlay) overlay.addEventListener('click', closeDrawer);
+    });
+</script>
+<!-- ======================================================= -->
+<!-- MOBILE NATIVE SIDE DRAWER END                           -->
+<!-- ======================================================= -->
     </header>
 
     <!-- STUDIO SECTION -->
