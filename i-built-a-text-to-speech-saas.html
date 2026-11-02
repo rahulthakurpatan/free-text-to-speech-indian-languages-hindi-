@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WD8JRGB2');</script>
+<!-- End Google Tag Manager -->
+
+
+
+    <script>
+  window.PushDotifyConfig = {
+    title: "Get Instant Updates",
+    desc: "Subscribe to get notified about our latest posts and offers!",
+    color: "#4f46e5",
+    delay: 2000
+  };
+</script>
+<script src="https://namedotify.com/api/script/pushdotify.js?key=336b7b7b-65e3-451d-91eb-dce6c299819d" async></script>
+
+    <meta name="google-adsense-account" content="ca-pub-2057359438981933">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057359438981933" crossorigin="anonymous"></script>
+    <!-- Search and social metadata -->
+    <meta name="title" content="I Built My Own Text-to-Speech SaaS: A New Digital Income Opportunity | Vāṇī AI">
+    <meta name="description" content="The real story behind building Vāṇī AI Studio: why I created a browser-based text-to-speech SaaS, how its BYOK model works, the tools and costs involved, and realistic ways a small creator can build an income stream around a useful product.">
+    <meta name="keywords" content="build a text to speech SaaS, AI voice generator business, BYOK text to speech, Vāṇī AI Studio, indie SaaS India, AI SaaS monetization, text to voice AI">
+    <meta name="author" content="Rahul | Vāṇī AI Studio">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://freetexttovoiceai.in/i-built-a-text-to-speech-saas.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://freetexttovoiceai.in/i-built-a-text-to-speech-saas.html">
+    <meta property="og:title" content="I Built My Own Text-to-Speech SaaS: A New Digital Income Opportunity | Vāṇī AI">
+    <meta property="og:description" content="The real story behind building Vāṇī AI Studio: why I created a browser-based text-to-speech SaaS, how its BYOK model works, the tools and costs involved, and realistic ways a small creator can build an income stream around a useful product.">
+    <meta property="og:site_name" content="Vāṇī AI Studio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="I Built My Own Text-to-Speech SaaS: A New Digital Income Opportunity | Vāṇī AI">
+    <meta name="twitter:description" content="The real story behind building Vāṇī AI Studio: why I created a browser-based text-to-speech SaaS, how its BYOK model works, the tools and costs involved, and realistic ways a small creator can build an income stream around a useful product.">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "I Built My Own Text-to-Speech SaaS: A New Digital Income Opportunity",
+  "description": "The real story behind building Vāṇī AI Studio: why I created a browser-based text-to-speech SaaS, how its BYOK model works, the tools and costs involved, and realistic ways a small creator can build an income stream around a useful product.",
+  "author": {
+    "@type": "Person",
+    "name": "Rahul",
+    "url": "https://freetexttovoiceai.in/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vāṇī AI Studio",
+    "url": "https://freetexttovoiceai.in/"
+  },
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://freetexttovoiceai.in/i-built-a-text-to-speech-saas.html"
+  },
+  "articleSection": "SaaS Building, AI Tools and Creator Economy",
+  "keywords": [
+    "build a text to speech SaaS",
+    "AI voice generator business",
+    "BYOK text to speech",
+    "Vāṇī AI Studio",
+    "indie SaaS India",
+    "AI SaaS monetization"
+  ]
+}</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RV64RB8M6S');
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', 'Noto Sans Devanagari', sans-serif; color: #0f172a; scroll-behavior: smooth; }
+        .static-header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .icon-box { background: linear-gradient(135deg, #f97316, #1e40af); color: white; border-radius: 1.25rem; }
+        .glass-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 2.5rem; box-shadow: 0 15px 35px -10px rgba(0,0,0,0.05); }
+        .seo-box { background: #fff; padding: 35px; border-radius: 2.5rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; height: 100%; text-align: left; }
+        .seo-box:hover { border-color: #f97316; transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.1); }
+        .footer-main { background: #fff; border-top: 1px solid #e2e8f0; padding: 100px 0 50px 0; }
+        .sitemap-link { color: #64748b; font-size: 13px; font-weight: 700; transition: all 0.2s; border-bottom: 1px solid transparent; display: block; padding: 4px 0; text-align: left; }
+        .sitemap-link:hover { color: #1e40af; border-color: #1e40af; }
+        
+        /* Article Styling */
+        .content-article h2 { font-size: 2.5rem; font-weight: 900; color: #1e40af; margin-top: 5rem; margin-bottom: 2rem; text-transform: uppercase; italic: true; border-left: 12px solid #f97316; padding-left: 30px; line-height: 1.1; text-align: left; }
+        .content-article p { font-size: 1.25rem; line-height: 2.2; color: #475569; margin-bottom: 2.5rem; font-weight: 500; text-align: left; }
+        .personal-card { background: #fff7ed; border: 3px dashed #f97316; padding: 50px; border-radius: 3.5rem; margin: 60px 0; position: relative; }
+        .point-box { background: #f1f5f9; padding: 45px; border-radius: 2.5rem; border-left: 10px solid #1e40af; margin-bottom: 40px; }
+        .author-box { background: white; border: 1px solid #e2e8f0; border-radius: 2.5rem; padding: 35px; margin-bottom: 80px; display: flex; align-items: center; gap: 30px; }
+    </style>
+</head>
+<body>
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD8JRGB2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- 4. HEADER AS PREVIOUS (Rule 4) -->
+    <header class="static-header py-8 px-6 md:px-12 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8 text-left">
+            <div class="flex items-center gap-8">
+                <div class="w-20 h-20 icon-box flex items-center justify-center shadow-2xl shrink-0">
+                    <i data-lucide="waves" class="w-11 h-11 text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none mb-1">Vāṇī <span class="text-orange-600">AI</span></h2>
+                    <p class="text-[14px] font-black text-slate-900 uppercase tracking-widest leading-none">Wasted Money Reality Check</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500 items-center">
+                <a href="index.html" class="bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-orange-600 transition-all shadow-xl flex items-center gap-3">
+                   <i data-lucide="arrow-left" class="w-5 h-5"></i> BACK TO STUDIO
+                </a>
+            </nav>
+        </div>
+          <!-- ======================================================= -->
+<!-- STICKY GLASSMORPHISM MEGA MENU (WITH ICONS)             -->
+<!-- ======================================================= -->
+<nav class="sticky top-0 w-full z-[100] bg-blue-50/90 backdrop-blur-2xl border-b border-blue-200 hidden lg:block transition-all">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between h-14">
+        
+        <!-- LEFT SIDE: MEGA DROPDOWNS -->
+        <ul class="flex items-center gap-2 h-full">
+            
+            <!-- 1. AI STUDIOS (MEGA MENU) -->
+            <li class="group h-full">
+                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-orange-600 transition-colors cursor-pointer">
+                    <i data-lucide="mic-2" class="w-4 h-4 text-orange-500"></i> AI Studios 
+                    <i data-lucide="chevron-down" class="w-3 h-3 text-blue-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <!-- Glassmorphism Dropdown Panel -->
+                <div class="absolute left-0 top-full w-full bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 rounded-b-[2.5rem]">
+                    <div class="max-w-7xl mx-auto p-10 grid grid-cols-12 gap-10">
+                        
+                        <!-- Featured Global Card -->
+                        <div class="col-span-3">
+                            <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-800 rounded-[2rem] p-8 text-white h-full shadow-xl relative overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300 border border-blue-400/30">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl -translate-y-10 translate-x-10"></div>
+                                <div>
+                                    <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                                        <i data-lucide="globe-2" class="w-6 h-6 text-white"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-black uppercase italic tracking-tighter mb-2 drop-shadow-md">Global Hub</h3>
+                                    <p class="text-[11px] font-bold text-blue-100 leading-relaxed mb-6">Access our complete ecosystem of 24+ languages from one dashboard.</p>
+                                </div>
+                                <a href="about-hindi-marathi-kannada-bengali-tamil-punjabi-gujarati-malayalam-telugu-urdu-odia-assamese-bhojpuri-sanskrit-maithili-konkani-arabic-swahili-nepali-sinhala-burmese-khmer-tagalog-amharic-text-to-speech.html" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white bg-white/20 hover:bg-white hover:text-blue-700 py-3 px-6 rounded-full transition-colors w-max shadow-sm">
+                                    View Ecosystem <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Link Columns (Decorated with Icons) -->
+                        <div class="col-span-9 grid grid-cols-4 gap-x-8 gap-y-6">
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-orange-600 mb-4 border-b border-orange-100 pb-3 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> North & East</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="index.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-orange-400"></i> Hindi Studio</a></li>
+                                    <li><a href="bhojpuri-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-orange-400"></i> Bhojpuri Studio</a></li>
+                                    <li><a href="bengali-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-orange-400"></i> Bengali Studio</a></li>
+                                    <li><a href="assamese-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-orange-400"></i> Assamese Studio</a></li>
+                                    <li><a href="odia-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-orange-400"></i> Odia Studio</a></li>
+                                    <li><a href="maithili-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-orange-400"></i> Maithili Studio</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-blue-600 mb-4 border-b border-blue-100 pb-3 flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> West & South</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="marathi-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-blue-400"></i> Marathi Studio</a></li>
+                                    <li><a href="gujarati-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-blue-400"></i> Gujarati Studio</a></li>
+                                    <li><a href="tamil-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-blue-400"></i> Tamil Studio</a></li>
+                                    <li><a href="telugu-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-400"></i> Telugu Studio</a></li>
+                                    <li><a href="kannada-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-blue-400"></i> Kannada Studio</a></li>
+                                    <li><a href="malayalam-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-blue-400"></i> Malayalam Studio</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-emerald-600 mb-4 border-b border-emerald-100 pb-3 flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Global Voices</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="urdu-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-emerald-500"></i> Urdu Studio</a></li>
+                                    <li><a href="arabic-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-emerald-500"></i> Arabic Studio</a></li>
+                                    <li><a href="nepali-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-emerald-500"></i> Nepali Studio</a></li>
+                                    <li><a href="sanskrit-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-500"></i> Sanskrit Studio</a></li>
+                                    <li><a href="punjabi-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-emerald-500"></i> Punjabi Studio</a></li>
+                                    <li><a href="konkani-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-emerald-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-emerald-500"></i> Konkani Studio</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-rose-500 mb-4 border-b border-rose-100 pb-3 flex items-center gap-2"><i data-lucide="trending-up" class="w-3.5 h-3.5"></i> New Markets</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="swahili-free-text-to-voice-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="mic" class="w-3.5 h-3.5 text-rose-400"></i> Swahili Studio</a></li>
+                                    <li><a href="sinhala-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="music" class="w-3.5 h-3.5 text-rose-400"></i> Sinhala Studio</a></li>
+                                    <li><a href="burmese-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="radio" class="w-3.5 h-3.5 text-rose-400"></i> Burmese Studio</a></li>
+                                    <li><a href="tagalog-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-400"></i> Tagalog Studio</a></li>
+                                    <li><a href="amharic-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-rose-400"></i> Amharic Studio</a></li>
+                                    <li><a href="khmer-free-text-to-speech-ai.html" class="flex items-center gap-2 py-1 text-[13px] font-bold text-slate-600 hover:text-rose-600 hover:translate-x-1 transition-all"><i data-lucide="speaker" class="w-3.5 h-3.5 text-rose-400"></i> Khmer Studio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 2. CREATOR GUIDES -->
+            <li class="group h-full relative">
+                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-blue-600 transition-colors cursor-pointer">
+                    <i data-lucide="book-open" class="w-4 h-4 text-blue-500"></i> Guides 
+                    <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="absolute left-0 top-full w-[650px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="beginner-to-pro-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="rocket" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">Beginner Masterclass</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Go from zero to pro AI creator.</p></div>
+                        </a>
+                        <a href="voice-profiles-masterclass.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="users-2" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">15+ Neural Profiles</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Pick the perfect voice for your niche.</p></div>
+                        </a>
+                        <a href="write-better-tts-scripts.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="pen-tool" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">High-Conversion Scripts</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Write scripts that retain viewers.</p></div>
+                        </a>
+                        <a href="ai-voice-for-elearning.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">E-Learning Courses</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Create educational content easily.</p></div>
+                        </a>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-slate-100 text-center">
+                        <a href="sitemap-directory.html" class="text-[11px] font-black uppercase text-blue-600 hover:text-blue-800 flex items-center gap-2 justify-center tracking-widest">
+                            Explore All 40+ Creator Guides <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 3. MONETIZATION -->
+            <li class="group h-full relative">
+                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-green-600 transition-colors cursor-pointer">
+                    <i data-lucide="circle-dollar-sign" class="w-4 h-4 text-green-500"></i> Monetization 
+                    <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="absolute left-0 top-full w-[650px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="earn-money-ai-voice.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">Earn with AI Voice</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Blueprint for 2026 YouTube income.</p></div>
+                        </a>
+                        <a href="earn-money-faceless-storytelling.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="video" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">Faceless Channels</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Make money without a camera.</p></div>
+                        </a>
+                        <a href="Can-AI-Voice-(Text-to-Speech)-Really-Make-Money-on-YouTube-in-2026.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="alert-circle" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">The Brutal Reality</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Will YouTube monetize you? Read this.</p></div>
+                        </a>
+                        <a href="paid-vs-free-text-to-speech.html" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                            <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="scale" class="w-6 h-6"></i></div>
+                            <div><h5 class="text-sm font-black text-slate-900 mb-1">Paid vs Free TTS</h5><p class="text-[11px] font-bold text-slate-500 leading-tight">Don't waste money on subscriptions.</p></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 4. TECH & FIXES -->
+            <li class="group h-full relative">
+                <button class="h-full px-4 flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-slate-800 group-hover:text-red-600 transition-colors cursor-pointer">
+                    <i data-lucide="settings" class="w-4 h-4 text-red-500"></i> Tech & Fixes 
+                    <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="absolute right-0 top-full w-[380px] bg-white/95 backdrop-blur-3xl border-b border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-b-3xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                    <ul class="space-y-1">
+                        <li><a href="how-to-get-api-key.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="key" class="w-4 h-4"></i></div> Get Free API Key</a></li>
+                        <li><a href="why-byok-is-safe.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="shield-check" class="w-4 h-4"></i></div> Why BYOK is 100% Safe</a></li>
+                        <li><a href="fix-chrome-loading-issues.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="monitor-x" class="w-4 h-4"></i></div> Fix Chrome White Screen</a></li>
+                        <li><a href="vani-ai-vs-elevenlabs.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="swords" class="w-4 h-4"></i></div> Vāṇī AI vs ElevenLabs</a></li>
+                        <li><a href="what-is-neural-speech.html" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 text-[13px] font-bold text-slate-700 hover:text-red-600 transition-all"><div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500"><i data-lucide="brain-circuit" class="w-4 h-4"></i></div> Science of Neural Speech</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <!-- RIGHT SIDE: THE 5 FIXED TOP-LEVEL LINKS -->
+        <ul class="flex items-center gap-6 h-full">
+            <li><a href="blog.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="layout-grid" class="w-3 h-3 text-indigo-500"></i> Blog</a></li>
+            <li><a href="about.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="info" class="w-3 h-3 text-indigo-500"></i> About</a></li>
+            <li><a href="contact.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-3 h-3 text-indigo-500"></i> Contact</a></li>
+            <li><a href="privacy-policy.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="shield" class="w-3 h-3 text-indigo-500"></i> Privacy</a></li>
+            <li><a href="terms.html" class="text-[12px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i data-lucide="file-text" class="w-3 h-3 text-indigo-500"></i> Terms</a></li>
+        </ul>
+
+    </div>
+</nav>
+<!-- ======================================================= -->
+<!-- STICKY GLASSMORPHISM MEGA MENU END                      -->
+<!-- ======================================================= -->
+     <!-- ======================================================= -->
+<!-- MOBILE NATIVE SIDE DRAWER MENU (ONLY FOR MOBILE)        -->
+<!-- ======================================================= -->
+
+<!-- 1. MOBILE TOP STICKY BAR (Visible only on lg screens and below) -->
+<div class="sticky top-0 w-full z-[90] bg-white/90 backdrop-blur-lg border-b border-slate-200 h-14 flex items-center justify-between px-6 lg:hidden shadow-sm">
+    <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center shadow-md">
+            <i data-lucide="waves" class="text-white w-4 h-4"></i>
+        </div>
+        <span class="text-sm font-black uppercase tracking-tighter text-slate-900">Vāṇī <span class="text-blue-600">AI</span></span>
+    </div>
+    
+    <!-- Hamburger Button to Open Drawer -->
+    <button id="openMobileDrawerBtn" class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-900 bg-blue-50 px-4 py-2 rounded-full hover:bg-blue-100 transition-colors">
+        <i data-lucide="menu" class="w-4 h-4 text-blue-600"></i> Menu
+    </button>
+</div>
+
+<!-- 2. THE DRAWER OVERLAY & SIDEBAR -->
+<div id="mobileDrawerWrapper" class="fixed inset-0 z-[200] hidden">
+    
+    <!-- Dark Transparent Overlay (Clicks outside close the menu) -->
+    <div id="mobileDrawerOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 cursor-pointer"></div>
+    
+    <!-- Sidebar Content (Slides from left) -->
+    <div id="mobileDrawerContent" class="absolute top-0 left-0 w-[85%] max-w-sm h-full bg-white shadow-[30px_0_60px_-15px_rgba(0,0,0,0.3)] flex flex-col transform -translate-x-full transition-transform duration-300 ease-out">
+        
+        <!-- Drawer Header with Close Button -->
+        <div class="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50/50">
+            <span class="text-xs font-black uppercase tracking-[0.2em] text-slate-500">Navigation</span>
+            <button id="closeMobileDrawerBtn" class="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors active:scale-90">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+        
+        <!-- Drawer Scrollable Links -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-2 custom-scrollbar">
+            
+            <!-- FIXED TOP LINKS (Blog, About, etc.) -->
+            <div class="border-b border-slate-100 pb-6 mb-4 space-y-4">
+                <a href="blog.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="book-open" class="w-4 h-4"></i></div> Blog</a>
+                <a href="about.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="info" class="w-4 h-4"></i></div> About Studio</a>
+                <a href="contact.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="mail" class="w-4 h-4"></i></div> Contact Help</a>
+                <a href="privacy-policy.html" class="flex items-center gap-4 text-[13px] font-black uppercase tracking-widest text-slate-700 hover:text-indigo-600 transition-colors"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i data-lucide="shield" class="w-4 h-4"></i></div> Privacy Policy</a>
+            </div>
+
+            <!-- ACCORDION 1: AI STUDIOS -->
+            <details class="group border-b border-slate-100 pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="mic-2" class="w-5 h-5 text-orange-500"></i> AI Studios</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-orange-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-4 pb-6 space-y-6">
+                    
+                    <!-- North & East -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-orange-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-orange-400"></div> North & East</h5>
+                        <div class="space-y-4">
+                            <a href="index.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Hindi Studio</a>
+                            <a href="bhojpuri-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Bhojpuri Studio</a>
+                            <a href="bengali-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Bengali Studio</a>
+                            <a href="assamese-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Assamese Studio</a>
+                            <a href="odia-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Odia Studio</a>
+                            <a href="maithili-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-orange-600">Maithili Studio</a>
+                        </div>
+                    </div>
+
+                    <!-- West & South -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div> West & South</h5>
+                        <div class="space-y-4">
+                            <a href="marathi-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Marathi Studio</a>
+                            <a href="gujarati-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Gujarati Studio</a>
+                            <a href="tamil-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Tamil Studio</a>
+                            <a href="telugu-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Telugu Studio</a>
+                            <a href="kannada-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Kannada Studio</a>
+                            <a href="malayalam-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Malayalam Studio</a>
+                        </div>
+                    </div>
+
+                    <!-- Global Voices -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> Global Voices</h5>
+                        <div class="space-y-4">
+                            <a href="urdu-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Urdu Studio</a>
+                            <a href="arabic-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Arabic Studio</a>
+                            <a href="nepali-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Nepali Studio</a>
+                            <a href="sanskrit-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Sanskrit Studio</a>
+                            <a href="punjabi-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Punjabi Studio</a>
+                            <a href="konkani-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-emerald-600">Konkani Studio</a>
+                        </div>
+                    </div>
+
+                    <!-- Emerging Markets -->
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-rose-400 mb-3 flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-rose-400"></div> New Markets</h5>
+                        <div class="space-y-4">
+                            <a href="swahili-free-text-to-voice-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Swahili Studio</a>
+                            <a href="sinhala-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Sinhala Studio</a>
+                            <a href="burmese-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Burmese Studio</a>
+                            <a href="tagalog-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Tagalog Studio</a>
+                            <a href="amharic-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Amharic Studio</a>
+                            <a href="khmer-free-text-to-speech-ai.html" class="block text-sm font-bold text-slate-600 hover:text-rose-600">Khmer Studio</a>
+                        </div>
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- ACCORDION 2: GUIDES -->
+            <details class="group border-b border-slate-100 pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5 text-blue-500"></i> Creator Guides</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-blue-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-2 pb-6 space-y-4">
+                    <a href="beginner-to-pro-masterclass.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">Beginner Masterclass</a>
+                    <a href="voice-profiles-masterclass.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">15+ Neural Profiles</a>
+                    <a href="write-better-tts-scripts.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">High-Conversion Scripts</a>
+                    <a href="ai-voice-for-elearning.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">E-Learning Courses</a>
+                    <a href="seo-for-audio-content.html" class="block text-sm font-bold text-slate-600 hover:text-blue-600">SEO for Audio Content</a>
+                </div>
+            </details>
+
+            <!-- ACCORDION 3: MONETIZATION -->
+            <details class="group border-b border-slate-100 pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="circle-dollar-sign" class="w-5 h-5 text-green-500"></i> Monetization</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-green-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-2 pb-6 space-y-4">
+                    <a href="earn-money-ai-voice.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">Earn with AI Voice</a>
+                    <a href="earn-money-faceless-storytelling.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">Faceless Channels</a>
+                    <a href="Can-AI-Voice-(Text-to-Speech)-Really-Make-Money-on-YouTube-in-2026.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">The Brutal Reality Guide</a>
+                    <a href="paid-vs-free-text-to-speech.html" class="block text-sm font-bold text-slate-600 hover:text-green-600">Paid vs Free TTS</a>
+                </div>
+            </details>
+
+            <!-- ACCORDION 4: TECH & FIXES -->
+            <details class="group pb-2">
+                <summary class="flex justify-between items-center py-3 text-[13px] font-black uppercase tracking-widest text-slate-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center gap-3"><i data-lucide="settings" class="w-5 h-5 text-red-500"></i> Tech & Fixes</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:text-red-500 group-open:rotate-180 transition-all duration-300"></i>
+                </summary>
+                <div class="pl-8 pt-2 pb-6 space-y-4">
+                    <a href="how-to-get-api-key.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Get Free API Key</a>
+                    <a href="why-byok-is-safe.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Why BYOK is 100% Safe</a>
+                    <a href="fix-chrome-loading-issues.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Fix Chrome White Screen</a>
+                    <a href="vani-ai-vs-elevenlabs.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Vāṇī AI vs ElevenLabs</a>
+                    <a href="what-is-neural-speech.html" class="block text-sm font-bold text-slate-600 hover:text-red-600">Science of Neural Speech</a>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</div>
+
+<!-- 3. MOBILE MENU JAVASCRIPT LOGIC -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('openMobileDrawerBtn');
+        const closeBtn = document.getElementById('closeMobileDrawerBtn');
+        const wrapper = document.getElementById('mobileDrawerWrapper');
+        const overlay = document.getElementById('mobileDrawerOverlay');
+        const content = document.getElementById('mobileDrawerContent');
+
+        function openDrawer() {
+            // Remove hidden to make it display:block
+            wrapper.classList.remove('hidden');
+            // Small delay to allow CSS transitions to trigger
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0');
+                overlay.classList.add('opacity-100');
+                
+                content.classList.remove('-translate-x-full');
+                content.classList.add('translate-x-0');
+                
+                // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
+            }, 10);
+        }
+
+        function closeDrawer() {
+            // Start slide out animations
+            overlay.classList.remove('opacity-100');
+            overlay.classList.add('opacity-0');
+            
+            content.classList.remove('translate-x-0');
+            content.classList.add('-translate-x-full');
+            
+            // Wait for transition to finish before hiding display
+            setTimeout(() => {
+                wrapper.classList.add('hidden');
+                // Restore background scrolling
+                document.body.style.overflow = '';
+            }, 300); // 300ms matches the CSS duration-300
+        }
+
+        if(openBtn) openBtn.addEventListener('click', openDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        if(overlay) overlay.addEventListener('click', closeDrawer);
+    });
+</script>
+<!-- ======================================================= -->
+<!-- MOBILE NATIVE SIDE DRAWER END                           -->
+<!-- ======================================================= -->
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-5xl mx-auto px-6 py-24 text-left">
+        <div class="author-box shadow-sm">
+            <div class="w-28 h-28 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 shadow-inner">
+                <i data-lucide="code-2" class="w-14 h-14"></i>
+            </div>
+            <div>
+                <h3 class="text-2xl font-black uppercase italic text-slate-900">Written by Rahul</h3>
+                <p class="text-base font-bold text-slate-500 leading-relaxed">Founder of Vāṇī AI Studio — building practical browser-based voice tools for creators.</p>
+            </div>
+        </div>
+
+        <article class="content-article">
+            <p class="text-orange-600 font-black uppercase tracking-[0.5em] mb-6">November 2, 2026 • Founder Story & Practical SaaS Breakdown</p>
+            <h1 class="text-5xl md:text-8xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-12">I Built My Own Text-to-Speech SaaS to Create a New Income Opportunity</h1>
+            <p class="text-2xl font-bold text-slate-400 italic mb-16 leading-relaxed">I did not start with a large team, a funding round or an expensive office. I started with a simple problem: creators need good voiceovers, but the tools they depend on can become expensive, complicated or restrictive. So I decided to build a small product of my own.</p>
+
+            <div class="personal-card">
+                <p class="text-orange-900 font-black mb-4 uppercase text-xs tracking-widest">The idea behind the product</p>
+                <p class="italic font-bold text-slate-700 m-0 leading-relaxed text-lg">I wanted to build something useful that I could improve over time, publish on my own domain and potentially turn into a sustainable digital business. That is how Vāṇī AI Studio took shape: a web-based text-to-speech workspace focused on access, simplicity and a creator-first workflow. This is a build-in-public account, not a claim that the product has already made me rich.</p>
+            </div>
+
+            <h2>1. Why I decided to build a TTS product</h2>
+            <p>Text-to-speech looks like a simple feature from the outside: paste words, select a voice and download audio. But anyone who regularly creates YouTube videos, explainers, reels, lessons, product demos or audiobooks knows that voice production is part of the whole publishing workflow. You need to test pronunciation, adjust punctuation, try different voices, regenerate lines and export audio that fits the edit.</p>
+            <p>For an occasional user, a paid subscription may be convenient. For a small creator who experiments frequently, however, character limits and monthly plans can become a real planning constraint. I wanted to explore another approach: build a focused interface around an existing speech engine instead of trying to train a voice model from scratch.</p>
+
+            <h2>2. What Vāṇī AI Studio actually is</h2>
+            <p><a href="index.html" class="text-blue-700 font-bold underline">Vāṇī AI Studio</a> is a browser-based text-to-speech tool. Its purpose is to help a user turn written scripts into spoken audio through a simple web interface. The product is designed for creators who need narration for videos, learning material, short-form content, presentations and other legitimate audio projects.</p>
+            <p>The important distinction is that Vāṇī is an application layer and workflow, not a claim that I independently trained a foundation speech model. The product brings together an interface, user-side settings and an API connection so that the process is easier to use. Being clear about this distinction matters: a small SaaS can create value through a better workflow even when it relies on a third-party model or API for the underlying technology.</p>
+            <div class="point-box">
+                <p class="m-0"><strong>The product principle:</strong> make the experience easier to access and understand, while keeping the user informed about the external service that actually processes the speech request.</p>
+            </div>
+
+            <h2>3. The BYOK model: bring your own API key</h2>
+            <p>One of the central ideas behind Vāṇī is BYOK, short for <strong>Bring Your Own Key</strong>. Instead of the website quietly pooling every visitor's usage under one private account, the user can connect their own supported API key. The key is used by the browser to make requests to the relevant provider, subject to that provider's account rules, quotas, pricing and availability.</p>
+            <p>This changes the economics of the product. The platform does not need to pretend that third-party inference is free or absorb unlimited usage on behalf of every visitor. Users can see that their usage is associated with their own provider account. They should always review the provider's current pricing and free-tier limits before using an API key.</p>
+            <p>BYOK also creates responsibilities. An API key is a credential. Users should create it through the official provider, keep it private, avoid sharing it in screenshots or public code, and revoke or rotate it if they think it has been exposed. A browser-based tool should explain these trade-offs honestly rather than describing BYOK as a magic guarantee of security.</p>
+
+            <h2>4. Why I chose a browser-first architecture</h2>
+            <p>A browser-first product is practical for a small independent builder. A visitor can open the website without installing desktop software. The interface can be delivered through static web pages, and much of the interaction can happen on the user's device. This keeps the initial product architecture relatively lean compared with building a large account system, media-processing backend and storage platform from day one.</p>
+            <p>Vāṇī's BYOK workflow is designed around client-side use. That does not mean every risk disappears: browser extensions, compromised devices, malicious scripts and careless key handling can still create exposure. It means the product can avoid collecting and storing user scripts on a dedicated Vāṇī database as part of its basic workflow. Users should still read the privacy information and understand how the connected API provider handles requests.</p>
+
+            <h2>5. The features are only valuable when they solve a real job</h2>
+            <p>I do not want to build a page full of features just to make a product look impressive. The useful job is straightforward: help someone move from a written script to a usable voiceover with fewer unnecessary steps. That means the essentials matter more than decorative dashboards.</p>
+            <ul class="list-disc pl-8 space-y-4 text-lg text-slate-600 font-medium mb-10">
+                <li><strong>Fast access:</strong> open the studio in a modern browser and get to the tool without a lengthy onboarding flow.</li>
+                <li><strong>Script-to-audio workflow:</strong> enter or paste text, configure the available voice options and generate speech through the connected service.</li>
+                <li><strong>Voice experimentation:</strong> compare available voice profiles and choose a delivery that suits the content.</li>
+                <li><strong>Creator use cases:</strong> prepare narration for videos, explainers, lessons, podcasts, product walkthroughs and other projects.</li>
+                <li><strong>Language-focused pages:</strong> help visitors discover the relevant studio and guidance for the language they want to work with.</li>
+                <li><strong>Clear guidance:</strong> explain API keys, privacy considerations and provider limits instead of hiding the technical details.</li>
+            </ul>
+            <p>These are product goals and workflow descriptions, not a promise that every voice, language, export format or provider feature is available in every browser or account. The live studio is the place to check the current options.</p>
+
+            <h2>6. Who can use a tool like this?</h2>
+            <p>A text-to-speech studio is not limited to one type of creator. A YouTube educator may use it for lesson narration. A regional-language creator may use it to prototype a script before recording. A small business may prepare a draft voiceover for an advertisement. A student may listen to study notes, while a podcaster may use synthetic narration for a segment or a placeholder track.</p>
+            <p>There are important boundaries. Users should only generate content they have the right to use, respect voice and likeness rights, follow the API provider's terms, and disclose synthetic audio where required by law, platform rules or audience expectations. A generated voice should not be used to impersonate a real person, mislead listeners or create deceptive endorsements.</p>
+
+            <h2>7. How a small SaaS can become an income project</h2>
+            <p>The phrase “earning SaaS” can create unrealistic expectations. Publishing a website does not automatically produce revenue. A product needs a clear audience, repeat usage, discoverability, trust and a business model that covers its ongoing costs. My thinking is to treat Vāṇī as a long-term digital asset and test more than one responsible revenue path rather than assuming that one launch will change everything.</p>
+            <div class="point-box">
+                <p><strong>Possible revenue paths to test:</strong> contextual advertising where approved, optional paid convenience features, carefully selected sponsorships, relevant affiliate partnerships with clear disclosures, and services or implementation help for organisations that need a tailored voice workflow. Each option needs to fit the product and comply with the relevant platform rules.</p>
+            </div>
+            <p>Advertising is not guaranteed income. It depends on eligible traffic, advertiser demand, page quality, policy compliance and the actual revenue reported by the ad platform. Paid features also need real value: for example, a well-supported workflow, team controls or convenience features—not artificial limits designed only to frustrate free users.</p>
+
+            <h2>8. Why SEO and useful content matter to an independent product</h2>
+            <p>A good tool can remain invisible if people cannot find it. That is why I am building supporting pages around specific problems: how to create a voiceover, how BYOK works, how to protect an API key, which voice may suit a format and how to produce content in Indian languages. These pages should answer a real question and help a reader decide whether the studio is relevant.</p>
+            <p>SEO is not repeating the phrase “free text to speech” fifty times. It is making the page technically understandable and genuinely useful. Each article needs a distinct title, a concise description, a canonical URL, relevant internal links, descriptive headings and structured data that accurately reflects the visible page. Search engines may choose their own snippets and indexing is never guaranteed.</p>
+            <p>I also need to keep the site healthy: working navigation, mobile readability, fast-loading assets, valid links, a current sitemap and pages that do not exist only to capture keywords. The goal is to build topical depth around the product, not publish dozens of near-identical pages.</p>
+
+            <h2>9. The real work starts after publishing</h2>
+            <p>Building the first version is only one part of SaaS. The next part is observing where people get stuck. Do they understand what an API key is? Can they find the right studio? Does the page explain provider limits? Does the tool work on common mobile browsers? Are error messages useful? These questions are more valuable than adding another animation to the homepage.</p>
+            <p>Analytics can help me understand aggregate traffic and page performance, but measurement should be configured responsibly. A visitor's private script or generated content should not be treated as an analytics event. I want to measure useful product signals—such as page visits, navigation and broad interaction patterns—without collecting the text people came to convert.</p>
+            <p>Support messages, real usage patterns and honest feedback should guide the roadmap. If a feature is unreliable, it needs fixing before it is promoted. If a provider changes its API or pricing, the documentation must be updated. If a claim is no longer accurate, it should be removed.</p>
+
+            <h2>10. What I learned while building it</h2>
+            <p>First, a small product needs a narrow promise. “An AI platform for everyone” is too broad. “A simple browser-based studio for turning scripts into speech” is something a visitor can understand.</p>
+            <p>Second, distribution is as important as development. A useful tool still needs search visibility, clear tutorials, word of mouth and a reason for people to return. Third, costs do not vanish just because a product is hosted as a static website. Domains, APIs, maintenance, support, compliance and the builder's time all have a cost.</p>
+            <p>Finally, trust is a product feature. Explaining BYOK, third-party processing, limitations and privacy in plain language may feel less exciting than a huge marketing claim, but it gives users a better basis for deciding whether to use the tool.</p>
+
+            <h2>11. My practical roadmap from here</h2>
+            <ul class="list-disc pl-8 space-y-4 text-lg text-slate-600 font-medium mb-10">
+                <li><strong>Improve reliability:</strong> test the core text-to-speech flow across desktop and mobile browsers.</li>
+                <li><strong>Improve onboarding:</strong> make API-key setup and troubleshooting easier for first-time users.</li>
+                <li><strong>Keep documentation current:</strong> review provider limits, supported voices and privacy explanations whenever the underlying service changes.</li>
+                <li><strong>Build useful language guides:</strong> publish original tutorials that address specific creator needs.</li>
+                <li><strong>Measure responsibly:</strong> use analytics for aggregate product improvement, not to collect private scripts.</li>
+                <li><strong>Test monetisation carefully:</strong> explore revenue options only when they improve or sustainably support the user experience.</li>
+            </ul>
+
+            <h2>12. Try the product and judge it yourself</h2>
+            <p>If you create videos, lessons, explainers or other audio-led content, you can open <a href="index.html" class="text-blue-700 font-bold underline">Vāṇī AI Studio</a> and explore the current workflow. Read the relevant setup and privacy guidance before connecting an API key. Check the provider's official terms and pricing, and start with a small test script so you understand the process before relying on it for a larger project.</p>
+            <p>You can also explore the <a href="blog.html" class="text-blue-700 font-bold underline">Vāṇī AI blog</a>, the <a href="why-byok-is-safe.html" class="text-blue-700 font-bold underline">BYOK guide</a> and the <a href="secure-your-api-key.html" class="text-blue-700 font-bold underline">API key safety guide</a> for more context.</p>
+
+            <h2>Conclusion: I wanted to build an asset, not just another website</h2>
+            <p>For me, building Vāṇī AI is an attempt to turn a practical problem into a useful product that can grow over time. The TTS engine is one part; the interface, language discovery, documentation, trust and ongoing improvements are what make it a product people may choose to use. Whether it becomes a meaningful income stream will depend on execution, audience needs and a sustainable business model—not on the fact that I published a page.</p>
+            <p>I am sharing this journey because independent software building should feel possible even when you start small. You do not need to pretend to be a big company. Start with one real problem, build a working solution, explain it honestly, listen to users and improve it step by step.</p>
+
+            <div class="personal-card bg-slate-900 border-none shadow-2xl">
+                <h3 class="text-orange-500 mb-6 italic text-left">A note to other independent builders</h3>
+                <p class="text-slate-300 font-medium mb-0 text-left leading-relaxed">Build something people can genuinely use. Be transparent about what your product does and what it depends on. Do not promise instant earnings. Let usefulness, reliability and trust become the foundation of the business.</p>
+            </div>
+        </article>
+
+        <div class="mt-20 flex justify-center">
+            <a href="index.html" class="bg-orange-600 text-white px-12 py-7 rounded-[3rem] font-black text-2xl shadow-2xl hover:bg-orange-700 transition-all uppercase flex items-center gap-6 active:scale-95 text-center">
+                Explore Vāṇī Studio <i data-lucide="sparkles" class="w-9 h-9 text-white"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER AREA (Complete Implementation) -->
+    <footer class="footer-main">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- 6. LEGAL CARDS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-40 text-left">
+                <a href="about.html" class="glass-card p-10 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="info" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">About Us</h3>
+                    <p class="text-[12px] text-slate-500 leading-relaxed font-bold">Bharat's premium neural studio for digital creators.</p>
+                </a>
+                <a href="privacy-policy.html" class="glass-card p-10 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">Privacy</h3>
+                    <p class="text-[12px] text-slate-500 leading-relaxed font-bold">100% Secure. Your scripts never leave your browser.</p>
+                </a>
+                <a href="terms.html" class="glass-card p-10 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="file-text" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3 uppercase italic">Terms</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">Full commercial rights for all your AI content.</p>
+                </a>
+                <a href="contact.html" class="glass-card p-10 group transition-all hover:border-blue-600 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner border border-blue-100">
+                        <i data-lucide="mail" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">Contact</h3>
+                    <p class="text-[12px] text-slate-500 leading-relaxed font-bold">Quick support for creators across Bharat.</p>
+                </a>
+                <a href="blog.html" class="glass-card p-10 group transition-all border-blue-600 bg-blue-50 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i data-lucide="book-open" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-3 uppercase italic">Our Blog</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">Master AI monetization and storytelling tips.</p>
+                </a>
+            </div>
+
+            <!-- 5. 8 FOOTER TEXT BOXES (Rule 5) -->
+            <section id="seo-content" class="py-24 border-t border-slate-100 text-left">
+                <div class="text-center mb-32">
+                    <h2 class="text-4xl md:text-8xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-8 text-center">Expert ElevenLabs <br class="hidden md:block" /> Alternative Analysis</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 1. Zero Waste AI Voiceovers</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Switch from paid plans to our <strong>free text to voice ai</strong> and stop wasting money on unused monthly credits in 2026. Every word you generate is truly free.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 2. Studio Speed Comparison</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Vāṇī AI is the <strong>best free text to voice ai app</strong> that matches the generation speed of premium tools without the login or email verification hassle.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 3. Premium Neural Voice Quality</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Our <strong>free text to voice ai generator</strong> uses Gemini Flash 2.5 to provide voices that sound even more natural than expensive silicon-valley competitors.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 4. Private Content Architecture</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Unlike ElevenLabs, Vāṇī is the most private <strong>free text to voice</strong> studio because your scripts stay client-side and are never logged on our database.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 5. Scaling Your Brand Globally</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Save thousands every month and reinvest it. Use our <strong>free text to speech</strong> technology to produce 10x more YouTube content for free across 100+ languages.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 6. AI Audio for Online Mentors</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Vāṇī AI is the <strong>best free text to speech</strong> tool for educators and mentors who need high-quality audio narrations without a big corporate budget.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-4 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 7. Frictionless Studio Workflow</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Why wait for signups? Use our <strong>free text to speech studio</strong> and start creating professional audio instantly without any registration barriers or limits.</p>
+                    </div>
+                    <div class="seo-box">
+                        <h3 class="text-2xl font-black uppercase text-blue-700 mb-6 tracking-tight flex items-center gap-4 text-left"><i data-lucide="search" class="w-8 h-8 text-orange-500"></i> 8. The Voice of Bharat</h3>
+                        <p class="text-base font-bold text-slate-600 leading-relaxed text-left">Vāṇī AI is the <strong>best free text to speech</strong> generator for Indian regional languages, offering perfect Hindi, Marathi and Bengali accents for local creators.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. ALL POST LINKS -->
+            <section id="sitemap" class="py-32 bg-slate-50 rounded-[5rem] px-16 border border-slate-100 mb-24 text-left text-left">
+                <h2 class="text-4xl font-black text-slate-900 mb-20 uppercase italic tracking-tighter text-left">Vāṇī Studio Creator Guides</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10">
+                    <a href="index.html" class="sitemap-link">1. Main Home Studio</a>
+                    <a href="marathi-free-text-to-voice-ai.html" class="sitemap-link">2. Marathi Free TTS Portal</a>
+                    <a href="kannada-free-text-to-voice-ai.html" class="sitemap-link">3. Kannada Free TTS Portal</a>
+                    <a href="bengali-free-text-to-voice-ai.html" class="sitemap-link">4. Bengali Free TTS Portal</a>
+                    <a href="tamil-free-text-to-voice-ai.html" class="sitemap-link">5. Tamil Free TTS Portal</a>
+                    <a href="punjabi-free-text-to-voice-ai.html" class="sitemap-link">6. Punjabi Free TTS Portal</a>
+                    <a href="gujarati-free-text-to-voice-ai.html" class="sitemap-link">7. Gujarati Free TTS Portal</a>
+                    <a href="malayalam-free-text-to-voice-ai.html" class="sitemap-link">8. Malayalam Free TTS Portal</a>
+                    <a href="telugu-free-text-to-voice-ai.html" class="sitemap-link">9. Telugu Free TTS Portal</a>
+                    <a href="urdu-free-text-to-voice-ai.html" class="sitemap-link">10. Urdu Free TTS Portal</a>
+                    <a href="odia-free-text-to-voice-ai.html" class="sitemap-link">11. Odia Free TTS Portal</a>
+                    <a href="assamese-free-text-to-voice-ai.html" class="sitemap-link">12. Assamese Free TTS Portal</a>
+                    <a href="bhojpuri-free-text-to-voice-ai.html" class="sitemap-link">13. Bhojpuri Free TTS Portal</a>
+                    <a href="sanskrit-free-text-to-voice-ai.html" class="sitemap-link">14. Sanskrit Free TTS Portal</a>
+                    <a href="maithili-free-text-to-voice-ai.html" class="sitemap-link">15. Maithili Free TTS Portal</a>
+                    <a href="konkani-free-text-to-voice-ai.html" class="sitemap-link">16. Konkani Free TTS Portal</a>
+                    <a href="how-to-get-api-key.html" class="sitemap-link">17. How to Get Free Gemini Key</a>
+                    <a href="best-voices-for-youtube.html" class="sitemap-link">18. Best Hindi Voices for Shorts</a>
+                    <a href="earn-money-ai-voice.html" class="sitemap-link">19. Monetization Secrets Masterclass</a>
+                    <a href="vani-ai-vs-elevenlabs.html" class="sitemap-link">20. Vani AI vs ElevenLabs Tech Comparison</a>
+                    <a href="why-byok-is-safe.html" class="sitemap-link">21. Security of BYOK Model</a>
+                    <a href="write-better-tts-scripts.html" class="sitemap-link">22. Writing High-Conversion Scripts</a>
+                    <a href="fix-chrome-loading-issues.html" class="sitemap-link">23. Fix Chrome Studio Crashes</a>
+                    <a href="ai-voice-for-elearning.html" class="sitemap-link">24. AI Voice for E-Learning Guide</a>
+                    <a href="create-podcast-with-ai.html" class="sitemap-link">25. Mic-less Podcast Roadmap</a>
+                    <a href="voice-profiles-masterclass.html" class="sitemap-link">26. 15+ Neural Profile Breakdown</a>
+                    <a href="regional-languages-guide.html" class="sitemap-link">27. Regional Indian Voice Strategy</a>
+                    <a href="secure-your-api-key.html" class="sitemap-link">28. Prevent Key Theft Guide</a>
+                    <a href="what-is-neural-speech.html" class="sitemap-link">29. Science of Neural Audio</a>
+                    <a href="ai-voices-for-ads.html" class="sitemap-link">30. Scaling Small Business Ads</a>
+                    <a href="emotional-ai-voices.html" class="sitemap-link">31. Adding Emotions to AI Voice</a>
+                    <a href="seo-for-audio-content.html" class="sitemap-link">32. SEO for Audio Search Rankings</a>
+                    <a href="mobile-vs-desktop-guide.html" class="sitemap-link">33. Optimization for All Devices</a>
+                    <a href="version-5-updates.html" class="sitemap-link">34. Vāṇī v5.0 Release Notes</a>
+                    <a href="beginner-to-pro-masterclass.html" class="sitemap-link">35. Pro AI Producer Career Path</a>
+                    <a href="future-of-indian-ai.html" class="sitemap-link">36. Future of Bharat AI Barriers</a>
+                    <a href="text-to-voice-youtube-architecture.html" class="sitemap-link">37. YouTube Architecture Secrets</a>
+                    <a href="best-text-to-speech-ai-2026.html" class="sitemap-link">38. Best TTS Tools of 2026</a>
+                    <a href="earn-money-faceless-storytelling.html" class="sitemap-link">39. Earning with Storytelling</a>
+                    <a href="no-login-free-text-to-speech.html" class="sitemap-link">40. Benefits of No Login Studio</a>
+                    <a href="new-earning-unlocked-text-to-voice.html" class="sitemap-link">41. New Earning Era Masterclass</a>
+                    <a href="sitemap-directory.html" class="sitemap-link">42. URL Directory Master Hub</a>
+                    <a href="blog.html" class="sitemap-link">43. Official Blog Index</a>
+                    <a href="about.html" class="sitemap-link">44. About the Vāṇī Team</a>
+                    <a href="contact.html" class="sitemap-link">45. Contact Support & Help</a>
+                    <a href="privacy-policy.html" class="sitemap-link">46. Data Privacy Standards</a>
+                    <a href="paid-vs-free-text-to-speech.html" class="sitemap-link">47. Paid vs Free Master Comparison</a>
+                    <a href="wasted-money-on-elevenlabs.html" class="sitemap-link border-indigo-600 text-indigo-700">48. I Wasted Rs.3000 on ElevenLabs (Reading Now)</a>
+                </div>
+            </section>
+
+            <!-- Copyright -->
+            <div class="text-center pt-24 border-t border-slate-100 flex flex-col items-center">
+                <div class="w-24 h-3 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mb-12"></div>
+                <p class="text-[12px] font-black uppercase tracking-[0.6em] text-slate-400">© 2026 Vāṇī Studio — Building Useful Tools for Independent Creators.</p>
+                <div class="mt-12">
+                    <a href="index.html" class="text-blue-600 font-black uppercase tracking-widest text-[11px] border-2 border-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition-all text-center">
+                        Back to Home Studio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
