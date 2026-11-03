@@ -370,206 +370,37 @@
         </header>
 
         <article class="privacy-content bg-white p-8 md:p-16 rounded-[3rem] border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)]">
-            
-            <div class="trust-box mt-0">
-                <h4 class="text-xl font-black text-blue-900 mb-2">Privacy at a Glance</h4>
-                <p class="text-blue-800 m-0">Vāṇī AI is built on a <strong>Bring Your Own Key (BYOK)</strong> architecture. This means we do not process your audio on our own backend servers. Your scripts and API keys communicate directly from your browser to Google's infrastructure. We do not save, sell, or read your generated content.</p>
-            </div>
-
-            <h2>1. Introduction to Vāṇī AI</h2>
-            <p>Welcome to Vāṇī AI (accessible at freetexttovoiceai.in). We provide a free, web-based graphical user interface (GUI) designed to help digital creators, educators, and storytellers convert text into high-fidelity speech using advanced neural models.</p>
-            <p>At Vāṇī AI, we believe that powerful technology should not come at the cost of your privacy. Our core philosophy is data minimization. We only collect the data absolutely necessary to keep the website running, and we explicitly avoid collecting the sensitive intellectual property (your scripts and API keys) that you use to generate your content.</p>
-            <p>This Privacy Policy explains in simple English how we handle information when you visit our website, use our tools, and interact with our ecosystem.</p>
-
-            <h2>2. The "Bring Your Own Key" (BYOK) Architecture</h2>
-            <p>To understand our privacy practices, you must first understand how our platform is engineered. Vāṇī AI <strong>does not provide its own proprietary text-to-speech API</strong>. Instead, our platform acts as a secure bridge.</p>
-            <p>We utilize the <strong>Google Gemini Text-to-Speech models</strong> (currently Gemini 2.5 Flash TTS, though models may update over time). To use our studio, you must bring your own personal Google API Key.</p>
-            <ul>
-                <li><strong>You paste your API key:</strong> It is stored temporarily in your device's browser.</li>
-                <li><strong>You write your script:</strong> The text is typed into a local text box.</li>
-                <li><strong>You click Generate:</strong> Your browser sends a direct, secure request to Google's servers.</li>
-                <li><strong>The audio returns:</strong> Google sends the generated audio file back directly to your browser for download.</li>
-            </ul>
-            <p>At no point in this cycle does your API key or your written script pass through a central database owned by Vāṇī AI. We do not have a backend database that logs the content you are generating.</p>
-
-            <h2>3. API Key Handling and Local Storage</h2>
-            <p>Your Google API key acts as your password to access Google's services. Protecting it is our top priority.</p>
-            <h3>Where is my API key stored?</h3>
-            <p>When you enter your API key into our studio, we use a web technology called <strong>Browser Local Storage</strong>. This means the key is saved directly on your physical device (your mobile phone or computer's hard drive), inside your specific browser (like Chrome or Safari).</p>
-            <h3>What we DO NOT do with your API key:</h3>
-            <ul>
-                <li>We <strong>do not</strong> upload your key to our servers.</li>
-                <li>We <strong>do not</strong> share your key with third-party advertisers.</li>
-                <li>We <strong>do not</strong> sell your key.</li>
-                <li>Our website administrators <strong>cannot see</strong> your key.</li>
-            </ul>
-            <p>Because the key is stored in your local browser, it improves your user experience. You do not have to paste the key every time you refresh the page. If you wish to remove your key, you can click the "Reset Studio Key" button at the bottom of the studio, or simply clear your browser's cache and site data. This instantly deletes the key from your device.</p>
-
-            <h2>4. Script Privacy and Content Ownership</h2>
-            <p>Content creators often use our platform to narrate proprietary courses, unreleased YouTube scripts, and private corporate training materials. We respect your intellectual property.</p>
-            <p>Because of our client-side architecture, <strong>Vāṇī AI does not intentionally collect, store, or monitor the text scripts you paste into the editor.</strong> When you close the browser tab, the text disappears from our interface.</p>
-            <p>Furthermore, <strong>you own the audio you generate.</strong> Vāṇī AI does not claim copyright over the WAV files you download. You are free to use them for commercial purposes, including YouTube monetization, podcasting, and social media advertising, provided your content complies with local laws and Google's Terms of Service.</p>
-
-            <h2>5. Data We May Collect</h2>
-            <p>While we do not collect your scripts or API keys, running a global website requires us to understand basic traffic patterns to ensure the site remains fast and accessible.</p>
-            <p>We may automatically collect non-personally identifying information, including:</p>
-            <ul>
-                <li><strong>Device Information:</strong> What type of device you are using (Mobile vs. Desktop) to help us optimize the layout.</li>
-                <li><strong>Browser Type:</strong> Whether you use Chrome, Safari, Firefox, etc., to fix compatibility bugs.</li>
-                <li><strong>Approximate Location:</strong> Country or regional data to understand where our users are coming from (e.g., India, UAE, Kenya).</li>
-                <li><strong>Usage Analytics:</strong> Which pages you visit (e.g., the Hindi Studio vs. the Assamese Studio) and how long you stay on the page.</li>
-                <li><strong>Performance Metrics:</strong> Crash reports or slow loading times to help us improve the website's speed.</li>
-            </ul>
-            <p>This data is anonymous. We do not ask for your name, email address, physical address, or credit card details to use the core TTS studio.</p>
-
-            <h2>6. Third-Party Services and Google Integrations</h2>
-            <p>Vāṇī AI relies on several trusted third-party services to function safely and efficiently. These services have their own privacy policies.</p>
-            
-            <h3>Google Gemini API</h3>
-            <p>The core text-to-speech generation is powered by Google. When you generate audio, your text script is sent securely to Google's servers for processing. Please review the <a href="https://policies.google.com/privacy" target="_blank" class="text-blue-600 underline font-bold">Google Privacy Policy</a> and their terms regarding API data processing.</p>
-
-            <h3>Google Analytics</h3>
-            <p>We use Google Analytics to collect the anonymous traffic data mentioned in Section 5. Google Analytics uses "cookies" to track visitor interactions. This helps us understand which creator guides are most helpful so we can write better content.</p>
-
-            <h3>Google AdSense</h3>
-            <p>To keep this platform 100% free without charging subscriptions, we display advertisements provided by Google AdSense. AdSense may use cookies to serve ads based on your prior visits to our website or other websites on the internet. You can opt out of personalized advertising by visiting Google's Ads Settings.</p>
-
-            <h3>GitHub Pages / Cloudflare</h3>
-            <p>Our website is hosted using secure global CDNs (Content Delivery Networks) like GitHub Pages to ensure fast loading times globally. These networks automatically log basic request data (like IP addresses) for security and anti-DDoS purposes.</p>
-
-            <h3>PushDotify (Push Notifications)</h3>
-            <p>We use PushDotify to offer browser push notifications (e.g., "Subscribe to get notified about our latest posts"). If you opt-in, PushDotify manages the secure delivery of these alerts. You can easily revoke this permission at any time through your browser settings.</p>
-
-            <h2>7. Understanding Cookies</h2>
-            <p>A "cookie" is a small text file placed on your device to help websites remember your preferences.</p>
-            <p>We use cookies primarily for:</p>
-            <ul>
-                <li><strong>Analytics:</strong> To count how many unique visitors use our platform daily.</li>
-                <li><strong>Advertising:</strong> To serve relevant ads via Google AdSense.</li>
-                <li><strong>Preferences:</strong> To remember if you have dismissed certain pop-ups or notifications.</li>
-            </ul>
-            <p>You have full control over cookies. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable local storage, the studio will forget your API key upon refresh, requiring you to paste it again.</p>
-
-            <h2>8. User Responsibilities</h2>
-            <p>Privacy and security are shared responsibilities. While we provide a secure interface, you must also practice safe digital habits:</p>
-            <ul>
-                <li><strong>Protect Your API Key:</strong> Your Google API key is sensitive. Do not share it publicly, do not post it on social media, and do not paste it into websites you do not trust.</li>
-                <li><strong>Respect Copyrights:</strong> Do not use our platform to narrate stolen, copyrighted material that you do not have the rights to use.</li>
-                <li><strong>No Illegal Content:</strong> You agree not to use the generated voices to create deepfakes, spread misinformation, engage in hate speech, or generate illegal content. You are bound by Google’s Generative AI Acceptable Use Policy.</li>
-            </ul>
-
-            <div class="warning-box">
-                <h4 class="text-xl font-black text-rose-900 mb-2">A Note on Absolute Security</h4>
-                <p class="text-rose-800 m-0">While our BYOK model heavily improves privacy by removing backend database risks, no method of transmission over the internet, or method of electronic storage, is 100% secure. We employ reasonable safeguards, but we cannot guarantee absolute security against advanced malware or keyloggers that may exist on your personal computer.</p>
-            </div>
-
-            <h2>9. Children's Privacy</h2>
-            <p>Vāṇī AI is built for professional content creators, educators, and adults. Our services are not directed at children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can take necessary actions.</p>
-
-            <h2>10. International Users</h2>
-            <p>Vāṇī AI is accessible globally. If you are accessing our website from outside India, please be aware that your information (such as analytics data) may be transferred to, stored, and processed in locations where our third-party servers (like Google or GitHub) operate. By using our website, you consent to this transfer.</p>
-
-            <h2>11. Changes to This Privacy Policy</h2>
-            <p>The digital landscape and artificial intelligence laws are evolving rapidly. We may update our Privacy Policy from time to time to reflect changes in technology, legal requirements, or our operational practices. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. We encourage you to review this Privacy Policy periodically.</p>
-
-            <h2>12. Contact Information</h2>
-            <p>If you have any questions, concerns, or feedback regarding this Privacy Policy, or if you need assistance regarding data protection, please reach out to us. You can contact our team directly through the official <strong><a href="contact.html" class="text-blue-600 font-bold underline">Contact Page</a></strong> available on our website.</p>
-
-            <!-- ======================================================= -->
-            <!-- 20 DETAILED FAQS SECTION                                -->
-            <!-- ======================================================= -->
-            <div class="mt-32 pt-16 border-t-[8px] border-slate-100">
-                <h2 class="text-4xl font-black uppercase italic tracking-tighter text-center mb-16">Privacy FAQ Directory</h2>
-                
-                <div class="space-y-6">
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">1. Does Vāṇī AI store my API key?</h4>
-                        <p class="text-slate-600">No. Your API key is stored strictly in your own browser's local storage. We do not upload it to any database.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">2. Who can see my text scripts?</h4>
-                        <p class="text-slate-600">Only you and Google's processing servers. Vāṇī AI bypasses intermediate backend storage, meaning your scripts go straight to the generation engine.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">3. Can administrators read my scripts?</h4>
-                        <p class="text-slate-600">No. We do not have a dashboard or database that logs what users are typing into the studio text area.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">4. Where exactly is my API key stored?</h4>
-                        <p class="text-slate-600">It is kept in `localStorage` under the variable name `vani_v5_key` directly on your hard drive/mobile storage via your browser.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">5. Can I delete my API key from your site?</h4>
-                        <p class="text-slate-600">Yes. Simply click the "Reset Studio Key" button located at the bottom of the studio, and it will be instantly erased from your browser.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">6. Does Vāṇī AI sell user data?</h4>
-                        <p class="text-slate-600">No. We do not collect personally identifiable information (PII) to sell. Our platform is monetized transparently through standard display ads.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">7. Does Vāṇī AI own the generated audio?</h4>
-                        <p class="text-slate-600">No. The audio generated using your API key and your script belongs entirely to you.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">8. Is browser local storage safe?</h4>
-                        <p class="text-slate-600">Local storage is isolated to your device and our specific website URL. However, you must ensure your computer is free from malware or viruses.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">9. Does Google store my scripts?</h4>
-                        <p class="text-slate-600">When making API calls, Google temporarily processes the text to create audio. You must review Google's API privacy policies to understand their exact data retention periods.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">10. What happens when I click Reset?</h4>
-                        <p class="text-slate-600">The website executes a `localStorage.removeItem()` command, wiping the key from your browser memory immediately.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">11. Do you use cookies?</h4>
-                        <p class="text-slate-600">Yes, primarily via third-party services like Google Analytics (to measure traffic) and Google AdSense (to show relevant ads).</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">12. Why do you need analytics?</h4>
-                        <p class="text-slate-600">To understand which language portals (e.g., Marathi vs. Bengali) are popular, so we can dedicate more time to improving those specific studios.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">13. Can I use this for commercial YouTube channels?</h4>
-                        <p class="text-slate-600">Absolutely. You have full commercial rights to monetize the audio you generate on YouTube, Reels, or Podcasts.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">14. Are my payments processed here?</h4>
-                        <p class="text-slate-600">No. Vāṇī AI is completely free. We do not ask for credit cards or process any payments on our site.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">15. How do third-party ads work here?</h4>
-                        <p class="text-slate-600">We use Google AdSense, which may use cookies to serve ads based on your interests and previous internet browsing history.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">16. What is the BYOK model?</h4>
-                        <p class="text-slate-600">"Bring Your Own Key" means instead of paying us a subscription, you use your own free developer key directly from Google. This guarantees lower costs and higher privacy.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">17. Do I need an account to use the site?</h4>
-                        <p class="text-slate-600">No. There is no signup, no login, and no password required. It is an open, client-side tool.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">18. Is this site safe for kids?</h4>
-                        <p class="text-slate-600">The tool is intended for adult creators, educators, and developers. We do not knowingly collect data from anyone under 13.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">19. Do you track my IP address?</h4>
-                        <p class="text-slate-600">IP addresses are temporarily logged by our hosting providers (like GitHub Pages/Cloudflare) to prevent DDoS attacks and spam, not to track individual identities.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h4 class="font-black text-lg text-slate-900 mb-2">20. How do I contact privacy support?</h4>
-                        <p class="text-slate-600">Please visit our Contact page to send a secure message regarding any privacy or data deletion concerns.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-24 p-8 bg-blue-50 text-blue-900 rounded-3xl font-bold text-center border-2 border-blue-200">
-                <p class="m-0">Vāṇī AI was designed with privacy-first principles. We believe that the browser-based BYOK architecture helps you keep greater control over your own tools and generated content. Thank you for trusting the Vāṇī ecosystem to build your digital assets.</p>
-            </div>
-
-        </article>
+<div class="trust-box mt-0"><h4 class="text-xl font-black text-blue-900 mb-2">Privacy at a Glance</h4><p class="text-blue-800 m-0">Vāṇī AI is a browser-based text-to-speech interface. You use your own Google API key (BYOK) to request audio generation. The website may use analytics, advertising, hosting, and notification providers. Your text and key are sent to Google when you choose to generate audio; please do not submit sensitive or confidential information.</p></div>
+<p><strong>Last updated: November 3, 2026</strong></p>
+<h2>1. Who We Are</h2><p>This Privacy Policy applies to Vāṇī AI, available at <a href="https://freetexttovoiceai.in/" class="text-blue-600 underline">https://freetexttovoiceai.in/</a> (the “Website”). Vāṇī AI provides browser-based tools and educational content that help users convert text into speech using third-party AI services. The Website is operated by Vāṇī Studio (“we,” “us,” or “our”).</p><p>This policy explains what information may be collected, how it is used and shared, your choices, and how to contact us. It should be read with our <a href="terms.html" class="text-blue-600 underline">Terms</a>.</p>
+<h2>2. How the Text-to-Speech Tool Works</h2><p>Vāṇī AI uses a Bring Your Own Key (BYOK) workflow. You provide your own Google API key and initiate audio generation from your browser. When you click Generate, the text, selected model/voice settings, and API key needed for the request are transmitted from your browser to Google’s API. Google processes that request under its own terms and privacy documentation.</p><ul><li>We do not operate a Vāṇī AI server-side TTS account that receives every generation request.</li><li>We do not intentionally collect or store your submitted script or generated audio in a Vāṇī AI database.</li><li>However, the browser, Google, hosting/CDN services, extensions, and security software may process or retain information according to their own practices.</li><li>Do not enter passwords, financial information, health information, confidential business material, or other sensitive personal data into the text editor.</li></ul><p>Our architecture and features may change. This policy describes the current intended workflow, not a guarantee that no third party ever processes request data.</p>
+<h2>3. API Keys and Browser Storage</h2><p>The Website may store your API key in your browser’s local storage so you do not need to enter it again on every visit. Local storage is on the device and browser profile you use; it is not a secure vault. Anyone with access to that browser profile, malicious extensions, or compromised device may be able to access it. Website scripts running on this origin may also access local storage.</p><ul><li>We do not intentionally transmit your key to Vāṇī AI servers for storage.</li><li>Your key is sent to Google when you use it to make an API request.</li><li>You can remove the saved key using the Studio reset/clear control if available, or clear this Website’s site data in your browser.</li><li>For stronger protection, use a restricted API key, set appropriate API restrictions and quotas in Google Cloud, and do not reuse a key with broad permissions.</li></ul><p>We cannot guarantee that a key is protected from device compromise, browser extensions, or every client-side security risk. If you believe your key was exposed, revoke or rotate it through Google.</p>
+<h2>4. Information We May Collect</h2><p>Depending on your browser, settings, and the services enabled, we and our providers may receive:</p><ul><li><strong>Technical and log information:</strong> IP address, request date/time, requested URL, referrer, browser and device details, operating system, and security or error logs.</li><li><strong>Usage and analytics information:</strong> pages viewed, approximate engagement, language page visited, events, and general device or geographic information derived from network data.</li><li><strong>Cookie and identifier information:</strong> cookies, local storage, or similar technologies used by analytics, advertising, preferences, and notification services.</li><li><strong>Messages you send us:</strong> information you include when contacting support, such as your email address and message.</li><li><strong>Notification choices:</strong> if you subscribe to browser notifications, the notification provider may process subscription identifiers and delivery information.</li></ul><p>We do not require an account, name, or email address to use the core tool. Do not assume that visiting anonymously means no technical information is processed.</p>
+<h2>5. Cookies, Analytics, and Similar Technologies</h2><p>Cookies and similar technologies may be used to make the Website work, remember preferences, measure traffic, prevent abuse, and support advertising. Some technologies are set by third-party providers whose services appear on our pages.</p><p>We use Google Analytics (measurement ID <code>G-RV64RB8M6S</code>) to understand Website usage and improve pages. Google Analytics may use cookies, device identifiers, and other information. Depending on implementation and settings, analytics data may include online identifiers and approximate location derived from IP address.</p><p>You can manage or delete cookies through your browser settings. Blocking cookies may affect certain features. Browser-level controls do not necessarily stop all forms of measurement or local storage; use any consent and privacy controls shown on the Website where available.</p>
+<h2>6. Google AdSense and Advertising</h2><p>We may display advertisements through Google AdSense to support the Website. Google and other advertising partners may use cookies, web beacons, IP addresses, or similar identifiers to serve, measure, limit frequency, and personalize ads, including based on your visits to this Website or other websites, subject to your choices, applicable law, and Google’s settings.</p><p>Google’s advertising cookies enable Google and its partners to serve ads based on visits to our site and/or other sites. You can review or change personalized advertising choices in <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Google Ads Settings</a>. You may also visit <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">YourAdChoices</a> for additional opt-out information. These controls may not disable all ads; ads may still be shown in non-personalized or contextual form.</p><p>For information about Google’s use of data on partner sites, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How Google uses information from sites or apps that use its services</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Google Privacy Policy</a>. We do not control Google’s cookies, ad selection, or data processing.</p>
+<h2>7. Third-Party Providers</h2><p>The Website relies on providers that may process information when you access or use it:</p><ul><li><strong>Google (Gemini/API, Analytics, AdSense, fonts, and related services):</strong> receives information required for API requests, analytics, or advertising. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Google’s Privacy Policy</a>.</li><li><strong>GitHub Pages and/or Cloudflare or other delivery/security infrastructure:</strong> may process IP addresses, request metadata, and logs to host, deliver, and protect the Website. The providers actually active may change.</li><li><strong>PushDotify:</strong> may process browser notification subscription and delivery information if you choose to subscribe. You can revoke notifications in browser/site settings and use any unsubscribe control provided.</li><li><strong>Other embedded or linked services:</strong> may collect information when their scripts, widgets, or links are used. Their own policies apply.</li></ul><p>We do not sell personal information for money. We may disclose information to service providers who help operate the Website, when required by law, to protect rights and security, or in connection with a business transfer. We do not control third-party processing once information is sent to those providers.</p>
+<h2>8. Why We Use Information</h2><ul><li>Operate, maintain, secure, and troubleshoot the Website and tool.</li><li>Respond to support requests and user feedback.</li><li>Understand traffic and improve content, accessibility, and performance.</li><li>Display, measure, and manage advertising where enabled.</li><li>Deliver notifications when you have subscribed.</li><li>Detect abuse, enforce terms, comply with legal obligations, and protect users and the Website.</li></ul>
+<h2>9. Legal Bases and Regional Privacy Rights</h2><p>Where applicable law requires a legal basis, we may process information based on legitimate interests in operating and securing the Website, your consent for optional technologies or communications, steps you request when contacting us, or legal obligations. The applicable basis depends on the activity and your location.</p><p>Depending on your country or region, you may have rights to request access, correction, deletion, portability, restriction, objection, or withdrawal of consent; you may also have the right to complain to a data protection authority. These rights are subject to applicable law and exceptions. To make a request, use our <a href="contact.html" class="text-blue-600 underline">Contact page</a>. We may need to verify your request before acting.</p>
+<h2>10. EEA, UK, and Switzerland: Consent and Advertising</h2><p>For visitors in the European Economic Area, the United Kingdom, and Switzerland, Google’s EU User Consent Policy and applicable privacy/ePrivacy rules may require consent before cookies or similar storage are used and before personal data is processed for personalized advertising. Google requires publishers serving personalized ads in these regions to use a Google-certified Consent Management Platform (CMP) integrated with the IAB Transparency and Consent Framework.</p><p>We aim to configure consent and advertising controls appropriate to our traffic and services. If a consent banner or privacy message is shown, use it to accept, reject, or manage optional purposes and vendors, and revisit it where a preference control is available. A privacy policy alone does not replace a required consent mechanism. We cannot promise that our current banner configuration satisfies every jurisdiction; users and publishers should consult applicable legal requirements.</p>
+<h2>11. Data Retention</h2><p>We retain information only for as long as reasonably necessary for the purposes described in this policy, including operation, security, analytics, support, and legal compliance. Retention periods are determined by the relevant provider and settings. We do not set or control the retention periods for Google API, Analytics, AdSense, hosting/CDN, or notification-provider records. Support messages may be retained for as long as needed to handle the request and maintain records.</p>
+<h2>12. Security</h2><p>We use reasonable technical and organizational measures appropriate to a small web service, including HTTPS where available and limiting intentional collection. No website, transmission, storage method, or browser environment can be guaranteed completely secure. You are responsible for securing your device, browser, API key, and generated files.</p>
+<h2>13. Children’s Privacy</h2><p>The Website is intended for general users, creators, educators, and developers, and is not directed to children under 13. We do not knowingly collect personal information directly from children under 13. If you believe a child has provided personal information to us, contact us and we will review the request and take appropriate action. Applicable local age rules may differ.</p>
+<h2>14. International Processing</h2><p>Our Website is accessible worldwide. Our service providers may process information in India, the United States, or other countries where they operate. Data protection laws in those countries may differ from those in your location. Where required, we rely on applicable safeguards and consent mechanisms for international transfers.</p>
+<h2>15. Your Choices</h2><ul><li>Use browser settings to manage cookies and site storage.</li><li>Clear Website data or use the Studio reset control to remove a locally saved API key.</li><li>Restrict, rotate, or revoke your Google API key in Google Cloud.</li><li>Manage personalized ads through Google Ads Settings and available advertising opt-outs.</li><li>Revoke browser notification permission in your browser settings.</li><li>Contact us for privacy requests or questions.</li></ul>
+<h2>16. Changes to This Policy</h2><p>We may update this policy when our tool, providers, or legal requirements change. The revised policy will be posted on this page with an updated “Last updated” date. Please review it periodically. Changes apply from the date posted, subject to applicable law.</p>
+<h2>17. Contact</h2><p>For privacy questions or requests, visit our <a href="contact.html" class="text-blue-600 underline font-bold">Contact page</a>. Please do not include your API key, passwords, or sensitive scripts in your message.</p>
+<div class="mt-16 pt-10 border-t border-slate-100"><h2 class="text-3xl font-black uppercase tracking-tight text-center mb-8">Privacy FAQ</h2><div class="space-y-5">
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">Does Vāṇī AI store my API key?</h4><p class="text-slate-600">The current tool may save it in your browser’s local storage. We do not intentionally store it in a Vāṇī AI server database. Google receives it with API requests.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">Does Vāṇī AI see my script?</h4><p class="text-slate-600">Our client-side workflow is designed not to route scripts through a Vāṇī AI backend. Your script is sent to Google when you generate audio, and browser or third-party services may process technical information.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">Does Google process my text?</h4><p class="text-slate-600">Yes. Google processes the text and request information needed to generate audio. Review Google’s terms and privacy documentation for its handling and retention.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">Does the Website use cookies?</h4><p class="text-slate-600">Analytics, advertising, and other enabled third-party services may use cookies or similar technologies. Browser controls and any on-site consent controls can help manage them.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">Can I opt out of personalized ads?</h4><p class="text-slate-600">You can manage personalized advertising in Google Ads Settings and review other opt-out resources. Non-personalized ads may still appear.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">How do I delete my API key?</h4><p class="text-slate-600">Use the Studio reset control if available, or clear site storage in your browser. Also revoke or rotate the key in Google Cloud if it may have been exposed.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">Do I need an account?</h4><p class="text-slate-600">The core tool currently does not require a Vāṇī AI account. Third-party services may have their own account requirements.</p></div>
+<div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><h4 class="font-black text-lg mb-2">How do I request access or deletion?</h4><p class="text-slate-600">Contact us through the Website’s Contact page. We will review requests under applicable law and may need to verify identity or clarify the request.</p></div>
+</div></div>
+<div class="mt-16 p-8 bg-blue-50 text-blue-900 rounded-3xl font-bold text-center border-2 border-blue-200"><p class="m-0">We aim to minimize the information we collect and explain the third-party services used by Vāṇī AI. Please review this policy and the linked provider policies before using the tool.</p></div>
+</article>
     </main>
 
     <!-- ======================================================= -->
