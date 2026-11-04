@@ -1,0 +1,78 @@
+name: Normalize AdSense global script
+
+on:
+  push:
+    paths:
+      - ".github/workflows/normalize-adsense.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - name: Normalize AdSense script in every HTML page
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+
+          canonical = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057359438981933" crossorigin="anonymous"></script>'
+          script_re = re.compile(r'<script\\b(?=[^>]*adsbygoogle\\.js)[^>]*(?:/>|>.*?</script\\s*>)', re.I | re.S)
+          head_re = re.compile(r'</head\\s*>', re.I)
+
+          html_files = sorted(
+              p for p in Path('.').rglob('*')
+              if p.is_file()
+              and p.suffix.lower() in {'.html', '.htm'}
+              and '.git' not in p.parts
+          )
+
+          changed = []
+          skipped = []
+          for path in html_files:
+              original = path.read_text(encoding='utf-8')
+              cleaned = script_re.sub('', original)
+              match = head_re.search(cleaned)
+              if not match:
+                  skipped.append(str(path))
+                  continue
+              newline = '\\r\\n' if '\\r\\n' in cleaned else '\\n'
+              updated = cleaned[:match.start()] + canonical + newline + cleaned[match.start():]
+              if updated != original:
+                  path.write_text(updated, encoding='utf-8', newline='')
+                  changed.append(str(path))
+
+              count = len(script_re.findall(path.read_text(encoding='utf-8')))
+              if count != 1:
+                  raise RuntimeError(f'{path}: expected exactly one AdSense script, found {count}')
+
+          print(f'HTML files scanned: {len(html_files)}')
+          print(f'Files changed: {len(changed)}')
+          print(f'Files already correct: {len(html_files) - len(changed) - len(skipped)}')
+          print(f'Files skipped (missing </head>): {len(skipped)}')
+          if skipped:
+              print('Skipped paths:')
+              print('\\n'.join(skipped))
+              sys.exit(2)
+
+          if changed:
+              subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+              subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+              subprocess.run(['git', 'add', '--', *changed], check=True)
+              subprocess.run(['git', 'commit', '-m', 'Add one AdSense global script to all HTML pages'], check=True)
+              subprocess.run(['git', 'push'], check=True)
+          else:
+              print('All HTML pages already have exactly one AdSense global script.')
+          PY
