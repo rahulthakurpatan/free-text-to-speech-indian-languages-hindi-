@@ -29,8 +29,8 @@ jobs:
           import sys
 
           canonical = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057359438981933" crossorigin="anonymous"></script>'
-          script_re = re.compile(r'<script\\b(?=[^>]*adsbygoogle\\.js)[^>]*(?:/>|>.*?</script\\s*>)', re.I | re.S)
-          head_re = re.compile(r'</head\\s*>', re.I)
+          script_re = re.compile(r'<script\b(?=[^>]*adsbygoogle\.js)[^>]*(?:/>|>.*?</script\s*>)', re.I | re.S)
+          head_re = re.compile(r'</head\s*>', re.I)
 
           html_files = sorted(
               p for p in Path('.').rglob('*')
@@ -48,8 +48,9 @@ jobs:
               if not match:
                   skipped.append(str(path))
                   continue
-              newline = '\\r\\n' if '\\r\\n' in cleaned else '\\n'
-              updated = cleaned[:match.start()] + canonical + newline + cleaned[match.start():]
+              newline = '\r\n' if '\r\n' in cleaned else '\n'
+              prefix = '' if cleaned[:match.start()].endswith(('\\n', '\\r')) else newline
+              updated = cleaned[:match.start()] + prefix + canonical + newline + cleaned[match.start():]
               if updated != original:
                   path.write_text(updated, encoding='utf-8', newline='')
                   changed.append(str(path))
