@@ -754,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const handleWordUpload = async (file) => {
                 if (!file) return;
                 setError(null);
-                if (!/\\.docx$/i.test(file.name)) {
+                if (!/\.docx$/i.test(file.name)) {
                     setError("Please upload a modern Word document (.docx). Legacy .doc files are not supported yet.");
                     return;
                 }
@@ -778,7 +778,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             };
 
             const splitTextIntoChunks = (input, maxChars = 2200) => {
-                const words = input.match(/\\S+\\s*/g) || [];
+                const words = input.match(/\S+\s*/g) || [];
                 const chunks = [];
                 let current = "";
                 words.forEach(word => {
@@ -1004,7 +1004,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                 </div>
                                                 <audio ref={audioRef} src={audioUrl} controls className="w-full h-10 relative z-10" autoPlay />
                                             </div>
-                                            <a href={audioUrl} download={(uploadedFileName ? uploadedFileName.replace(/\\.docx$/i, "") : "Vani_AI_Master") + ".mp3"} className="w-full py-7 bg-white border-2 border-blue-800 text-blue-800 rounded-[2.5rem] text-sm font-black uppercase flex items-center justify-center gap-4 hover:bg-blue-50 transition-all shadow-2xl text-center">
+                                            <a href={audioUrl} download={(uploadedFileName ? uploadedFileName.replace(/\.docx$/i, "") : "Vani_AI_Master") + ".mp3"} className="w-full py-7 bg-white border-2 border-blue-800 text-blue-800 rounded-[2.5rem] text-sm font-black uppercase flex items-center justify-center gap-4 hover:bg-blue-50 transition-all shadow-2xl text-center">
                                                 <Icon name="download" size={24} /> Download MP3
                                             </a>
                                         </div>
