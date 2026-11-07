@@ -91,6 +91,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.3/babel.min.js" crossorigin></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.300.0/umd/lucide.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js"></script>
 
     <style>
         body { background-color: #f8fafc; font-family: 'Inter', 'Noto Sans Devanagari', sans-serif; color: #0f172a; scroll-behavior: smooth; }
@@ -737,6 +739,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const [audioUrl, setAudioUrl] = useState(null);
             const [isGenerating, setIsGenerating] = useState(false);
             const [error, setError] = useState(null);
+            const [uploadedFileName, setUploadedFileName] = useState('');
+            const [isReadingDoc, setIsReadingDoc] = useState(false);
+            const [generationProgress, setGenerationProgress] = useState(0);
+            const [generationStatus, setGenerationStatus] = useState('');
             const audioRef = useRef(null);
 
             useEffect(() => {
@@ -744,6 +750,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 if (saved) { setApiKey(saved); setIsConfigured(true); }
                 if(window.lucide) window.lucide.createIcons();
             }, []);
+
+            const handleWordUpload = async (file) => {
+                if (!file) return;
+                setError(null);
+                if (!/\\.docx$/i.test(file.name)) {
+                    setError("Please upload a modern Word document (.docx). Legacy .doc files are not supported yet.");
+                    return;
+                }
+                if (file.size > 10 * 1024 * 1024) {
+                    setError("This Word file is larger than 10 MB. Please upload a smaller document.");
+                    return;
+                }
+                setIsReadingDoc(true);
+                try {
+                    if (!window.mammoth) throw new Error("Word document reader could not load. Please refresh and try again.");
+                    const result = await window.mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
+                    const extractedText = (result.value || "").trim();
+                    if (!extractedText) throw new Error("No readable text was found in this Word document.");
+                    setText(extractedText);
+                    setUploadedFileName(file.name);
+                } catch (err) {
+                    setError(err.message || "Could not read this Word document.");
+                } finally {
+                    setIsReadingDoc(false);
+                }
+            };
+
+            const splitTextIntoChunks = (input, maxChars = 2200) => {
+                const words = input.match(/\\S+\\s*/g) || [];
+                const chunks = [];
+                let current = "";
+                words.forEach(word => {
+                    if (current && current.length + word.length > maxChars) {
+                        chunks.push(current.trim());
+                        current = "";
+                    }
+                    current += word;
+                });
+                if (current.trim()) chunks.push(current.trim());
+                return chunks;
+            };
+
+            const pcmFromBase64 = (b64) => {
+                const binary = atob(b64);
+                const bytes = new Uint8Array(binary.length);
+                for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+                return new Int16Array(bytes.buffer, 0, Math.floor(bytes.byteLength / 2));
+            };
 
             const voices = [
                 { id: 'Leda', name: 'Priya', mood: 'Standard', gender: 'F' },
@@ -781,43 +835,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             const generateAudio = async () => {
                 if (!text.trim()) return;
-                setIsGenerating(true); setError(null); setAudioUrl(null);
+                if (!window.lamejs || !window.lamejs.Mp3Encoder) {
+                    setError("MP3 encoder could not load. Please refresh the page and try again.");
+                    return;
+                }
+                setIsGenerating(true);
+                setError(null);
+                setAudioUrl(null);
+                setGenerationProgress(0);
+                const textChunks = splitTextIntoChunks(text);
+                const encoder = new window.lamejs.Mp3Encoder(1, 24000, 128);
+                const mp3Parts = [];
                 try {
-                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{ parts: [{ text: text }] }],
-                            generationConfig: {
-                                responseModalities: ["AUDIO"],
-                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
-                            }
-                        })
-                    });
-                    
-                    if (response.status === 429) throw new Error("Limit Reached. Please wait 60 seconds.");
-                    const data = await response.json();
-                    
-                    // Fixed: Robust API Error handling
-                    if (data.error) {
-                        throw new Error(data.error.message || "API Error occurred.");
-                    }
-                    
-                    let b64 = null;
-                    if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts) {
-                        const part = data.candidates[0].content.parts.find(p => p.inlineData);
-                        if (part && part.inlineData) {
-                            b64 = part.inlineData.data;
-                        }
-                    }
+                    for (let index = 0; index < textChunks.length; index++) {
+                        setGenerationStatus("Generating part " + (index + 1) + " of " + textChunks.length + "...");
+                        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                contents: [{ parts: [{ text: textChunks[index] }] }],
+                                generationConfig: {
+                                    responseModalities: ["AUDIO"],
+                                    speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voiceProfile } } }
+                                }
+                            })
+                        });
 
-                    if (!b64) throw new Error("Invalid API Key or Limit Reached.");
-                    const url = URL.createObjectURL(pcmToWav(b64));
-                    setAudioUrl(url);
-                } catch (err) { 
-                    setError(err.message); 
-                } finally { 
-                    setIsGenerating(false); 
+                        const data = await response.json();
+                        if (!response.ok || data.error) {
+                            throw new Error((data.error && data.error.message) || ("Audio generation failed (HTTP " + response.status + ")."));
+                        }
+                        let b64 = null;
+                        if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts) {
+                            const part = data.candidates[0].content.parts.find(p => p.inlineData);
+                            if (part && part.inlineData) b64 = part.inlineData.data;
+                        }
+                        if (!b64) throw new Error("No audio was returned for part " + (index + 1) + ". Please try again.");
+                        const pcm = pcmFromBase64(b64);
+                        for (let offset = 0; offset < pcm.length; offset += 1152) {
+                            const mp3Buffer = encoder.encodeBuffer(pcm.subarray(offset, Math.min(offset + 1152, pcm.length)));
+                            if (mp3Buffer.length) mp3Parts.push(new Uint8Array(mp3Buffer));
+                        }
+                        setGenerationProgress(Math.round(((index + 1) / textChunks.length) * 100));
+                    }
+                    const finalBuffer = encoder.flush();
+                    if (finalBuffer.length) mp3Parts.push(new Uint8Array(finalBuffer));
+                    if (!mp3Parts.length) throw new Error("The MP3 file could not be created. Please try again.");
+                    const mp3Blob = new Blob(mp3Parts, { type: "audio/mpeg" });
+                    setAudioUrl(URL.createObjectURL(mp3Blob));
+                    setGenerationStatus("MP3 ready to download");
+                } catch (err) {
+                    setError(err.message || "Something went wrong while generating audio.");
+                    setGenerationStatus("");
+                } finally {
+                    setIsGenerating(false);
                 }
             };
 
@@ -868,6 +939,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     ) : (
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                             <div className="lg:col-span-8 space-y-8 text-left text-left">
+                                <div className="glass-card p-8 border-2 border-dashed border-blue-200 bg-blue-50/50 shadow-xl">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+                                        <div className="text-left">
+                                            <h3 className="text-sm font-black uppercase tracking-widest text-blue-800 flex items-center gap-3">
+                                                <Icon name="file-up" size={22} /> Word-to-Audio Upload
+                                            </h3>
+                                            <p className="text-xs font-semibold text-slate-500 mt-2">Upload a .docx file. Text is extracted in your browser and placed in the studio editor.</p>
+                                        </div>
+                                        <label className="inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-blue-800 text-white text-xs font-black uppercase tracking-wider cursor-pointer hover:bg-orange-600 transition-all shadow-lg">
+                                            <Icon name="upload" size={18} />
+                                            {isReadingDoc ? "Reading Word File..." : "Choose Word File"}
+                                            <input type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" className="hidden" disabled={isReadingDoc || isGenerating} onChange={(e) => handleWordUpload(e.target.files && e.target.files[0])} />
+                                        </label>
+                                    </div>
+                                    {uploadedFileName && <p className="mt-4 text-xs font-bold text-emerald-700 flex items-center gap-2"><Icon name="file-check" size={16} /> Loaded: {uploadedFileName}</p>}
+                                    <p className="mt-3 text-[10px] font-bold text-slate-400 uppercase tracking-wide">DOCX only • Maximum file size 10 MB • Your document is not uploaded to our server</p>
+                                </div>
                                 <div className="glass-card p-12 border-slate-900 shadow-2xl relative">
                                     <div className="flex justify-between items-center mb-10 border-b border-slate-100 pb-6 text-left">
                                         <h3 className="text-[12px] font-black uppercase text-blue-700 tracking-[0.3em] flex items-center gap-4 text-left">
@@ -888,10 +976,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         </button>
                                     ))}
                                 </div>
-                                <button onClick={generateAudio} disabled={isGenerating || !text.trim()} className="w-full py-12 bg-blue-800 text-white rounded-[4rem] text-4xl font-black shadow-2xl flex items-center justify-center gap-8 hover:bg-blue-900 active:scale-[0.98] transition-all group">
-                                    {isGenerating ? <div className="custom-loader" style={{width: 38, height: 38}}></div> : <Icon name="sparkles" size={48} className="text-orange-400 group-hover:rotate-12 transition-transform" />}
-                                    {isGenerating ? "GENERATING..." : "GENERATE AI VOICE"}
+                                <button onClick={generateAudio} disabled={isGenerating || !text.trim() || isReadingDoc} className="w-full py-10 bg-blue-800 text-white rounded-[3rem] text-2xl md:text-3xl font-black shadow-2xl flex items-center justify-center gap-5 hover:bg-blue-900 active:scale-[0.98] transition-all group disabled:opacity-60 disabled:cursor-not-allowed">
+                                    {isGenerating ? <div className="custom-loader" style={{width: 34, height: 34}}></div> : <Icon name="sparkles" size={38} className="text-orange-400 group-hover:rotate-12 transition-transform" />}
+                                    {isGenerating ? "GENERATING MP3..." : "GENERATE MP3 AUDIO"}
                                 </button>
+                                {isGenerating && <div className="mt-4">
+                                    <div className="flex justify-between text-xs font-black text-blue-800 mb-2"><span>{generationStatus}</span><span>{generationProgress}%</span></div>
+                                    <div className="w-full h-3 rounded-full bg-slate-100 overflow-hidden"><div className="h-full bg-orange-500 transition-all duration-300" style={{width: generationProgress + "%"}}></div></div>
+                                </div>}
                                 {error && <div className="p-5 bg-red-50 text-red-700 rounded-3xl border border-red-200 text-xs font-black flex items-center gap-3 shadow-sm animate-bounce text-left"><Icon name="alert-circle" size={18} /> {error}</div>}
                             </div>
                             <div className="lg:col-span-4">
@@ -912,8 +1004,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                 </div>
                                                 <audio ref={audioRef} src={audioUrl} controls className="w-full h-10 relative z-10" autoPlay />
                                             </div>
-                                            <a href={audioUrl} download="Vani_AI_Master.wav" className="w-full py-7 bg-white border-2 border-blue-800 text-blue-800 rounded-[2.5rem] text-sm font-black uppercase flex items-center justify-center gap-4 hover:bg-blue-50 transition-all shadow-2xl text-center">
-                                                <Icon name="download" size={24} /> Download WAV
+                                            <a href={audioUrl} download={(uploadedFileName ? uploadedFileName.replace(/\\.docx$/i, "") : "Vani_AI_Master") + ".mp3"} className="w-full py-7 bg-white border-2 border-blue-800 text-blue-800 rounded-[2.5rem] text-sm font-black uppercase flex items-center justify-center gap-4 hover:bg-blue-50 transition-all shadow-2xl text-center">
+                                                <Icon name="download" size={24} /> Download MP3
                                             </a>
                                         </div>
                                     )}
