@@ -55,9 +55,10 @@ window.PushDotifyConfig={title:"Get Vani updates",desc:"Get new language tools a
 </div>
 <label class="field-label" for="style">Delivery direction <span>Optional</span></label>
 <input id="style" class="text-input" maxlength="180" value="Speak naturally in clear Hindi, with a warm and engaging storyteller tone.">
-<label class="field-label" for="apiKey">Gemini API key <span>Required · used in this browser session</span></label>
+<label class="field-label" for="apiKey">Gemini API key <span>Saved in this browser for reuse</span></label>
 <div class="key-wrap"><input id="apiKey" class="text-input" type="password" autocomplete="off" spellcheck="false" placeholder="Paste your Gemini API key"><button type="button" id="toggleKey" aria-label="Show API key">Show</button></div>
-<p class="privacy-hint"><span aria-hidden="true">◈</span> Key local storage ya Vani server par intentionally save nahi hoti; generation request Google ko direct jaati hai. Is page par analytics, ads aur notification scripts bhi chalte hain—sirf wahi API key use karein jise aap is page ke scripts ke saath share karne mein comfortable hon. <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio se key lein ↗</a></p>
+<div class="key-options"><label><input id="rememberKey" type="checkbox" checked> Remember on this device</label><span id="keySaveState" aria-live="polite">Saved keys stay here until removed.</span><button type="button" id="removeSavedKey">Remove saved key</button></div>
+<p class="privacy-hint"><span aria-hidden="true">◈</span> Key is stored in this browser’s local storage until you remove it. This page also runs analytics, ads and notification scripts; use a dedicated, restricted API key, and avoid saving it on shared devices. <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio se key lein ↗</a></p>
 <div class="action-row"><button id="generateBtn" class="primary-btn"><span class="btn-icon">✦</span><span>Generate Hindi voice</span><span class="btn-arrow">→</span></button><span class="secure-note">BYOK · Google quota/charges apply</span></div>
 <div id="status" class="status" role="status" aria-live="polite"></div>
 </div>
