@@ -31,7 +31,7 @@ studioNavItem?.addEventListener('pointerenter',event=>{if(event.pointerType==='m
 studioNavItem?.addEventListener('pointerleave',()=>{if(hoverDevice.matches&&!studioNavItem.contains(document.activeElement))closeMegaSoon()});
 mega?.addEventListener('pointerenter',()=>{cancelMegaClose();if(hoverDevice.matches)setMegaOpen(true)});
 mega?.addEventListener('pointerleave',()=>{if(hoverDevice.matches&&!studioNavItem?.contains(document.activeElement))closeMegaSoon()});
-studioNavItem?.addEventListener('focusin',()=>{cancelMegaClose();setMegaOpen(true)});
+studioNavItem?.addEventListener('focusin',()=>{if(hoverDevice.matches){cancelMegaClose();setMegaOpen(true)}});
 studioNavItem?.addEventListener('focusout',event=>{if(!studioNavItem.contains(event.relatedTarget))closeMegaSoon()});
 input?.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();resultsEl.innerHTML=q?pages.filter(x=>(x.name+' '+x.terms).toLowerCase().includes(q)).map(x=>'<a href="'+x.href+'">'+x.name+' →</a>').join('')||'<span class="no-search-results">No matches. Try Maithili, Nepali, Odia, Assamese, Bengali, Bhojpuri, Hindi, stories or BYOK.</span>':''});
 document.addEventListener('click',event=>{if(mega&&!mega.contains(event.target)&&event.target!==studiosToggle){cancelMegaClose();setMegaOpen(false)}if(box&&!box.contains(event.target)&&event.target!==trigger){box.classList.remove('open');trigger?.setAttribute('aria-expanded','false')}if(nav?.classList.contains('open')&&!nav.contains(event.target)&&event.target!==menu){nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}});
