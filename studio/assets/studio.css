@@ -19,7 +19,7 @@
 /* Wide, regional Studio 2.0 navigation */
 .nav-item{position:static}
 .header-inner{position:relative}
-.mega-menu{display:none;position:absolute;z-index:30;top:calc(100% + 1px);left:50%;transform:translateX(-50%);grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;width:min(1240px,calc(100vw - 40px));max-height:min(76vh,700px);overflow:auto;padding:22px;background:linear-gradient(145deg,#151c30,#0d1220);border:1px solid #ffffff20;border-radius:0 0 18px 18px;box-shadow:0 24px 70px #000b}
+.mega-menu{display:none;position:absolute;z-index:30;top:100%;left:50%;transform:translateX(-50%);grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;width:min(1240px,calc(100vw - 40px));max-height:min(76vh,700px);overflow:auto;padding:22px;background:linear-gradient(145deg,#151c30,#0d1220);border:1px solid #ffffff20;border-radius:0 0 18px 18px;box-shadow:0 24px 70px #000b}
 .mega-menu.open{display:grid}
 .mega-column{min-width:0}
 .mega-kicker{margin:0 0 10px;padding:0 8px;color:#a99cff;font:700 10px Manrope,sans-serif;letter-spacing:1px;line-height:1.5}
