@@ -26,7 +26,7 @@ const setMegaOpen=open=>{mega?.classList.toggle('open',open);studiosToggle?.setA
 studiosToggle?.addEventListener('click',()=>{if(hoverDevice.matches)setMegaOpen(true);else setMegaOpen(!mega?.classList.contains('open'))});
 let megaCloseTimer;
 const cancelMegaClose=()=>{if(megaCloseTimer){clearTimeout(megaCloseTimer);megaCloseTimer=null}};
-const closeMegaSoon=()=>{cancelMegaClose();megaCloseTimer=setTimeout(()=>{if(!studioNavItem?.contains(document.activeElement))setMegaOpen(false)},320)};
+const closeMegaSoon=()=>{cancelMegaClose();megaCloseTimer=setTimeout(()=>{if(!studioNavItem?.contains(document.activeElement))setMegaOpen(false)},700)};
 studioNavItem?.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'||hoverDevice.matches){cancelMegaClose();setMegaOpen(true)}});
 studioNavItem?.addEventListener('pointerleave',()=>{if(hoverDevice.matches&&!studioNavItem.contains(document.activeElement))closeMegaSoon()});
 mega?.addEventListener('pointerenter',()=>{cancelMegaClose();if(hoverDevice.matches)setMegaOpen(true)});
