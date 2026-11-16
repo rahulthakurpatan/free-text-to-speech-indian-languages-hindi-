@@ -32,7 +32,7 @@
     var style = document.createElement('style');
     style.textContent =
       '.vani-upgrade-host{height:auto!important;flex-wrap:wrap!important}' +
-      '#'+id+'{box-sizing:border-box;display:flex;justify-content:flex-end;align-items:center;flex:0 0 100%;width:100%;padding:8px 16px;position:relative;z-index:1}' +
+      '#'+id+'{box-sizing:border-box;display:flex;justify-content:center;align-items:center;flex:0 0 100%;width:100%;padding:8px 16px;position:relative;z-index:1}' +
       '#'+id+' a{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid #4338ca;border-radius:999px;background:linear-gradient(120deg,#4338ca,#7c3aed);color:#fff!important;font:700 14px/1.3 system-ui,sans-serif;letter-spacing:normal;text-transform:none;text-decoration:none!important;white-space:nowrap;box-shadow:0 3px 10px #4338ca26}' +
       '#'+id+' a:hover{background:#3730a3;box-shadow:0 4px 14px #4338ca40}' +
       '#'+id+' a:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}' +
