@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gemini TTS Not Working? Fix No Audio, API Errors & WAV Issues (2026) | Vāṇī AI</title>
+<meta name="description" content="Gemini text-to-speech returning no audio? Diagnose empty payloads, 400/403/429/500 errors, Gemini 3.8 WAV vs PCM mismatches, and API key issues step by step.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://freetexttovoiceai.in/articles/troubleshooting/gemini-tts-not-working/">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="article"><meta property="og:title" content="Gemini TTS Not Working? Fix No Audio, API Errors & WAV Issues (2026)"><meta property="og:description" content="Gemini text-to-speech returning no audio? Diagnose empty payloads, 400/403/429/500 errors, Gemini 3.8 WAV vs PCM mismatches, and API key issues step by step."><meta property="og:url" content="https://freetexttovoiceai.in/articles/troubleshooting/gemini-tts-not-working/"><meta property="og:site_name" content="Vāṇī AI">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/studio/assets/studio.css?v=20261114.7">
+<link rel="stylesheet" href="/assets/editorial-v2.css?v=20261116.1">
+<meta name="google-adsense-account" content="ca-pub-2057359438981933">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057359438981933" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV64RB8M6S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RV64RB8M6S');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Gemini TTS Not Working? Fix No Audio, API Errors & WAV Issues (2026)","description":"Gemini text-to-speech returning no audio? Diagnose empty payloads, 400/403/429/500 errors, Gemini 3.8 WAV vs PCM mismatches, and API key issues step by step.","mainEntityOfPage":"https://freetexttovoiceai.in/articles/troubleshooting/gemini-tts-not-working/","datePublished":"2026-11-16","dateModified":"2026-11-16","inLanguage":"en","author":{"@type":"Person","name":"Rahul"},"publisher":{"@type":"Organization","name":"Vāṇī AI","url":"https://freetexttovoiceai.in/"},"articleSection":"Troubleshooting","keywords":["Gemini TTS not working","Gemini TTS no audio","Gemini API audio errors","Gemini 3.8 WAV PCM"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freetexttovoiceai.in/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://freetexttovoiceai.in/articles/"},{"@type":"ListItem","position":3,"name":"Troubleshooting","item":"https://freetexttovoiceai.in/articles/#troubleshooting"},{"@type":"ListItem","position":4,"name":"Gemini TTS Not Working","item":"https://freetexttovoiceai.in/articles/troubleshooting/gemini-tts-not-working/"}]}</script>
+</head>
+<body class="editorial-page">
+<div id="site-header"></div>
+<main>
+<header class="editorial-hero">
+<div class="editorial-container">
+<nav class="ed-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a> / <a href="/articles/#troubleshooting">Troubleshooting</a></nav>
+<div class="ed-hero-grid"><div>
+<div class="ed-eyebrow">VĀṆĪ EDITORIAL 2.0 · TROUBLESHOOTING</div>
+<h1 class="ed-title">Gemini TTS Not Working? <span>Fix No Audio &amp; API Errors</span></h1>
+<p class="ed-subtitle">A practical 2026 troubleshooting guide for empty audio responses, wrong model endpoints, quota failures, and WAV-versus-PCM playback mistakes.</p>
+<div class="ed-meta"><span>Updated: 16 November 2026</span><span>·</span><span>By Vāṇī AI Editorial</span><span>·</span><span>12-minute troubleshooting guide</span></div>
+</div><div class="ed-illustration" aria-hidden="true">
+<svg viewBox="0 0 180 180" role="img"><circle cx="90" cy="90" r="82" fill="#272255" stroke="#a99cff" stroke-width="1.5" opacity=".9"/><circle cx="90" cy="90" r="60" fill="none" stroke="#8b7cff" stroke-width="1.2" stroke-dasharray="5 8"/><g fill="#c5b8ff"><rect x="45" y="77" width="8" height="26" rx="4"/><rect x="60" y="63" width="8" height="54" rx="4"/><rect x="75" y="49" width="8" height="82" rx="4"/><rect x="90" y="71" width="8" height="38" rx="4"/><rect x="105" y="56" width="8" height="68" rx="4"/><rect x="120" y="76" width="8" height="28" rx="4"/></g></svg>
+<span class="ed-ill-pill">AUDIO · API · FIXES</span></div></div>
+</div>
+</header>
+<div class="editorial-container ed-layout">
+<article class="ed-content">
+<section class="ed-quick" aria-labelledby="quick"><h2 id="quick">Quick answer: why is Gemini TTS returning no audio?</h2><p>First identify whether your request <strong>failed with an HTTP error</strong>, <strong>succeeded but returned no audio bytes</strong>, or <strong>returned bytes your player cannot decode</strong>. Check the exact model ID and API workflow, inspect the response's audio field, retry one short supported-language sentence, and match the returned audio format to your playback code. Do not assume HTTP 200 means a playable file exists.</p></section>
+<section class="ed-takeaways" aria-labelledby="takeaways"><h2 id="takeaways">What to check first</h2><ul>
+<li><strong>Using Gemini 3.8 TTS?</strong> Current Interactions API examples return audio in <code>interaction.output_audio.data</code>, not the older <code>candidates[].content.parts[].inlineData.data</code> location.</li>
+<li><strong>Wrong file format?</strong> Gemini 3.8 unary audio defaults to complete WAV; older TTS workflows may have expected headerless PCM.</li>
+<li><strong>Empty result?</strong> An HTTP 200 response can still contain no usable audio. Inspect finish reasons and payload fields, then retry conservatively.</li>
+<li><strong>Quota or access error?</strong> Resolve key restrictions and model availability before repeating the request.</li>
+</ul></section>
+<nav class="ed-toc" aria-label="Article contents"><h2>In this guide</h2><ol>
+<li><a href="#diagnosis">Diagnose the symptom</a></li><li><a href="#working-check">Run a minimal test</a></li>
+<li><a href="#empty-audio">Fix HTTP 200, no audio</a></li><li><a href="#wav-pcm">Fix WAV / PCM mismatches</a></li>
+<li><a href="#error-table">Decode API errors</a></li><li><a href="#api-key">Check API key and quotas</a></li>
+<li><a href="#language">Improve language and voice output</a></li><li><a href="#vani">Try Vāṇī Studio 2.0</a></li>
+<li><a href="#faq">Frequently asked questions</a></li><li><a href="#sources">Official sources</a></li>
+</ol></nav>
+<section id="diagnosis"><h2>1. Start with the actual symptom—not a random fix</h2>
+<p>The words “Gemini voice not working” cover several different failures. A server error is not the same as a silent audio file, and neither is the same as a response that contains no audio field. Treating them separately saves time and avoids repeated paid requests.</p>
+<div class="ed-table-scroll"><table class="ed-data"><thead><tr><th>You see</th><th>Likely issue to investigate</th><th>First action</th></tr></thead><tbody>
+<tr><td><strong>400 / invalid argument</strong></td><td>Malformed request or unsupported field/model combination</td><td>Compare your payload with the current TTS documentation</td></tr>
+<tr><td><strong>401 / 403</strong></td><td>Credentials, key restrictions, or permission</td><td>Check Google AI Studio key type and project access</td></tr>
+<tr><td><strong>404 / model not found</strong></td><td>Model or API method mismatch</td><td>Verify the exact supported model identifier and endpoint</td></tr>
+<tr><td><strong>429 / resource exhausted</strong></td><td>Project rate limit or quota</td><td>Back off and inspect current tier limits</td></tr>
+<tr><td><strong>500 / 503 / 504</strong></td><td>Temporary server issue or deadline</td><td>Retry with bounded exponential backoff</td></tr>
+<tr><td><strong>200, no audio bytes</strong></td><td>Missing output field, unfinished generation, or model failure</td><td>Inspect complete response including finish reason</td></tr>
+<tr><td><strong>Bytes exist, audio will not play</strong></td><td>WAV/PCM mismatch, incorrect MIME type, or corrupt file</td><td>Read MIME type and check file header before decoding</td></tr>
+</tbody></table></div>
+<p>Google documents API status codes and generation-blocked reasons separately; a safety- or language-blocked response should not be treated like a recoverable network outage.</p></section>
+<section id="working-check"><h2>2. Test the smallest possible TTS request</h2>
+<p>Before debugging an entire audiobook script, use a short sentence like “Hello! Welcome to today's lesson.” Disable extra prompt decorations and complex multi-speaker configuration. A successful short test helps isolate script length, voice setup, or formatting problems.</p>
+<h3>For the current Gemini 3.8 TTS workflow</h3>
+<p>Google's documented <strong>Interactions API</strong> example uses model <code>gemini-3.8-flash-tts</code> and an audio response format. The resulting bytes are available as <code>interaction.output_audio.data</code>. The following example is an illustrative payload structure; authenticate with your own key using Google's supported method.</p>
+<pre class="ed-code"><code>POST /v1beta/interactions
+{
+  "model": "gemini-3.8-flash-tts",
+  "input": [{
+    "type": "user_input",
+    "content": [{
+      "type": "text",
+      "text": "Hello! Welcome to today's lesson."
+    }]
+  }],
+  "response_format": { "type": "audio" },
+  "generation_config": {
+    "speech_config": [{ "voice": "Kore" }]
+  }
+}</code></pre>
+<p><strong>Check the result:</strong> Confirm that <code>output_audio.data</code> exists and is non-empty before decoding it. A complete unary WAV result should usually begin with a RIFF/WAVE file signature after Base64 decoding. Do not log or share a live API key when requesting help.</p>
+<div class="ed-note">Using an older <code>generateContent</code> request instead? Its <code>candidates[].content.parts[].inlineData</code> response shape is a different workflow. Always follow the docs for your specific model and API method; mixing old and new examples is a common source of false “no audio” errors.</div>
+</section>
+<section id="empty-audio"><h2>3. Fix HTTP 200 but no audio returned</h2>
+<p>HTTP 200 confirms that the server handled the request, not that the requested audio was generated. A May 2026 community report documented an older Gemini TTS preview returning HTTP 200 with usage metadata, <code>finishReason: "OTHER"</code>, and an empty <code>content</code> object. Later retries sometimes worked. This is a reported symptom, not proof of one universal cause.</p>
+<div class="ed-example"><strong>Example: older preview response with no audio</strong><pre class="ed-code"><code>{
+  "candidates": [{
+    "content": {},
+    "finishReason": "OTHER"
+  }],
+  "usageMetadata": { "totalTokenCount": 6229 }
+}</code></pre><p>There is no playable <code>inlineData.data</code> field. Your application should show a meaningful failure message rather than manufacturing an empty file.</p></div>
+<ol>
+<li>Save the HTTP status, model ID, sanitized response shape, <code>finishReason</code> (if supplied), and whether the audio field is empty. <strong>Never store API keys or private scripts in public logs.</strong></li>
+<li>Run the same request with a short plain sentence and a supported prebuilt voice.</li>
+<li>Retry only transient conditions with a small capped retry count and backoff; repeated calls may consume quota or incur charges.</li>
+<li>Check the <a href="https://ai.google.dev/gemini-api/docs/deprecations" rel="noopener noreferrer">model deprecations list</a> and migrate from a legacy preview model when needed.</li>
+<li>If the failure persists, inspect Google's developer forum and report a reproducible sanitized example with the model, endpoint and status code.</li>
+</ol>
+<p>For policy-blocked content, change the underlying input appropriately instead of endlessly retrying. For stable, repeatable empty responses, investigate the request and output parsing first.</p>
+</section>
+<section id="wav-pcm"><h2>4. Gemini 3.8 WAV versus raw PCM: why audio may sound broken</h2>
+<p>This is an important migration detail. Google's current Gemini 3.8 TTS documentation describes a <strong>complete WAV file</strong> for a normal unary response (<code>audio/wav</code>, typically mono 24 kHz 16-bit PCM). Streaming responses default to <strong>headerless raw PCM</strong> (<code>audio/l16</code>), and older TTS examples often manually built a WAV header around raw PCM.</p>
+<div class="ed-table-scroll"><table class="ed-data"><thead><tr><th>Audio response</th><th>Expected handling</th><th>What not to do</th></tr></thead><tbody>
+<tr><td><strong>3.8 unary WAV</strong></td><td>Base64-decode and save/play the WAV bytes directly</td><td>Do not prepend another RIFF header</td></tr>
+<tr><td><strong>3.8 streaming raw PCM</strong></td><td>Assemble audio chunks, then decode using declared sample rate, channels and sample width</td><td>Do not rename raw bytes .wav without a valid container</td></tr>
+<tr><td><strong>Explicit audio/l16</strong></td><td>Interpret as raw signed 16-bit PCM at the configured sample rate</td><td>Do not assume the bytes already contain WAV metadata</td></tr>
+</tbody></table></div>
+<div class="ed-warning ed-note"><strong>MP3 reminder:</strong> A browser tool may offer an MP3 download after converting audio. That does not mean Gemini 3.8's default API output is MP3. Check the generated MIME type, then convert only if your app requires that format.</div>
+<h3>What to inspect in the decoded bytes</h3><p>A WAV file normally starts with <code>RIFF</code> and later includes <code>WAVE</code>. If you see that header, do not wrap it in a second WAV container. If your response is explicitly <code>audio/l16</code>, the bytes will not have a WAV header; configure your decoder or package the PCM bytes correctly.</p>
+</section>
+<section id="error-table"><h2>5. Gemini TTS API errors: what each category means</h2>
+<h3>400: Invalid argument or request shape</h3><p>Confirm your chosen model accepts audio generation, your JSON fields match its API method, and your speaker/voice configuration is valid. The Gemini 3.8 Interactions example is not a drop-in replacement for older <code>generateContent</code> payloads.</p>
+<h3>401 / 403: API key or access is rejected</h3><p>Verify the current key in Google AI Studio, its restrictions, the associated project, and access to the requested model. Google's 2026 key guidance describes a transition toward authorization keys. Recreate a restricted key if your key is blocked or obsolete, rather than removing security controls.</p>
+<h3>404: Wrong model ID or API endpoint</h3><p>Check the exact model string against Google's <a href="https://ai.google.dev/gemini-api/docs/models">model catalog</a>. Do not accidentally substitute a Live model, a transcription model, or a discontinued preview ID for a TTS model.</p>
+<h3>429: Rate or quota exceeded</h3><p>Stop rapid retries. Use exponential backoff, review project usage and billing tier, and reduce concurrent generation jobs. Being able to open AI Studio does not guarantee your project has available API quota at that moment.</p>
+<h3>500 / 503 / 504: Server failure or timeout</h3><p>These can be temporary. Retry conservatively, consider shortening a very long script, and distinguish a true server failure from a client-side timeout. If repeated failures affect multiple short requests, preserve a sanitized response and check service updates.</p>
+<h3>Blocked generation: safety or unsupported language</h3><p>Google also documents generation-blocked reasons such as safety, language, and prohibited content. Those are not fixed by network retries. Review the response and adjust the input or language choice where appropriate.</p>
+</section>
+<section id="api-key"><h2>6. Check your Gemini API key without exposing it</h2>
+<p>Vāṇī Studio 2.0 works on a bring-your-own-key basis: you supply a Gemini API key for your own Google project. Google manages API quotas, permissions, and any applicable charges. A key is not a promise of unlimited free use.</p>
+<ol><li>Open <a href="https://aistudio.google.com/apikey" rel="noopener noreferrer">Google AI Studio's API key page</a> and inspect your current key's status and type.</li>
+<li>Confirm the key is permitted for the Gemini API and linked to the intended project.</li>
+<li>Review current quota and usage. For a chargeable project, check billing settings before large tests.</li>
+<li>Test using a short non-sensitive script.</li>
+<li>Revoke any key you suspect was leaked. Never paste an API key into a bug report, article comment, or GitHub issue.</li></ol>
+<div class="ed-note ed-warning"><strong>Security:</strong> Google's guidance recommends backend key handling for production apps. Any key deliberately entered into a browser-based BYOK tool is accessible within that browser context; use a dedicated, restricted key and understand the local-storage and third-party-script implications before choosing to save it.</div>
+</section>
+<section id="language"><h2>7. Fix unusual pronunciation, accents or incomplete narration</h2>
+<p>If audio is generated but the voice sounds wrong, the issue may be linguistic rather than technical. Start with correctly encoded Unicode text, proper punctuation and small paragraph breaks. Test challenging names and numbers as separate samples before creating a long narration.</p>
+<ul><li><strong>Regional-language scripts:</strong> Prefer correctly written native Unicode script instead of copied mixed-encoding text. For Hindi, test Devanagari; for Tamil, test Tamil Unicode.</li>
+<li><strong>Overlong voice direction:</strong> Simplify instructions and separate spoken transcript from delivery guidance. Do not ask the model to read production notes aloud.</li>
+<li><strong>Voice choice:</strong> Use a voice and style suited to the script; compare short samples and listen before publishing.</li>
+<li><strong>Long output:</strong> Split scripts into coherent segments when quality drifts or the audio is truncated, then verify transitions manually.</li></ul>
+<div class="ed-example"><strong>Short multilingual test idea</strong><p>English: “Welcome to our learning studio.”</p><p>Hindi: “नमस्ते! हमारे शिक्षण स्टूडियो में आपका स्वागत है।”</p><p>Tamil: “வணக்கம்! எங்கள் கற்றல் ஸ்டுடியோவிற்கு வரவேற்கிறோம்.”</p><p>Test each separately with the target voice and compare its actual pronunciation; sample output may vary by model.</p></div>
+</section>
+<section class="ed-mini" id="vani"><div><div class="ed-eyebrow">TRY A SHORT SAMPLE</div><h2>Test your script in Vāṇī 2.0</h2><p>Open the full Hindi AI Voice Studio to choose a voice, enter your own restricted Gemini key, preview the result and download supported audio. No complete studio is embedded in this article.</p></div><a class="ed-btn" href="/studio/hindi/">Open Hindi Studio →</a></section>
+<section id="faq" class="ed-faq"><h2>Frequently asked questions</h2>
+<details><summary>Why does Gemini TTS return HTTP 200 but no audio?</summary><p>A successful HTTP status can coexist with a missing audio field. Inspect the response payload and finish reason. Some users have reported intermittent empty responses with older preview models. Test a short request and retry conservatively if the issue is transient.</p></details>
+<details><summary>Does Gemini 3.8 TTS output WAV or MP3?</summary><p>Google documents WAV as the default for unary Gemini 3.8 TTS output, and raw PCM for streaming by default. An MP3 offered by a website may involve additional conversion; do not assume the API sends MP3 automatically.</p></details>
+<details><summary>How can I fix the Gemini API 429 error?</summary><p>Reduce request frequency, implement bounded exponential backoff, and inspect the project's tier, quotas, and usage. Retrying repeatedly without delay may worsen the problem.</p></details>
+<details><summary>Can I use Gemini 3.1 and Gemini 3.8 code interchangeably?</summary><p>Not without checking the current docs. Gemini 3.8 examples use the Interactions API and may return audio in a different response structure and format from older preview examples.</p></details>
+<details><summary>Is Vāṇī AI Studio completely free?</summary><p>The studio supplies a browser interface; Google controls Gemini API quota, terms, and any charges tied to your own key and project. Review your Google account before extensive generation.</p></details>
+</section>
+<section><h2>Keep learning</h2><div class="ed-related"><a href="/articles/">Browse all new Vāṇī articles<small>Troubleshooting, creator tutorials and comparisons</small></a><a href="/how-to-get-api-key.html">How to get a Gemini API key<small>Setup guidance for new creators</small></a><a href="/studio/tamil/">Tamil Voice Studio 2.0<small>Try regional-language narration</small></a><a href="/studio/malayalam/">Malayalam Voice Studio 2.0<small>Unicode-focused voice workflow</small></a></div></section>
+<section class="ed-references" id="sources"><h2>Sources and verification</h2><p>This guide reflects Google documentation and a separately identified community report reviewed on 16 November 2026. Error handling and supported models may change; verify current API behavior before deploying code.</p><ol>
+<li><a href="https://ai.google.dev/gemini-api/docs/speech-generation" rel="noopener noreferrer">Google AI Developers — Text-to-speech generation</a> (model workflow and audio format)</li>
+<li><a href="https://ai.google.dev/gemini-api/docs/models" rel="noopener noreferrer">Google AI Developers — Models</a> (supported model IDs)</li>
+<li><a href="https://ai.google.dev/gemini-api/docs/api-errors" rel="noopener noreferrer">Google AI Developers — API errors</a> (status codes and blocked-generation reasons)</li>
+<li><a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener noreferrer">Google AI Developers — Using Gemini API keys</a> (credential guidance)</li>
+<li><a href="https://ai.google.dev/gemini-api/docs/deprecations" rel="noopener noreferrer">Google AI Developers — Deprecations</a> (retirements and replacements)</li>
+<li><a href="https://discuss.ai.google.dev/t/gemini-tts-preview-returns-http-200-with-usagemetadata-but-no-audio-payload/145337" rel="noopener noreferrer">Google AI Developers Forum — HTTP 200 with no audio payload</a> (user-reported preview behavior, not an official root-cause confirmation)</li>
+</ol></section>
+</article>
+<aside class="ed-aside" aria-label="Article sidebar">
+<nav class="ed-aside-card" aria-label="Sections"><h2>ON THIS PAGE</h2>
+<a href="#quick">Quick answer</a><a href="#diagnosis">Symptom checklist</a><a href="#empty-audio">Empty audio response</a><a href="#wav-pcm">WAV vs PCM</a><a href="#error-table">API error codes</a><a href="#api-key">API key checks</a><a href="#faq">FAQ</a>
+</nav>
+<div class="ed-aside-card ed-aside-cta"><h2>Give your words a voice.</h2><p>Explore our dedicated Gemini-powered voice studios. Bring your own key and test a short script.</p><a href="/studio/hindi/">Try Vāṇī 2.0 →</a></div>
+<nav class="ed-aside-card" aria-label="Article categories"><h2>ARTICLE CATEGORIES</h2><a href="/articles/#troubleshooting">Troubleshooting</a><a href="/articles/#how-to">How-to Guides</a><a href="/articles/#comparisons">Comparisons &amp; Research</a></nav>
+</aside>
+</div></main>
+<div id="site-footer"></div>
+<script src="/studio/assets/site-shell.js?v=20261116.4" defer></script>
+</body></html>
