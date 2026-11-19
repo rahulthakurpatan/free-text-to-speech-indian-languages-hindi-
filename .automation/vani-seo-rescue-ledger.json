@@ -1,0 +1,21 @@
+{
+  "issues": [
+    {
+      "run_date_ist": "2026-11-20",
+      "batch": "Vāṇī SEO Rescue 3 — Technical Indexing",
+      "issue_fingerprint": "sitemap:malformed-marathi-html-quote-gt",
+      "URL": "https://freetexttovoiceai.in/marathi-free-text-to-voice-ai.html%22%3E",
+      "evidence_window": "2026-11-04..2026-11-17",
+      "diagnosis": "Malformed sitemap loc and separately existing malformed filename; GSC 3 clicks/143 impressions at malformed URL versus 11 clicks/304 impressions at canonical URL",
+      "action": "Removed only malformed <url> entry; preserved correct Marathi entry and page",
+      "touched_files": [
+        "sitemap.xml"
+      ],
+      "commit": "c925745e7c65355a1c242a358f18739dcac30eb3",
+      "live_verified": false,
+      "status": "committed; live XML not verified",
+      "next_check_date": "2026-11-27",
+      "cooldown_end": "2026-12-04"
+    }
+  ]
+}
